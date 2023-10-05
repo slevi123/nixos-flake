@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      <nixos-hardware/lenovo/thinkpad/x220>
+      <nixos-hardware/lenovo/ideapad/15arh05>
       ./hardware-configuration.nix
     ];
 
