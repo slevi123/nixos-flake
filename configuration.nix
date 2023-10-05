@@ -146,7 +146,7 @@
     prime = {
       # Make sure to use the correct Bus ID values for your system!
         amdgpuBusId = "PCI:01:00:0";
-        nvidiaBusId = "PCI:06:00:0";
+        nvidiaBusId = lib.mkForce "PCI:06:00:0";
     };
   };
 
