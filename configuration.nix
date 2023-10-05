@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -145,7 +145,7 @@
   hardware.nvidia = {
     prime = {
       # Make sure to use the correct Bus ID values for your system!
-        amdgpuBusId = "PCI:01:00:0";
+        amdgpuBusId = lib.mkForce "PCI:01:00:0";
         nvidiaBusId = lib.mkForce "PCI:06:00:0";
     };
   };
