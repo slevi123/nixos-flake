@@ -104,6 +104,22 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    epiphany    # web browser
+    simple-scan # document scanner
+
+    # baobab      # disk usage analyzer
+    # cheese      # photo booth
+    eog         # image viewer
+    gedit       # text editor
+    totem       # video player
+    # yelp        # help viewer
+    # evince      # document viewer
+    # file-roller # archive manager
+    geary       # email client
+    seahorse    # password manager
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
