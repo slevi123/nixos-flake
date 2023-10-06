@@ -80,15 +80,25 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.leswell = {
-    isNormalUser = true;
-    description = "simofilevi";
-    extraGroups = [ "networkmanager" "wheel"  "docker" ];
-    uid = 1000;
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
+  users.users = {
+    leswell = {
+      isNormalUser = true;
+      description = "simofilevi";
+      extraGroups = [ "networkmanager" "wheel"  "docker" ];
+      uid = 1000;
+      packages = with pkgs; [
+        firefox
+      #  thunderbird
+      ];
+    };
+
+    unsafe = {
+      isNormalUser = true;
+      description = "account mainly for only films.. not trusted";
+      packages = with pkgs; [
+        firefox
+      ]; 
+    };
   };
 
   # Allow unfree packages
@@ -137,8 +147,7 @@
   ];
 
   virtualisation.docker.enable = true;
-
-
+  services.power-profiles-daemon.enable = lib.mkForce true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
