@@ -121,9 +121,10 @@
     git
     exa
     bat
-
     pciutils
+
   # Terminal
+    blackbox-terminal
     
   # Notes
     obsidian
@@ -136,6 +137,13 @@
     python311
     nodejs_20
     jdk
+
+  # Office Suite
+    libreoffice
+    hunspell
+    hunspellDicts.en-us
+    hunspellDicts.hu_HU
+    hunspellDicts.ru_RU
 
   # Customization
     gnomeExtensions.blur-my-shell
@@ -161,6 +169,8 @@
         nvidiaBusId = lib.mkForce "PCI:06:00:0";
     };
   };
+
+
 
 
   # Some programs need SUID wrappers, can be configured further or are
