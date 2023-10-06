@@ -143,7 +143,10 @@
   # Others
     copyq  # multiclipboard, clipboard history
     neofetch
-    gnome.gnome-power-manager
+    # gnome.gnome-power-manager
+
+    auto-cpufreq
+    # gnomeExtensions.cpufreq
   ];
 
   virtualisation.docker.enable = true;
