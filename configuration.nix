@@ -147,8 +147,8 @@
     
   # Editors
     vim
-    vscodium
-    
+    vscode.fhs    
+
   # Languages
     python311
     nodejs_20
@@ -163,10 +163,14 @@
 
   # Customization
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.clipboard-history
     
   # Others
-    copyq  # multiclipboard, clipboard history
     neofetch
+    gparted
+
+    coreutils-prefixed
+    # gnome.gpaste
     # gnome.gnome-power-manager
 
     auto-cpufreq

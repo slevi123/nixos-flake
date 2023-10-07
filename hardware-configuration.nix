@@ -25,11 +25,15 @@
       fsType = "vfat";
     };
 
-  fileSystems."/windows" =
+  fileSystems."/maindata" =
     { device = "/dev/disk/by-uuid/440CDCCA0CDCB85E";
       fsType = "ntfs-3g"; 
     };
 
+  fileSystems."/windows" =
+    { device = "/dev/disk/by-uuid/DCCAB742CAB717AA";
+      fsType = "ntfs-3g"; 
+    };
 
 
   swapDevices =
