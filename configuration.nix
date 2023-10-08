@@ -171,10 +171,16 @@
 
     # coreutils-prefixed
     gnomeExtensions.power-profile-switcher
-    # gnome.gpaste
+    # gnomeExtensions.power-profile-indicator  # not compatible
+
+    gnomeExtensions.ideapad
+    gnomeExtensions.thinkpad-battery-threshold 
+   
     
-    # gnome.gnome-power-manager
-    # auto-cpufreq
+    
+    # gnome.gpaste # not working
+    
+    # auto-cpufreq # not installing
     # gnomeExtensions.cpufreq
   ];
 
