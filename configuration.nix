@@ -141,7 +141,10 @@
 
   # Terminal
     blackbox-terminal
-    
+
+  # Prompt    
+    # starship
+
   # Notes
     obsidian
     
@@ -168,21 +171,23 @@
   # Others
     neofetch
     gparted
+    # libusb1
 
     # coreutils-prefixed
     gnomeExtensions.power-profile-switcher
     # gnomeExtensions.power-profile-indicator  # not compatible
 
     gnomeExtensions.ideapad
-    gnomeExtensions.thinkpad-battery-threshold 
-   
-    
-    
+    # gnomeExtensions.ideapad-controls # may try in future
+
+    #gnomeExtensions.thinkpad-battery-threshold  # not this platform
     # gnome.gpaste # not working
     
     # auto-cpufreq # not installing
     # gnomeExtensions.cpufreq
   ];
+
+  programs.starship.enable = true;
 
   virtualisation.docker.enable = true;
   services.power-profiles-daemon.enable = lib.mkForce true;
