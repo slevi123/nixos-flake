@@ -169,11 +169,12 @@
     neofetch
     gparted
 
-    coreutils-prefixed
+    # coreutils-prefixed
+    gnomeExtensions.power-profile-switcher
     # gnome.gpaste
+    
     # gnome.gnome-power-manager
-
-    auto-cpufreq
+    # auto-cpufreq
     # gnomeExtensions.cpufreq
   ];
 
