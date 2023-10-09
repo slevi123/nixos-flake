@@ -104,6 +104,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  fonts.fonts = with pkgs; [
+    aurulent-sans
+  ];
+	
+  fonts.enableDefaultFonts = true;
+
   environment.gnome.excludePackages = with pkgs.gnome; [
     epiphany    # web browser
     simple-scan # document scanner
@@ -123,6 +129,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+  nerdfonts
+
   # Search
     # rofi
 
@@ -188,9 +197,10 @@
   ];
 
   programs.starship.enable = true;
+  programs.starship.settings = pkgs.lib.importTOML ./starship.toml;
 
   virtualisation.docker.enable = true;
-  services.power-profiles-daemon.enable = lib.mkForce true;
+  # services.power-profiles-daemon.enable = lib.mkForce true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
