@@ -84,11 +84,15 @@
     leswell = {
       isNormalUser = true;
       description = "simofilevi";
-      extraGroups = [ "networkmanager" "wheel"  "docker" ];
+      extraGroups = [ "networkmanager" "wheel"  "docker" "users" ];
       uid = 1000;
       packages = with pkgs; [
         firefox
       #  thunderbird
+      ];
+    
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrbQaW5MNyS+SOy8D539VHZgiXiLdAd3D9sKnS/dz8L simofilevente@gmail.com"
       ];
     };
 
@@ -116,9 +120,9 @@
 
     # baobab      # disk usage analyzer
     # cheese      # photo booth
-    eog         # image viewer
+    # eog         # image viewer
     gedit       # text editor
-    totem       # video player
+    # totem       # video player
     # yelp        # help viewer
     # evince      # document viewer
     # file-roller # archive manager
@@ -176,11 +180,13 @@
   # Customization
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-history
+    gnomeExtensions.pop-shell
     
   # Others
     neofetch
     gparted
     # libusb1
+    xsel # copy the selected text using X
 
     # coreutils-prefixed
     gnomeExtensions.power-profile-switcher
@@ -198,6 +204,14 @@
 
   programs.starship.enable = true;
   programs.starship.settings = pkgs.lib.importTOML ./starship.toml;
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+
+    viAlias = true;
+    vimAlias = true;
+  };
 
   virtualisation.docker.enable = true;
   # services.power-profiles-daemon.enable = lib.mkForce true;
@@ -226,7 +240,13 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = { 
+    enable = true;
+
+    # require public key authentication for better security
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

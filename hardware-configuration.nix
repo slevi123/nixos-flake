@@ -28,6 +28,7 @@
   fileSystems."/maindata" =
     { device = "/dev/disk/by-uuid/440CDCCA0CDCB85E";
       fsType = "ntfs-3g"; 
+      options = [ "rw" "uid=1000" "gid=100" ];
     };
 
   fileSystems."/windows" =
