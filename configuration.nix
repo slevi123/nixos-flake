@@ -8,8 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       <nixos-hardware/lenovo/ideapad/15arh05>
+      # <nixos-hardware/common/cpu/amd/pstate.nix>  # If I want to enable the new amd-pstate driver (powersaving)
       ./hardware-configuration.nix
     ];
+  
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -55,6 +59,23 @@
     layout = "us";
     xkbVariant = "";
   };
+
+  services.power-profiles-daemon.enable = false;
+  services.tlp.enable = false; 
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+    };
+  };
+  
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -110,6 +131,7 @@
 
   fonts.fonts = with pkgs; [
     aurulent-sans
+    nerdfonts
   ];
 	
   fonts.enableDefaultFonts = true;
@@ -126,7 +148,7 @@
     # yelp        # help viewer
     # evince      # document viewer
     # file-roller # archive manager
-    geary       # email client
+    # geary       # email client
     seahorse    # password manager
   ];
 
@@ -134,7 +156,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-  nerdfonts
+    nerdfonts
 
   # Search
     # rofi
@@ -163,7 +185,8 @@
     
   # Editors
     vim
-    vscode.fhs    
+    vscode.fhs
+    jetbrains.idea-ultimate
 
   # Languages
     python311
@@ -180,7 +203,10 @@
   # Customization
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-history
-    gnomeExtensions.pop-shell
+    gnomeExtensions.noannoyance-2
+
+    # gnomeExtensions.pop-shell  # buggy, shortcuts not working
+    gnomeExtensions.forge
     
   # Others
     neofetch
@@ -189,10 +215,10 @@
     xsel # copy the selected text using X
 
     # coreutils-prefixed
-    gnomeExtensions.power-profile-switcher
+    # gnomeExtensions.power-profile-switcher
     # gnomeExtensions.power-profile-indicator  # not compatible
 
-    gnomeExtensions.ideapad
+    # gnomeExtensions.ideapad
     # gnomeExtensions.ideapad-controls # may try in future
 
     #gnomeExtensions.thinkpad-battery-threshold  # not this platform
@@ -200,6 +226,9 @@
     
     # auto-cpufreq # not installing
     # gnomeExtensions.cpufreq
+
+  # TO BE MOVED TO PROJECT NIX-SHELLS
+    # graphviz
   ];
 
   programs.starship.enable = true;

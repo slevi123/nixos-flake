@@ -1,6 +1,6 @@
 add_newline = true
 
-format=""" $character $git_metrics $git_state $git_status
+format=""" $character $git_metrics $git_state $git_status $nix_shell 
 $username $directory $git_branch $cmd_duration\
 $docker_context\
 $azure\
@@ -14,7 +14,7 @@ $java\
 $haskell
  [{}](bold white) """
 
-right_format = "$git_commit $time"
+# right_format = "$git_commit $time $nix_shell"
 
 
 [character]
@@ -40,6 +40,13 @@ format = "[DETACHED head](bold red): [$hash]($style)"
 [time]
 disabled = false
 time_format = "%H:%M"
+
+[nix_shell]
+# format = '[$state($symbol \($name\))]($style)'
+# format = "[\ue0c7](#ffedbd)[ $state($symbol \\($name\\))](bg:#ffedbd fg:blue)[\ue0c6](#ffedbd)"
+format = '[$state($symbol \($name\))]($style)'
+impure_msg=""
+symbol = ""
 
 # -------------------
 
@@ -109,8 +116,6 @@ symbol = "󰔷 "
 [nim]
 symbol = "󰆥 "
 
-[nix_shell]
-symbol = " "
 
 [nodejs]
 symbol = " "
