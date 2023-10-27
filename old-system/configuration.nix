@@ -113,7 +113,7 @@
       ];
     
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrbQaW5MNyS+SOy8D539VHZgiXiLdAd3D9sKnS/dz8L simofilevente@gmail.com"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrbQaW5MNyS+SOy8D539VHZgiXiLdAd3D9sKnS/dz8L leswell"
       ];
     };
 
@@ -250,8 +250,8 @@
   hardware.nvidia = {
     prime = {
       # Make sure to use the correct Bus ID values for your system!
-        amdgpuBusId = lib.mkForce "PCI:01:00:0";
-        nvidiaBusId = lib.mkForce "PCI:06:00:0";
+        nvidiaBusId = lib.mkForce "PCI:01:00:0";
+        amdgpuBusId = lib.mkForce "PCI:06:00:0";
     };
   };
 
