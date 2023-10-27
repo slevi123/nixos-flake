@@ -285,7 +285,7 @@
   ];
 
   programs.starship.enable = true;
-  programs.starship.settings = pkgs.lib.importTOML ./starship.toml;
+  programs.starship.settings = pkgs.lib.importTOML ../starship.toml;
 
   programs.neovim = {
     enable = true;
