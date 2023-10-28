@@ -63,7 +63,7 @@
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
-      auto-optimise-store = true;
+      auto-optimise-store = false;
     };
   };
 
@@ -283,6 +283,10 @@
   # TO BE MOVED TO PROJECT NIX-SHELLS
     # graphviz
   ];
+
+  environment.shellAliases = {
+    exa = "exa --icons";
+  };
 
   programs.starship.enable = true;
   programs.starship.settings = pkgs.lib.importTOML ../starship.toml;
