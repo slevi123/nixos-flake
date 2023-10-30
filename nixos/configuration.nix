@@ -207,7 +207,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ./package_lists/stable.nix { pkgs = pkgs; };
+  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; };
 
   environment.shellAliases = {
     exa = "exa --icons";
