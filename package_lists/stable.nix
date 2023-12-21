@@ -1,6 +1,22 @@
 {pkgs} :
 with pkgs; [
+    distrobox
+
     nerdfonts
+    chromium
+
+
+    discord
+
+    # postman
+    vlc
+
+    shotwell
+
+  # creative
+    gimp
+    ardour
+    drawio
 
   # Search
     # rofi
@@ -10,16 +26,22 @@ with pkgs; [
     bitwarden-cli
     
   # Tools  
+    gcc
     wget
     htop
+    btop
     nvtop
     git
     eza
+    fzf
     bat
     pciutils
+    fff
+    go-chromecast
 
-  # Terminal
+  # Terminals
     blackbox-terminal
+    guake # dropdown
 
   # Prompt    
     # starship
@@ -35,7 +57,13 @@ with pkgs; [
   # Languages
     python311
     nodejs_20
-    jdk
+    jdk17
+
+  # Language Tools
+    gradle
+
+    flex
+    bison
 
   # Office Suite
     libreoffice
@@ -51,7 +79,7 @@ with pkgs; [
 
     # gnomeExtensions.pop-shell  # buggy, shortcuts not working
     gnomeExtensions.forge
-    
+
   # Others
     neofetch
     gparted
@@ -71,6 +99,7 @@ with pkgs; [
     # auto-cpufreq # not installing
     # gnomeExtensions.cpufreq
 
+    ## SCHOOL
   # TO BE MOVED TO PROJECT NIX-SHELLS
     # graphviz
 ]

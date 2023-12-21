@@ -207,7 +207,16 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; };
+  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; };
+  # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
+  environment.variables = {
+    FFF_CD_ON_EXIT = "1";
+  };
+
+  nixpkgs.config.permittedInsecurePackages = [
+                "electron-25.9.0"
+              ];
+
 
   environment.shellAliases = {
     exa = "eza --icons";
@@ -271,6 +280,11 @@
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
   };
+
+
+   services.udev.extraRules = ''
+      SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c965", MODE="0666"
+  '';
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
