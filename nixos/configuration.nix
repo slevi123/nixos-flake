@@ -182,12 +182,12 @@
     };
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     aurulent-sans
     nerdfonts
   ];
 
-  fonts.enableDefaultFonts = true;
+  fonts.enableDefaultPackages = true;
 
   environment.gnome.excludePackages = with pkgs.gnome; [
     epiphany    # web browser
@@ -210,7 +210,7 @@
   environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; };
 
   environment.shellAliases = {
-    exa = "exa --icons";
+    exa = "eza --icons";
   };
 
   programs.starship.enable = true;

@@ -14,7 +14,7 @@ with pkgs; [
     htop
     nvtop
     git
-    exa
+    eza
     bat
     pciutils
 
