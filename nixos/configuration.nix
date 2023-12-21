@@ -224,17 +224,30 @@
     vimAlias = true;
   };
 
-  virtualisation.docker.enable = true;
-  # services.power-profiles-daemon.enable = lib.mkForce true;
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  virtualisation.docker = {
+    enable = true;
+    # enableNvidia = true;
+  };
 
   hardware.nvidia = {
     prime = {
       # Make sure to use the correct Bus ID values for your system!
-        nvidiaBusId = lib.mkForce "PCI:01:00:0";
-        amdgpuBusId = lib.mkForce "PCI:06:00:0";
+        # nvidiaBusId = lib.mkForce "PCI:1:0:0";
+        amdgpuBusId = lib.mkForce "PCI:6:0:0";
     };
+
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    powerManagement.enable = false;
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
+
+    # Enable the Nvidia settings menu,
+	  # accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
 
