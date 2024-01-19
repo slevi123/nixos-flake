@@ -161,7 +161,7 @@
     leswell = {
       isNormalUser = true;
       description = "simofilevi";
-      extraGroups = [ "networkmanager" "wheel"  "docker" "users" ];
+      extraGroups = [ "networkmanager" "wheel"  "docker" "users" "plugdev" "usb" ];
       uid = 1000;
       packages = with pkgs; [
         firefox
@@ -220,10 +220,15 @@
 
   environment.shellAliases = {
     exa = "eza --icons";
+    py = "/run/current-system/sw/bin/python";
+    keylight = "py /home/leswell/Downloads/lenovo-ideapad-legion-keyboard-led/levi.py";
+    switch = "/maindata/project/nix_config/my_own_nix_config && sudo nixos-rebuild switch --flake .";
   };
 
+  services.flatpak.enable = true;
   programs.starship.enable = true;
   programs.starship.settings = pkgs.lib.importTOML ../starship.toml;
+
 
   programs.neovim = {
     enable = true;

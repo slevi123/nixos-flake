@@ -1,4 +1,9 @@
 {pkgs} :
+let    
+     my-python-packages = ps: with ps; [    
+          pyusb
+     ];    
+in
 with pkgs; [
     distrobox
 
@@ -8,13 +13,14 @@ with pkgs; [
 
     discord
 
-    # postman
+    insomnia
     vlc
 
     shotwell
 
   # creative
     gimp
+    davinci-resolve
     ardour
     drawio
 
@@ -24,6 +30,9 @@ with pkgs; [
   # Passwords
     bitwarden
     bitwarden-cli
+
+  # cuda
+    cudatoolkit
     
   # Tools  
     gcc
@@ -53,9 +62,9 @@ with pkgs; [
     vim
     vscode.fhs
     jetbrains.idea-ultimate
-
+   
   # Languages
-    python311
+    (python311.withPackages my-python-packages)
     nodejs_20
     jdk17
 
@@ -64,6 +73,8 @@ with pkgs; [
 
     flex
     bison
+
+    gdb
 
   # Office Suite
     libreoffice
@@ -75,7 +86,8 @@ with pkgs; [
   # Customization
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-history
-    gnomeExtensions.noannoyance-2
+    # gnomeExtensions.noannoyance-2
+    gnomeExtensions.emoji-copy
 
     # gnomeExtensions.pop-shell  # buggy, shortcuts not working
     gnomeExtensions.forge
@@ -85,6 +97,7 @@ with pkgs; [
     gparted
     # libusb1
     xsel # copy the selected text using X
+    libusb1
 
     # coreutils-prefixed
     # gnomeExtensions.power-profile-switcher

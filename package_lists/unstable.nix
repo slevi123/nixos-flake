@@ -1,4 +1,5 @@
 {pkgs} :
 with pkgs; [
-    postman
+    # postman  # broken right now.. (postman side thing, nix developers tried)
+    jetbrains.pycharm-professional
 ]
