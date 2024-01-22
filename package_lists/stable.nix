@@ -60,6 +60,7 @@ with pkgs; [
     
   # Editors
     vim
+    helix
     vscode.fhs
     jetbrains.idea-ultimate
    
@@ -75,6 +76,13 @@ with pkgs; [
     bison
 
     gdb
+
+  # Language Servers
+    jdtls   # java
+    python311Packages.python-lsp-server
+    taplo   # toml
+    yaml-language-server
+    nodePackages.typescript-language-server
 
   # Office Suite
     libreoffice

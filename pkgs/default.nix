@@ -1,7 +1,7 @@
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # You can build them using 'nix build .#example'
-pkgs: {
+
+{ pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
-  lenovo-keyboard = pkgs.callPackage ./lenovo-keyboard { };
-  # rclip = pkgs.callPackage ./rclip { };
+  jdtls = pkgs.callPackage ./jdt-language-server { };
 }

@@ -221,8 +221,7 @@
   environment.shellAliases = {
     exa = "eza --icons";
     py = "/run/current-system/sw/bin/python";
-    keylight = "py /home/leswell/Downloads/lenovo-ideapad-legion-keyboard-led/levi.py";
-    switch = "/maindata/project/nix_config/my_own_nix_config && sudo nixos-rebuild switch --flake .";
+    keylight ="py " + toString (../. +"/related_projects/lenovo-ideapad-legion-keyboard-led/levi.py");
   };
 
   services.flatpak.enable = true;
