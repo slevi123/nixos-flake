@@ -157,6 +157,7 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.defaultUserShell = pkgs.zsh;
   users.users = {
     leswell = {
       isNormalUser = true;
@@ -167,7 +168,8 @@
         firefox
       #  thunderbird
       ];
-    
+      useDefaultShell = true;
+
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrbQaW5MNyS+SOy8D539VHZgiXiLdAd3D9sKnS/dz8L leswell"
       ];
@@ -220,6 +222,9 @@
 
   environment.shellAliases = {
     exa = "eza --icons";
+    ls = "eza --icons";
+    lstree = "eza --tree";
+    ll = "eza -l";
     py = "/run/current-system/sw/bin/python";
     keylight ="py " + toString (../. +"/related_projects/lenovo-ideapad-legion-keyboard-led/levi.py");
   };
@@ -261,6 +266,15 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  programs = {
+    zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+    };
   };
 
 
