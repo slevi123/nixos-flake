@@ -72,6 +72,8 @@
   # TODO: Set your hostname
   networking.hostName = "leswell-nixos";
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
+
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -173,7 +175,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrbQaW5MNyS+SOy8D539VHZgiXiLdAd3D9sKnS/dz8L leswell"
       ];
-    };
+    }; 
 
     unsafe = {
       isNormalUser = true;
@@ -223,9 +225,12 @@
   environment.shellAliases = {
     exa = "eza --icons";
     ls = "eza --icons";
-    lstree = "eza --tree";
-    ll = "eza -l";
+    lstree = "exa --tree";
+    ll = "exa -l";
+    la = "exa -a";
+    lla = "exa -la";
     py = "/run/current-system/sw/bin/python";
+    # z = "zoxide";
     keylight ="py " + toString (../. +"/related_projects/lenovo-ideapad-legion-keyboard-led/levi.py");
   };
 
@@ -274,8 +279,11 @@
       autosuggestions.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
+
+      shellInit = "eval \"$(zoxide init zsh)\"";
     };
   };
+
 
 
 

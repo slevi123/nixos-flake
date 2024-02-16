@@ -2,6 +2,7 @@
   description = "My Own NixOS Config (Leswell)";
 
   inputs = {
+    fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     old-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
@@ -62,6 +63,9 @@
       leswell-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+          {
+            environment.systemPackages = [ inputs.fh.packages.x86_64-linux.default ];
+          }
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
         ];

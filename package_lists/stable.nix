@@ -47,6 +47,7 @@ with pkgs; [
     pciutils
     fff
     go-chromecast
+    lazydocker 
 
   # Terminals
     blackbox-terminal
@@ -106,6 +107,12 @@ with pkgs; [
     # libusb1
     xsel # copy the selected text using X
     libusb1
+
+    openssl
+
+    azure-cli
+
+    zoxide
 
     # coreutils-prefixed
     # gnomeExtensions.power-profile-switcher
