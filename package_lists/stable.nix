@@ -99,7 +99,8 @@ with pkgs; [
     gnomeExtensions.emoji-copy
 
     # gnomeExtensions.pop-shell  # buggy, shortcuts not working
-    gnomeExtensions.forge
+    # gnomeExtensions.forge
+    gnomeExtensions.media-controls
 
   # Others
     neofetch
