@@ -222,6 +222,18 @@ def effect23(controller: LedController) -> dict:
         speed=1
     )
 
+def effect24(controller: LedController) -> dict:
+    """Cinema mid"""
+    # 'd91818',
+    return controller.build_control_string(
+        effect='static',
+        colors=['000000', 'd27575', '000000'],
+        # colors=['1F51FF', '9D00FF', ''],
+        brightness=1,
+        speed=1
+    )
+
+
 
 def cycle_all(effect_list, controller):
     while True:
@@ -254,7 +266,8 @@ effect_list = {
     'np': effect20,
     'lpng': effect21,
     'gng': effect22,
-    'hrt': effect23
+    'hrt': effect23,
+    'cm': effect24,
     }
 
 def main():
