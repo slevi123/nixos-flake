@@ -2,6 +2,7 @@
   description = "My Own NixOS Config (Leswell)";
 
   inputs = {
+    # nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
     fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -68,6 +69,16 @@
           }
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          # ./nixos/virt.nix
+
+          # nixtheplanet.nixosModules.macos-ventura
+          # {
+          #   services.macos-ventura = {
+          #     # enable = true;
+          #     openFirewall = true;
+          #     vncListenAddr = "0.0.0.0";
+          #   };
+          # }
         ];
       };
     };

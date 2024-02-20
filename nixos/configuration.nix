@@ -175,7 +175,7 @@
     leswell = {
       isNormalUser = true;
       description = "simofilevi";
-      extraGroups = [ "networkmanager" "wheel"  "docker" "users" "plugdev" "usb" ];
+      extraGroups = [ "networkmanager" "wheel"  "docker" "users" "plugdev" "usb" "libvirtd" ];
       uid = 1000;
       packages = with pkgs; [
         firefox
