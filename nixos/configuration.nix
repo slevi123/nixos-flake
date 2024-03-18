@@ -76,8 +76,17 @@
 
     # Open ports in the firewall.
     firewall = {
-      allowedTCPPorts = [ 1968 ];
-      # allowedUDPPorts = [ ... ];
+      allowedTCPPorts = [ 
+        1968
+      ];
+
+      # allowedTCPPortRanges = [
+      #  {from = 1716; to=1764;} # for gsconnect 
+      # ];
+
+      # allowedUDPPortRanges = [ 
+      #   {from = 1716; to=1764;} # for gsconnect
+      # ];
     };
 
 
@@ -290,8 +299,13 @@
       autosuggestions.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
+      zsh-autoenv.enable = true;
 
       shellInit = "eval \"$(zoxide init zsh)\"";
+    };
+
+    bash = {
+      shellInit = "eval \"$(zoxide init bash)\"";
     };
   };
 
@@ -320,7 +334,8 @@
 
 
    services.udev.extraRules = ''
-      SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c965", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
   '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

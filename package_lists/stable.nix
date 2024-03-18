@@ -2,6 +2,10 @@
 let    
      my-python-packages = ps: with ps; [    
           pyusb
+          jupyter
+          requests
+          scrapy
+          nltk
      ];    
 in
 with pkgs; [
@@ -102,6 +106,8 @@ with pkgs; [
     # gnomeExtensions.forge
     gnomeExtensions.media-controls
 
+    # gnomeExtensions.gsconnect  # not working
+
   # Others
     neofetch
     gparted
@@ -113,7 +119,18 @@ with pkgs; [
 
     azure-cli
 
-    zoxide
+    zoxide # z, better cd
+
+    texlive.combined.scheme-full
+
+    nmap
+
+    wineWowPackages.stable
+    qbittorrent
+
+    calibre
+
+    teams-for-linux
 
     # coreutils-prefixed
     # gnomeExtensions.power-profile-switcher
