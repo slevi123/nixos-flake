@@ -233,6 +233,31 @@ def effect24(controller: LedController) -> dict:
         speed=1
     )
 
+def effect25(controller: LedController) -> dict:
+    """ocean blue"""
+    # 'd91818',
+    return controller.build_control_string(
+        effect='static',
+        colors=['009dc4'],
+        brightness=2
+    )
+
+def effect26(controller: LedController) -> dict:
+    """ocean blue - white"""
+    return controller.build_control_string(
+        effect='static',
+        colors=['009dc4', 'e2f9fe', '009dc4'],
+        brightness=2
+    )
+    
+def effect27(controller: LedController) -> dict:
+    """sunset orange - purple"""
+    return controller.build_control_string(
+        effect='static',
+        colors=['FA5F55', '581845', 'FA5F55'],
+        brightness=2
+    )
+
 
 
 def cycle_all(effect_list, controller):
@@ -268,6 +293,9 @@ effect_list = {
     'gng': effect22,
     'hrt': effect23,
     'cm': effect24,
+    'ob': effect25,
+    'obw': effect26,
+    'sop': effect27,
     }
 
 def main():

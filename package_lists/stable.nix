@@ -83,7 +83,7 @@ with pkgs; [
     gdb
 
   # Language Servers
-    jdtls   # java
+    # jdtls   # java
     python311Packages.python-lsp-server
     taplo   # toml
     yaml-language-server
@@ -107,6 +107,7 @@ with pkgs; [
     gnomeExtensions.media-controls
 
     # gnomeExtensions.gsconnect  # not working
+    gnomeExtensions.switcher
 
   # Others
     neofetch
@@ -131,6 +132,22 @@ with pkgs; [
     calibre
 
     teams-for-linux
+    whatsapp-for-linux
+
+    traceroute
+
+    caprine-bin  # fb messenger app
+
+    tor-browser
+    macchanger
+    torsocks
+
+    # astra gnom extension required
+    wirelesstools
+    amdgpu_top
+    gtop
+
+    # pulseaudio # for pactl and who knows why
 
     # coreutils-prefixed
     # gnomeExtensions.power-profile-switcher

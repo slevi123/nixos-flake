@@ -97,12 +97,14 @@
     # };
   };
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
+  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
+  boot.kernel.sysctl = { "vm.swappiness" = 10;};
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
    # Enable networking
@@ -233,9 +235,7 @@
   # $ nix search wget
   environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; };
   # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
-  environment.variables = {
-    FFF_CD_ON_EXIT = "1";
-  };
+
 
   nixpkgs.config.permittedInsecurePackages = [
                 "electron-25.9.0"
@@ -249,9 +249,14 @@
     ll = "exa -l";
     la = "exa -a";
     lla = "exa -la";
-    py = "/run/current-system/sw/bin/python";
+    py = "/run/current-system/sw/bin/python -q";
     # z = "zoxide";
-    keylight ="py " + toString (../. +"/related_projects/lenovo-ideapad-legion-keyboard-led/levi.py");
+    keylight ="py " + toString (../. +"/related_projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
+  };
+
+  environment.variables = {
+    PYTHONSTARTUP = ../. + "/python_startup.py";
+    FFF_CD_ON_EXIT = "1";
   };
 
   services.flatpak.enable = true;

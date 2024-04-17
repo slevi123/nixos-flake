@@ -5,7 +5,7 @@
     # nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
     fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2311.557104.tar.gz";
     old-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
@@ -69,6 +69,7 @@
           }
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          ./nixos/vpn.nix
           # ./nixos/virt.nix
 
           # nixtheplanet.nixosModules.macos-ventura
