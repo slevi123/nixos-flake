@@ -16,6 +16,8 @@
     #home-manager.url = "github:nix-community/home-manager/release-23.05";
     #home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    darkmatter.url = "gitlab:VandalByte/darkmatter-grub-theme";
+
     hardware.url = "github:nixos/nixos-hardware";
   };
 
@@ -23,6 +25,7 @@
     self,
     nixpkgs,
     #home-manager,
+    darkmatter,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -68,6 +71,7 @@
             environment.systemPackages = [ inputs.fh.packages.x86_64-linux.default ];
           }
           # > Our main nixos configuration file <
+          darkmatter.nixosModule
           ./nixos/configuration.nix
           ./nixos/vpn.nix
           # ./nixos/virt.nix

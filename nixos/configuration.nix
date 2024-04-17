@@ -99,9 +99,18 @@
 
   # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6;
 
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.useOSProber = true;
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader.grub.darkmatter-theme = {
+    enable = true;
+    style = "nixos";
+  };
   
   boot.kernel.sysctl = { "vm.swappiness" = 10;};
 
