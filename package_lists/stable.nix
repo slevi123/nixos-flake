@@ -16,7 +16,7 @@ with pkgs; [
     distrobox
 
     nerdfonts
-    # chromium
+    chromium
 
     jdk8
 
@@ -49,8 +49,8 @@ with pkgs; [
     wget
     htop
     btop
-    nvtop
-    # nvtopPackages.full
+    # nvtop
+    nvtopPackages.full
     git
     eza
     fzf
