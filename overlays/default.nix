@@ -11,6 +11,20 @@
     # ...
     # });
   };
+    
+  other-packages = final: _prev: {
+    other = import inputs.nixpkgs-for-chromium {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
+
+  new-packages = final: _prev: {
+    new-pkgs = import inputs.new-nixpkgs {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'

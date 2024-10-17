@@ -6,13 +6,19 @@ let
           requests
           scrapy
           nltk
+          numpy
+          marisa-trie
+          pygtrie
+          scapy
      ];    
 in
 with pkgs; [
     distrobox
 
     nerdfonts
-    chromium
+    # chromium
+
+    jdk8
 
 
     discord
@@ -36,7 +42,7 @@ with pkgs; [
     bitwarden-cli
 
   # cuda
-    cudatoolkit
+    # cudatoolkit
     
   # Tools  
     gcc
@@ -44,6 +50,7 @@ with pkgs; [
     htop
     btop
     nvtop
+    # nvtopPackages.full
     git
     eza
     fzf
@@ -72,7 +79,7 @@ with pkgs; [
   # Languages
     (python311.withPackages my-python-packages)
     nodejs_20
-    jdk17
+    # jdk17
 
   # Language Tools
     gradle
@@ -147,6 +154,12 @@ with pkgs; [
     amdgpu_top
     gtop
 
+    # android-studio
+
+    wireshark
+
+    android-tools
+
     # pulseaudio # for pactl and who knows why
 
     # coreutils-prefixed
@@ -165,4 +178,22 @@ with pkgs; [
     ## SCHOOL
   # TO BE MOVED TO PROJECT NIX-SHELLS
     # graphviz
+
+    # chromedriver
+    selenium-server-standalone 
+
+    jmeter
+
+    fragments  # gnome circle torrent client
+
+    # gaphor  # gnome UML tool
+    libpng
+
+    genymotion
+
+    # ls
+
+    spotify
+    
+  
 ]

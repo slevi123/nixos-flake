@@ -32,6 +32,8 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.other-packages
+      outputs.overlays.new-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -78,6 +80,11 @@
     firewall = {
       allowedTCPPorts = [ 
         1968
+        8691
+        4723  # appium
+        5037  # appium
+        5173
+        2022
       ];
 
       # allowedTCPPortRanges = [
@@ -144,10 +151,10 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+  # services.xserver = {
+    # layout = "us";
+    # xkbVariant = "";
+  # };
 
   services.power-profiles-daemon.enable = false;
   services.tlp.enable = false; 
@@ -231,7 +238,7 @@
     # baobab      # disk usage analyzer
     # cheese      # photo booth
     # eog         # image viewer
-    gedit       # text editor
+    # gedit       # text editor
     # totem       # video player
     # yelp        # help viewer
     # evince      # document viewer
@@ -242,7 +249,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; };
+  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; } ++ [ pkgs.other.chromium pkgs.other.chromedriver pkgs.new-pkgs.gnomeExtensions.gemini-ai ];
   # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
 
 
@@ -350,6 +357,7 @@
    services.udev.extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
       SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
   '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

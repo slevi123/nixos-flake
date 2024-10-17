@@ -4,4 +4,5 @@ with pkgs; [
     jetbrains.pycharm-professional
     arduino-ide
     gnomeExtensions.astra-monitor
+    hieroglyphic
 ]
