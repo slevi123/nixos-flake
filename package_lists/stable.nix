@@ -79,7 +79,8 @@ with pkgs; [
   # Languages
     (python311.withPackages my-python-packages)
     nodejs_20
-    # jdk17
+    jdk17
+    jdk
 
   # Language Tools
     gradle
@@ -194,6 +195,7 @@ with pkgs; [
     # ls
 
     spotify
-    
-  
+
+    # ruby_3_2
+    # rubyPackages_3_2.railties
 ]

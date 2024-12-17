@@ -83,8 +83,9 @@
         8691
         4723  # appium
         5037  # appium
-        5173
+        5173  # frontend
         2022
+        8080  # backend
       ];
 
       # allowedTCPPortRanges = [
@@ -148,7 +149,18 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome = {
+    enable = true;
+    # extraGSettingsOverrides = ''
+    #   # disable capslock
+    #   [org.gnome.desktop.input-sources]
+    #   xkb-options ['caps:none']
+    # '';
+  };
+
+  # services.keyd = {
+  #   enab
+  # }
 
   # Configure keymap in X11
   # services.xserver = {
@@ -195,6 +207,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  boot.kernel.sysctl."kernel.sysrq" = 80;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.defaultUserShell = pkgs.zsh;
@@ -232,7 +245,7 @@
   fonts.enableDefaultPackages = true;
 
   environment.gnome.excludePackages = with pkgs.gnome; [
-    epiphany    # web browser
+    # epiphany    # web browser
     simple-scan # document scanner
 
     # baobab      # disk usage analyzer
@@ -244,7 +257,7 @@
     # evince      # document viewer
     # file-roller # archive manager
     # geary       # email client
-    seahorse    # password manager
+    # seahorse    # password manager
   ];
 
   # List packages installed in system profile. To search, run:
@@ -279,6 +292,8 @@
   services.flatpak.enable = true;
   programs.starship.enable = true;
   programs.starship.settings = pkgs.lib.importTOML ../starship.toml;
+
+  programs.direnv.enable = true;
 
 
   programs.neovim = {

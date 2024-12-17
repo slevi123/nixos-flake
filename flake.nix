@@ -6,7 +6,8 @@
     fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # Nixpkgs
     new-nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.630973.tar.gz";
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.635879.tar.gz";
+    # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.635879.tar.gz";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.711349.tar.gz";
     nixpkgs-for-chromium.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2305.492294.tar.gz";
     old-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     # You can access packages and modules from different nixpkgs revs
