@@ -10,16 +10,27 @@ let
           marisa-trie
           pygtrie
           scapy
+          # overleaf-sync
+          # pint 
+          # simpleeval 
+          # parsedatetime 
+          # pytz
+          # fuzzywuzzy
      ];    
 in
 with pkgs; [
     distrobox
+
+    albert
+    ulauncher
+    # findutils
 
     nerdfonts
     chromium
 
     jdk8
 
+    unzip
 
     discord
 
@@ -109,6 +120,8 @@ with pkgs; [
     gnomeExtensions.clipboard-history
     # gnomeExtensions.noannoyance-2
     gnomeExtensions.emoji-copy
+    gnomeExtensions.system-monitor
+    gnomeExtensions.astra-monitor
 
     # gnomeExtensions.pop-shell  # buggy, shortcuts not working
     # gnomeExtensions.forge
@@ -123,6 +136,9 @@ with pkgs; [
     # libusb1
     xsel # copy the selected text using X
     libusb1
+
+    nethogs
+    iotop
 
     openssl
 
@@ -163,6 +179,11 @@ with pkgs; [
 
     # pulseaudio # for pactl and who knows why
 
+    gnomeExtensions.autohide-battery
+    gnomeExtensions.caffeine
+    gnomeExtensions.burn-my-windows
+    gnomeExtensions.bubblemail
+    gnomeExtensions.xwayland-indicator
     # coreutils-prefixed
     # gnomeExtensions.power-profile-switcher
     # gnomeExtensions.power-profile-indicator  # not compatible
