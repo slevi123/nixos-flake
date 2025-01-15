@@ -31,6 +31,7 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
       outputs.overlays.other-packages
+      outputs.overlays.ulauncher-packages
       # outputs.overlays.new-packages
 
       # You can also add overlays exported from other flakes:
@@ -138,35 +139,36 @@
 
   systemd.user.services = {
     ulauncher = {
+      enable = true;
       description = "Linux Application Launcher";
       documentation = [ "https://ulauncher.io/" ];
-
       serviceConfig = {
         Type = "simple";
         Restart = "on-success";
         RestartSec = "3s";
         ExecStart =  ''
-          ${pkgs.bash}/bin/bash -c "export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
+          ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
         '';
       };
 
       wantedBy = [ "graphical-session.target" ];
+      after = [ "display-manager.service" ];
     };
-    albert = {
-      description = "Linux Application Launcher";
-      documentation = [ "https://albertlauncher.github.io/" ];
+    # albert = {
+    #   description = "Linux Application Launcher";
+    #   documentation = [ "https://albertlauncher.github.io/" ];
 
-      serviceConfig = {
-        Type = "simple";
-        Restart = "on-success";
-        RestartSec = "3s";
-        ExecStart =  ''
-          ${pkgs.bash}/bin/bash -c "export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.albert}/bin/albert"
-        '';
-      };
+    #   serviceConfig = {
+    #     Type = "simple";
+    #     Restart = "on-success";
+    #     RestartSec = "3s";
+    #     ExecStart =  ''
+    #       ${pkgs.bash}/bin/bash -c "export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.albert}/bin/albert"
+    #     '';
+    #   };
 
-      wantedBy = [ "graphical-session.target" ];
-    };
+    #   wantedBy = [ "graphical-session.target" ];
+    # };
   };
 
  
@@ -342,7 +344,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; } ; 
+  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; } ++ [ pkgs.ulauncher ]; 
   # ++ [ pkgs.other.chromium pkgs.other.chromedriver pkgs.new-pkgs.gnomeExtensions.gemini-ai ];
   # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
 

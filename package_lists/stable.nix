@@ -11,10 +11,11 @@ let
           pygtrie
           scapy
           # overleaf-sync
-          # pint 
-          # simpleeval 
-          # parsedatetime 
-          # pytz
+          pint 
+          simpleeval 
+          parsedatetime 
+          pytz
+          babel
           # fuzzywuzzy
      ];    
 in
@@ -22,7 +23,7 @@ with pkgs; [
     distrobox
 
     albert
-    ulauncher
+    # ulauncher
     # findutils
 
     nerdfonts
@@ -103,7 +104,7 @@ with pkgs; [
 
   # Language Servers
     # jdtls   # java
-    python311Packages.python-lsp-server
+    # python311Packages.python-lsp-server
     taplo   # toml
     yaml-language-server
     nodePackages.typescript-language-server

@@ -26,6 +26,19 @@
     };
   };
 
+  ulauncher-packages = final: prev: {
+    ulauncher = prev.ulauncher.overrideAttrs (old: {
+      propagatedBuildInputs = with final.python3Packages;
+        old.propagatedBuildInputs ++ [
+          pint 
+          simpleeval 
+          parsedatetime 
+          pytz
+          babel
+        ];
+    });
+  };
+
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
