@@ -11,19 +11,19 @@ let
           pygtrie
           scapy
           # overleaf-sync
-          pint 
-          simpleeval 
-          parsedatetime 
-          pytz
-          babel
+          #pint 
+          #simpleeval 
+          #parsedatetime 
+          #pytz
+          #babel
           # fuzzywuzzy
      ];    
 in
 with pkgs; [
     distrobox
 
-    albert
-    # ulauncher
+    # albert
+    ulauncher
     # findutils
 
     nerdfonts
@@ -203,7 +203,7 @@ with pkgs; [
     # graphviz
 
     # chromedriver
-    selenium-server-standalone 
+    #selenium-server-standalone 
 
     jmeter
 

@@ -3,13 +3,15 @@
 
   inputs = {
     # nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
-    fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
+    # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # Nixpkgs
     # new-nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.630973.tar.gz";
     # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.635879.tar.gz";
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.712512.tar.gz";
+    # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.712512.tar.gz";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.713184.tar.gz";
+    hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.2090.tar.gz";
     # nixpkgs-for-chromium.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2305.492294.tar.gz";
-    old-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    #old-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -21,7 +23,6 @@
 
     darkmatter.url = "gitlab:VandalByte/darkmatter-grub-theme";
 
-    hardware.url = "github:nixos/nixos-hardware";
   };
 
   outputs = {
@@ -71,7 +72,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           {
-            environment.systemPackages = [ inputs.fh.packages.x86_64-linux.default ];
+            # environment.systemPackages = [ inputs.fh.packages.x86_64-linux.default ];
           }
           # > Our main nixos configuration file <
           darkmatter.nixosModule

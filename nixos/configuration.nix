@@ -112,7 +112,7 @@
       # ];
     };
 
-    networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
+    # networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
   };
 
 
@@ -135,25 +135,29 @@
     };
     kernel.sysctl = { "vm.swappiness" = 10;};
     # boot.kernel.sysctl."kernel.sysrq" = 80; doesnt works (magic keys for frozen system)
+    #extraModprobeConfig = ''
+    #  options nvidia NVreg_PreserveVideoMemoryAllocations=1
+    #  options nvidia NVreg_TemporaryFilePath=/var/tmp
+    #'';
   };
 
-  systemd.user.services = {
-    ulauncher = {
-      enable = true;
-      description = "Linux Application Launcher";
-      documentation = [ "https://ulauncher.io/" ];
-      serviceConfig = {
-        Type = "simple";
-        Restart = "on-success";
-        RestartSec = "3s";
-        ExecStart =  ''
-          ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
-        '';
-      };
+  # systemd.user.services = {
+  #   ulauncher = {
+  #     enable = true;
+  #     description = "Linux Application Launcher";
+  #     documentation = [ "https://ulauncher.io/" ];
+  #     serviceConfig = {
+  #       Type = "simple";
+  #       Restart = "on-success";
+  #       RestartSec = "3s";
+  #       ExecStart =  ''
+  #         ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
+  #       '';
+  #     };
 
-      wantedBy = [ "graphical-session.target" ];
-      after = [ "display-manager.service" ];
-    };
+  #     wantedBy = [ "graphical-session.target" ];
+  #     after = [ "display-manager.service" ];
+  #   };
     # albert = {
     #   description = "Linux Application Launcher";
     #   documentation = [ "https://albertlauncher.github.io/" ];
@@ -169,7 +173,7 @@
 
     #   wantedBy = [ "graphical-session.target" ];
     # };
-  };
+  # };
 
  
   
@@ -247,12 +251,13 @@
 
     # for keyboard RGB control script
     # and for nvidia gpu for gnome
+    # ENV{DEVNAME}=="/dev/dri/card0", TAG+="mutter-device-preferred-primary"
+
     udev = {
       extraRules = ''
           SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
           SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
           SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
-          ENV{DEVNAME}=="/dev/dri/card0", TAG+="mutter-device-preferred-primary"
       '';
     };
     
@@ -268,7 +273,7 @@
 
     nvidia = {
       open = false; # Set to false for proprietary drivers
-      # modesetting.enable = true;
+      modesetting.enable = true;
       
       # prime = {
       #   # allowExternalGpu = true;
@@ -279,14 +284,13 @@
       #     enable = true;
       #   };
       # };
-      prime = {
-        offload = {
-          enable = true;
-        };
-        sync = {
-          enable = false;
-        };
-      };
+      #prime = {
+      #  offload = {
+      #  };
+      #  sync = {
+      #    enable = true;
+      #  };
+      #};
 
 
       powerManagement.enable = false;
@@ -344,7 +348,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; } ++ [ pkgs.ulauncher ]; 
+  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; };
   # ++ [ pkgs.other.chromium pkgs.other.chromedriver pkgs.new-pkgs.gnomeExtensions.gemini-ai ];
   # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
 
@@ -372,6 +376,9 @@
   };
 
   programs = {
+      xwayland = {
+        enable = true;
+      };
     starship = {
       enable = true;
       settings = pkgs.lib.importTOML ../starship.toml;
