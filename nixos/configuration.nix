@@ -112,7 +112,7 @@
       # ];
     };
 
-    # networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
+    networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
   };
 
 
@@ -141,23 +141,23 @@
     #'';
   };
 
-  # systemd.user.services = {
-  #   ulauncher = {
-  #     enable = true;
-  #     description = "Linux Application Launcher";
-  #     documentation = [ "https://ulauncher.io/" ];
-  #     serviceConfig = {
-  #       Type = "simple";
-  #       Restart = "on-success";
-  #       RestartSec = "3s";
-  #       ExecStart =  ''
-  #         ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
-  #       '';
-  #     };
+  systemd.user.services = {
+    ulauncher = {
+      enable = true;
+      description = "Linux Application Launcher";
+      documentation = [ "https://ulauncher.io/" ];
+      serviceConfig = {
+        Type = "simple";
+        Restart = "always";
+        RestartSec = "3s";
+        ExecStart =  ''
+          ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
+        '';
+      };
 
-  #     wantedBy = [ "graphical-session.target" ];
-  #     after = [ "display-manager.service" ];
-  #   };
+      wantedBy = [ "graphical-session.target" ];
+      after = [ "display-manager.service" ];
+    };
     # albert = {
     #   description = "Linux Application Launcher";
     #   documentation = [ "https://albertlauncher.github.io/" ];
@@ -173,7 +173,7 @@
 
     #   wantedBy = [ "graphical-session.target" ];
     # };
-  # };
+  };
 
  
   
@@ -348,7 +348,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ../package_lists/stable.nix { pkgs = pkgs; } ++ import ../package_lists/unstable.nix { pkgs = pkgs.unstable; };
+  environment.systemPackages = import ./packages/stable.nix { pkgs = pkgs; } ++ import ./packages/unstable.nix { pkgs = pkgs.unstable; };
   # ++ [ pkgs.other.chromium pkgs.other.chromedriver pkgs.new-pkgs.gnomeExtensions.gemini-ai ];
   # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
 
@@ -367,7 +367,8 @@
     lla = "exa -la";
     py = "/run/current-system/sw/bin/python -q";
     # z = "zoxide";
-    keylight ="py " + toString (../. +"/related_projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
+    keylight ="py " + toString (../. +"/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
+    os-manager = toString (../. +"/related-projects/small-scripts/os-manager.sh");
   };
 
   environment.variables = {

@@ -22,7 +22,7 @@ in
 with pkgs; [
     distrobox
 
-    # albert
+    # F
     ulauncher
     # findutils
 
@@ -132,6 +132,7 @@ with pkgs; [
     gnomeExtensions.switcher
 
   # Others
+    nssmdns
     neofetch
     gparted
     # libusb1
