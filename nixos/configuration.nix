@@ -374,7 +374,7 @@
   };
 
   environment.variables = {
-    PYTHONSTARTUP = ../. + "/python_startup.py";
+    PYTHONSTARTUP = ../. + "/dotfiles/python_startup.py";
     FFF_CD_ON_EXIT = "1";
   };
 
@@ -384,7 +384,7 @@
       };
     starship = {
       enable = true;
-      settings = pkgs.lib.importTOML ../starship.toml;
+      settings = pkgs.lib.importTOML ../dotfiles/starship.toml;
     };    
     direnv.enable = true;
     neovim = {

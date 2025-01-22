@@ -62,7 +62,7 @@
     nixosModules = import ./modules/nixos;
     # Reusable home-manager modules you might want to export
     # These are usually stuff you would upstream into home-manager
-    #homeManagerModules = import ./modules/home-manager;
+    homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -93,8 +93,8 @@
       };
     };
 
-    # # Standalone home-manager configuration entrypoint
-    # # Available through 'home-manager --flake .#your-username@your-hostname'
+    # Standalone home-manager configuration entrypoint
+    # Available through 'home-manager --flake .#your-username@your-hostname'
     # homeConfigurations = {
     #   # TODO replace with your username@hostname
     #   "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
