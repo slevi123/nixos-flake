@@ -265,6 +265,8 @@
   };
 
   hardware = {
+    firmware = [ pkgs.linux-firmware ];
+
     #Prime GPU Bus Ids set by nixos-hardware
     graphics = {
       enable = true;
