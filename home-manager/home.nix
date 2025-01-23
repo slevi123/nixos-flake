@@ -1,3 +1,11 @@
+##-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## ==================Manual Setup For==============
+##----------------------Ulauncher------------------
+## extensions, settings, theme, etc...
+##---------------------Burn My Windows-------------
+## to copy profile files in ~/.config/burn-my-windows/profiles to new user
+## ==================END of Manual Setup===========
+
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
@@ -43,23 +51,15 @@
       # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
+      # allowUnfreePredicate = _: true; # TODO: check if not working unfree
     };
   };
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "leswellhm";
+    homeDirectory = "/home/leswellhm";
   };
-
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
-
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
 
 
   # Nicely reload system units when changing configs

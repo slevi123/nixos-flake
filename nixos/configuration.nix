@@ -307,36 +307,6 @@
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-  
-  };
-
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.defaultUserShell = pkgs.zsh;
-  users.users = {
-    leswell = {
-      isNormalUser = true;
-      description = "simofilevi";
-      extraGroups = [ "networkmanager" "wheel"  "docker" "users" "plugdev" "usb" "libvirtd" ];
-      uid = 1000;
-      packages = with pkgs; [
-        firefox
-      #  thunderbird
-      ];
-      useDefaultShell = true;
-
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrbQaW5MNyS+SOy8D539VHZgiXiLdAd3D9sKnS/dz8L leswell"
-      ];
-    }; 
-
-    # unsafe = {
-    #   isNormalUser = true;
-    #   description = "account mainly for only films.. not trusted";
-    #   packages = with pkgs; [
-    #     firefox
-    #   ]; 
-    # };
   };
 
   fonts = {

@@ -2,16 +2,10 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   inputs = {
-    # nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
-    # Nixpkgs
-    # new-nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.630973.tar.gz";
-    # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.635879.tar.gz";
-    # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.712512.tar.gz";
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.713184.tar.gz";
     hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.2090.tar.gz";
     # nixpkgs-for-chromium.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2305.492294.tar.gz";
-    #old-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -28,7 +22,7 @@
   outputs = {
     self,
     nixpkgs,
-    #home-manager,
+    home-manager,
     darkmatter,
     ...
   } @ inputs: let
@@ -76,6 +70,7 @@
           }
           # > Our main nixos configuration file <
           darkmatter.nixosModule
+          ./nixos/users.nix
           ./nixos/configuration.nix
           ./nixos/vpn.nix
           # ./nixos/gitlab-runner.nix
@@ -95,16 +90,21 @@
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    # homeConfigurations = {
-    #   # TODO replace with your username@hostname
-    #   "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-    #     extraSpecialArgs = {inherit inputs outputs;};
-    #     modules = [
-    #       # > Our main home-manager configuration file <
-    #       ./home-manager/home.nix
-    #     ];
-    #   };
-    # };
+    homeConfigurations = {
+      # TODO replace with your username@hostname
+      leswellhm = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/home.nix
+          ./home-manager/programs
+          ./home-manager/dconf.nix
+          ./home-manager/packages.nix
+          ./home-manager/dotfile-bindings.nix
+          ./home-manager/programs/vscode.nix
+        ];
+      };
+    };
   };
 }
