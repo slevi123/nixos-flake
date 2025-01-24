@@ -68,7 +68,7 @@ with lib.hm.gvariant;
             enabled-extensions=[
                 "drive-menu@gnome-shell-extensions.gcampax.github.com"
                 "blur-my-shell@aunetx"
-                # "emoji-copy@felipeftn"
+                pkgs.gnomeExtensions.emoji-copy.extensionUuid
                 "mediacontrols@cliffniff.github.com"
                 "clipboard-history@alexsaveau.dev" 
                 "autohide-battery@sitnik.ru" 

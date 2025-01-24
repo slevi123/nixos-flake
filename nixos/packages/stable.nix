@@ -120,7 +120,7 @@ with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-history
     # gnomeExtensions.noannoyance-2
-    gnomeExtensions.emoji-copy
+    
     gnomeExtensions.system-monitor
     gnomeExtensions.astra-monitor
 

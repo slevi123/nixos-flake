@@ -35,7 +35,8 @@
           parsedatetime 
           pytz
           babel
-        ];
+          requests
+        ] ++ [ final.pkgs.bitwarden-cli ];
     });
   };
 
