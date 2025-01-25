@@ -55,11 +55,17 @@
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "leswellhm";
     homeDirectory = "/home/leswellhm";
+
+    # keyboard = {
+    #   layout = "us,hu+qwerty,ro"; # Define the layouts
+    #   options = "lv3:ralt_switch"; # Set XKB options
+    # };   
   };
+
+
 
 
   # Nicely reload system units when changing configs
