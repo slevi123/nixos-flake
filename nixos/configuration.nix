@@ -15,8 +15,8 @@
 
     # Or modules from other flakes (such as nixos-hardware):
     inputs.hardware.nixosModules.lenovo-ideapad-15ach6
-
-    # You can also split up your configuration and import pieces of it here:
+    ./display-manager.nix
+    ./cpu.nix
     ./users.nix
     ./vpn.nix
     ./ollama.nix
@@ -151,30 +151,12 @@
     xserver = { 
       enable = true;
       videoDrivers = [ "nvidia" ];
-      displayManager.gdm.enable = true;
 
       # Enable the GNOME Desktop Environment.
       desktopManager.gnome = {
         enable = true;
       };
     };
-    # ----------OLD CPU CONFIG-------------
-    # power-profiles-daemon.enable = false;
-    # tlp.enable = false; 
-    # auto-cpufreq = {
-    #   enable = true;
-    #   settings = {
-    #     battery = {
-    #       governor = "powersave";
-    #       turbo = "never";
-    #     };
-    #     charger = {
-    #       governor = "performance";
-    #       turbo = "auto";
-    #     };
-    #   };
-    # };
-    # ------
 
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -211,47 +193,6 @@
 
   hardware = {
     firmware = [ pkgs.linux-firmware ];
-
-    #Prime GPU Bus Ids set by nixos-hardware
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
-    };
-
-    nvidia = {
-      open = false; # Set to false for proprietary drivers
-      modesetting.enable = true;
-      
-      # prime = {
-      #   # allowExternalGpu = true;
-      #   offload = {
-      #     enable = false;
-      #   };
-      #   sync = {
-      #     enable = true;
-      #   };
-      # };
-      #prime = {
-      #  offload = {
-      #  };
-      #  sync = {
-      #    enable = true;
-      #  };
-      #};
-
-
-      powerManagement.enable = false;
-      # Fine-grained power management. Turns off GPU when not in use.
-      # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-      powerManagement.finegrained = false;
-
-      # Enable the Nvidia settings menu,
-      # accessible via `nvidia-settings`.
-      nvidiaSettings = true;
-
-      # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
   };
 
   fonts = {
