@@ -153,7 +153,7 @@ with lib.hm.gvariant;
             use-trayicon=false;
             window-halignment=0;
             window-height=48;
-            window-losefocus=true;
+            window-losefocus=false;
             window-refocus=false;
             window-ontop=false;
             window-tabbar=true;

@@ -2,22 +2,21 @@
     home.packages = with pkgs; [ 
         firefox
 
-        ## gnome extensions
     ] ++ (with pkgs.gnomeExtensions; [
+        clipboard-history
+        astra-monitor
+        media-controls
         emoji-copy
+        blur-my-shell
+        burn-my-windows
         autohide-battery
         # caffeine
-        burn-my-windows
         # bubblemail
         xwayland-indicator
 
-        media-controls
-        blur-my-shell
-        clipboard-history
         # gnomeExtensions.noannoyance-2
         
         # system-monitor
-        astra-monitor
 
         # pop-shell  # buggy, shortcuts not working
         # forge
@@ -30,9 +29,6 @@
 
         # ideapad
         # ideapad-controls # may try in future
-
-        #thinkpad-battery-threshold  # not this platform
-        # gnome.gpaste # not working
         
         # auto-cpufreq # not installing
         # cpufreq

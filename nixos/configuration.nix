@@ -17,7 +17,14 @@
     inputs.hardware.nixosModules.lenovo-ideapad-15ach6
 
     # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
+    ./users.nix
+    ./vpn.nix
+    ./ollama.nix
+    # ./gitlab-runner.nix
+    # ./virt.nix
+    ./bootloader.nix
+    ./hybrid-graphics.nix
+    ./firewall.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -37,12 +44,7 @@
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
+      # Or define it inline
     ];
     # Configure your nixpkgs instance
     config = {
@@ -68,71 +70,14 @@
     };
   };
 
-  # FIXME: Add the rest of your current configuration
-  # specialisation = {
-  #   on-the-go.configuration = {
-  #     system.nixos.tags = [ "on-the-go" ];
-  #     hardware = {
-  #       nvidia = {
-  #         prime = {
-  #           offload = {
-  #             enable = lib.mkForce true;
-  #           };
-  #           sync = {
-  #             enable = lib.mkForce false;
-  #           };
-  #         };
-  #       };
-  #     };
-  #   };
-  # };
-
   networking = {
     hostName = "leswell-nixos";
     networkmanager.enable = true;
-      
-    # Open ports in the firewall.
-    firewall = {
-      allowedTCPPorts = [ 
-        1968
-        8691
-        4723  # appium
-        5037  # appium
-        5173  # frontend
-        2022
-        8080  # backend
-      ];
-
-      # allowedTCPPortRanges = [
-      #  {from = 1716; to=1764;} # for gsconnect 
-      # ];
-
-      # allowedUDPPortRanges = [ 
-      #   {from = 1716; to=1764;} # for gsconnect
-      # ];
-    };
 
     networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
   };
-
-
+  
   boot = {
-    # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6; kernel version
-    loader = {
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-        darkmatter-theme = {
-          enable = true;
-          style = "nixos";
-        };
-      };
-      # TODO: This is just an example, be sure to use whatever bootloader you prefer
-      # boot.loader.systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
     kernel.sysctl = { "vm.swappiness" = 10;};
     # boot.kernel.sysctl."kernel.sysrq" = 80; doesnt works (magic keys for frozen system)
     #extraModprobeConfig = ''
@@ -331,14 +276,6 @@
 
 
   environment.shellAliases = {
-    exa = "eza --icons";
-    ls = "eza --icons";
-    lstree = "exa --tree";
-    ll = "exa -l";
-    la = "exa -a";
-    lla = "exa -la";
-    py = "/run/current-system/sw/bin/python -q";
-    # z = "zoxide";
     keylight ="py " + toString (../. +"/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
     os-manager = toString (../. +"/related-projects/small-scripts/os-manager.sh");
   };

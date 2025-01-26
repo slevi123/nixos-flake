@@ -25,7 +25,6 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
     ./programs
     ./dconf.nix
     ./packages.nix
@@ -43,20 +42,11 @@
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
+      # Or define it inline
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      # allowUnfreePredicate = _: true; # TODO: check if not working unfree
     };
   };
 
@@ -67,9 +57,18 @@
     # keyboard = {
     #   layout = "us,hu+qwerty,ro"; # Define the layouts
     #   options = "lv3:ralt_switch"; # Set XKB options
-    # };   
+    # };  
+    shellAliases = {
+      exa = "eza --icons";
+      ls = "exa --icons";
+      lstree = "exa --tree";
+      ll = "exa -l";
+      la = "exa -a";
+      lla = "exa -la";
+      py = "/run/current-system/sw/bin/python -q";
+      # z = "zoxide";
+    };
   };
-
 
 
 
