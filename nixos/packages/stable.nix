@@ -87,7 +87,6 @@ with pkgs; [
     vim
     helix
     vscode.fhs
-    jetbrains.idea-ultimate
    
   # Languages
     (python311.withPackages my-python-packages)
@@ -156,18 +155,16 @@ with pkgs; [
     macchanger
     torsocks
 
-    # astra gnom extension required
     wirelesstools
     amdgpu_top
-    gtop
+    # gtop
 
     # android-studio
 
+    fragments  # gnome circle torrent client
     wireshark
 
     android-tools
-
-    # pulseaudio # for pactl and who knows why
 
 
     ## SCHOOL
@@ -179,16 +176,14 @@ with pkgs; [
 
     jmeter
 
-    fragments  # gnome circle torrent client
 
     # gaphor  # gnome UML tool
     libpng
 
-    genymotion
+    # genymotion
 
     # ls
 
-    spotify
 
     # ruby_3_2
     # rubyPackages_3_2.railties

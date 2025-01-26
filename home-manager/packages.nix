@@ -1,6 +1,16 @@
 {pkgs, ...} : {
     home.packages = with pkgs; [ 
         firefox
+        spotify
+
+
+
+        arduino-ide
+
+    ] ++ (with pkgs.jetbrains) [
+        pycharm-professional
+        idea-ultimate
+        clion
 
     ] ++ (with pkgs.gnomeExtensions; [
         clipboard-history

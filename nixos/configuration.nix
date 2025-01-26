@@ -149,7 +149,7 @@
   services = {
     # Enable the X11 windowing system.
     xserver = { 
-      enable = true;
+      # enable = true;
       videoDrivers = [ "nvidia" ];
 
       # Enable the GNOME Desktop Environment.
