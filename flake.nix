@@ -73,6 +73,7 @@
           ./nixos/users.nix
           ./nixos/configuration.nix
           ./nixos/vpn.nix
+          ./nixos/ollama.nix
           # ./nixos/gitlab-runner.nix
           # ./nixos/virt.nix
 
