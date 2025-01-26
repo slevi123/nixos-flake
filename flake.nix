@@ -99,11 +99,6 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
-          ./home-manager/programs
-          ./home-manager/dconf.nix
-          ./home-manager/packages.nix
-          ./home-manager/dotfile-bindings.nix
-          ./home-manager/programs/vscode.nix
         ];
       };
     };

@@ -353,7 +353,6 @@
       enable = true;
       settings = pkgs.lib.importTOML ../dotfiles/starship.toml;
     };    
-    direnv.enable = true;
     neovim = {
       enable = true;
       defaultEditor = true;

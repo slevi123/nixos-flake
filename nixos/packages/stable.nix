@@ -50,7 +50,7 @@ with pkgs; [
     # rofi
 
   # Passwords
-    bitwarden
+    # bitwarden
     bitwarden-cli
 
   # cuda
@@ -116,20 +116,7 @@ with pkgs; [
     hunspellDicts.hu_HU
     hunspellDicts.ru_RU
 
-  # Customization
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.clipboard-history
-    # gnomeExtensions.noannoyance-2
-    
-    gnomeExtensions.system-monitor
-    gnomeExtensions.astra-monitor
 
-    # gnomeExtensions.pop-shell  # buggy, shortcuts not working
-    # gnomeExtensions.forge
-    gnomeExtensions.media-controls
-
-    # gnomeExtensions.gsconnect  # not working
-    gnomeExtensions.switcher
 
   # Others
     nssmdns
@@ -181,23 +168,6 @@ with pkgs; [
 
     # pulseaudio # for pactl and who knows why
 
-    gnomeExtensions.autohide-battery
-    gnomeExtensions.caffeine
-    gnomeExtensions.burn-my-windows
-    gnomeExtensions.bubblemail
-    gnomeExtensions.xwayland-indicator
-    # coreutils-prefixed
-    # gnomeExtensions.power-profile-switcher
-    # gnomeExtensions.power-profile-indicator  # not compatible
-
-    # gnomeExtensions.ideapad
-    # gnomeExtensions.ideapad-controls # may try in future
-
-    #gnomeExtensions.thinkpad-battery-threshold  # not this platform
-    # gnome.gpaste # not working
-    
-    # auto-cpufreq # not installing
-    # gnomeExtensions.cpufreq
 
     ## SCHOOL
   # TO BE MOVED TO PROJECT NIX-SHELLS
