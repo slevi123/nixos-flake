@@ -68,6 +68,7 @@ with pkgs; [
     fzf
     bat
     pciutils
+    usbutils
     fff
     go-chromecast
     lazydocker 

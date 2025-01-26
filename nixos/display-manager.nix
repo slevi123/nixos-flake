@@ -1,7 +1,16 @@
 {pkgs, ...} : {
     services = {
         xserver = { 
-            displayManager.gdm.enable = true;
+            displayManager = {
+                # defaultSession = "gnome";
+
+                gdm = {
+                    enable = true;
+                    # debug = true;\
+                    wayland = true;
+                    banner = "heyhoo";
+                };
+            };
         };
     };
 }

@@ -184,8 +184,8 @@
       extraRules = ''
           SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
           SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
-          SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
       '';
+      # SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
     };
     
     flatpak.enable = true;
@@ -253,9 +253,6 @@
       shellInit = "eval \"$(zoxide init bash)\"";
     };
   };
-
-
-
 
   virtualisation.docker = {
     enable = true;
