@@ -1,6 +1,6 @@
 add_newline = true
 
-format=""" $character $git_metrics $git_state $git_status $nix_shell 
+format=""" $character $git_metrics $git_state $git_status $nix_shell ${custom.fsh}
 $username $directory $git_branch $cmd_duration\
 $docker_context\
 $azure\
@@ -15,11 +15,17 @@ $haskell
  [{}](bold white) """
 
 # right_format = "$git_commit $time $nix_shell"
+[custom.fsh]
+description = "Indicates when I'm in FHS env."
+symbol = '\(FHS\)'
+when = 'test -n "$FHS"'
+style = "blink dimmed blue"
+
 
 
 [character]
 success_symbol = " 🔥 "
-error_symbol = "[✗](bold red)"
+error_symbol = "bold green"
 
 [cmd_duration]
 min_time = 1000
