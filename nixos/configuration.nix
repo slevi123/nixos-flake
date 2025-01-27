@@ -26,7 +26,7 @@
     ./hybrid-graphics.nix
     ./firewall.nix
 
-    # ./specialisations/hyperland
+    ./specialisations/hyperland
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -218,14 +218,17 @@
   #             ];
 
 
-  environment.shellAliases = {
-    keylight ="py " + toString (../. +"/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
-    os-manager = toString (../. +"/related-projects/small-scripts/os-manager.sh");
-  };
+  environment = {
+    shellAliases = {
+      keylight ="py " + toString (../. +"/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
+      os-manager = toString (../. +"/related-projects/small-scripts/os-manager.sh");
+    };
 
-  environment.variables = {
-    PYTHONSTARTUP = ../. + "/dotfiles/python_startup.py";
-    FFF_CD_ON_EXIT = "1";
+    variables = {
+      PYTHONSTARTUP = ../. + "/dotfiles/python_startup.py";
+      FFF_CD_ON_EXIT = "1";
+    };
+    sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
   programs = {

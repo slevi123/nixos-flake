@@ -68,6 +68,8 @@
       py = "/run/current-system/sw/bin/python -q";
       # z = "zoxide";
     };
+
+    sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
 
