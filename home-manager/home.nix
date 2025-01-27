@@ -30,6 +30,7 @@
     ./packages.nix
     ./dotfile-bindings.nix
     ./programs/vscode.nix
+    # ./hyprland
   ];
 
   nixpkgs = {
@@ -67,6 +68,7 @@
       lla = "exa -la";
       py = "/run/current-system/sw/bin/python -q";
       # z = "zoxide";
+      fckcnt = "echo 1";
     };
 
     sessionVariables.NIXOS_OZONE_WL = "1";

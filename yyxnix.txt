@@ -1,0 +1,1179 @@
+# Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
+{ lib, ... }:
+
+with lib.hm.gvariant;
+
+{
+  dconf.settings = {
+    "apps/guake/general" = {
+      compat-delete = "delete-sequence";
+      display-n = 0;
+      display-tab-names = 0;
+      gtk-use-system-default-theme = true;
+      hide-tabs-if-one-tab = false;
+      history-size = 1000;
+      infinite-history = true;
+      lazy-losefocus = false;
+      load-guake-yml = true;
+      max-tab-name-length = 100;
+      mouse-display = true;
+      open-tab-cwd = true;
+      prompt-on-quit = true;
+      quick-open-command-line = "code %(file_path)s";
+      quick-open-enable = true;
+      quick-open-in-current-terminal = false;
+      restore-tabs-notify = false;
+      restore-tabs-startup = true;
+      save-tabs-when-changed = true;
+      schema-version = "3.9.0";
+      scroll-keystroke = true;
+      start-at-login = true;
+      startup-script = "";
+      use-default-font = false;
+      use-login-shell = true;
+      use-popup = false;
+      use-scrollbar = false;
+      use-trayicon = true;
+      window-halignment = 0;
+      window-height = 46;
+      window-losefocus = true;
+      window-refocus = false;
+      window-tabbar = false;
+      window-valignment = 1;
+      window-width = 100;
+    };
+
+    "apps/guake/keybindings/global" = {
+      show-hide = "F12";
+    };
+
+    "apps/guake/keybindings/local" = {
+      clipboard-copy = "<Primary><Shift>c";
+      clipboard-paste = "<Primary><Shift>v";
+      focus-terminal-down = "<Shift>Down";
+      focus-terminal-left = "<Shift>Left";
+      focus-terminal-right = "<Shift>Right";
+      focus-terminal-up = "<Shift>Up";
+      move-terminal-split-up = "disabled";
+      search-on-web = "disabled";
+      split-tab-vertical = "<Shift><Super>plus";
+    };
+
+    "apps/guake/style" = {
+      cursor-shape = 1;
+    };
+
+    "apps/guake/style/background" = {
+      transparency = 40;
+    };
+
+    "apps/guake/style/font" = {
+      allow-bold = true;
+      bold-is-bright = true;
+      palette = "#222233334444:#aaaa11112222:#3333aaaa1111:#ccccaaaa2222:#22225555cccc:#77775555aaaa:#2222bbbbcccc:#88889999aaaa:#555566667777:#ffff11113333:#3333ffff1111:#ffffdddd3333:#33337777ffff:#aaaa7777ffff:#3333ddddffff:#bbbbccccdddd:#ddddeeeeffff:#070713131717";
+      palette-name = "Galizur";
+      style = "Hack Nerd Font Mono 16";
+    };
+
+    "ca/desrt/dconf-editor" = {
+      saved-pathbar-path = "/org/gnome/shell/last-selected-power-profile";
+      saved-view = "/org/gnome/shell/";
+      window-height = 500;
+      window-is-maximized = false;
+      window-width = 540;
+    };
+
+    "com/github/davidmhewitt/torrential/settings" = {
+      window-maximized = true;
+    };
+
+    "com/github/finefindus/eyedropper" = {
+      alpha-position = 0;
+      is-maximized = false;
+      name-source-extended = true;
+      show-color-name = true;
+      use-default-precision = true;
+      window-height = 445;
+      window-width = 336;
+    };
+
+    "com/raggesilver/BlackBox" = {
+      cursor-blink-mode = mkUint32 0;
+      cursor-shape = mkUint32 1;
+      easy-copy-paste = true;
+      floating-controls = true;
+      font = "Hack Nerd Font Mono 18";
+      headerbar-drag-area = false;
+      headerbar-draw-line-single-tab = false;
+      hide-single-tab = true;
+      opacity = mkUint32 75;
+      remember-window-size = false;
+      show-headerbar = false;
+      show-menu-button = true;
+      stealth-single-tab = true;
+      style-preference = mkUint32 0;
+      theme-dark = "Dracula";
+      theme-light = "Tomorrow";
+      was-maximized = true;
+      window-height = mkUint32 610;
+      window-show-borders = false;
+      window-width = mkUint32 1066;
+    };
+
+    "de/haeckerfelix/Fragments" = {
+      client-last-connection = "00000000-0000-0000-0000-000000000000";
+      window-height = 700;
+      window-width = 900;
+    };
+
+    "org/gnome/Console" = {
+      font-scale = 1.4000000000000004;
+      last-window-maximised = true;
+      last-window-size = mkTuple [ 652 481 ];
+      theme = "night";
+    };
+
+    "org/gnome/Disks" = {
+      image-dir-uri = "file:///home/leswell/Downloads";
+    };
+
+    "org/gnome/Extensions" = {
+      window-maximized = true;
+    };
+
+    "org/gnome/GPaste" = {
+      max-memory-usage = mkInt64 435;
+      track-extension-state = true;
+    };
+
+    "org/gnome/Geary" = {
+      compose-as-html = true;
+      formatting-toolbar-visible = false;
+      migrated-config = true;
+      window-maximize = true;
+    };
+
+    "org/gnome/Loupe" = {
+      show-properties = false;
+    };
+
+    "org/gnome/Snapshot" = {
+      is-maximized = false;
+      window-height = 640;
+      window-width = 800;
+    };
+
+    "org/gnome/TextEditor" = {
+      custom-font = "Hack Nerd Font Mono 15";
+      highlight-current-line = true;
+      indent-style = "space";
+      last-save-directory = "file:///home/leswell/Documents";
+      show-grid = false;
+      show-line-numbers = true;
+      show-map = true;
+      show-right-margin = false;
+      spellcheck = false;
+      style-scheme = "classic-dark";
+      tab-width = mkUint32 4;
+      use-system-font = false;
+    };
+
+    "org/gnome/Totem" = {
+      active-plugins = [ "vimeo" "movie-properties" "save-file" "screensaver" "screenshot" "mpris" "apple-trailers" "recent" "open-directory" "skipto" "variable-rate" "autoload-subtitles" "rotation" ];
+      subtitle-encoding = "UTF-8";
+    };
+
+    "org/gnome/Weather" = {
+      window-height = 416;
+      window-maximized = false;
+      window-width = 992;
+    };
+
+    "org/gnome/baobab/ui" = {
+      active-chart = "rings";
+      is-maximized = false;
+      window-size = mkTuple [ 960 600 ];
+    };
+
+    "org/gnome/calculator" = {
+      accuracy = 9;
+      angle-units = "degrees";
+      base = 10;
+      button-mode = "basic";
+      number-format = "automatic";
+      show-thousands = false;
+      show-zeroes = false;
+      source-currency = "DZD";
+      source-units = "degree";
+      target-currency = "DZD";
+      target-units = "radian";
+      window-maximized = true;
+      window-size = mkTuple [ 360 666 ];
+      word-size = 32;
+    };
+
+    "org/gnome/calendar" = {
+      active-view = "month";
+      window-maximized = true;
+      window-size = mkTuple [ 768 600 ];
+    };
+
+    "org/gnome/cheese" = {
+      burst-delay = 1000;
+      camera = "Integrated Camera (V4L2)";
+      photo-x-resolution = 1280;
+      photo-y-resolution = 720;
+      video-x-resolution = 1280;
+      video-y-resolution = 720;
+    };
+
+    "org/gnome/clocks/state/window" = {
+      maximized = false;
+      panel-id = "alarm";
+      size = mkTuple [ 805 294 ];
+    };
+
+    "org/gnome/control-center" = {
+      last-panel = "keyboard";
+      window-state = mkTuple [ 572 485 true ];
+    };
+
+    "org/gnome/desktop/a11y/applications" = {
+      screen-magnifier-enabled = false;
+    };
+
+    "org/gnome/desktop/a11y/magnifier" = {
+      mag-factor = 3.0;
+    };
+
+    "org/gnome/desktop/app-folders" = {
+      folder-children = [ "Utilities" "YaST" "6a95ba47-49e0-4c3f-ac4c-d78721e242df" "0c58b7e1-0021-45f8-a3cf-47d3e986eeae" "721b63d4-043b-49ce-a55b-1b0f32688c8f" "74d3f57d-4b9a-430f-ad64-475eaf63c239" "81266aa6-6081-4b5c-9bd3-3902d5877bfc" "f45ddf01-0460-41e0-8d3b-c48249fa56de" ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/0c58b7e1-0021-45f8-a3cf-47d3e986eeae" = {
+      apps = [ "calibre-ebook-edit.desktop" "calibre-ebook-viewer.desktop" "calibre-gui.desktop" ];
+      name = "EBook";
+      translate = false;
+    };
+
+    "org/gnome/desktop/app-folders/folders/6a95ba47-49e0-4c3f-ac4c-d78721e242df" = {
+      apps = [ "teams-for-linux.desktop" "com.github.eneshecan.WhatsAppForLinux.desktop" "caprine.desktop" "chrome-agimnkijcaahngcdmfeangaknmldooml-Default.desktop" ];
+      name = "Internet";
+    };
+
+    "org/gnome/desktop/app-folders/folders/721b63d4-043b-49ce-a55b-1b0f32688c8f" = {
+      apps = [ "ardour8.desktop" "gimp.desktop" ];
+      name = "Media Edit";
+      translate = false;
+    };
+
+    "org/gnome/desktop/app-folders/folders/74d3f57d-4b9a-430f-ad64-475eaf63c239" = {
+      apps = [ "calc.desktop" "base.desktop" "draw.desktop" "impress.desktop" "math.desktop" "writer.desktop" ];
+      name = "Office";
+    };
+
+    "org/gnome/desktop/app-folders/folders/81266aa6-6081-4b5c-9bd3-3902d5877bfc" = {
+      apps = [ "Helix.desktop" "htop.desktop" "nvim.desktop" "btop.desktop" ];
+      name = "Terminal Apps";
+      translate = false;
+    };
+
+    "org/gnome/desktop/app-folders/folders/Utilities" = {
+      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.eog.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
+      categories = [ "X-GNOME-Utilities" ];
+      name = "X-GNOME-Utilities.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/app-folders/folders/YaST" = {
+      categories = [ "X-SuSE-YaST" ];
+      name = "suse-yast.directory";
+      translate = true;
+    };
+
+    "org/gnome/desktop/app-folders/folders/f45ddf01-0460-41e0-8d3b-c48249fa56de" = {
+      apps = [ "com.raggesilver.BlackBox.desktop" "guake-prefs.desktop" "guake.desktop" ];
+      name = "Terminals";
+      translate = false;
+    };
+
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///home/leswell/.local/share/backgrounds/2024-03-20-19-54-02-HD%20No%20Logo%20G233.png";
+      picture-uri-dark = "file:///home/leswell/.local/share/backgrounds/2024-03-20-19-54-02-HD%20No%20Logo%20G233.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
+
+    "org/gnome/desktop/input-sources" = {
+      mru-sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "hu+qwerty" ]) ];
+      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "hu+qwerty" ]) (mkTuple [ "xkb" "ro" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" ];
+    };
+
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      enable-hot-corners = false;
+      show-battery-percentage = true;
+      text-scaling-factor = 1.25;
+      toolkit-accessibility = false;
+    };
+
+    "org/gnome/desktop/notifications" = {
+      application-children = [ "org-gnome-console" "gnome-power-panel" "org-gnome-nautilus" "org-gnome-texteditor" "firefox" "codium" "org-gnome-settings" "code" "obsidian" "gnome-network-panel" "org-gnome-geary" "org-gnome-clocks" "idea-ultimate" "discord" "vlc" "chromium-browser" "org-gnome-fileroller" "guake" "xdg-desktop-portal-gnome" "impress" "drawio" "gnome-system-monitor" "pycharm-professional" "org-gnome-characters" "insomnia" "startcenter" "com-raggesilver-blackbox" "chrome-cinhimbnkkaeohfgghhklpknlkffjgod-default" "virt-manager" "org-gnome-calculator" "org-gnome-extensions" "calibre-gui" "teams-for-linux" "caprine" "com-github-eneshecan-whatsappforlinux" "gparted" "chrome-agimnkijcaahngcdmfeangaknmldooml-default" "android-studio" "org-gnome-evince" "gimp" "org-gnome-software" "gnome-printers-panel" "org-qbittorrent-qbittorrent" "org-gnome-totem" "spotify" "org-gnome-evolution-alarm-notify" "org-gnome-baobab" "albert" ];
+      show-banners = true;
+    };
+
+    "org/gnome/desktop/notifications/application/albert" = {
+      application-id = "albert.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/android-studio" = {
+      application-id = "android-studio.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/calibre-gui" = {
+      application-id = "calibre-gui.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/caprine" = {
+      application-id = "caprine.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/chrome-agimnkijcaahngcdmfeangaknmldooml-default" = {
+      application-id = "chrome-agimnkijcaahngcdmfeangaknmldooml-Default.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-default" = {
+      application-id = "chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/chromium-browser" = {
+      application-id = "chromium-browser.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/code" = {
+      application-id = "code.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/codium" = {
+      application-id = "codium.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/com-github-eneshecan-whatsappforlinux" = {
+      application-id = "com.github.eneshecan.WhatsAppForLinux.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/com-raggesilver-blackbox" = {
+      application-id = "com.raggesilver.BlackBox.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/discord" = {
+      application-id = "discord.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/drawio" = {
+      application-id = "drawio.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/firefox" = {
+      application-id = "firefox.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gimp" = {
+      application-id = "gimp.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-network-panel" = {
+      application-id = "gnome-network-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
+      application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-printers-panel" = {
+      application-id = "gnome-printers-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gnome-system-monitor" = {
+      application-id = "gnome-system-monitor.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/gparted" = {
+      application-id = "gparted.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/guake" = {
+      application-id = "guake.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/idea-ultimate" = {
+      application-id = "idea-ultimate.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/impress" = {
+      application-id = "impress.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/insomnia" = {
+      application-id = "insomnia.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/obsidian" = {
+      application-id = "obsidian.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-baobab" = {
+      application-id = "org.gnome.baobab.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-calculator" = {
+      application-id = "org.gnome.Calculator.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-characters" = {
+      application-id = "org.gnome.Characters.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-clocks" = {
+      application-id = "org.gnome.clocks.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-console" = {
+      application-id = "org.gnome.Console.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-evince" = {
+      application-id = "org.gnome.Evince.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify" = {
+      application-id = "org.gnome.Evolution-alarm-notify.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-extensions" = {
+      application-id = "org.gnome.Extensions.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-fileroller" = {
+      application-id = "org.gnome.FileRoller.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-geary" = {
+      application-id = "org.gnome.Geary.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
+      application-id = "org.gnome.Nautilus.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-settings" = {
+      application-id = "org.gnome.Settings.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-software" = {
+      application-id = "org.gnome.Software.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-texteditor" = {
+      application-id = "org.gnome.TextEditor.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-totem" = {
+      application-id = "org.gnome.Totem.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-qbittorrent-qbittorrent" = {
+      application-id = "org.qbittorrent.qBittorrent.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/pycharm-professional" = {
+      application-id = "pycharm-professional.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/spotify" = {
+      application-id = "spotify.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/startcenter" = {
+      application-id = "startcenter.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/teams-for-linux" = {
+      application-id = "teams-for-linux.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/virt-manager" = {
+      application-id = "virt-manager.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/vlc" = {
+      application-id = "vlc.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/xdg-desktop-portal-gnome" = {
+      application-id = "xdg-desktop-portal-gnome.desktop";
+    };
+
+    "org/gnome/desktop/peripherals/keyboard" = {
+      numlock-state = true;
+    };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      natural-scroll = false;
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      click-method = "fingers";
+      tap-to-click = true;
+      two-finger-scrolling-enabled = true;
+    };
+
+    "org/gnome/desktop/privacy" = {
+      old-files-age = mkUint32 30;
+      recent-files-max-age = -1;
+    };
+
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///home/leswell/.local/share/backgrounds/2024-03-20-19-54-02-HD%20No%20Logo%20G233.png";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
+
+    "org/gnome/desktop/search-providers" = {
+      sort-order = [ "org.gnome.Contacts.desktop" "org.gnome.Documents.desktop" "org.gnome.Nautilus.desktop" ];
+    };
+
+    "org/gnome/desktop/session" = {
+      idle-delay = mkUint32 300;
+    };
+
+    "org/gnome/desktop/sound" = {
+      event-sounds = true;
+      theme-name = "__custom";
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Super>q" ];
+      minimize = [];
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      num-workspaces = 6;
+    };
+
+    "org/gnome/epiphany/state" = {
+      is-maximized = false;
+      window-size = mkTuple [ 1024 768 ];
+    };
+
+    "org/gnome/evince/default" = {
+      continuous = true;
+      dual-page = false;
+      dual-page-odd-left = false;
+      enable-spellchecking = true;
+      fullscreen = false;
+      inverted-colors = false;
+      show-sidebar = true;
+      sidebar-page = "layers";
+      sidebar-size = 148;
+      sizing-mode = "automatic";
+      window-ratio = mkTuple [ 0.3125 0.5555555555555556 ];
+    };
+
+    "org/gnome/evolution-data-server" = {
+      migrated = true;
+    };
+
+    "org/gnome/evolution-data-server/calendar" = {
+      reminders-past = [];
+    };
+
+    "org/gnome/file-roller/dialogs/extract" = {
+      height = 800;
+      recreate-folders = true;
+      skip-newer = false;
+      width = 1000;
+    };
+
+    "org/gnome/file-roller/dialogs/new" = {
+      default-extension = ".tar.gz";
+      encrypt-header = false;
+      expand-options = false;
+      volume-size = 0;
+    };
+
+    "org/gnome/file-roller/file-selector" = {
+      show-hidden = false;
+      sidebar-size = 300;
+      window-size = mkTuple [ (-1) (-1) ];
+    };
+
+    "org/gnome/file-roller/listing" = {
+      list-mode = "as-folder";
+      name-column-width = 1370;
+      show-path = false;
+      sort-method = "name";
+      sort-type = "ascending";
+    };
+
+    "org/gnome/file-roller/ui" = {
+      sidebar-width = 200;
+      view-sidebar = false;
+      window-height = 1001;
+      window-width = 1920;
+    };
+
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "processes";
+      graph-data-points = 100;
+      maximized = true;
+      network-total-in-bits = false;
+      show-dependencies = true;
+      show-whose-processes = "all";
+      window-state = mkTuple [ 1920 1048 0 0 ];
+    };
+
+    "org/gnome/gnome-system-monitor/disktreenew" = {
+      col-0-visible = true;
+      col-0-width = 508;
+      col-2-visible = true;
+      col-2-width = 79;
+      col-6-visible = true;
+      col-6-width = 0;
+    };
+
+    "org/gnome/gnome-system-monitor/proctree" = {
+      col-17-visible = false;
+      col-17-width = 0;
+      col-26-visible = false;
+      col-26-width = 0;
+      col-3-visible = false;
+      col-3-width = 0;
+      col-9-visible = false;
+      col-9-width = 0;
+      columns-order = [ 0 1 2 3 4 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 7 ];
+      sort-col = 15;
+      sort-order = 0;
+    };
+
+    "org/gnome/mutter" = {
+      dynamic-workspaces = false;
+      edge-tiling = false;
+    };
+
+    "org/gnome/nautilus/compression" = {
+      default-compression-format = "zip";
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "list-view";
+      migrated-gtk-settings = true;
+      search-filter-time-type = "last_modified";
+      search-view = "list-view";
+    };
+
+    "org/gnome/nautilus/window-state" = {
+      initial-size = mkTuple [ 360 380 ];
+      maximized = true;
+    };
+
+    "org/gnome/nm-applet/eap/cadc1440-322f-4b06-84c4-4bcbfa708629" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/photos" = {
+      window-maximized = true;
+    };
+
+    "org/gnome/portal/filechooser/caprine" = {
+      last-folder-path = "/maindata/project/obsidianvaults/Notes/Faculty/3.year/BasszHattyuk";
+    };
+
+    "org/gnome/portal/filechooser/chrome-agimnkijcaahngcdmfeangaknmldooml-Default" = {
+      last-folder-path = "/home/leswell/Downloads";
+    };
+
+    "org/gnome/portal/filechooser/code" = {
+      last-folder-path = "/maindata/tmp";
+    };
+
+    "org/gnome/portal/filechooser/firefox" = {
+      last-folder-path = "/maindata/project/Anobidis/anobidisz-frontend/Anobidis/src/asset";
+    };
+
+    "org/gnome/portal/filechooser/org/gnome/Settings" = {
+      last-folder-path = "/home/leswell/Downloads/wallpapers";
+    };
+
+    "org/gnome/portal/filechooser/teams-for-linux" = {
+      last-folder-path = "/maindata/ubb_studiing/3_ev/2_felev/VerVal/Course";
+    };
+
+    "org/gnome/power-manager" = {
+      info-history-time = 1800;
+      info-history-type = "time-full";
+      info-last-device = "/org/freedesktop/UPower/devices/battery_BAT1";
+      info-page-number = 2;
+      info-stats-type = "discharge-accuracy";
+    };
+
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-schedule-automatic = false;
+      night-light-schedule-from = 9.016666666666667;
+      night-light-schedule-to = 9.0;
+      night-light-temperature = mkUint32 4121;
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/" ];
+      screenreader = [];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>t";
+      command = "blackbox";
+      name = "Terminal";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>o";
+      command = "obsidian";
+      name = "Obsidian";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "<Super>m";
+      command = "firefox music.youtube.com";
+      name = "Music";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "<Control>KP_Divide";
+      command = "bash -c 'firefox \"https://www.google.com/search?q=$(xsel -o)\"'";
+      name = "Search Selected";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+      binding = "<Super>e";
+      command = "nautilus";
+      name = "File Explorer";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
+      binding = "<Alt>t";
+      command = "guake-toggle";
+      name = "Dropdown Terminal";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
+      binding = "<Alt>w";
+      command = "echo w | /home/leswell/kaka";
+      name = "keylight war";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
+      binding = "<Super>f";
+      command = "nvidia-offload firefox";
+      name = "Accelerated Firefox";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
+      binding = "<Control>space";
+      command = "ulauncher-toggle";
+      name = "Ulauncher Toggle";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9" = {
+      binding = "<Shift>space";
+      command = "albert show";
+      name = "Albert";
+    };
+
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-button-action = "hibernate";
+    };
+
+    "org/gnome/shell" = {
+      command-history = [ "restart" "rt" "l" "lg" "r" "rr" ];
+      disable-user-extensions = false;
+      disabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" "auto-move-windows@gnome-shell-extensions.gcampax.github.com" "GPaste@gnome-shell-extensions.gnome.org" "thinkpad-battery-threshold@marcosdalvarez.org" "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com" "ideapad@laurento.frittella" "power-profile-switcher@eliapasquali.github.io" "forge@jmmaranan.com" "native-window-placement@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.io" "window-list@gnome-shell-extensions.gcampax.github.com" "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "geminiaiubuntu@arda.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "light-style@gnome-shell-extensions.gcampax.github.com" "system-monitor@gnome-shell-extensions.gcampax.github.com" "switcher@landau.fi" "prime-indicator@gnome-shell-exstensions.fffilo.github.com" "bubblemail@razer.framagit.org" "caffeine@patapon.info" ];
+      enabled-extensions = [ "pop-shell@system76.com" "drive-menu@gnome-shell-extensions.gcampax.github.com" "blur-my-shell@aunetx" "emoji-copy@felipeftn" "mediacontrols@cliffniff.github.com" "clipboard-history@alexsaveau.dev" "autohide-battery@sitnik.ru" "monitor@astraext.github.io" "burn-my-windows@schneegans.github.com" "xwayland-indicator@swsnr.de" ];
+      favorite-apps = [ "org.gnome.Geary.desktop" "org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop" ];
+      last-selected-power-profile = "power-saver";
+      remember-mount-password = false;
+      welcome-dialog-last-shown-version = "44.2";
+    };
+
+    "org/gnome/shell/app-switcher" = {
+      current-workspace-only = false;
+    };
+
+    "org/gnome/shell/extensions/astra-monitor" = {
+      compact-mode = false;
+      current-profile = "default";
+      explicit-zero = false;
+      gpu-header-activity-bar-color1 = "rgb(192,28,40)";
+      gpu-header-activity-graph-color1 = "rgb(192,28,40)";
+      gpu-header-show = false;
+      gpu-indicators-order = "[\"icon\",\"activity bar\",\"activity graph\",\"activity percentage\",\"memory bar\",\"memory graph\",\"memory percentage\",\"memory value\"]";
+      gpu-main = ''
+        {"domain":"0000:06","bus":"00","slot":"0","vendorId":"1002","productId":"1638"}
+      '';
+      headers-height = 0;
+      headers-height-override = 0;
+      memory-header-bars-color1 = "rgb(192,28,40)";
+      memory-header-bars-color2 = "rgba(192,28,40,0.3)";
+      memory-header-graph-color1 = "rgb(192,28,40)";
+      memory-header-graph-color2 = "rgba(192,28,40,0.3)";
+      memory-header-icon = false;
+      memory-indicators-order = "[\"icon\",\"bar\",\"graph\",\"percentage\",\"value\",\"free\"]";
+      memory-menu-swap-color = "rgb(192,28,40)";
+      monitors-order = "[\"processor\",\"memory\",\"storage\",\"network\",\"sensors\",\"gpu\"]";
+      network-header-bars = false;
+      network-header-graph-width = 55;
+      network-header-icon = false;
+      network-header-io-bars-color1 = "rgb(192,28,40)";
+      network-header-io-bars-color2 = "rgb(28,113,216)";
+      network-header-io-figures = 2;
+      network-header-io-graph-color1 = "rgb(192,28,40)";
+      network-header-io-graph-color2 = "rgb(28,113,216)";
+      network-indicators-order = "[\"icon\",\"IO bar\",\"IO graph\",\"IO speed\"]";
+      network-menu-arrow-color1 = "rgb(192,28,40)";
+      network-menu-arrow-color2 = "rgb(28,113,216)";
+      panel-box = "right";
+      panel-box-order = 0;
+      panel-margin-left = 0;
+      panel-margin-right = 40;
+      processor-header-bars-color1 = "rgb(192,28,40)";
+      processor-header-bars-color2 = "rgb(28,113,216)";
+      processor-header-graph = true;
+      processor-header-graph-color1 = "rgb(192,28,40)";
+      processor-header-graph-color2 = "rgb(28,113,216)";
+      processor-header-icon = true;
+      processor-header-percentage = false;
+      processor-header-show = true;
+      processor-indicators-order = "[\"icon\",\"bar\",\"graph\",\"percentage\",\"frequency\"]";
+      processor-menu-gpu-color = "";
+      profiles = ''
+        {"default":{"panel-margin-left":0,"sensors-header-tooltip-sensor2-digits":-1,"memory-update":3,"gpu-header-memory-graph-color1":"rgba(29,172,214,1.0)","panel-box":"right","memory-header-show":true,"network-header-tooltip-io":true,"processor-header-bars-color2":"rgb(28,113,216)","processor-header-icon-size":18,"storage-source-storage-io":"auto","sensors-header-tooltip-sensor4-name":"","storage-header-icon-color":"","network-source-public-ipv4":"https://api.ipify.org","storage-header-io-graph-color2":"rgb(28,113,216)","storage-header-io":false,"processor-menu-top-processes-percentage-core":true,"sensors-header-sensor1":"\\"\\"","processor-header-graph":true,"storage-header-graph-width":30,"network-header-bars":false,"processor-source-load-avg":"auto","network-menu-arrow-color1":"rgb(192,28,40)","storage-header-io-graph-color1":"rgb(192,28,40)","gpu-header-icon":true,"processor-menu-graph-breakdown":true,"sensors-header-icon-custom":"","sensors-header-sensor2":"\\"\\"","network-header-icon-alert-color":"rgba(235, 64, 52, 1)","memory-header-tooltip-free":false,"storage-header-io-figures":2,"network-menu-arrow-color2":"rgb(28,113,216)","sensors-header-tooltip-sensor3-name":"","network-source-public-ipv6":"https://api6.ipify.org","monitors-order":"[\\"processor\\",\\"memory\\",\\"storage\\",\\"network\\",\\"sensors\\",\\"gpu\\"]","network-header-graph":true,"network-indicators-order":"[\\"icon\\",\\"IO bar\\",\\"IO graph\\",\\"IO speed\\"]","memory-header-percentage":false,"processor-header-tooltip":true,"gpu-main":"\\"\\"","storage-header-bars":false,"sensors-header-tooltip-sensor5-digits":-1,"memory-menu-swap-color":"rgb(192,28,40)","storage-io-unit":"kB/s","memory-header-graph-width":30,"processor-header-graph-color1":"rgb(192,28,40)","storage-header-tooltip-value":false,"gpu-header-icon-custom":"","processor-header-graph-breakdown":true,"panel-margin-right":40,"gpu-header-icon-size":18,"processor-source-cpu-usage":"auto","sensors-header-tooltip-sensor3-digits":-1,"sensors-header-icon":true,"memory-header-value-figures":3,"processor-header-graph-color2":"rgb(28,113,216)","compact-mode":false,"panel-box-order":0,"compact-mode-compact-icon-custom":"","network-header-graph-width":55,"gpu-header-tooltip":true,"sensors-header-icon-alert-color":"rgba(235, 64, 52, 1)","gpu-header-activity-percentage-icon-alert-threshold":0,"sensors-header-sensor2-digits":-1,"sensors-header-tooltip-sensor2-name":"","sensors-update":3,"gpu-header-tooltip-memory-value":true,"processor-header-bars":false,"gpu-header-memory-bar-color1":"rgba(29,172,214,1.0)","gpu-header-tooltip-memory-percentage":true,"sensors-header-tooltip-sensor1":"\\"\\"","sensors-header-tooltip-sensor1-digits":-1,"storage-header-free-figures":3,"processor-header-percentage-core":false,"storage-main":"eui.002538ac01d018ed-part2","network-source-network-io":"auto","memory-header-bars":true,"processor-header-percentage":false,"sensors-header-icon-color":"","storage-header-io-threshold":0,"memory-header-graph-color1":"rgb(192,28,40)","compact-mode-activation":"both","storage-header-icon-size":18,"sensors-header-tooltip-sensor1-name":"","sensors-header-icon-size":18,"sensors-source":"auto","explicit-zero":false,"storage-header-percentage-icon-alert-threshold":0,"storage-header-tooltip-io":true,"sensors-header-tooltip-sensor2":"\\"\\"","compact-mode-expanded-icon-custom":"","memory-header-graph-color2":"rgba(192,28,40,0.3)","processor-header-icon-alert-color":"rgba(235, 64, 52, 1)","processor-header-tooltip-percentage":true,"gpu-header-show":false,"network-update":1.5,"sensors-header-tooltip-sensor3":"\\"\\"","storage-header-free-icon-alert-threshold":0,"memory-header-icon-custom":"","sensors-header-tooltip-sensor4":"\\"\\"","storage-header-percentage":false,"sensors-temperature-unit":"celsius","storage-header-icon-alert-color":"rgba(235, 64, 52, 1)","storage-menu-arrow-color2":"rgb(28,113,216)","memory-source-top-processes":"auto","storage-header-value-figures":3,"storage-header-io-bars-color1":"rgb(192,28,40)","storage-menu-arrow-color1":"rgb(192,28,40)","processor-header-graph-width":30,"network-header-icon-custom":"","gpu-header-tooltip-activity-percentage":true,"network-header-icon":false,"sensors-header-sensor2-layout":"vertical","sensors-header-tooltip-sensor5":"\\"\\"","memory-header-bars-breakdown":true,"sensors-header-show":true,"sensors-header-tooltip":false,"storage-update":3,"processor-header-bars-core":false,"storage-indicators-order":"[\\"icon\\",\\"bar\\",\\"percentage\\",\\"value\\",\\"free\\",\\"IO bar\\",\\"IO graph\\",\\"IO speed\\"]","processor-menu-bars-breakdown":true,"storage-header-io-bars-color2":"rgb(28,113,216)","network-io-unit":"kB/s","storage-header-icon":true,"gpu-header-activity-graph-color1":"rgb(192,28,40)","memory-unit":"kB-kiB","processor-menu-core-bars-breakdown":true,"sensors-header-sensor2-show":false,"network-header-tooltip":true,"storage-header-tooltip-free":true,"storage-header-bars-color1":"rgb(192,28,40)","theme-style":"light","storage-source-storage-usage":"auto","network-header-io":false,"memory-header-tooltip-percentage":true,"memory-indicators-order":"[\\"icon\\",\\"bar\\",\\"graph\\",\\"percentage\\",\\"value\\",\\"free\\"]","memory-source-memory-usage":"auto","memory-header-graph-breakdown":false,"memory-header-tooltip-value":true,"memory-menu-graph-breakdown":true,"sensors-indicators-order":"[\\"icon\\",\\"value\\"]","compact-mode-start-expanded":false,"startup-delay":2,"memory-header-percentage-icon-alert-threshold":0,"sensors-header-sensor1-show":false,"network-ignored-regex":"","memory-header-value":false,"memory-header-bars-color1":"rgb(192,28,40)","network-header-io-graph-color1":"rgb(192,28,40)","gpu-header-memory-bar":true,"memory-used":"total-free-buffers-cached","gpu-header-memory-graph-width":30,"gpu-header-memory-graph":false,"headers-font-family":"","memory-header-icon":false,"network-header-io-graph-color2":"rgb(28,113,216)","memory-header-bars-color2":"rgba(192,28,40,0.3)","processor-gpu":true,"network-header-icon-color":"","storage-header-value":false,"gpu-header-icon-alert-color":"rgba(235, 64, 52, 1)","processor-header-icon":true,"headers-font-size":0,"network-header-io-figures":2,"network-header-show":true,"storage-header-tooltip":true,"network-header-io-bars-color1":"rgb(192,28,40)","processor-update":1.5,"network-source-wireless":"auto","processor-indicators-order":"[\\"icon\\",\\"bar\\",\\"graph\\",\\"percentage\\"]","storage-header-icon-custom":"","gpu-header-activity-bar":true,"gpu-header-activity-bar-color1":"rgb(192,28,40)","shell-bar-position":"top","network-ignored":"\\"[]\\"","network-header-io-bars-color2":"rgb(28,113,216)","memory-header-icon-color":"","sensors-header-sensor1-digits":-1,"storage-header-io-layout":"vertical","memory-header-icon-size":18,"network-header-io-threshold":0,"storage-header-show":true,"sensors-header-tooltip-sensor4-digits":-1,"processor-header-percentage-icon-alert-threshold":0,"memory-header-tooltip":true,"headers-height-override":0,"memory-header-graph":false,"network-header-icon-size":18,"gpu-header-icon-color":"","memory-header-free-figures":3,"storage-header-io-bars":true,"processor-header-bars-breakdown":true,"gpu-header-activity-graph":false,"storage-ignored":"[\\"nvme1n1p1\\",\\"nvme0n1p1\\",\\"nvme0n1p2\\",\\"nvme1n1p3\\",\\"nvme0n1p4\\"]","memory-header-icon-alert-color":"rgba(235, 64, 52, 1)","storage-header-free":false,"processor-header-icon-custom":"","gpu-header-memory-percentage":false,"processor-header-tooltip-percentage-core":false,"processor-source-cpu-cores-usage":"auto","processor-source-top-processes":"auto","processor-header-icon-color":"","sensors-header-tooltip-sensor5-name":"","gpu-header-activity-graph-width":30,"gpu-header-activity-percentage":false,"gpu-indicators-order":"[\\"icon\\",\\"activity bar\\",\\"activity graph\\",\\"activity percentage\\",\\"memory bar\\",\\"memory graph\\",\\"memory percentage\\",\\"memory value\\"]","processor-header-bars-color1":"rgb(192,28,40)","gpu-update":1.5,"gpu-header-memory-percentage-icon-alert-threshold":0,"network-header-io-layout":"vertical","processor-header-show":true,"storage-header-graph":false,"memory-header-free-icon-alert-threshold":0,"storage-ignored-regex":"","storage-menu-device-color":"rgb(192,28,40)","storage-header-tooltip-percentage":true,"memory-header-free":false,"storage-source-top-processes":"auto"},"chill":{"panel-margin-left":0,"sensors-header-tooltip-sensor2-digits":-1,"memory-update":3,"gpu-header-memory-graph-color1":"rgba(29,172,214,1.0)","panel-box":"right","memory-header-show":true,"network-header-tooltip-io":true,"processor-header-bars-color2":"rgb(28,113,216)","processor-header-icon-size":18,"storage-source-storage-io":"auto","sensors-header-tooltip-sensor4-name":"","storage-header-icon-color":"","network-source-public-ipv4":"https://api.ipify.org","storage-header-io-graph-color2":"rgb(28,113,216)","storage-header-io":false,"processor-menu-top-processes-percentage-core":true,"sensors-header-sensor1":"\\"\\"","processor-header-graph":true,"storage-header-graph-width":30,"network-header-bars":false,"processor-source-load-avg":"auto","network-menu-arrow-color1":"rgb(192,28,40)","storage-header-io-graph-color1":"rgb(192,28,40)","gpu-header-icon":true,"processor-menu-graph-breakdown":true,"sensors-header-icon-custom":"","sensors-header-sensor2":"\\"\\"","network-header-icon-alert-color":"rgba(235, 64, 52, 1)","memory-header-tooltip-free":false,"storage-header-io-figures":2,"network-menu-arrow-color2":"rgb(28,113,216)","sensors-header-tooltip-sensor3-name":"","network-source-public-ipv6":"https://api6.ipify.org","monitors-order":"[\\"processor\\",\\"memory\\",\\"storage\\",\\"network\\",\\"sensors\\",\\"gpu\\"]","network-header-graph":true,"network-indicators-order":"[\\"icon\\",\\"IO bar\\",\\"IO graph\\",\\"IO speed\\"]","memory-header-percentage":false,"processor-header-tooltip":true,"gpu-main":"\\"\\"","storage-header-bars":false,"sensors-header-tooltip-sensor5-digits":-1,"memory-menu-swap-color":"rgb(192,28,40)","storage-io-unit":"kB/s","memory-header-graph-width":30,"processor-header-graph-color1":"rgb(192,28,40)","storage-header-tooltip-value":false,"gpu-header-icon-custom":"","processor-header-graph-breakdown":true,"panel-margin-right":40,"gpu-header-icon-size":18,"processor-source-cpu-usage":"auto","sensors-header-tooltip-sensor3-digits":-1,"sensors-header-icon":true,"memory-header-value-figures":3,"processor-header-graph-color2":"rgb(28,113,216)","compact-mode":false,"panel-box-order":0,"compact-mode-compact-icon-custom":"","network-header-graph-width":55,"gpu-header-tooltip":true,"sensors-header-icon-alert-color":"rgba(235, 64, 52, 1)","gpu-header-activity-percentage-icon-alert-threshold":0,"sensors-header-sensor2-digits":-1,"sensors-header-tooltip-sensor2-name":"","sensors-update":3,"gpu-header-tooltip-memory-value":true,"processor-header-bars":false,"gpu-header-memory-bar-color1":"rgba(29,172,214,1.0)","gpu-header-tooltip-memory-percentage":true,"sensors-header-tooltip-sensor1":"\\"\\"","sensors-header-tooltip-sensor1-digits":-1,"storage-header-free-figures":3,"processor-header-percentage-core":false,"storage-main":"eui.002538ac01d018ed-part2","network-source-network-io":"auto","memory-header-bars":true,"processor-header-percentage":false,"sensors-header-icon-color":"","storage-header-io-threshold":0,"memory-header-graph-color1":"rgb(192,28,40)","compact-mode-activation":"both","storage-header-icon-size":18,"sensors-header-tooltip-sensor1-name":"","sensors-header-icon-size":18,"sensors-source":"auto","explicit-zero":false,"storage-header-percentage-icon-alert-threshold":0,"storage-header-tooltip-io":true,"sensors-header-tooltip-sensor2":"\\"\\"","compact-mode-expanded-icon-custom":"","memory-header-graph-color2":"rgba(192,28,40,0.3)","processor-header-icon-alert-color":"rgba(235, 64, 52, 1)","processor-header-tooltip-percentage":true,"gpu-header-show":false,"network-update":1.5,"sensors-header-tooltip-sensor3":"\\"\\"","storage-header-free-icon-alert-threshold":0,"memory-header-icon-custom":"","sensors-header-tooltip-sensor4":"\\"\\"","storage-header-percentage":false,"sensors-temperature-unit":"celsius","storage-header-icon-alert-color":"rgba(235, 64, 52, 1)","storage-menu-arrow-color2":"rgb(28,113,216)","memory-source-top-processes":"auto","storage-header-value-figures":3,"storage-header-io-bars-color1":"rgb(192,28,40)","storage-menu-arrow-color1":"rgb(192,28,40)","processor-header-graph-width":30,"network-header-icon-custom":"","gpu-header-tooltip-activity-percentage":true,"network-header-icon":false,"sensors-header-sensor2-layout":"vertical","sensors-header-tooltip-sensor5":"\\"\\"","memory-header-bars-breakdown":true,"sensors-header-show":false,"sensors-header-tooltip":false,"storage-update":3,"processor-header-bars-core":false,"storage-indicators-order":"[\\"icon\\",\\"bar\\",\\"percentage\\",\\"value\\",\\"free\\",\\"IO bar\\",\\"IO graph\\",\\"IO speed\\"]","processor-menu-bars-breakdown":true,"storage-header-io-bars-color2":"rgb(28,113,216)","network-io-unit":"kB/s","storage-header-icon":false,"gpu-header-activity-graph-color1":"rgb(192,28,40)","memory-unit":"kB-kiB","processor-menu-core-bars-breakdown":true,"sensors-header-sensor2-show":false,"network-header-tooltip":true,"storage-header-tooltip-free":true,"storage-header-bars-color1":"rgb(192,28,40)","theme-style":"dark","storage-source-storage-usage":"auto","network-header-io":false,"memory-header-tooltip-percentage":true,"memory-indicators-order":"[\\"icon\\",\\"bar\\",\\"graph\\",\\"percentage\\",\\"value\\",\\"free\\"]","memory-source-memory-usage":"auto","memory-header-graph-breakdown":false,"memory-header-tooltip-value":true,"memory-menu-graph-breakdown":true,"sensors-indicators-order":"[\\"icon\\",\\"value\\"]","compact-mode-start-expanded":false,"startup-delay":2,"memory-header-percentage-icon-alert-threshold":0,"sensors-header-sensor1-show":false,"network-ignored-regex":"","memory-header-value":false,"memory-header-bars-color1":"rgb(192,28,40)","network-header-io-graph-color1":"rgb(192,28,40)","gpu-header-memory-bar":true,"memory-used":"total-free-buffers-cached","gpu-header-memory-graph-width":30,"gpu-header-memory-graph":false,"headers-font-family":"","memory-header-icon":false,"network-header-io-graph-color2":"rgb(28,113,216)","memory-header-bars-color2":"rgba(192,28,40,0.3)","processor-gpu":true,"network-header-icon-color":"","storage-header-value":false,"gpu-header-icon-alert-color":"rgba(235, 64, 52, 1)","processor-header-icon":true,"headers-font-size":0,"network-header-io-figures":2,"network-header-show":true,"storage-header-tooltip":true,"network-header-io-bars-color1":"rgb(192,28,40)","processor-update":1.5,"network-source-wireless":"auto","processor-indicators-order":"[\\"icon\\",\\"bar\\",\\"graph\\",\\"percentage\\"]","storage-header-icon-custom":"","gpu-header-activity-bar":true,"gpu-header-activity-bar-color1":"rgb(192,28,40)","shell-bar-position":"top","network-ignored":"\\"[]\\"","network-header-io-bars-color2":"rgb(28,113,216)","memory-header-icon-color":"","sensors-header-sensor1-digits":-1,"storage-header-io-layout":"vertical","memory-header-icon-size":18,"network-header-io-threshold":0,"storage-header-show":false,"sensors-header-tooltip-sensor4-digits":-1,"processor-header-percentage-icon-alert-threshold":0,"memory-header-tooltip":true,"headers-height-override":0,"memory-header-graph":false,"network-header-icon-size":18,"gpu-header-icon-color":"","memory-header-free-figures":3,"storage-header-io-bars":true,"processor-header-bars-breakdown":true,"gpu-header-activity-graph":false,"storage-ignored":"[\\"nvme1n1p1\\",\\"nvme0n1p1\\",\\"nvme0n1p2\\",\\"nvme1n1p3\\",\\"nvme0n1p4\\"]","memory-header-icon-alert-color":"rgba(235, 64, 52, 1)","storage-header-free":false,"processor-header-icon-custom":"","gpu-header-memory-percentage":false,"processor-header-tooltip-percentage-core":false,"processor-source-cpu-cores-usage":"auto","processor-source-top-processes":"auto","processor-header-icon-color":"","sensors-header-tooltip-sensor5-name":"","gpu-header-activity-graph-width":30,"gpu-header-activity-percentage":false,"gpu-indicators-order":"[\\"icon\\",\\"activity bar\\",\\"activity graph\\",\\"activity percentage\\",\\"memory bar\\",\\"memory graph\\",\\"memory percentage\\",\\"memory value\\"]","processor-header-bars-color1":"rgb(192,28,40)","gpu-update":1.5,"gpu-header-memory-percentage-icon-alert-threshold":0,"network-header-io-layout":"vertical","processor-header-show":false,"storage-header-graph":false,"memory-header-free-icon-alert-threshold":0,"storage-ignored-regex":"","storage-menu-device-color":"rgb(192,28,40)","storage-header-tooltip-percentage":true,"memory-header-free":false,"storage-source-top-processes":"auto"}}
+      '';
+      queued-pref-category = "";
+      sensors-header-icon = true;
+      sensors-header-sensor1-show = false;
+      sensors-header-show = true;
+      sensors-indicators-order = "[\"icon\",\"value\"]";
+      shell-bar-position = "top";
+      storage-header-bars = false;
+      storage-header-bars-color1 = "rgb(192,28,40)";
+      storage-header-icon = true;
+      storage-header-io-bars = true;
+      storage-header-io-bars-color1 = "rgb(192,28,40)";
+      storage-header-io-bars-color2 = "rgb(28,113,216)";
+      storage-header-io-graph-color1 = "rgb(192,28,40)";
+      storage-header-io-graph-color2 = "rgb(28,113,216)";
+      storage-header-show = true;
+      storage-ignored = "[\"nvme1n1p1\",\"nvme0n1p1\",\"nvme0n1p2\",\"nvme1n1p3\",\"nvme0n1p4\"]";
+      storage-indicators-order = "[\"icon\",\"bar\",\"percentage\",\"value\",\"free\",\"IO bar\",\"IO graph\",\"IO speed\"]";
+      storage-main = "eui.002538ac01d018ed-part2";
+      storage-menu-arrow-color1 = "rgb(192,28,40)";
+      storage-menu-arrow-color2 = "rgb(28,113,216)";
+      storage-menu-device-color = "rgb(192,28,40)";
+      theme-style = "light";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      settings-version = 2;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+      brightness = 0.6;
+      sigma = 32;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = true;
+      brightness = 0.6;
+      sigma = 32;
+      static-blur = true;
+      style-dash-to-dock = 0;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      brightness = 0.6;
+      sigma = 32;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      brightness = 0.6;
+      sigma = 32;
+    };
+
+    "org/gnome/shell/extensions/burn-my-windows" = {
+      active-profile = "/home/leswell/.config/burn-my-windows/profiles/1736344148485990.conf";
+      last-extension-version = 44;
+      last-prefs-version = 44;
+      prefs-open-count = 18;
+      preview-effect = "";
+    };
+
+    "org/gnome/shell/extensions/caffeine" = {
+      enable-fullscreen = false;
+      indicator-position = 4;
+      indicator-position-index = 17;
+      indicator-position-max = 4;
+      show-indicator = "only-active";
+      show-timer = true;
+    };
+
+    "org/gnome/shell/extensions/clipboard-history" = {
+      cache-size = 435;
+      display-mode = 1;
+      history-size = 700;
+      private-mode = false;
+      toggle-menu = [ "<Super>v" ];
+      window-width-percentage = 38;
+    };
+
+    "org/gnome/shell/extensions/emoji-copy" = {
+      always-show = false;
+      recently-used = [ "\127969" "\10071" "\127911" "\128514" "\128099" "\128095" "\128072" "\128073" "\129300" "\10084\65039" "\128525" ];
+    };
+
+    "org/gnome/shell/extensions/forge" = {
+      css-last-update = mkUint32 37;
+      tiling-mode-enabled = false;
+    };
+
+    "org/gnome/shell/extensions/gsconnect" = {
+      id = "e7ef1fe9-5b83-44a9-baf6-1503ba703b55";
+      name = "leswell-nixos";
+      show-indicators = false;
+    };
+
+    "org/gnome/shell/extensions/gsconnect/preferences" = {
+      window-maximized = true;
+    };
+
+    "org/gnome/shell/extensions/mediacontrols" = {
+      element-order = [ "menu" "title" "controls" "icon" ];
+      extension-index = mkUint32 2;
+      extension-position = "Left";
+      hide-media-notification = true;
+      max-widget-width = 300;
+      mouse-action-double = "NEXT_TRACK";
+      mouse-action-left = "PLAY_PAUSE";
+      mouse-action-middle = "SHOW_POPUP_MENU";
+      mouse-action-right = "PLAY_PAUSE";
+      mouse-actions = [ "toggle_play" "toggle_info" "toggle_menu" "next" "previous" "none" "none" "none" ];
+      prefer-using-seek = false;
+      show-control-icons = false;
+      show-player-icon = false;
+      show-seperators = false;
+      show-sources-menu = false;
+      track-label = [ "track" "-" "artist" ];
+    };
+
+    "org/gnome/shell/extensions/pop-shell" = {
+      active-hint = true;
+      active-hint-border-radius = mkUint32 2;
+      gap-inner = mkUint32 0;
+      gap-outer = mkUint32 0;
+      show-title = true;
+      tile-by-default = true;
+    };
+
+    "org/gnome/shell/extensions/power-profile-switcher" = {
+      bat = "power-saver";
+      threshold = 60;
+    };
+
+    "org/gnome/shell/keybindings" = {
+      focus-active-notification = [];
+      toggle-message-tray = [ "<Super>n" ];
+    };
+
+    "org/gnome/shell/weather" = {
+      automatic-location = true;
+      locations = [];
+    };
+
+    "org/gnome/shell/world-clocks" = {
+      locations = [ (mkVariant [ (mkUint32 2) (mkVariant [ "Budapest" "LHBP" true [ (mkTuple [ 0.8278678360448793 0.33626677503533836 ]) ] [ (mkTuple [ 0.8290313946973066 0.33306699310448706 ]) ] ]) ]) ];
+    };
+
+    "org/gnome/shotwell/preferences/ui" = {
+      display-basic-properties = true;
+      display-event-comments = false;
+      display-extended-properties = false;
+      display-photo-comments = false;
+      display-photo-ratings = true;
+      display-photo-tags = true;
+      display-photo-titles = false;
+      display-search-bar = false;
+      display-sidebar = true;
+      event-photos-sort-ascending = true;
+      event-photos-sort-by = 2;
+      events-sort-ascending = false;
+      library-photos-sort-ascending = false;
+      library-photos-sort-by = 2;
+      show-welcome-dialog = false;
+      sidebar-position = 180;
+    };
+
+    "org/gnome/shotwell/preferences/window" = {
+      library-height = 1043;
+      library-maximize = false;
+      library-width = 1920;
+    };
+
+    "org/gnome/simple-scan" = {
+      document-type = "photo";
+    };
+
+    "org/gnome/software" = {
+      check-timestamp = mkInt64 1737277102;
+      first-run = false;
+      flatpak-purge-timestamp = mkInt64 1737548416;
+    };
+
+    "org/gtk/gtk4/settings/color-chooser" = {
+      custom-colors = [ (mkTuple [ 0.8266666531562805 0.0 0.0 1.0 ]) (mkTuple [ 0.39666667580604553 6.611105054616928e-3 6.611105054616928e-3 1.0 ]) (mkTuple [ 9.803921729326248e-2 1.0 0.3490196168422699 1.0 ]) (mkTuple [ 0.75 0.25 0.25 1.0 ]) (mkTuple [ 0.7450980544090271 0.8078431487083435 0.8666666746139526 1.0 ]) (mkTuple [ 0.0 0.0 0.0 0.0 ]) (mkTuple [ 1.0 0.9647058844566345 0.42352941632270813 1.0 ]) (mkTuple [ 0.7058823704719543 0.6549019813537598 0.8392156958580017 1.0 ]) ];
+      selected-color = mkTuple [ true 0.8266666531562805 0.0 0.0 1.0 ];
+    };
+
+    "org/gtk/gtk4/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = true;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 140;
+      sort-column = "name";
+      sort-directories-first = true;
+      sort-order = "ascending";
+      type-format = "category";
+      view-type = "list";
+      window-size = mkTuple [ 1216 669 ];
+    };
+
+    "org/gtk/settings/color-chooser" = {
+      custom-colors = [ (mkTuple [ 0.38823529411764707 0.36470588235294116 1.0 1.0 ]) (mkTuple [ 0.6666666666666666 1.0 0.7647058823529411 1.0 ]) (mkTuple [ 0.28627450980392155 0.6588235294117647 0.20784313725490197 1.0 ]) (mkTuple [ 1.0 0.8823529411764706 9.803921568627451e-2 1.0 ]) (mkTuple [ 0.9019607843137255 0.7450980392156863 1.0 1.0 ]) (mkTuple [ 0.8 0.0 0.0 1.0 ]) (mkTuple [ 0.6705882352941176 9.411764705882353e-2 0.3215686274509804 1.0 ]) (mkTuple [ 0.9607843137254902 0.5098039215686274 0.19215686274509805 1.0 ]) ];
+      selected-color = mkTuple [ true 0.0 0.0 0.0 1.0 ];
+    };
+
+    "org/gtk/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 293;
+      sort-column = "name";
+      sort-directories-first = false;
+      sort-order = "ascending";
+      type-format = "category";
+      window-position = mkTuple [ 2319 364 ];
+      window-size = mkTuple [ 1123 902 ];
+    };
+
+    "org/guake/general" = {
+      compat-delete = "delete-sequence";
+      display-n = 0;
+      display-tab-names = 0;
+      gtk-use-system-default-theme = true;
+      hide-tabs-if-one-tab = true;
+      history-size = 1000;
+      infinite-history = true;
+      load-guake-yml = true;
+      max-tab-name-length = 99;
+      mouse-display = true;
+      open-tab-cwd = true;
+      prompt-on-quit = true;
+      quick-open-command-line = "code %(file_path)s";
+      quick-open-enable = true;
+      quick-open-in-current-terminal = false;
+      restore-tabs-notify = false;
+      restore-tabs-startup = true;
+      save-tabs-when-changed = true;
+      schema-version = "3.10";
+      scroll-keystroke = true;
+      start-at-login = true;
+      startup-script = "";
+      tab-ontop = false;
+      use-default-font = false;
+      use-login-shell = true;
+      use-popup = false;
+      use-scrollbar = false;
+      use-trayicon = true;
+      window-halignment = 0;
+      window-height = 48;
+      window-losefocus = false;
+      window-ontop = true;
+      window-refocus = true;
+      window-tabbar = true;
+      window-valignment = 1;
+      window-vertical-displacement = 0;
+      window-width = 100;
+    };
+
+    "org/guake/keybindings/global" = {
+      show-hide = "F12";
+    };
+
+    "org/guake/keybindings/local" = {
+      clipboard-copy = "<Primary><Shift>c";
+      clipboard-paste = "<Primary><Shift>v";
+      focus-terminal-down = "<Shift>Down";
+      focus-terminal-left = "<Shift>Left";
+      focus-terminal-right = "<Shift>Right";
+      focus-terminal-up = "<Shift>Up";
+      move-terminal-split-up = "disabled";
+      search-on-web = "disabled";
+      split-tab-vertical = "<Shift><Super>plus";
+    };
+
+    "org/guake/style" = {
+      cursor-shape = 1;
+    };
+
+    "org/guake/style/background" = {
+      transparency = 41;
+    };
+
+    "org/guake/style/font" = {
+      allow-bold = true;
+      bold-is-bright = true;
+      palette = "#222233334444:#aaaa11112222:#3333aaaa1111:#ccccaaaa2222:#22225555cccc:#77775555aaaa:#2222bbbbcccc:#88889999aaaa:#555566667777:#ffff11113333:#3333ffff1111:#ffffdddd3333:#33337777ffff:#aaaa7777ffff:#3333ddddffff:#bbbbccccdddd:#ddddeeeeffff:#070713131717";
+      palette-name = "Galizur";
+      style = "Hack Nerd Font Mono 16";
+    };
+
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
+    };
+
+    "org/virt-manager/virt-manager/vmlist-fields" = {
+      disk-usage = false;
+      network-traffic = false;
+    };
+
+    "re/sonny/Tangram" = {
+      instances = [ "b0efde28dee648808483f6c15c65090e" ];
+      window-maximized = true;
+    };
+
+    "re/sonny/Tangram/instances/b0efde28dee648808483f6c15c65090e" = {
+      name = "Messenger";
+      url = "https://www.messenger.com/";
+    };
+
+  };
+}
