@@ -3,6 +3,18 @@
         firefox
         spotify
         arduino-ide
+        insomnia
+
+
+        # hypr
+        psmisc
+        pywal
+        rofi
+        hyprshade
+        bluez
+        bluetuith
+        bluetui
+        hyprpaper
 
     ] ++ (with pkgs.jetbrains; [
         pycharm-professional

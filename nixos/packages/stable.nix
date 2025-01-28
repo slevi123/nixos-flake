@@ -47,7 +47,6 @@ with pkgs; [
     drawio
 
   # Search
-    # rofi
 
   # Passwords
     # bitwarden
