@@ -44,7 +44,7 @@
         "format-en": "Eng",
         "format-hu": "Hun",
         "format-ro": "Rom",
-        "keyboard-name": "at-translated-set-2-keyboard"
+        "keyboard-name": "hid-04f3:0103"
     },
 
     "bluetooth": {

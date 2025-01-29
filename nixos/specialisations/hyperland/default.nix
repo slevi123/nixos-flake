@@ -12,9 +12,6 @@
             #   enable = true;
             # };
           };
-#          hypridle = {
-#           enable = true;
-#        };
         };
 
         programs = {

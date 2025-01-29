@@ -3,6 +3,15 @@ from typing import Callable, Dict
 from lenovolight import LedController
 import argparse
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import dconf
+
+# ------------DISCLAIMER: very bad practices, it's lame, needs a refactor--------
+
+
+
 
 def effect1(controller: LedController) -> dict:
     """Whitey"""
@@ -259,12 +268,25 @@ def effect27(controller: LedController) -> dict:
     )
 
 
+def effect_off(controller: LedController) -> dict:
+    """off"""
+    return controller.build_control_string(
+        effect='off',
+        # colors=['FA5F55', '581845', 'FA5F55'],
+        # brightness=2
+    )
+
+
+
+DCONF_KEY = "/me/leswell/keyboard/light-pattern"
 
 def cycle_all(effect_list, controller):
     while True:
         for name, func in effect_list.items():
             data = func(controller)
             controller.send_control_string(data)
+
+            dconf.write(DCONF_KEY, name)
 
             print(f"{func.__name__}: {name}")
             time.sleep(6)
@@ -296,6 +318,7 @@ effect_list = {
     'ob': effect25,
     'obw': effect26,
     'sop': effect27,
+    'off': effect_off,
     }
 
 def main():
@@ -307,14 +330,26 @@ def main():
     reserved_effects = effect_list.copy()
     effect_list["sample"] = lambda controller: cycle_all(reserved_effects, controller)
 
-    argparser.add_argument('action', choices=effect_list.keys(), help=f'Specify action ({",".join(effect_list.keys())}).')
+    options = list(effect_list.keys()) + ["off", "on", "off-onetime"]
+    argparser.add_argument('action', choices=options, help=f'Specify action ({",".join(effect_list.keys())}).')
 
     args = argparser.parse_args()
 
     # Use controller
     controller = LedController()
 
-    effect = effect_list.get(args.action)
+    effect_name = ""
+    onetime = False
+    if args.action == "on":
+        effect_name = dconf.read(DCONF_KEY)
+    elif args.action == "off-onetime":
+        effect_name = "off"
+        onetime = True;
+    else:
+        effect_name = args.action
+
+    effect = effect_list.get(effect_name)
+    
     if effect:
         data = effect(controller)
     else:
@@ -322,6 +357,9 @@ def main():
         return
     
     controller.send_control_string(data)
+    if not onetime:
+        dconf.write(DCONF_KEY, effect_name)
+
 
 if __name__ == "__main__":
     main()

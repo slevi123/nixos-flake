@@ -5,6 +5,7 @@
         arduino-ide
         insomnia
 
+        jq
 
         # hypr
         psmisc
@@ -15,6 +16,11 @@
         bluetuith
         bluetui
         hyprpaper
+        hypridle
+        hyprsunset
+        hyprcursor
+        hyprpicker
+        brightnessctl
 
     ] ++ (with pkgs.jetbrains; [
         pycharm-professional

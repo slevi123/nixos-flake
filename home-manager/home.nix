@@ -67,11 +67,36 @@
       la = "exa -a";
       lla = "exa -la";
       py = "/run/current-system/sw/bin/python -q";
+      keylight ="py " + toString (../. +"/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
       # z = "zoxide";
-      fckcnt = "echo 1";
     };
 
     sessionVariables.NIXOS_OZONE_WL = "1";
+  };
+
+  programs = {
+    zsh = {
+      enable = true;
+
+      autocd = true;
+      prezto.editor.keymap = "vi";
+      autosuggestion = {
+        enable = true;
+      };
+
+      history = {
+        path = "${config.xdg.dataHome}/.histfile";
+      };
+    };
+    bash = {
+      enable = true;
+    };
+
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
   };
 
 
