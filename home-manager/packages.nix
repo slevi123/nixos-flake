@@ -1,10 +1,13 @@
 {pkgs, ...} : {
     home.packages = with pkgs; [ 
         firefox
+        vivaldi
+
         spotify
         arduino-ide
         insomnia
         fastfetch
+        
 
         jq
         comma
@@ -36,6 +39,9 @@
         # iwgtk # I use NetworkManagar not iwd
         networkmanagerapplet # WIFI needs gnome theme, it's good, until I get better
         avizo # notifications for light and volumctl
+
+        hyprpanel
+        swaynotificationcenter
 
     ] ++ (with pkgs.jetbrains; [
         pycharm-professional

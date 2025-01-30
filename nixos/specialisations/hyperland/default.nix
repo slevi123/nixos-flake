@@ -35,7 +35,7 @@
           waybar
           kitty
           nautilus
-          fnott
+          # fnott  # swaync is just better for now
         ];
 
         hardware = {

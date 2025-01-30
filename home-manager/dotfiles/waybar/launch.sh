@@ -10,6 +10,6 @@ WAYBAR_STATE_KEY="/me/leswell/waybar-toggle"
 
 # Check if waybar-disabled file exists
 if [ "$(dconf read "$WAYBAR_STATE_KEY")" == "true" ]; then 
-    waybar &
+    waybar
 fi
 

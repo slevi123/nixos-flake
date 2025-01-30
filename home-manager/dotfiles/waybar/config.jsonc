@@ -8,6 +8,7 @@
     // Choose the order of the modules
     "modules-left": [
         // "custom/media"
+        "custom/notification",
         "hyprland/window",
     ],
     "modules-center": [
@@ -33,6 +34,7 @@
         "bluetooth",
         "wireplumber",
         "backlight",
+        "battery",
         "hyprland/language",
         "clock",
     ],
@@ -45,25 +47,43 @@
         "format-en": "Eng",
         "format-hu": "Hun",
         "format-ro": "Rom",
-        "keyboard-name": "hid-04f3:0103"
+        "keyboard-name": "at-translated-set-2-keyboard"
     },
     "hyprland/workspaces": {
+        "show-special": true,
         "format": "<sub>{icon}</sub>\n{windows}",
         "format-window-separator": "\n",
-        "window-rewrite-default": "",
+        "window-rewrite-default": ".",
         "window-rewrite": {
             "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-            "class<firefox>": "", // Windows whose classes are "firefox"
-            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "class<vivaldi-stable>": "",
+            "class<spotify>": "",
+            "class<chromium-browser>": "",
+            // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
             "code": "󰨞",
+            "kitty": "",
+            "guake": "",
+            "blackbox": "",
         },
     },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+
     "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-muted": "",
+        "format": "{icon}",
+        "format-muted": "",  //"",
         "on-click": "pkill helvum || helvum",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", "", "", ""], // ["", "", ""],
+        "tooltip-format": "Volume: {volume}%"
     },
 
     "bluetooth": {
@@ -71,9 +91,11 @@
     },
 
     "backlight": {
-        "format": "󰃠  {percent}",
-        "on-scroll-up": "brightnessctl s 10%+",
-        "on-scroll-down": "brightnessctl s 10%-",
+        "format": "{icon}",
+        "on-scroll-up": "brightnessctl s 10%-",
+        "on-scroll-down": "brightnessctl s 10%+",
+        "format-icons": [ "󰃜", "󰃝", "󰃞", "󰃟", "󰃠" ],
+        "tooltip-format": "Brightness: {percent}%"
     },
 
     "clock": {
@@ -113,10 +135,32 @@
     //         "deactivated": ""
     //     }
     // },
-    // "tray": {
-    //     // "icon-size": 21,
-    //     "spacing": 10
-    // },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "custom/notification": {
+        // TODO: to customize
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+             "notification": "",
+             "none": "",
+             "dnd-notification": "",
+             "dnd-none": "",
+             "inhibited-notification": "",
+             "inhibited-none": "",
+             "dnd-inhibited-notification": "",
+             "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+   },
     // "clock": {
     //     // "timezone": "America/New_York",
     //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

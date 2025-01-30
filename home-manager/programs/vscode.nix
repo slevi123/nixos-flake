@@ -9,7 +9,15 @@
             # language support
             bbenoist.nix
             tamasfe.even-better-toml
+            gruntfuggly.todo-tree
+            pkief.material-icon-theme
             # ewen-lbh.vscode-hyprls # not added yet to nixpkgs
         ];
+        userSettings = {
+            "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
+            "files.autoSave" = "afterDelay";
+            "workbench.colorTheme" = "Wal";
+            "workbench.iconTheme" = "material-icon-theme";
+        };
     };
 }
