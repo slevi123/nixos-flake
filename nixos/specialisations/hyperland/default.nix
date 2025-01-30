@@ -12,6 +12,9 @@
             #   enable = true;
             # };
           };
+          udisks2 = {
+            enable = true;
+          };
         };
 
         programs = {
@@ -33,7 +36,6 @@
           kitty
           nautilus
           fnott
-          hyprpolkitagent
         ];
 
         hardware = {

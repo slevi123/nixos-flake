@@ -9,6 +9,7 @@
             # language support
             bbenoist.nix
             tamasfe.even-better-toml
+            # ewen-lbh.vscode-hyprls # not added yet to nixpkgs
         ];
     };
 }

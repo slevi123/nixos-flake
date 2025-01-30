@@ -26,10 +26,12 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./programs
+    ./services
     ./dconf.nix
     ./packages.nix
     ./dotfile-bindings.nix
     ./programs/vscode.nix
+    ./gtk.nix
     # ./hyprland
   ];
 
@@ -73,33 +75,6 @@
 
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
-
-  programs = {
-    zsh = {
-      enable = true;
-
-      autocd = true;
-      prezto.editor.keymap = "vi";
-      autosuggestion = {
-        enable = true;
-      };
-
-      history = {
-        path = "${config.xdg.dataHome}/.histfile";
-      };
-    };
-    bash = {
-      enable = true;
-    };
-
-    atuin = {
-      enable = true;
-      enableZshIntegration = true;
-      enableBashIntegration = true;
-    };
-  };
-
-
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

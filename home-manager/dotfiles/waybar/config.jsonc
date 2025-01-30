@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": [
         // "custom/media"
-        "hyprland/window"
+        "hyprland/window",
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -31,6 +31,7 @@
         // "custom/power"
         "tray",
         "bluetooth",
+        "wireplumber",
         "backlight",
         "hyprland/language",
         "clock",
@@ -46,13 +47,33 @@
         "format-ro": "Rom",
         "keyboard-name": "hid-04f3:0103"
     },
+    "hyprland/workspaces": {
+        "format": "<sub>{icon}</sub>\n{windows}",
+        "format-window-separator": "\n",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+            "code": "󰨞",
+        },
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "on-click": "pkill helvum || helvum",
+        "format-icons": ["", "", ""]
+    },
 
     "bluetooth": {
-        "on-click": "bluetuith",
+        "on-click": "overskride",
     },
 
     "backlight": {
-        "format": "󰃠  {percent}"
+        "format": "󰃠  {percent}",
+        "on-scroll-up": "brightnessctl s 10%+",
+        "on-scroll-down": "brightnessctl s 10%-",
     },
 
     "clock": {

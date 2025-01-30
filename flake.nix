@@ -12,10 +12,17 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     darkmatter.url = "gitlab:VandalByte/darkmatter-grub-theme";
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -24,6 +31,7 @@
     nixpkgs,
     home-manager,
     darkmatter,
+    nix-index-database,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -92,6 +100,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
+          nix-index-database.hmModules.nix-index
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
         ];

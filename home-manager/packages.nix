@@ -4,23 +4,38 @@
         spotify
         arduino-ide
         insomnia
+        fastfetch
 
         jq
+        comma
+        helvum # vs qpwgraph
+        cava
+
 
         # hypr
         psmisc
-        pywal
+        pywal16
         rofi
         hyprshade
         bluez
         bluetuith
         bluetui
+        hyprpolkitagent
         hyprpaper
         hypridle
         hyprsunset
         hyprcursor
         hyprpicker
+        hyprlang
+        hyprshot
         brightnessctl
+        playerctl
+        udiskie
+        overskride # bluetooth GUI
+        # libsForQt5.xwaylandvideobridge # have to try it out
+        # iwgtk # I use NetworkManagar not iwd
+        networkmanagerapplet # WIFI needs gnome theme, it's good, until I get better
+        avizo # notifications for light and volumctl
 
     ] ++ (with pkgs.jetbrains; [
         pycharm-professional
