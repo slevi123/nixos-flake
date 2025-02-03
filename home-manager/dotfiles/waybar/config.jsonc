@@ -10,13 +10,16 @@
         // "custom/media"
         "custom/notification",
         "hyprland/window",
+        "custom/xwayland-indicator"
+        // "mpris",  // TODO: custromize this
     ],
     "modules-center": [
+        "hyprland/submap",
         "hyprland/workspaces"
     ],
     "modules-right": [
         // "mpd",
-        // "idle_inhibitor",
+        "idle_inhibitor",
         // "pulseaudio",
         // "network",
         // "power-profiles-daemon",
@@ -31,6 +34,7 @@
         // "tray",
         // "custom/power"
         "tray",
+        "power-profiles-daemon",
         "bluetooth",
         "wireplumber",
         "backlight",
@@ -52,10 +56,10 @@
     "hyprland/workspaces": {
         "show-special": true,
         "format": "<sub>{icon}</sub>\n{windows}",
-        "format-window-separator": "\n",
+        "format-window-separator": " ",
         "window-rewrite-default": ".",
         "window-rewrite": {
-            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "title<.*[yY]ou[tT]ube.*>": "", // Windows whose titles contain "youtube"
             "class<firefox>": "", // Windows whose classes are "firefox"
             "class<vivaldi-stable>": "",
             "class<spotify>": "",
@@ -92,8 +96,9 @@
 
     "backlight": {
         "format": "{icon}",
-        "on-scroll-up": "brightnessctl s 10%-",
-        "on-scroll-down": "brightnessctl s 10%+",
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl s 5%-",
+        "smooth-scrolling-threshold": 0.25,
         "format-icons": [ "󰃜", "󰃝", "󰃞", "󰃟", "󰃠" ],
         "tooltip-format": "Brightness: {percent}%"
     },
@@ -118,6 +123,18 @@
             "on-click-right": "mode",
         }
     },
+    "mpris": {
+        "format": " {player_icon} {title}",
+        "format-paused": " {status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        // "ignored-players": ["firefox"]
+    },
     // Modules configuration
     // "keyboard-state": {
     //     "numlock": true,
@@ -128,18 +145,32 @@
     //         "unlocked": ""
     //     }
     // },
-    // "idle_inhibitor": {
-    //     "format": "{icon}",
-    //     "format-icons": {
-    //         "activated": "",
-    //         "deactivated": ""
-    //     }
-    // },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "",
+        "tooltip-format-activated": "Preventing sleep",
+        "tooltip-format-deactivated": "Click to prevent sleep",
+        }
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
+    "power-profiles-daemon": {
+        "format-icons": {
+          "default": "",
+          "performance": "",
+          "balanced": "",
+          "power-saver": ""
+        }
+    },
+    "custom/xwayland-indicator": {
+        "exec": "~/.config/waybar/scripts/xwayland-indicator/is-xwayland.sh",
+        "signal": 1,
 
+    },
     "custom/notification": {
         // TODO: to customize
         "tooltip": false,
@@ -166,10 +197,10 @@
     //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     //     "format-alt": "{:%Y-%m-%d}"
     // },
-    // "cpu": {
-    //     "format": "{usage}% ",
-    //     "tooltip": false
-    // },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
     // "memory": {
     //     "format": "{}% "
     // },
@@ -204,16 +235,6 @@
     // "battery#bat2": {
     //     "bat": "BAT2"
     // },
-    // "power-profiles-daemon": {
-    //   "format": "{icon}",
-    //   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    //   "tooltip": true,
-    //   "format-icons": {
-    //     "default": "",
-    //     "performance": "",
-    //     "balanced": "",
-    //     "power-saver": ""
-    //   }
     // },
     // "network": {
     //     // "interface": "wlp2*", // (Optional) To force the use of this interface

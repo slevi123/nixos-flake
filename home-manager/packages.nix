@@ -42,6 +42,10 @@
 
         hyprpanel
         swaynotificationcenter
+        # copyq
+        clipse
+        wl-clipboard
+        socat
 
     ] ++ (with pkgs.jetbrains; [
         pycharm-professional
