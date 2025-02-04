@@ -1,7 +1,10 @@
 {
+  # template used: https://github.com/Misterio77/nix-starter-configs (it is outdated now)
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   inputs = {
+
+    
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.713184.tar.gz";
     hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.2090.tar.gz";
@@ -16,6 +19,8 @@
 
     # Bootloader theme
     darkmatter.url = "gitlab:VandalByte/darkmatter-grub-theme";
+
+    
 
     # package database for `, any_command`
     nix-index-database = {
@@ -43,13 +48,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    systems = [
-      "aarch64-linux"
-      "i686-linux"
-      "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64darwin"
-    ];
+    systems = [ "aarch64-linux" "i686-linux" "x86_64-linux" "aarch64-darwin" "x86_64darwin" ];
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
@@ -62,15 +61,17 @@
         import ./pkgs {inherit pkgs;}
     );
 
-    # Formatter for your nix files, available through 'nix fmt'
-    # Other options beside 'alejandra' include 'nixpkgs-fmt'
+    # available through 'nix fmt'
+    # other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
+
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
     nixosModules = import ./modules/nixos;
+
     # Reusable home-manager modules you might want to export
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
