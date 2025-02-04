@@ -18,6 +18,7 @@
             "files.autoSave" = "afterDelay";
             "workbench.colorTheme" = "Wal";
             "workbench.iconTheme" = "material-icon-theme";
+            "window.menuBarVisibility" = "toggle";
         };
     };
 }

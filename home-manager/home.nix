@@ -31,7 +31,7 @@
     ./packages.nix
     ./dotfile-bindings.nix
     ./programs/vscode.nix
-    ./gtk.nix
+    ./theme.nix
     # ./hyprland
   ];
 
