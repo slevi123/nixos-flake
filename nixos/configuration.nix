@@ -78,9 +78,9 @@
 
     networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
   };
-  
+
   boot = {
-    kernel.sysctl = { "vm.swappiness" = 10;};
+    kernel.sysctl = {"vm.swappiness" = 10;};
     # boot.kernel.sysctl."kernel.sysrq" = 80; doesnt works (magic keys for frozen system)
     #extraModprobeConfig = ''
     #  options nvidia NVreg_PreserveVideoMemoryAllocations=1
@@ -92,18 +92,18 @@
     ulauncher = {
       enable = true;
       description = "Linux Application Launcher";
-      documentation = [ "https://ulauncher.io/" ];
+      documentation = ["https://ulauncher.io/"];
       serviceConfig = {
         Type = "simple";
         Restart = "always";
         RestartSec = "3s";
-        ExecStart =  ''
+        ExecStart = ''
           ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
         '';
       };
 
-      wantedBy = [ "graphical-session.target" ];
-      after = [ "display-manager.service" ];
+      wantedBy = ["graphical-session.target"];
+      after = ["display-manager.service"];
     };
     # albert = {
     #   description = "Linux Application Launcher";
@@ -122,13 +122,11 @@
     # };
   };
 
- 
-  
   # Set your time zone.
   time.timeZone = "Europe/Bucharest";
 
   # Select internationalisation properties.
-  i18n = { 
+  i18n = {
     defaultLocale = "en_US.UTF-8";
 
     extraLocaleSettings = {
@@ -150,9 +148,9 @@
 
   services = {
     # Enable the X11 windowing system.
-    xserver = { 
+    xserver = {
       # enable = true;
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = ["nvidia"];
 
       # Enable the GNOME Desktop Environment.
       desktopManager.gnome = {
@@ -162,7 +160,6 @@
 
     # Enable CUPS to print documents.
     printing.enable = true;
-
 
     # Enable sound with pipewire.
     pipewire = {
@@ -184,17 +181,17 @@
 
     udev = {
       extraRules = ''
-          SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
-          SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
+        SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
+        SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
       '';
       # SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
     };
-    
+
     flatpak.enable = true;
   };
 
   hardware = {
-    firmware = [ pkgs.linux-firmware ];
+    firmware = [pkgs.linux-firmware];
   };
 
   fonts = {
@@ -205,23 +202,20 @@
     enableDefaultPackages = true;
   };
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ./packages/stable.nix { pkgs = pkgs; } ++ import ./packages/unstable.nix { pkgs = pkgs.unstable; };
+  environment.systemPackages = import ./packages/stable.nix {pkgs = pkgs;} ++ import ./packages/unstable.nix {pkgs = pkgs.unstable;};
   # ++ [ pkgs.other.chromium pkgs.other.chromedriver pkgs.new-pkgs.gnomeExtensions.gemini-ai ];
   # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
-
 
   # nixpkgs.config.permittedInsecurePackages = [
   #               "electron-25.9.0"
   #             ];
 
-
   environment = {
     shellAliases = {
-      keylight ="py " + toString (../. +"/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
-      os-manager = toString (../. +"/related-projects/small-scripts/os-manager.sh");
+      keylight = "py " + toString (../. + "/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
+      os-manager = toString (../. + "/related-projects/small-scripts/os-manager.sh");
     };
 
     variables = {
@@ -235,7 +229,7 @@
     starship = {
       enable = true;
       settings = pkgs.lib.importTOML ../dotfiles/starship.toml;
-    };    
+    };
     neovim = {
       enable = true;
       defaultEditor = true;

@@ -1,48 +1,52 @@
-{pkgs, lib, ...} : {
-    specialisation = {
-      hyprland.configuration = {
-        system.nixos.tags = [ "hyprland" ];
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  specialisation = {
+    hyprland.configuration = {
+      system.nixos.tags = ["hyprland"];
 
-        services = {
-          xserver = {
-            desktopManager.gnome = {
-              enable = lib.mkForce false;
-            };
-            # windowManager.hypr = {
-            #   enable = true;
-            # };
+      services = {
+        xserver = {
+          desktopManager.gnome = {
+            enable = lib.mkForce false;
           };
-          udisks2 = {
-            enable = true;
-          };
-        };
-
-        programs = {
-          hyprland = {
-            enable = true;
-            withUWSM = true;
-            xwayland.enable = true;
-          };
-          # waybar = {
+          # windowManager.hypr = {
           #   enable = true;
-          # }
-          hyprlock = {
-            enable = true;
-          };
+          # };
         };
+        udisks2 = {
+          enable = true;
+        };
+      };
 
-        environment.systemPackages = with pkgs; [
-          waybar
-          kitty
-          nautilus
-          # fnott  # swaync is just better for now
-        ];
+      programs = {
+        hyprland = {
+          enable = true;
+          withUWSM = true;
+          xwayland.enable = true;
+        };
+        # waybar = {
+        #   enable = true;
+        # }
+        hyprlock = {
+          enable = true;
+        };
+      };
 
-        hardware = {
-          bluetooth = {
-            enable = true;
-          };
+      environment.systemPackages = with pkgs; [
+        waybar
+        kitty
+        nautilus
+        # fnott  # swaync is just better for now
+      ];
+
+      hardware = {
+        bluetooth = {
+          enable = true;
         };
       };
     };
+  };
 }

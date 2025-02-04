@@ -1,7 +1,8 @@
-{ lib
-, stdenv
-, fetchzip
-, python3
+{
+  lib,
+  stdenv,
+  fetchzip,
+  python3,
 }:
 stdenv.mkDerivation rec {
   pname = "jdt-language-server";
@@ -22,12 +23,12 @@ stdenv.mkDerivation rec {
     install -Dm444 -t $out/bin bin/jdtls.py
   '';
 
-  buildInputs = [ python3 ];
+  buildInputs = [python3];
 
   meta = with lib; {
     homepage = "https://github.com/eclipse/eclipse.jdt.ls";
     description = "Java language server";
-    sourceProvenance = with sourceTypes; [ binaryBytecode ];
+    sourceProvenance = with sourceTypes; [binaryBytecode];
     license = licenses.epl20;
   };
 }

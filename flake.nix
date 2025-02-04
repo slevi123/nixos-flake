@@ -17,7 +17,7 @@
     # Bootloader theme
     darkmatter.url = "gitlab:VandalByte/darkmatter-grub-theme";
 
-    # package database for `, any_command` 
+    # package database for `, any_command`
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +32,6 @@
       # disable darwin deps on linux (saves some space)
       # inputs.darwin.follows = "";
     };
-
   };
 
   outputs = {
@@ -56,9 +55,11 @@
   in {
     # custom packages
     # acessible through 'nix build', 'nix shell', etc
-    packages = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs; }
+    packages = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        import ./pkgs {inherit pkgs;}
     );
 
     # Formatter for your nix files, available through 'nix fmt'

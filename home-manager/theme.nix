@@ -10,7 +10,6 @@
     size = 32; # Adjust the size as needed
   };
 
-
   gtk = {
     enable = true;
     # font.name = "TeX Gyre Adventor 10";
@@ -20,8 +19,8 @@
       # package = pkgs.gtk3-theme;
     };
     # iconTheme = {
-      # name = "Posys Cursor";
-      # package = pkgs.posy-cursors;
+    # name = "Posys Cursor";
+    # package = pkgs.posy-cursors;
     # };
     gtk3.extraConfig = {
       Settings = ''

@@ -1,6 +1,6 @@
-{pkgs, ...} : {
-    # services.flameshot = {
-    #     enable = true;
-    #     package = pkgs.flameshot;
-    # };
+{pkgs, ...}: {
+  # services.flameshot = {
+  #     enable = true;
+  #     package = pkgs.flameshot;
+  # };
 }

@@ -16,10 +16,10 @@
         "-DUSE_WAYLAND_CLIPBOARD=1"
         "-DUSE_WAYLAND_GRIM=1"
       ];
-      buildInputs = previousAttrs.buildInputs ++ [ final.libsForQt5.kguiaddons final.grim ];
+      buildInputs = previousAttrs.buildInputs ++ [final.libsForQt5.kguiaddons final.grim];
     });
   };
-    
+
   other-packages = final: _prev: {
     other = import inputs.nixpkgs-for-chromium {
       system = final.system;
@@ -37,14 +37,16 @@
   ulauncher-packages = final: prev: {
     ulauncher = prev.ulauncher.overrideAttrs (old: {
       propagatedBuildInputs = with final.python3Packages;
-        old.propagatedBuildInputs ++ [
-          pint 
-          simpleeval 
-          parsedatetime 
+        old.propagatedBuildInputs
+        ++ [
+          pint
+          simpleeval
+          parsedatetime
           pytz
           babel
           requests
-        ] ++ [ final.pkgs.bitwarden-cli ];
+        ]
+        ++ [final.pkgs.bitwarden-cli];
     });
   };
 

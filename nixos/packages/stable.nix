@@ -1,25 +1,25 @@
-{pkgs} :
-let    
-     my-python-packages = ps: with ps; [    
-          pyusb
-          jupyter
-          requests
-          scrapy
-          nltk
-          numpy
-          marisa-trie
-          pygtrie
-          scapy
-          # overleaf-sync
-          #pint 
-          #simpleeval 
-          #parsedatetime 
-          #pytz
-          #babel
-          # fuzzywuzzy
-     ];    
+{pkgs}: let
+  my-python-packages = ps:
+    with ps; [
+      pyusb
+      jupyter
+      requests
+      scrapy
+      nltk
+      numpy
+      marisa-trie
+      pygtrie
+      scapy
+      # overleaf-sync
+      #pint
+      #simpleeval
+      #parsedatetime
+      #pytz
+      #babel
+      # fuzzywuzzy
+    ];
 in
-with pkgs; [
+  with pkgs; [
     distrobox
 
     # F
@@ -40,22 +40,22 @@ with pkgs; [
 
     shotwell
 
-  # creative
+    # creative
     gimp
     davinci-resolve
     ardour
     drawio
 
-  # Search
+    # Search
 
-  # Passwords
+    # Passwords
     # bitwarden
     bitwarden-cli
 
-  # cuda
+    # cuda
     # cudatoolkit
-    
-  # Tools  
+
+    # Tools
     gcc
     wget
     htop
@@ -70,30 +70,30 @@ with pkgs; [
     usbutils
     fff
     go-chromecast
-    lazydocker 
+    lazydocker
 
-  # Terminals
+    # Terminals
     blackbox-terminal
     guake # dropdown
 
-  # Prompt    
+    # Prompt
     # starship
 
-  # Notes
+    # Notes
     obsidian
-    
-  # Editors
+
+    # Editors
     vim
     helix
     vscode.fhs
-   
-  # Languages
+
+    # Languages
     (python311.withPackages my-python-packages)
     nodejs_20
     jdk17
     jdk
 
-  # Language Tools
+    # Language Tools
     gradle
 
     flex
@@ -101,23 +101,21 @@ with pkgs; [
 
     gdb
 
-  # Language Servers
+    # Language Servers
     # jdtls   # java
     # python311Packages.python-lsp-server
-    taplo   # toml
+    taplo # toml
     yaml-language-server
     nodePackages.typescript-language-server
 
-  # Office Suite
+    # Office Suite
     libreoffice
     hunspell
     hunspellDicts.en-us
     hunspellDicts.hu_HU
     hunspellDicts.ru_RU
 
-
-
-  # Others
+    # Others
     nssmdns
     neofetch
     gparted
@@ -148,7 +146,7 @@ with pkgs; [
 
     traceroute
 
-    caprine-bin  # fb messenger app
+    caprine-bin # fb messenger app
 
     tor-browser
     macchanger
@@ -160,21 +158,19 @@ with pkgs; [
 
     # android-studio
 
-    fragments  # gnome circle torrent client
+    fragments # gnome circle torrent client
     wireshark
 
     android-tools
 
-
     ## SCHOOL
-  # TO BE MOVED TO PROJECT NIX-SHELLS
+    # TO BE MOVED TO PROJECT NIX-SHELLS
     # graphviz
 
     # chromedriver
-    #selenium-server-standalone 
+    #selenium-server-standalone
 
     jmeter
-
 
     # gaphor  # gnome UML tool
     libpng
@@ -183,7 +179,6 @@ with pkgs; [
 
     # ls
 
-
     # ruby_3_2
     # rubyPackages_3_2.railties
-]
+  ]
