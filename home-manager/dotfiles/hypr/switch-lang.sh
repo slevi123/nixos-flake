@@ -13,6 +13,7 @@ if [ -z "$ORDER" ]; then
     ORDER="0,1,2"
 fi
 
+# https://github.com/hyprwm/Hyprland/issues/7044 this is why we need sleep
 sleep 0.2
 IFS=',' read -r LAST1 LAST2 THIRD <<< "$ORDER"
 INP=$(dconf read "$LAYOUT_SWITCH_INPROGRESS_KEY")

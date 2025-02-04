@@ -32,6 +32,7 @@
     ./dotfile-bindings.nix
     ./programs/vscode.nix
     ./theme.nix
+    ./ssh.nix
     # ./hyprland
   ];
 
