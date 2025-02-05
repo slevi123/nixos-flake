@@ -8,29 +8,6 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
-  imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    inputs.hardware.nixosModules.lenovo-ideapad-15ach6
-    ./display-manager.nix
-    ./cpu.nix
-    ./users.nix
-    ./vpn.nix
-    ./ollama.nix
-    # ./gitlab-runner.nix
-    # ./virt.nix
-    ./bootloader.nix
-    ./hybrid-graphics.nix
-    ./firewall.nix
-
-    ./specialisations/hyperland
-
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
-  ];
 
   nixpkgs = {
     # You can add overlays here
