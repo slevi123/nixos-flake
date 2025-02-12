@@ -28,30 +28,33 @@
           leswell-nixos = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs outputs; };
             modules = [
-              {
-                # environment.systemPackages = [ inputs.fh.packages.x86_64-linux.default ];
-              }
-              # > Our main nixos configuration file <
               darkmatter.nixosModule
+              inputs.keylightctl.nixosModules.lenovo
               inputs.hardware.nixosModules.lenovo-ideapad-15ach6
               ./modules/nixos
               ./nixos/configuration.nix
+
+              inputs.home-manager.nixosModules.home-manager
+              {
+                home-manager = {
+                    users.leswellhm = ./home-manager/home.nix;
+                    # leswellhm = home-manager.lib.homeManagerConfiguration {
+                    extraSpecialArgs = {inherit inputs self;};
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    sharedModules = [
+                      # modules shared between all users
+                    ];
+                  # };
+                };
+              }
             ];
           };
         };
 
         # Available through 'home-manager --flake .#your-username@your-hostname'
         homeConfigurations = {
-          leswellhm = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            extraSpecialArgs = {inherit inputs outputs;};
-            modules = [ 
-              nix-index-database.hmModules.nix-index
-              inputs.agenix.homeManagerModules.default
-              ./modules/home-manager
-              ./home-manager/home.nix
-            ];
-          };
+          
         };
       };
 
@@ -91,8 +94,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,5 +101,15 @@
       # disable darwin deps on linux (saves some space)
       # inputs.darwin.follows = "";
     };
+
+    keylightctl = {
+      url = "git+https://gitlab.com/leswell/keylightctl";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # ====might-be-useful====
+    # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    # open-vsx.ankitpati.extname
+    # vscode-marketplace.extname
   };
 }

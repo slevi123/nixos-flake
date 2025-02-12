@@ -18,44 +18,20 @@
       ];
       buildInputs = previousAttrs.buildInputs ++ [final.libsForQt5.kguiaddons final.grim];
     });
-  };
 
-  other-packages = final: _prev: {
-    other = import inputs.nixpkgs-for-chromium {
-      system = final.system;
-      config.allowUnfree = true;
-    };
-  };
-
-  new-packages = final: _prev: {
-    new-pkgs = import inputs.new-nixpkgs {
-      system = final.system;
-      config.allowUnfree = true;
-    };
-  };
-
-  ulauncher-packages = final: prev: {
     ulauncher = prev.ulauncher.overrideAttrs (old: {
       propagatedBuildInputs = with final.python3Packages;
         old.propagatedBuildInputs
         ++ [
+          # ====EXTENSIONS NEED:============
           pint
           simpleeval
           parsedatetime
           pytz
           babel
-          requests
+          # requests  # is there by default
         ]
         ++ [final.pkgs.bitwarden-cli];
     });
-  };
-
-  # When applied, the unstable nixpkgs set (declared in the flake inputs) will
-  # be accessible through 'pkgs.unstable'
-  unstable-packages = final: _prev: {
-    unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
-      config.allowUnfree = true;
-    };
   };
 }

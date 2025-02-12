@@ -15,15 +15,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-      outputs.overlays.other-packages
-      outputs.overlays.ulauncher-packages
-      # outputs.overlays.new-packages
 
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline
     ];
     # Configure your nixpkgs instance
     config = {
@@ -45,7 +37,7 @@
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
-      auto-optimise-store = false;
+      auto-optimise-store = true;
     };
   };
 
@@ -152,18 +144,6 @@
       #media-session.enable = true;
     };
 
-    # for keyboard RGB control script
-    # and for nvidia gpu for gnome
-    # ENV{DEVNAME}=="/dev/dri/card0", TAG+="mutter-device-preferred-primary"
-
-    udev = {
-      extraRules = ''
-        SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c966", MODE="0666"
-        SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
-      '';
-      # SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
-    };
-
     flatpak.enable = true;
   };
 
@@ -191,7 +171,6 @@
 
   environment = {
     shellAliases = {
-      keylight = "py " + toString (../. + "/related-projects/lenovo-ideapad-legion-keyboard-led/keylight.py");
       os-manager = toString (../. + "/related-projects/small-scripts/os-manager.sh");
     };
 

@@ -53,6 +53,7 @@ time_format = "%H:%M"
 format = '[$state($symbol \($name\))]($style)'
 impure_msg=""
 symbol = ""
+heuristic = true
 
 # -------------------
 
