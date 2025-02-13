@@ -20,6 +20,10 @@
     inputs.nix-index-database.hmModules.nix-index
     # inputs.agenix.homeManagerModules.default
     ../modules/home-manager
+
+    ../modules/home-manager/window-manager/hyprland/hypr-ecosystem
+    ../modules/home-manager/window-manager/desk-env-parts/bar/waybar
+    ../modules/home-manager/window-manager/desk-env-parts/notification
   ];
   
 
