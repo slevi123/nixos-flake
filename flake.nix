@@ -25,7 +25,7 @@
             specialArgs = {inherit inputs self; };
             modules = [
               ./hosts/leswell-nixos
-              darkmatter.nixosModule
+              ./modules/nixos/bootloader/grub
               inputs.keylightctl.nixosModules.lenovo
               inputs.hardware.nixosModules.lenovo-ideapad-15ach6
               ./modules/nixos

@@ -7,7 +7,6 @@
     ./ollama.nix
     # ./gitlab-runner.nix
     # ./virt.nix
-    ./bootloader.nix
     ./hybrid-graphics.nix
     ./firewall.nix
 

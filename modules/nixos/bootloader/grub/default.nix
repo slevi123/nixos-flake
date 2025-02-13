@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
+  imports = [
+    inputs.darkmatter.nixosModule
+  ];
+
   boot = {
     # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6; kernel version
     loader = {

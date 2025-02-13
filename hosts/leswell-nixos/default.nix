@@ -36,7 +36,6 @@
     settings = {
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
       auto-optimise-store = true;
     };
   };
@@ -46,15 +45,6 @@
     networkmanager.enable = true;
 
     networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
-  };
-
-  boot = {
-    kernel.sysctl = {"vm.swappiness" = 10;};
-    # boot.kernel.sysctl."kernel.sysrq" = 80; doesnt works (magic keys for frozen system)
-    #extraModprobeConfig = ''
-    #  options nvidia NVreg_PreserveVideoMemoryAllocations=1
-    #  options nvidia NVreg_TemporaryFilePath=/var/tmp
-    #'';
   };
 
   systemd.user.services = {
