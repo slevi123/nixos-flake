@@ -16,51 +16,39 @@
       ];
 
       flake = {
-        # Your custom packages and modifications, exported as overlays
         overlays = import ./overlays {inherit inputs;};
-
-        # Reusable home-manager modules you might want to export
-        # These are usually stuff you would upstream into home-manager
 
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
           leswell-nixos = nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs; };
+            specialArgs = {inherit inputs self; };
             modules = [
+              ./hosts/leswell-nixos
               darkmatter.nixosModule
               inputs.keylightctl.nixosModules.lenovo
               inputs.hardware.nixosModules.lenovo-ideapad-15ach6
               ./modules/nixos
-              ./nixos/configuration.nix
 
               inputs.home-manager.nixosModules.home-manager
               {
                 home-manager = {
                     users.leswellhm = ./home-manager/home.nix;
-                    # leswellhm = home-manager.lib.homeManagerConfiguration {
                     extraSpecialArgs = {inherit inputs self;};
                     useGlobalPkgs = true;
                     useUserPackages = true;
                     sharedModules = [
                       # modules shared between all users
                     ];
-                  # };
                 };
               }
             ];
           };
         };
-
-        # Available through 'home-manager --flake .#your-username@your-hostname'
-        homeConfigurations = {
-          
-        };
       };
 
       perSystem = {pkgs, ...}: {
         # available through 'nix fmt'
-        # other options beside 'alejandra' include 'nixpkgs-fmt'
         formatter = pkgs.alejandra;
 
         # custom packages

@@ -1,7 +1,6 @@
 {...}:{
   imports = [
     ./programs
-    ./services
     ./dconf.nix
     ./packages.nix
     ./dotfile-bindings.nix
@@ -9,5 +8,8 @@
     ./theme.nix
     ./ssh.nix
     # ./hyprland
+
+
+    ./shell
   ];
 }

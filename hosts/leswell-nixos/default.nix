@@ -1,8 +1,8 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
+  self,
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
@@ -13,8 +13,8 @@
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
+      self.overlays.additions
+      self.overlays.modifications
 
     ];
     # Configure your nixpkgs instance
@@ -170,22 +170,13 @@
   #             ];
 
   environment = {
-    shellAliases = {
-      os-manager = toString (../. + "/related-projects/small-scripts/os-manager.sh");
-    };
-
     variables = {
-      PYTHONSTARTUP = ../. + "/dotfiles/python_startup.py";
       FFF_CD_ON_EXIT = "1";
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
   programs = {
-    starship = {
-      enable = true;
-      settings = pkgs.lib.importTOML ../dotfiles/starship.toml;
-    };
     neovim = {
       enable = true;
       defaultEditor = true;
