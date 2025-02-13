@@ -120,11 +120,6 @@
     xserver = {
       # enable = true;
       videoDrivers = ["nvidia"];
-
-      # Enable the GNOME Desktop Environment.
-      desktopManager.gnome = {
-        enable = true;
-      };
     };
 
     # Enable CUPS to print documents.

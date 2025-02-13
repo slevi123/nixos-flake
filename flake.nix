@@ -30,15 +30,18 @@
               inputs.hardware.nixosModules.lenovo-ideapad-15ach6
               ./modules/nixos
 
+              ./modules/nixos/environment/desktop-environment/gnome
+
               inputs.home-manager.nixosModules.home-manager
               {
                 home-manager = {
-                    users.leswellhm = ./home-manager/home.nix;
+                    users.leswellhm = ./homes/leswellhm;
                     extraSpecialArgs = {inherit inputs self;};
                     useGlobalPkgs = true;
                     useUserPackages = true;
                     sharedModules = [
                       # modules shared between all users
+                      ./modules/home-manager/environments/desktop-environment/gnome
                     ];
                 };
               }
