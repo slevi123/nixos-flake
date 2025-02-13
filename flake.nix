@@ -27,6 +27,8 @@
               ./hosts/leswell-nixos
               ./modules/nixos/bootloader/grub
               ./modules/nixos/environment/display-manager/gdm
+
+              ./modules/nixos/cpu/power-profiles-daemon
               inputs.keylightctl.nixosModules.lenovo
               inputs.hardware.nixosModules.lenovo-ideapad-15ach6
               ./modules/nixos

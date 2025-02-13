@@ -1,11 +1,6 @@
 {...} : {
   imports = [
-    ./cpu.nix
     ./users.nix
-    ./vpn.nix
-    ./ollama.nix
-    # ./gitlab-runner.nix
-    # ./virt.nix
     ./firewall.nix
 
     ./specialisations/hyperland

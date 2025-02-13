@@ -42,9 +42,10 @@
 
   networking = {
     hostName = "leswell-nixos";
-    networkmanager.enable = true;
-
-    networkmanager.wifi.powersave = false; # maybe it not letting the laptop to sleep
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false; # maybe it not letting the laptop to sleep
+    };
   };
 
   systemd.user.services = {
