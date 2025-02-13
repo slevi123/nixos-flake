@@ -1,13 +1,11 @@
 {...} : {
   imports = [
-    ./display-manager.nix
     ./cpu.nix
     ./users.nix
     ./vpn.nix
     ./ollama.nix
     # ./gitlab-runner.nix
     # ./virt.nix
-    ./hybrid-graphics.nix
     ./firewall.nix
 
     ./specialisations/hyperland

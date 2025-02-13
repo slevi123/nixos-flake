@@ -37,6 +37,17 @@
     };
   };
 
+  environment.sessionVariables = {
+    # MAYBE USEFULL
+    # Force Wayland to use the NVIDIA driver
+    # GBM_BACKEND = "nvidia-drm";
+    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+
+    # Fallback to Xwayland for X11 apps
+    # WLR_NO_HARDWARE_CURSORS = "1"; # Required for Hyprland with NVIDIA
+  };
+}
+
   # specialisation = {
   #   on-the-go.configuration = {
   #     system.nixos.tags = [ "on-the-go" ];
@@ -54,4 +65,3 @@
   #     };
   #   };
   # };
-}
