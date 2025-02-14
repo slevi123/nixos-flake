@@ -24,6 +24,28 @@
     };
   };
 
+  imports = [
+    "${self}/modules/nixos/bootloader/grub"
+    "${self}/modules/nixos/environment/display-manager/gdm"
+    "${self}/modules/nixos/environment/desktop-environment/gnome"
+    "${self}/modules/nixos/users"
+    "${self}/modules/nixos/firewall"
+
+    "${self}/modules/nixos/cpu/power-profiles-daemon"
+    # Import your generated (nixos-generate-config) hardware configuration
+    "${self}/hardware/lenovo-gaming3-15ach6"
+
+    "${self}/modules/nixos/agenix"
+  ];
+
+  specialisation = {
+    hyprland.configuration = {
+      imports = [
+        ../../modules/nixos/environment/window-manager/hyprland/default.nix
+      ];
+    };
+  };
+
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake

@@ -1,4 +1,4 @@
-{config, ...}: {
+{config, osConfig, ...}: {
   programs.ssh = {
     enable = true;
 
@@ -8,7 +8,7 @@
       "lrpi" = {
         hostname = "192.168.0.66";
         user = "root";
-        identityFile = ["${config.home.homeDirectory}/.ssh/homerpi"];
+        identityFile = osConfig.age.secrets.homerpi.path;
       };
 
       # Host: rpi
@@ -16,7 +16,7 @@
         hostname = "leswell.crabdance.com";
         port = 99;
         user = "root";
-        identityFile = ["${config.home.homeDirectory}/.ssh/homerpi"];
+        identityFile = osConfig.age.secrets.homerpi.path;
       };
 
       # Host: pcloc

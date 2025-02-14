@@ -24,20 +24,7 @@
           leswell-nixos = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs self; };
             modules = [
-              ./hosts/leswell-nixos
-              ./modules/nixos/bootloader/grub
-              ./modules/nixos/environment/display-manager/gdm
-              ./modules/nixos/environment/desktop-environment/gnome
-              ./modules/nixos/users
-              ./modules/nixos/firewall
-
-              ./modules/nixos/cpu/power-profiles-daemon
-              inputs.keylightctl.nixosModules.lenovo
-              inputs.hardware.nixosModules.lenovo-ideapad-15ach6
-              # Import your generated (nixos-generate-config) hardware configuration
-              ./modules/nixos/hardware-configuration.nix
-              ./modules/nixos
-
+              "${self}/hosts/leswell-nixos"
 
               inputs.home-manager.nixosModules.home-manager
               {
