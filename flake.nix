@@ -1,5 +1,5 @@
 {
-  # template used: https://github.com/Misterio77/nix-starter-configs (it is outdated now)
+  # template used: https://github.com/Misterio77/nix-starter-configs (it is outdated now) [IN THE PROCESS OF REFACTORING TO MY FLAVOR]
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs = inputs @ {
