@@ -27,6 +27,7 @@
               "${self}/hosts/leswell-nixos"
 
               inputs.home-manager.nixosModules.home-manager
+              inputs.niri.nixosModules.niri
               {
                 home-manager = {
                     users.leswellhm = ./homes/leswellhm;
@@ -86,12 +87,21 @@
       # disable darwin deps on linux (saves some space)
       # inputs.darwin.follows = "";
     };
+    
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     keylightctl = {
       url = "git+https://gitlab.com/leswell/keylightctl";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # open-vsx.ankitpati.extname

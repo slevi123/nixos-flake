@@ -22,7 +22,7 @@
     ../../modules/home-manager
 
     ../../modules/home-manager/environments/window-manager/hyprland/hypr-ecosystem
-    ../../modules/home-manager/environments/window-manager/desk-env-parts/bar/waybar
+    "${self}/modules/home-manager/environments/bar/waybar"
     ../../modules/home-manager/environments/window-manager/desk-env-parts/notification
   ];
   

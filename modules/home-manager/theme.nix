@@ -11,7 +11,7 @@
   };
 
   gtk = {
-    enable = true;
+    enable = false;
     # font.name = "TeX Gyre Adventor 10";
     font.name = "Hack Nerd Font Mono 16";
     theme = {

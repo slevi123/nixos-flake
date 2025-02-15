@@ -4,4 +4,6 @@
     source = ./dotfiles/waybar;
     recursive = true;
   };
+
+  # programs.enable 
 }

@@ -9,9 +9,9 @@
   services = {
     xserver = {
       enable = false; 
-      desktopManager.gnome = {
-        enable = lib.mkForce false;
-      };
+      # desktopManager.gnome = {
+      #   enable = lib.mkForce false;
+      # };
     };
     udisks2 = {
       enable = true;

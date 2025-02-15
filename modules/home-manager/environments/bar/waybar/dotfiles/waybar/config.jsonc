@@ -10,12 +10,14 @@
         // "custom/media"
         "custom/notification",
         "hyprland/window",
+        "niri/window",
         "custom/xwayland-indicator"
         // "mpris",  // TODO: custromize this
     ],
     "modules-center": [
         "hyprland/submap",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "niri/workspaces"
     ],
     "modules-right": [
         // "mpd",
@@ -40,11 +42,16 @@
         "backlight",
         "battery",
         "hyprland/language",
+        "niri/language",
         "clock",
     ],
     "hyprland/window": {
         "icon": true,
         "max-length": 30,
+    },
+    "niri/window": {
+        "format": "{title}",
+        "icon": true
     },
     "hyprland/language": {
         // "format": "{}",
@@ -52,6 +59,12 @@
         "format-hu": "Hun",
         "format-ro": "Rom",
         "keyboard-name": "at-translated-set-2-keyboard"
+    },
+    "niri/language": {
+        // "format": "{}",
+        "format-en": "Eng",
+        "format-hu": "Hun",
+        "format-ro": "Rom"
     },
     "hyprland/workspaces": {
         "show-special": true,

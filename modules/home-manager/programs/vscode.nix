@@ -9,8 +9,13 @@
       # language support
       bbenoist.nix
       tamasfe.even-better-toml
+      # kdl-org.kdl
+
+
       gruntfuggly.todo-tree
       pkief.material-icon-theme
+
+      naumovs.color-highlight
       # ewen-lbh.vscode-hyprls # not added yet to nixpkgs
     ];
     userSettings = {
