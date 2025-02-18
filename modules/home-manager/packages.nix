@@ -14,6 +14,8 @@
       helvum # vs qpwgraph
       cava
 
+      delta
+
       # hypr
       psmisc
       pywal16

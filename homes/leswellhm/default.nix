@@ -19,11 +19,11 @@
   imports = [ 
     inputs.nix-index-database.hmModules.nix-index
     # inputs.agenix.homeManagerModules.default
-    ../../modules/home-manager
+    "${self}/modules/home-manager"
 
-    ../../modules/home-manager/environments/window-manager/hyprland/hypr-ecosystem
+    "${self}/modules/home-manager/environments/window-manager/hyprland"
     "${self}/modules/home-manager/environments/bar/waybar"
-    ../../modules/home-manager/environments/window-manager/desk-env-parts/notification
+    "${self}/modules/home-manager/environments/notification/swaync"
   ];
   
 

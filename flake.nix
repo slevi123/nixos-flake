@@ -38,6 +38,7 @@
                       # modules shared between all users
                       ./modules/home-manager/environments/desktop-environment/gnome
                     ];
+                    backupFileExtension = "hm-backup"; 
                 };
               }
             ];

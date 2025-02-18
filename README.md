@@ -1,0 +1,10 @@
+# Charm OS
+>Nixos Configuration - by Leswell
+
+This is my personal nixos configuration.
+
+**This repository may change based on my preferencies. If you want to use it as a starting point, clone it first and make sure you understand to customize it.**
+
+- Hyprland
+- mostly hypr components
+- Swaync
