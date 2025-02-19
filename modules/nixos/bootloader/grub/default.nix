@@ -4,7 +4,6 @@
   ];
 
   boot = {
-    # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_6; kernel version
     loader = {
       grub = {
         enable = true;

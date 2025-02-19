@@ -2,6 +2,7 @@
 {
   imports =
     lib.optionals osConfig.services.xserver.desktopManager.gnome.enable [
+      ./extensions.nix
       ./dconf/settings.nix
       ./dconf/extension-settings.nix
       ./dconf/shortcuts.nix

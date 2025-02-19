@@ -1,5 +1,6 @@
-{pkgs}: let
-  my-python-packages = ps:
+{pkgs, ...}: 
+let
+  python-packages = ps:
     with ps; [
       pyusb
       jupyter
@@ -19,6 +20,8 @@
       # fuzzywuzzy
     ];
 in
+{
+  environment.systemPackages = 
   with pkgs; [
     distrobox
 
@@ -88,7 +91,7 @@ in
     vscode.fhs
 
     # Languages
-    (python311.withPackages my-python-packages)
+    (python311.withPackages python-packages)
     nodejs_20
     jdk17
     jdk
@@ -181,4 +184,5 @@ in
 
     # ruby_3_2
     # rubyPackages_3_2.railties
-  ]
+  ];
+}

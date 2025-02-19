@@ -30,10 +30,10 @@
   home = {
     homeDirectory = "/home/leswellhm";
 
-    # keyboard = {
-    #   layout = "us,hu+qwerty,ro"; # Define the layouts
-    #   options = "lv3:ralt_switch"; # Set XKB options
-    # };
+/*     keyboard = {
+      layout = "us,hu+qwerty,ro"; # Define the layouts
+      options = "lv3:ralt_switch"; # Set XKB options
+    }; */
     shellAliases = {
       exa = "eza --icons";
       ls = "exa --icons";

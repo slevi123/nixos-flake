@@ -25,6 +25,7 @@
 
   imports = [
     "${self}/modules/nixos/bootloader/grub"
+    "${self}/modules/nixos/kernel"
     "${self}/modules/nixos/environment/display-manager/gdm"
     "${self}/modules/nixos/environment/desktop-environment/gnome"
     "${self}/modules/nixos/environment/window-manager/hyprland"
@@ -155,12 +156,6 @@
     ];
     enableDefaultPackages = true;
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = import ./packages/stable.nix {pkgs = pkgs;} ++ import ./packages/unstable.nix {pkgs = pkgs.unstable;};
-  # ++ [ pkgs.other.chromium pkgs.other.chromedriver pkgs.new-pkgs.gnomeExtensions.gemini-ai ];
-  # ++ import ../package_lists/cuda.nix { pkgs = cudaPackages; };
 
   # nixpkgs.config.permittedInsecurePackages = [
   #               "electron-25.9.0"
