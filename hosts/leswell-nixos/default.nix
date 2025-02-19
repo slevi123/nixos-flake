@@ -26,6 +26,7 @@
   imports = [
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
+    "${self}/modules/nixos/shell/phi.nix"
     "${self}/modules/nixos/environment/display-manager/gdm"
     "${self}/modules/nixos/environment/desktop-environment/gnome"
     "${self}/modules/nixos/environment/window-manager/hyprland"
@@ -167,31 +168,7 @@
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
-
-  programs = {
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-
-      viAlias = true;
-      vimAlias = true;
-    };
-
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      zsh-autoenv.enable = true;
-
-      shellInit = "eval \"$(zoxide init zsh)\"";
-    };
-
-    bash = {
-      shellInit = "eval \"$(zoxide init bash)\"";
-    };
-  };
-
+  
   virtualisation.docker = {
     enable = true;
     # enableNvidia = true;

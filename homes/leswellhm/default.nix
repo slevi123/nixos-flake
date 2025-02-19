@@ -20,10 +20,13 @@
     inputs.nix-index-database.hmModules.nix-index
     # inputs.agenix.homeManagerModules.default
     "${self}/modules/home-manager"
+    "${self}/modules/home-manager/shell/alpha.nix"
 
     "${self}/modules/home-manager/environments/window-manager/hyprland"
     "${self}/modules/home-manager/environments/bar/waybar"
     "${self}/modules/home-manager/environments/notification/swaync"
+
+    "${self}/modules/home-manager/ide/vscode"
   ];
   
 
