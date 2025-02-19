@@ -2,7 +2,8 @@
 {
   programs = {
     bash = {
-      shellInit = "eval \"$(zoxide init bash)\"";
+      enable = true;
+      enableCompletion = true;
     };
   };
 }

@@ -6,9 +6,7 @@
       autosuggestions.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
-      zsh-autoenv.enable = true;
-
-      shellInit = "eval \"$(zoxide init zsh)\"";
+      zsh-autoenv.enable = true; # .autoenv.zsh
     };
   };
 }
