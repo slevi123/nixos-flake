@@ -21,8 +21,13 @@
     # inputs.agenix.homeManagerModules.default
     "${self}/modules/home-manager"
     "${self}/modules/home-manager/shell/alpha.nix"
+    "${self}/modules/home-manager/terminal/kitty"
 
     "${self}/modules/home-manager/environments/window-manager/hyprland"
+    "${self}/modules/home-manager/environments/bar/waybar"
+    "${self}/modules/home-manager/environments/idle/hypridle"
+    "${self}/modules/home-manager/environments/wallpaper/hyprpaper"
+    "${self}/modules/home-manager/environments/screen-lock/hyprlock"
     "${self}/modules/home-manager/environments/bar/waybar"
     "${self}/modules/home-manager/environments/notification/swaync"
 
@@ -38,8 +43,7 @@
       options = "lv3:ralt_switch"; # Set XKB options
     }; */
     shellAliases = {
-      exa = "eza --icons";
-      ls = "exa --icons";
+      ls = "eza";
       lstree = "exa --tree";
       ll = "exa -l";
       la = "exa -a";
