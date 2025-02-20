@@ -1,10 +1,12 @@
-{...}:
+{config, pkgs, ...}:
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     ddcutil
   ];
-  boot.kernelPackages = with config.boot.kernelPackages; [ 
-    dccci-driver # testing
-    i2c-dev
-  ];
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ 
+      ddcci-driver # testing
+    ];
+    kernelModules = [ "i2c-dev" "ddcci" ];
+  };
 }

@@ -39,6 +39,7 @@
     "${self}/modules/nixos/cpu/power-profiles-daemon"
     # Import your generated (nixos-generate-config) hardware configuration
     "${self}/hardware/lenovo-gaming3-15ach6"
+    "${self}/hardware/benq-gw2270"
 
     "${self}/modules/nixos/agenix"
   ];

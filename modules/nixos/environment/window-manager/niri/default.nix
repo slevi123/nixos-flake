@@ -1,6 +1,7 @@
 {inputs, ...}:
 {
   programs.niri = {
-    enable = true;
+   enable = true;
   };
 }
+

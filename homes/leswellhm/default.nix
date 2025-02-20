@@ -31,7 +31,10 @@
     "${self}/modules/home-manager/environments/bar/waybar"
     "${self}/modules/home-manager/environments/notification/swaync"
 
+    "${self}/modules/home-manager/environments/menu/wofi"
+
     "${self}/modules/home-manager/ide/vscode"
+    "${self}/modules/home-manager/ide/nixvim"
   ];
   
 
