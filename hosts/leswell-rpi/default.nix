@@ -1,5 +1,13 @@
-{...}:
+{pkgs, ...}:
 {
+  imports = [
+    ./shell.nix
+    ./ssh.nix
+    ./cron.nix
+    ./firewall.nix
+    ./vpn.nix
+  ];
+
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     initrd.availableKernelModules = ["xhci_pci" "usbhid" "usb_storage"];
@@ -48,7 +56,7 @@
 
         ];
         useDefaultShell = true;
-      }
+      };
     };
 
     fileSystems = {
