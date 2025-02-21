@@ -43,7 +43,31 @@
               }
             ];
           };
+
+          leswell-rpi = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs self; };
+            modules = [
+              "${self}/hosts/leswell-rpi"
+
+              inputs.home-manager.nixosModules.home-manager
+              # inputs.niri.nixosModules.niri
+              # {
+              #   home-manager = {
+              #       users.leswellhm = ./homes/leswellhm;
+              #       extraSpecialArgs = {inherit inputs self;};
+              #       useGlobalPkgs = true;
+              #       useUserPackages = true;
+              #       sharedModules = [
+              #         # modules shared between all users
+              #         ./modules/home-manager/environments/desktop-environment/gnome
+              #       ];
+              #       backupFileExtension = "hm-backup"; 
+              #   };
+              # }
+            ];
+          };
         };
+
       };
 
       perSystem = {pkgs, ...}: {
