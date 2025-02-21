@@ -18,7 +18,6 @@
 }: {
   imports = [ 
     inputs.nix-index-database.hmModules.nix-index
-    # inputs.agenix.homeManagerModules.default
     "${self}/modules/home-manager"
     "${self}/modules/home-manager/shell/alpha.nix"
     "${self}/modules/home-manager/terminal/kitty"

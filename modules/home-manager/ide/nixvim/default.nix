@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./plugins/nvim-tree.nix
   ];
 
   programs.nixvim = {
@@ -46,6 +47,31 @@
           desc = "Live Grep";
         };
       }
+      {
+        mode = "n";
+	key = "<leader>kf";
+	action = "<cmd>Telescope keymapsi<CR>";
+	options = {
+	  desc = "Find Keybindings";
+	};
+      }
+      {
+      	mode = "n";
+	key = "<leader>bl";
+	action = "<cmd>bnext<CR>";
+	options = {
+	  desc = "Next buffer";
+	};
+      } 
+      {
+      	mode = "n";
+	key = "<leader>bh";
+	action = "<cmd>bprev<CR>";
+	options = {
+	  desc = "Previous buffer";
+	};
+      } 
+
     ];
  
   };

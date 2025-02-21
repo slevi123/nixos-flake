@@ -1,15 +1,21 @@
-{inputs, ...}:
+{inputs, self, ...}:
 {
   imports = [
     inputs.agenix.nixosModules.default
   ];
   age = {
     secrets = {
-      homerpi.file = ../../../secrets/homerpi.age;
-      pypirc.file = ../../../secrets/pypirc.age;
+      homerpi = {
+        file = "${self}/secrets/homerpi.age";
+        owner = "leswellhm";
+      };
+      pypirc = {
+        file = "${self}/secrets/pypirc.age";
+        owner = "leswellhm";
+      };
     };
     identityPaths = [
-      "/home/lesswelhm/.ssh/agenix_id_ed25519"
+      "/home/leswellhm/.ssh/agenix_id_ed25519"
     ];
   };
 }
