@@ -1,10 +1,16 @@
 {pkgs, ...}: {
   imports = [
-    ./plugins/lualine.nix
+    ./plugins/lines-n-bars/lualine.nix
+    ./plugins/startup/alpha.nix
     ./plugins/nvim-tree.nix
     ./plugins/telescope.nix
     ./plugins/which-key.nix
-    ./plugins/startup/alpha.nix
+    ./plugins/auto-save.nix
+    ./plugins/session/auto-session.nix
+    ./plugins/indent/indent-blankline.nix
+    # ./plugins/mini
+    
+
 
     # ======== might want in future
     # --> startup
@@ -22,6 +28,10 @@
 
     oil.enable = true;
   };
+
+    opts = {
+      number = true;
+    };
 
 
   keymaps = [
@@ -43,5 +53,4 @@
       };
     } 
   ];
- 
 }
