@@ -14,7 +14,7 @@
         action = "<cmd>NvimTreeToggle<CR>";
         options = {
           desc = "Toggle Nvim Tree";
-	};
+	      };
       }
     ];
   };
