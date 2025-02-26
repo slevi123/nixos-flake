@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, lib, ...}:
 {
   imports = [
     ./shell.nix
@@ -66,6 +66,9 @@
         options = [ "noatime" ];
       };
     };
+
+    nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+
 
     hardware.enableRedistributableFirmware = true;
     system.stateVersion = "23.11";
