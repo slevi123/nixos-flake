@@ -52,7 +52,7 @@
         extraGroups = [
           "wheel"
           "docker"
-          "netwromanager"
+          "networkmanager"
 
         ];
         useDefaultShell = true;
