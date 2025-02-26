@@ -1,22 +1,20 @@
 {...}:
 {
-  programs.nixvim = {
-   plugins.nvim-tree = {
-      enable = true;
+  plugins.nvim-tree = {
+    enable = true;
 
-      openOnSetup = true;
-    };
-
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>tt";
-        action = "<cmd>NvimTreeToggle<CR>";
-        options = {
-          desc = "Toggle Nvim Tree";
-	      };
-      }
-    ];
+    openOnSetup = true;
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>tt";
+      action = "<cmd>NvimTreeToggle<CR>";
+      options = {
+        desc = "Toggle Nvim Tree";
+      };
+    }
+  ];
 }
 

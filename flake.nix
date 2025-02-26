@@ -46,13 +46,15 @@
         };
       };
 
-      perSystem = {pkgs, ...}: {
+      perSystem = {pkgs, system, ...}: {
         # available through 'nix fmt'
         formatter = pkgs.alejandra;
 
         # custom packages
         # acessible through 'nix build', 'nix shell', etc
-        packages = import ./pkgs {inherit pkgs;};
+        packages = {
+          nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" {inherit pkgs;} );
+        } // import ./pkgs {inherit pkgs;};
       };
 
       systems = ["aarch64-linux" "i686-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin"];

@@ -1,13 +1,11 @@
 {...}:
 {
-  programs.nixvim = {
-   plugins.lualine = {
-      enable = true;
-    };
-
-    keymaps = [
-      
-    ];
+  plugins.lualine = {
+    enable = true;
   };
+
+  keymaps = [
+    
+  ];
 }
 
