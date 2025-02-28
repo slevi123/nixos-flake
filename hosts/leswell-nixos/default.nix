@@ -42,6 +42,10 @@
     "${self}/hardware/benq-gw2270"
 
     "${self}/modules/nixos/agenix"
+
+
+    # temporary
+    # "${self}/modules/nixos/ide/jupyter" # for faculty
   ];
 
   nix = {
