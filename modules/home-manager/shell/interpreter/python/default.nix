@@ -1,6 +1,6 @@
 {...} : 
 {
   home.sessionVariables = {
-    PYTHONSTARTUP = ../. + "/dotfiles/python_startup.py";
+    PYTHONSTARTUP = ./python_startup.py;
   };
 }

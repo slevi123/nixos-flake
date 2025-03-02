@@ -11,11 +11,11 @@
       "SUPER SHIFT, f, togglefloating,"
       "SUPER, R, exec, $menu"
 
-      "SUPER SHIFT, B, exec, ~/.config/waybar/launch.sh" # Reload waybar
-      "SUPER CTRL, B, exec, ~/.config/waybar/toggle.sh" # Toggle waybar
+      "SUPER SHIFT, W, exec, ~/.config/waybar/launch.sh # Reload waybar"
+      "SUPER CTRL, W, exec, ~/.config/waybar/toggle.sh # Toggle waybar"
       "SUPER, L, exec, hyprlock"
-      "SUPER, Space, exec, ~/.charm/scripts/hyprland/switch-lang.sh"
-      "SUPER, B, exec, ~/.charm/scripts/hyprland/toggle-hyprsunset.sh"
+      "SUPER, Space, exec, ~/.charm/scripts/hyprland/switch-lang.sh # Switch language"
+      "SUPER SHIFT, B, exec, ~/.charm/scripts/hyprland/toggle-hyprsunset.sh # Toggle bluelight (hypesunset)"
     ];
   };
 }

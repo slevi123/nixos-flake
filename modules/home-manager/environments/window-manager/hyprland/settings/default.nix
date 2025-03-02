@@ -15,6 +15,9 @@
     ./program/obsidian.nix
     ./program/spotify.nix
     ./program/discord.nix
+    ./program/ulauncher.nix
+    ./program/wofi
+    ./program/wofi/bluetuith.nix
 
     ./plugin/hyprexpo.nix
   ];

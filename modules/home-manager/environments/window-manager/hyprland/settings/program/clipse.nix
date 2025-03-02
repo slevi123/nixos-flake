@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "SUPER, V, exec,  kitty --class clipse -e 'clipse' && wtype -M ctrl -k v -m ctrl" 
+      "SUPER, V, exec,  kitty --class clipse -e 'clipse' && wtype -M ctrl -k v -m ctrl  # Clipboard manager" 
     ];
     windowrulev2 = [
       "float,class:(clipse)" # ensure you have a floating window class set if you want this behavior

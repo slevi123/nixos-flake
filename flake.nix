@@ -54,6 +54,7 @@
         # acessible through 'nix build', 'nix shell', etc
         packages = {
           nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" {inherit pkgs;} );
+          zen-browser = inputs.zen-browser.packages."${system}".twilight;
         } // import ./pkgs {inherit pkgs;};
       };
 
@@ -105,6 +106,8 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # open-vsx.ankitpati.extname

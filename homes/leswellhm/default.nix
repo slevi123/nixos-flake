@@ -34,6 +34,8 @@
 
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"
+
+    "${self}/modules/home-manager/browser/zen.nix"
   ];
   
 

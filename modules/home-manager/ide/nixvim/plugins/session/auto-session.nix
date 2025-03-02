@@ -12,6 +12,10 @@
         __raw = "vim.fn.stdpath 'data' .. '/sessions/'";
       };
 
+      session_lens = {
+        load_on_setup = true;
+      };
+
     };
   };
 

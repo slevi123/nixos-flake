@@ -2,8 +2,8 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "SUPER, D, togglespecialworkspace, discord"
-      "SUPER        , D, exec, discord"
+      "SUPER, D, togglespecialworkspace, discord  # Open discord in it's special workspace"
+      "SUPER, D, exec, discord"
     ];
 
     windowrulev2 = [
