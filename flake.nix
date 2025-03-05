@@ -53,7 +53,7 @@
         # custom packages
         # acessible through 'nix build', 'nix shell', etc
         packages = {
-          nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" {inherit pkgs;} );
+          nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" {inherit pkgs inputs;} );
           zen-browser = inputs.zen-browser.packages."${system}".twilight;
         } // import ./pkgs {inherit pkgs;};
       };
@@ -96,6 +96,8 @@
       url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    awesome-neovim-plugins.url = "github:m15a/flake-awesome-neovim-plugins";
 
     keylightctl = {
       url = "git+https://gitlab.com/leswell/keylightctl";

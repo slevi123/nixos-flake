@@ -16,6 +16,16 @@
         load_on_setup = true;
       };
 
+       # fix for nvim bug
+      luaConfig = {
+        post = ''
+          require('auto-session').setup {
+            pre_save_cmds = { 'NvimTreeClose' },
+            post_restore_cmds = { 'NvimTreeOpen' },
+          }
+        '';
+      };
+
     };
   };
 

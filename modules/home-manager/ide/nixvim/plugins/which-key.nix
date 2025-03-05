@@ -5,12 +5,12 @@
 
     settings = {
       show_help = true; 
-      triggers = [
-        {
-          key = "<auto>";
-          mode = "nxsotc";
-        }
-      ];
+      # triggers = [
+      #   {
+      #     __unkeyed-1 = "<auto>";
+      #     mode = "nxsotc";
+      #   }
+      # ];
     };
 
   };

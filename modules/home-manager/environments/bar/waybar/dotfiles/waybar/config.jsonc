@@ -21,12 +21,12 @@
     ],
     "modules-right": [
         // "mpd",
+        "cpu",
+        "memory",
+        "disk",
         "idle_inhibitor",
         // "pulseaudio",
         // "network",
-        // "power-profiles-daemon",
-        // "cpu",
-        // "memory",
         // "temperature",
         // "backlight",
         // "keyboard-state",
@@ -74,6 +74,7 @@
         "window-rewrite": {
             "title<.*[yY]ou[tT]ube.*>": "", // Windows whose titles contain "youtube"
             "class<firefox>": "", // Windows whose classes are "firefox"
+            "class<zen-twilight>": "", // Windows whose classes are "firefox"
             "class<vivaldi-stable>": "",
             "class<spotify>": "",
             "class<chromium-browser>": "",
@@ -212,11 +213,12 @@
     // },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        // "tooltip": false
     },
-    // "memory": {
-    //     "format": "{}% "
-    // },
+    "memory": {
+        "format": "{}% ",
+        "tooltip-format": "{used:0.1f} / {total} GiB\nSwap: {swapUsed:0.1f} / {swapTotal:0.1f} GiB" 
+    },
     // "temperature": {
     //     // "thermal-zone": 2,
     //     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",

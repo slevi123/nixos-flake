@@ -12,6 +12,7 @@
         ];
 
         settings = {
+          filter_mode = "session";
           style = "compact";
         };
     };

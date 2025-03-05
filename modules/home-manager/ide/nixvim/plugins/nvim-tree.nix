@@ -1,9 +1,9 @@
-{...}:
+{config, ...}:
 {
   plugins.nvim-tree = {
     enable = true;
 
-    openOnSetup = true;
+    openOnSetup = false;
   };
 
   keymaps = [

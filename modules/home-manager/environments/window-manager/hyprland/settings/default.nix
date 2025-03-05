@@ -18,6 +18,7 @@
     ./program/ulauncher.nix
     ./program/wofi
     ./program/wofi/bluetuith.nix
+    ./program/overskride
 
     ./plugin/hyprexpo.nix
   ];

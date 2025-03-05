@@ -15,6 +15,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       self.overlays.additions
       self.overlays.modifications
+      inputs.awesome-neovim-plugins.overlays.default
     ];
     # Configure your nixpkgs instance
     config = {

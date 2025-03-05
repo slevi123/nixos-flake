@@ -6,6 +6,7 @@
 
     settings = {
       allow_markup = true;
+      insensitive = true;
     };
   };
 }
