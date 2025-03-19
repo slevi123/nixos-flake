@@ -43,6 +43,7 @@
     "${self}/hardware/benq-gw2270"
 
     "${self}/modules/nixos/agenix"
+    # "${self}/modules/nixos/virtualisation/qemu.nix"
 
 
     # temporary
