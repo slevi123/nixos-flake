@@ -12,7 +12,6 @@
       fastfetch
 
       jq
-      comma
       helvum # vs qpwgraph
       cava
 

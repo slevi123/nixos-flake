@@ -9,5 +9,6 @@
     ./atuin
     ./starship-prompt
     ./interpreter/python
+    ./comma
   ];
 }

@@ -43,6 +43,29 @@
               }
             ];
           };
+          leswell-wsl = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {inherit inputs self; };
+            modules = [
+              inputs.nixos-wsl.nixosModules.default
+              inputs.home-manager.nixosModules.home-manager
+              "${self}/hosts/leswell-wsl"
+
+               {
+                home-manager = {
+                    users.leswell = ./homes/leswell-wsl;
+                    users.leswellhm = ./homes/leswell-wsl;
+                    extraSpecialArgs = {inherit inputs self;};
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    sharedModules = [
+                      # modules shared between all users
+                    ];
+                    backupFileExtension = "hm-backup"; 
+                };
+              }
+            ];
+          };
         };
       };
 
@@ -110,9 +133,11 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # open-vsx.ankitpati.extname
     # vscode-marketplace.extname
   };
+
 }
