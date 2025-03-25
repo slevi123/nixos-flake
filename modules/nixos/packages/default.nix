@@ -23,7 +23,7 @@ in
 {
   environment.systemPackages = 
   with pkgs; [
-    distrobox
+    # distrobox
 
     # F
     ulauncher
@@ -32,7 +32,7 @@ in
     nerdfonts
     chromium
 
-    jdk8
+    # jdk8
 
     unzip
 
@@ -45,7 +45,7 @@ in
 
     # creative
     gimp
-    davinci-resolve
+    # davinci-resolve
     ardour
     drawio
 
@@ -53,7 +53,7 @@ in
 
     # Passwords
     # bitwarden
-    bitwarden-cli
+    # bitwarden-cli
 
     # cuda
     # cudatoolkit

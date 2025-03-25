@@ -27,7 +27,7 @@
               "${self}/hosts/leswell-nixos"
 
               inputs.home-manager.nixosModules.home-manager
-              inputs.niri.nixosModules.niri
+              # inputs.hyprland.nixosModules.default
               {
                 home-manager = {
                     users.leswellhm = ./homes/leswellhm;
@@ -65,8 +65,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.713184.tar.gz";
-    hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.2090.tar.gz";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
@@ -104,10 +104,14 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
+    # };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     # ====might-be-useful====

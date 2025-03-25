@@ -1,7 +1,9 @@
-{pkgs, lib, osConfig,  ...}: 
+{pkgs, inputs, lib, osConfig,  ...}: 
 {
   imports = [
     ./settings
+    # inputs.hyprland.homeManagerModules.default
+
   ];
 
   home.file.".charm/scripts/hyprland" = lib.mkIf osConfig.programs.hyprland.enable {
@@ -11,8 +13,5 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [
-      pkgs.hyprlandPlugins.hyprexpo
-    ];
   };
 }

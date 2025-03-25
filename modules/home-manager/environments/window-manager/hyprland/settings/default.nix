@@ -20,6 +20,6 @@
     ./program/wofi/bluetuith.nix
     ./program/overskride
 
-    ./plugin/hyprexpo.nix
+    # ./plugin/hyprexpo.nix
   ];
 }

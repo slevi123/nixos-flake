@@ -4,7 +4,7 @@
       wtype
 
       firefox
-      vivaldi
+      # vivaldi
 
       spotify
       arduino-ide

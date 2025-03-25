@@ -31,7 +31,7 @@
     "${self}/modules/nixos/environment/display-manager/gdm"
     "${self}/modules/nixos/environment/desktop-environment/gnome"
     "${self}/modules/nixos/environment/window-manager/hyprland"
-    "${self}/modules/nixos/environment/window-manager/niri"
+    # "${self}/modules/nixos/environment/window-manager/niri"
     "${self}/modules/nixos/users"
     "${self}/modules/nixos/firewall"
 
