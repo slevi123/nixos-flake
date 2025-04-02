@@ -1,10 +1,15 @@
-{...}:
+{pkgs, ...}:
 {
   programs.kitty = {
     enable = true;
     shellIntegration = {
       enableBashIntegration = true;
       enableZshIntegration = true;
+    };
+
+    font = {
+      name = "Hack Nerd Font Mono";
+      # package = pkgs.nerd-fonts.hack;
     };
 
     settings = {
@@ -25,6 +30,9 @@
       cursor_trail = 500;
 
       focus_follows_mouse = "yes";
+
+      background_opacity = 0.2;
+      background_blur = 0;
     };
   };
 }

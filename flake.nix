@@ -65,13 +65,15 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      # url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -94,7 +96,7 @@
     
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     awesome-neovim-plugins.url = "github:m15a/flake-awesome-neovim-plugins";

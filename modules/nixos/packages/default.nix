@@ -29,7 +29,9 @@ in
     ulauncher
     # findutils
 
-    nerdfonts
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.code-new-roman
     chromium
 
     # jdk8
