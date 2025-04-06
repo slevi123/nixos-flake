@@ -2,11 +2,6 @@
 {
   programs.kitty = {
     enable = true;
-    shellIntegration = {
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-    };
-
     font = {
       name = "Hack Nerd Font Mono";
       # package = pkgs.nerd-fonts.hack;
