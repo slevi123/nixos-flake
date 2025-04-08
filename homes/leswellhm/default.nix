@@ -9,6 +9,7 @@
 }: {
   imports = [ 
     inputs.nix-index-database.hmModules.nix-index
+    "${self}/modules/home-manager/environments/languages"
     "${self}/modules/home-manager/environments/tty/alpha.nix"
     "${self}/modules/home-manager/terminal/kitty"
 
@@ -20,6 +21,8 @@
     "${self}/modules/home-manager/environments/gui/bar/waybar"
     "${self}/modules/home-manager/environments/gui/notification/swaync"
     "${self}/modules/home-manager/environments/gui/menu/wofi"
+
+    "${self}/modules/home-manager/environments/gui/fonts"
 
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"

@@ -8,8 +8,6 @@
     # findutils
     chromium
 
-    # jdk8
-
 
     discord
 
@@ -34,7 +32,6 @@
     # cudatoolkit
 
     # Tools
-    gcc
     wget
     htop
     btop
@@ -57,21 +54,12 @@
     # Notes
     obsidian
 
-    # Languages
-    nodejs_20
-    jdk17
-    jdk
-
     # Language Tools
-    gradle
 
     flex
     bison
 
-    gdb
-
     # Language Servers
-    # jdtls   # java
     taplo # toml
     yaml-language-server
     nodePackages.typescript-language-server
@@ -138,7 +126,7 @@
     # chromedriver
     #selenium-server-standalone
 
-    jmeter
+
 
     # gaphor  # gnome UML tool
     libpng
@@ -146,8 +134,5 @@
     # genymotion
 
     # ls
-
-    # ruby_3_2
-    # rubyPackages_3_2.railties
   ];
 }

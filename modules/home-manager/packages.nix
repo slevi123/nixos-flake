@@ -48,10 +48,6 @@
       clipse
       wl-clipboard
       socat
-
-      nerd-fonts.hack
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.code-new-roman
     ]
     ++ (with pkgs.jetbrains; [
       pycharm-professional
