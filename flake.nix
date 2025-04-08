@@ -36,7 +36,7 @@
                     useUserPackages = true;
                     sharedModules = [
                       # modules shared between all users
-                      ./modules/home-manager/environments/desktop-environment/gnome
+                      ./modules/home-manager/environments/gui/desktop-environment/gnome
                     ];
                     backupFileExtension = "hm-backup"; 
                 };

@@ -19,18 +19,17 @@
   imports = [ 
     inputs.nix-index-database.hmModules.nix-index
     "${self}/modules/home-manager"
-    "${self}/modules/home-manager/shell/alpha.nix"
+    "${self}/modules/home-manager/environments/tty/alpha.nix"
     "${self}/modules/home-manager/terminal/kitty"
 
-    "${self}/modules/home-manager/environments/window-manager/hyprland"
-    "${self}/modules/home-manager/environments/bar/waybar"
-    "${self}/modules/home-manager/environments/idle/hypridle"
-    "${self}/modules/home-manager/environments/wallpaper/hyprpaper"
-    "${self}/modules/home-manager/environments/screen-lock/hyprlock"
-    "${self}/modules/home-manager/environments/bar/waybar"
-    "${self}/modules/home-manager/environments/notification/swaync"
-
-    "${self}/modules/home-manager/environments/menu/wofi"
+    "${self}/modules/home-manager/environments/gui/window-manager/hyprland"
+    "${self}/modules/home-manager/environments/gui/bar/waybar"
+    "${self}/modules/home-manager/environments/gui/idle/hypridle"
+    "${self}/modules/home-manager/environments/gui/wallpaper/hyprpaper"
+    "${self}/modules/home-manager/environments/gui/screen-lock/hyprlock"
+    "${self}/modules/home-manager/environments/gui/bar/waybar"
+    "${self}/modules/home-manager/environments/gui/notification/swaync"
+    "${self}/modules/home-manager/environments/gui/menu/wofi"
 
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"

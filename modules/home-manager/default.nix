@@ -5,8 +5,5 @@
     ./theme.nix
     ./ssh
     # ./hyprland
-
-
-    ./shell
   ];
 }
