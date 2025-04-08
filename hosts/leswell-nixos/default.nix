@@ -34,6 +34,7 @@
     # "${self}/modules/nixos/environment/window-manager/niri"
     "${self}/modules/nixos/users"
     "${self}/modules/nixos/firewall"
+    "${self}/modules/nixos/kvm/input-leap"
 
     "${self}/modules/nixos/packages"
 
