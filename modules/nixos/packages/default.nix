@@ -26,17 +26,11 @@ in
     # distrobox
 
     # F
-    ulauncher
     # findutils
-
-    nerd-fonts.hack
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.code-new-roman
     chromium
 
     # jdk8
 
-    unzip
 
     discord
 
@@ -65,15 +59,12 @@ in
     wget
     htop
     btop
+    unzip
     # nvtop
-    nvtopPackages.full
-    git
-    eza
-    fzf
-    bat
     pciutils
     usbutils
-    fff
+    nvtopPackages.full
+    
     go-chromecast
     lazydocker
 
@@ -86,11 +77,6 @@ in
 
     # Notes
     obsidian
-
-    # Editors
-    vim
-    helix
-    vscode.fhs
 
     # Languages
     (python311.withPackages python-packages)

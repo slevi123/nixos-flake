@@ -42,6 +42,7 @@
     "${self}/modules/nixos/kvm/input-leap"
 
     "${self}/modules/nixos/packages"
+    "${self}/modules/nixos/i18n_i10n"
 
     "${self}/modules/nixos/cpu/power-profiles-daemon"
     # Import your generated (nixos-generate-config) hardware configuration
@@ -80,26 +81,6 @@
     };
   };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Bucharest";
-
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-
-    extraLocaleSettings = {
-      LC_ADDRESS = "hu_HU.UTF-8";
-      LC_IDENTIFICATION = "hu_HU.UTF-8";
-      LC_MEASUREMENT = "hu_HU.UTF-8";
-      LC_MONETARY = "hu_HU.UTF-8";
-      LC_NAME = "hu_HU.UTF-8";
-      LC_NUMERIC = "hu_HU.UTF-8";
-      LC_PAPER = "hu_HU.UTF-8";
-      LC_TELEPHONE = "hu_HU.UTF-8";
-      LC_TIME = "hu_HU.UTF-8";
-    };
-  };
-
   security = {
     rtkit.enable = true;
   };
@@ -112,8 +93,10 @@
     # Enable sound with pipewire.
     pipewire = {
       enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
       pulse.enable = true;
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
@@ -124,16 +107,6 @@
 
   hardware = {
     firmware = [pkgs.linux-firmware];
-  };
-
-  fonts = {
-    packages = with pkgs; [
-      aurulent-sans
-      nerd-fonts.hack
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.code-new-roman
-    ];
-    enableDefaultPackages = true;
   };
 
   environment = {

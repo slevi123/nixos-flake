@@ -1,5 +1,9 @@
 {pkgs, ...}:
 {
+  environment.systemPackages = [
+    pkgs.ulauncher
+  ];
+
   systemd.user.services = {
     ulauncher = {
       enable = true;
