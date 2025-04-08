@@ -25,12 +25,17 @@
   };
 
   imports = [
+    "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
+    
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
-    "${self}/modules/nixos/shell/phi.nix"
-    "${self}/modules/nixos/environment/display-manager/gdm"
-    "${self}/modules/nixos/environment/desktop-environment/gnome"
-    "${self}/modules/nixos/environment/window-manager/hyprland"
+
+    "${self}/modules/nixos/environment/tty/phi.nix"
+
+    "${self}/modules/nixos/environment/gui/display-manager/gdm"
+    "${self}/modules/nixos/environment/gui/desktop-environment/gnome"
+    "${self}/modules/nixos/environment/gui/window-manager/hyprland"
+    "${self}/modules/nixos/environment/gui/menu/ulauncher"
     # "${self}/modules/nixos/environment/window-manager/niri"
     "${self}/modules/nixos/users"
     "${self}/modules/nixos/firewall"
@@ -44,7 +49,7 @@
     "${self}/hardware/benq-gw2270"
 
     "${self}/modules/nixos/agenix"
-    # "${self}/modules/nixos/virtualisation/qemu.nix"
+    "${self}/modules/nixos/virtualisation/docker"
 
 
     # temporary
@@ -61,7 +66,7 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
-      # Enable flakes and new 'nix' command
+      # Enable flakes
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
     };
@@ -71,42 +76,8 @@
     hostName = "leswell-nixos";
     networkmanager = {
       enable = true;
-      wifi.powersave = false; # maybe it not letting the laptop to sleep
+      # wifi.powersave = false; # maybe it not letting the laptop to sleep
     };
-  };
-
-  systemd.user.services = {
-    ulauncher = {
-      enable = true;
-      description = "Linux Application Launcher";
-      documentation = ["https://ulauncher.io/"];
-      serviceConfig = {
-        Type = "simple";
-        Restart = "always";
-        RestartSec = "3s";
-        ExecStart = ''
-          ${pkgs.bash}/bin/bash -c "export GDK_BACKEND=wayland && export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.ulauncher}/bin/ulauncher --hide-window"
-        '';
-      };
-
-      wantedBy = ["graphical-session.target"];
-      after = ["display-manager.service"];
-    };
-    # albert = {
-    #   description = "Linux Application Launcher";
-    #   documentation = [ "https://albertlauncher.github.io/" ];
-
-    #   serviceConfig = {
-    #     Type = "simple";
-    #     Restart = "on-success";
-    #     RestartSec = "3s";
-    #     ExecStart =  ''
-    #       ${pkgs.bash}/bin/bash -c "export PATH=\"$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin/\" && exec ${pkgs.albert}/bin/albert"
-    #     '';
-    #   };
-
-    #   wantedBy = [ "graphical-session.target" ];
-    # };
   };
 
   # Set your time zone.
@@ -134,11 +105,6 @@
   };
 
   services = {
-    # Enable the X11 windowing system.
-    xserver = {
-      # enable = true;
-      videoDrivers = ["nvidia"];
-    };
 
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -170,20 +136,11 @@
     enableDefaultPackages = true;
   };
 
-  # nixpkgs.config.permittedInsecurePackages = [
-  #               "electron-25.9.0"
-  #             ];
-
   environment = {
     variables = {
       FFF_CD_ON_EXIT = "1";
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
-  };
-  
-  virtualisation.docker = {
-    enable = true;
-    # enableNvidia = true;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
