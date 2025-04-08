@@ -3,11 +3,13 @@
   imports = [
     ./zsh
     ./bash
-    ./direnv
-    ./eza
-    ./zoxide
-    ./atuin
     ./starship-prompt
-    ./interpreter/python
+    
+    ./cool-tools/direnv
+    ./cool-tools/eza
+    ./cool-tools/zoxide
+    ./cool-tools/atuin
+
+    ./languages/python
   ];
 }
