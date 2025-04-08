@@ -1,5 +1,9 @@
 {pkgs, ...}:
 {
+  imports = [
+    ./zoxide
+  ];
+
   programs = {
     bat.enable = true;
     git.enable = true;

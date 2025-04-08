@@ -24,13 +24,17 @@
 
     "${self}/modules/home-manager/environments/gui/fonts"
 
+    "${self}/modules/home-manager/program/browser"
+
+    "${self}/modules/home-manager/program/communication/discord"
+    "${self}/modules/home-manager/program/communication/matrix/element"
+    "${self}/modules/home-manager/program"
+
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"
-
-    "${self}/modules/home-manager/browser/zen.nix"
+    "${self}/modules/home-manager/ide/jetbrains"
 
     # TODO: refactor these
-    "${self}/modules/home-manager/programs"
     "${self}/modules/home-manager/packages.nix"
     "${self}/modules/home-manager/theme.nix"
     "${self}/modules/home-manager/ssh"

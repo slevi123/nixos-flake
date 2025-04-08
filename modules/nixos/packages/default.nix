@@ -6,10 +6,6 @@
 
     # F
     # findutils
-    chromium
-
-
-    discord
 
     insomnia
     vlc
@@ -86,19 +82,11 @@
 
     azure-cli
 
-    zoxide # z, better cd
-
     texlive.combined.scheme-full
 
     nmap
 
-    wineWowPackages.stable
-    qbittorrent
-
     calibre
-
-    teams-for-linux
-    whatsapp-for-linux
 
     traceroute
 
@@ -113,8 +101,6 @@
     # gtop
 
     # android-studio
-
-    fragments # gnome circle torrent client
     wireshark
 
     android-tools
@@ -134,5 +120,6 @@
     # genymotion
 
     # ls
+    baobab
   ];
 }

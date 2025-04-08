@@ -3,7 +3,6 @@
     [
       wtype
 
-      firefox
       # vivaldi
 
       spotify
@@ -12,11 +11,12 @@
       fastfetch
 
       jq
-      comma
+
       helvum # vs qpwgraph
       cava
 
       delta
+
 
       # hypr
       psmisc
@@ -49,11 +49,6 @@
       wl-clipboard
       socat
     ]
-    ++ (with pkgs.jetbrains; [
-      pycharm-professional
-      idea-ultimate
-      clion
-    ])
     ++ [
       (let
         base = pkgs.appimageTools.defaultFhsEnvArgs;
