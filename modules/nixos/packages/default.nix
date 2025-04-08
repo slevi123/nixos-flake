@@ -1,25 +1,4 @@
-{pkgs, ...}: 
-let
-  python-packages = ps:
-    with ps; [
-      pyusb
-      jupyter
-      requests
-      scrapy
-      nltk
-      numpy
-      marisa-trie
-      pygtrie
-      scapy
-      # overleaf-sync
-      #pint
-      #simpleeval
-      #parsedatetime
-      #pytz
-      #babel
-      # fuzzywuzzy
-    ];
-in
+{pkgs, ...}:
 {
   environment.systemPackages = 
   with pkgs; [
@@ -79,7 +58,6 @@ in
     obsidian
 
     # Languages
-    (python311.withPackages python-packages)
     nodejs_20
     jdk17
     jdk
@@ -94,7 +72,6 @@ in
 
     # Language Servers
     # jdtls   # java
-    # python311Packages.python-lsp-server
     taplo # toml
     yaml-language-server
     nodePackages.typescript-language-server

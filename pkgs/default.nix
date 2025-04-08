@@ -2,5 +2,5 @@
 # You can build them using 'nix build .#example'
 {pkgs ? (import ../nixpkgs.nix) {}}: {
   # example = pkgs.callPackage ./example { };
-  jdtls = pkgs.callPackage ./jdt-language-server {};
+  # jdtls = pkgs.callPackage ./jdt-language-server {};
 }
