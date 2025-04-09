@@ -1,42 +1,11 @@
-{pkgs, ...}: 
-let
-  python-packages = ps:
-    with ps; [
-      pyusb
-      jupyter
-      requests
-      scrapy
-      nltk
-      numpy
-      marisa-trie
-      pygtrie
-      scapy
-      # overleaf-sync
-      #pint
-      #simpleeval
-      #parsedatetime
-      #pytz
-      #babel
-      # fuzzywuzzy
-    ];
-in
+{pkgs, ...}:
 {
   environment.systemPackages = 
   with pkgs; [
-    distrobox
+    # distrobox
 
     # F
-    ulauncher
     # findutils
-
-    nerdfonts
-    chromium
-
-    jdk8
-
-    unzip
-
-    discord
 
     insomnia
     vlc
@@ -45,7 +14,7 @@ in
 
     # creative
     gimp
-    davinci-resolve
+    # davinci-resolve
     ardour
     drawio
 
@@ -53,25 +22,21 @@ in
 
     # Passwords
     # bitwarden
-    bitwarden-cli
+    # bitwarden-cli
 
     # cuda
     # cudatoolkit
 
     # Tools
-    gcc
     wget
     htop
     btop
+    unzip
     # nvtop
-    nvtopPackages.full
-    git
-    eza
-    fzf
-    bat
     pciutils
     usbutils
-    fff
+    nvtopPackages.full
+    
     go-chromecast
     lazydocker
 
@@ -85,28 +50,12 @@ in
     # Notes
     obsidian
 
-    # Editors
-    vim
-    helix
-    vscode.fhs
-
-    # Languages
-    (python311.withPackages python-packages)
-    nodejs_20
-    jdk17
-    jdk
-
     # Language Tools
-    gradle
 
     flex
     bison
 
-    gdb
-
     # Language Servers
-    # jdtls   # java
-    # python311Packages.python-lsp-server
     taplo # toml
     yaml-language-server
     nodePackages.typescript-language-server
@@ -133,19 +82,11 @@ in
 
     azure-cli
 
-    zoxide # z, better cd
-
     texlive.combined.scheme-full
 
     nmap
 
-    wineWowPackages.stable
-    qbittorrent
-
     calibre
-
-    teams-for-linux
-    whatsapp-for-linux
 
     traceroute
 
@@ -160,8 +101,6 @@ in
     # gtop
 
     # android-studio
-
-    fragments # gnome circle torrent client
     wireshark
 
     android-tools
@@ -173,7 +112,7 @@ in
     # chromedriver
     #selenium-server-standalone
 
-    jmeter
+
 
     # gaphor  # gnome UML tool
     libpng
@@ -181,8 +120,6 @@ in
     # genymotion
 
     # ls
-
-    # ruby_3_2
-    # rubyPackages_3_2.railties
+    baobab
   ];
 }

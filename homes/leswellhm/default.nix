@@ -1,12 +1,3 @@
-##-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-## ==================Manual Setup For==============
-##----------------------Ulauncher------------------
-## extensions, settings, theme, etc...
-##---------------------Burn My Windows-------------
-## to copy profile files in ~/.config/burn-my-windows/profiles to new user
-## ==================END of Manual Setup===========
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   self,
   inputs,
@@ -18,24 +9,35 @@
 }: {
   imports = [ 
     inputs.nix-index-database.hmModules.nix-index
-    "${self}/modules/home-manager"
-    "${self}/modules/home-manager/shell/alpha.nix"
+    "${self}/modules/home-manager/environments/languages"
+    "${self}/modules/home-manager/environments/tty/alpha.nix"
     "${self}/modules/home-manager/terminal/kitty"
 
-    "${self}/modules/home-manager/environments/window-manager/hyprland"
-    "${self}/modules/home-manager/environments/bar/waybar"
-    "${self}/modules/home-manager/environments/idle/hypridle"
-    "${self}/modules/home-manager/environments/wallpaper/hyprpaper"
-    "${self}/modules/home-manager/environments/screen-lock/hyprlock"
-    "${self}/modules/home-manager/environments/bar/waybar"
-    "${self}/modules/home-manager/environments/notification/swaync"
+    "${self}/modules/home-manager/environments/gui/window-manager/hyprland"
+    "${self}/modules/home-manager/environments/gui/bar/waybar"
+    "${self}/modules/home-manager/environments/gui/idle/hypridle"
+    "${self}/modules/home-manager/environments/gui/wallpaper/hyprpaper"
+    "${self}/modules/home-manager/environments/gui/screen-lock/hyprlock"
+    "${self}/modules/home-manager/environments/gui/bar/waybar"
+    "${self}/modules/home-manager/environments/gui/notification/swaync"
+    "${self}/modules/home-manager/environments/gui/menu/wofi"
 
-    "${self}/modules/home-manager/environments/menu/wofi"
+    "${self}/modules/home-manager/environments/gui/fonts"
+
+    "${self}/modules/home-manager/program/browser"
+
+    "${self}/modules/home-manager/program/communication/discord"
+    # "${self}/modules/home-manager/program/communication/matrix/element"
+    "${self}/modules/home-manager/program"
 
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"
+    "${self}/modules/home-manager/ide/jetbrains"
 
-    "${self}/modules/home-manager/browser/zen.nix"
+    # TODO: refactor these
+    "${self}/modules/home-manager/packages.nix"
+    "${self}/modules/home-manager/theme.nix"
+    "${self}/modules/home-manager/ssh"
   ];
   
 
@@ -46,15 +48,6 @@
       layout = "us,hu+qwerty,ro"; # Define the layouts
       options = "lv3:ralt_switch"; # Set XKB options
     }; */
-    shellAliases = {
-      ls = "eza";
-      lstree = "exa --tree";
-      ll = "exa -l";
-      la = "exa -a";
-      lla = "exa -la";
-      py = "/run/current-system/sw/bin/python -q";
-      # z = "zoxide";
-    };
 
     sessionVariables.NIXOS_OZONE_WL = "1";
   };

@@ -27,7 +27,7 @@
               "${self}/hosts/leswell-nixos"
 
               inputs.home-manager.nixosModules.home-manager
-              inputs.niri.nixosModules.niri
+              # inputs.hyprland.nixosModules.default
               {
                 home-manager = {
                     users.leswellhm = ./homes/leswellhm;
@@ -36,7 +36,7 @@
                     useUserPackages = true;
                     sharedModules = [
                       # modules shared between all users
-                      ./modules/home-manager/environments/desktop-environment/gnome
+                      ./modules/home-manager/environments/gui/desktop-environment/gnome
                     ];
                     backupFileExtension = "hm-backup"; 
                 };
@@ -88,13 +88,15 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.713184.tar.gz";
-    hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.2090.tar.gz";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      # url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -117,7 +119,7 @@
     
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     awesome-neovim-plugins.url = "github:m15a/flake-awesome-neovim-plugins";
@@ -127,10 +129,14 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
+    # };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";

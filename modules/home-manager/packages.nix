@@ -3,8 +3,7 @@
     [
       wtype
 
-      firefox
-      vivaldi
+      # vivaldi
 
       spotify
       arduino-ide
@@ -16,6 +15,7 @@
       cava
 
       delta
+
 
       # hypr
       psmisc
@@ -48,16 +48,11 @@
       wl-clipboard
       socat
     ]
-    ++ (with pkgs.jetbrains; [
-      pycharm-professional
-      idea-ultimate
-      clion
-    ])
     ++ [
       (let
         base = pkgs.appimageTools.defaultFhsEnvArgs;
       in
-        pkgs.buildFHSUserEnv (base
+        pkgs.buildFHSEnv (base
           // {
             name = "fhs";
             targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config];
