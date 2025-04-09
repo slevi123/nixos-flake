@@ -5,6 +5,7 @@
     "$menu" = "ulauncher-toggle";
     bind = [
       "SUPER, Q, exec, $terminal"
+      "SUPER, Z, exec, zen"
       "SUPER, C, killactive,"
       "SUPER, M, exec, uwsm stop"
       "SUPER, f, fullscreen"
