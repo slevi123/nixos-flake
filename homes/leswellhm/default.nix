@@ -9,20 +9,20 @@
 }: {
   imports = [ 
     inputs.nix-index-database.hmModules.nix-index
-    "${self}/modules/home-manager/environments/languages"
-    "${self}/modules/home-manager/environments/tty/alpha.nix"
+    "${self}/modules/home-manager/environment/languages"
+    "${self}/modules/home-manager/environment/tty/alpha.nix"
     "${self}/modules/home-manager/terminal/kitty"
 
-    "${self}/modules/home-manager/environments/gui/window-manager/hyprland"
-    "${self}/modules/home-manager/environments/gui/bar/waybar"
-    "${self}/modules/home-manager/environments/gui/idle/hypridle"
-    "${self}/modules/home-manager/environments/gui/wallpaper/hyprpaper"
-    "${self}/modules/home-manager/environments/gui/screen-lock/hyprlock"
-    "${self}/modules/home-manager/environments/gui/bar/waybar"
-    "${self}/modules/home-manager/environments/gui/notification/swaync"
-    "${self}/modules/home-manager/environments/gui/menu/wofi"
+    "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
+    "${self}/modules/home-manager/environment/gui/bar/waybar"
+    "${self}/modules/home-manager/environment/gui/idle/hypridle"
+    "${self}/modules/home-manager/environment/gui/wallpaper/hyprpaper"
+    "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
+    "${self}/modules/home-manager/environment/gui/bar/waybar"
+    "${self}/modules/home-manager/environment/gui/notification/swaync"
+    "${self}/modules/home-manager/environment/gui/menu/wofi"
 
-    "${self}/modules/home-manager/environments/gui/fonts"
+    "${self}/modules/home-manager/environment/gui/fonts"
 
     "${self}/modules/home-manager/program/browser"
 

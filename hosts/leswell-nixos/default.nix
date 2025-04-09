@@ -39,13 +39,12 @@
     # "${self}/modules/nixos/environment/window-manager/niri"
     "${self}/modules/nixos/users"
     "${self}/modules/nixos/firewall"
-    "${self}/modules/nixos/kvm/input-leap"
+    # "${self}/modules/nixos/kvm/input-leap"
 
     "${self}/modules/nixos/packages"
     "${self}/modules/nixos/i18n_i10n"
 
     "${self}/modules/nixos/cpu/power-profiles-daemon"
-    # Import your generated (nixos-generate-config) hardware configuration
     "${self}/hardware/lenovo-gaming3-15ach6"
     "${self}/hardware/benq-gw2270"
 
