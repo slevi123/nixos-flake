@@ -72,6 +72,7 @@
         "format-window-separator": " ",
         "window-rewrite-default": ".",
         "window-rewrite": {
+            "class<org.gnome.Nautilus>": "", // Windows whose titles contain "youtube"
             "title<.*[yY]ou[tT]ube.*>": "", // Windows whose titles contain "youtube"
             "class<firefox>": "", // Windows whose classes are "firefox"
             "class<zen-twilight>": "", // Windows whose classes are "firefox"

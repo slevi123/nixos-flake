@@ -2,6 +2,8 @@
   pkgs,
   config,
   lib,
+  inputs,
+  system,
   ...
 }: {
   nix.settings = {
@@ -31,6 +33,7 @@
     #   enable = true;
     # }
     hyprlock = {
+      # package = inputs.nixpkgs-stable.legacyPackages."${system}".hyprlock;
       enable = true;
     };
   };

@@ -77,7 +77,7 @@
         # acessible through 'nix build', 'nix shell', etc
         packages = {
           nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" {inherit pkgs inputs;} );
-          zen-browser = inputs.zen-browser.packages."${system}".twilight;
+          # zen-browser = inputs.zen-browser.packages."${system}".twilight;
         } // import ./pkgs {inherit pkgs;};
       };
 
@@ -90,9 +90,10 @@
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    hardware.url = "github:NixOS/nixos-hardware";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
+    hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {
       # url = "github:nix-community/home-manager/release-24.11";
@@ -138,7 +139,8 @@
     #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
     # };
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
