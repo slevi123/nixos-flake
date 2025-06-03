@@ -77,7 +77,6 @@
         # acessible through 'nix build', 'nix shell', etc
         packages = {
           nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" {inherit pkgs inputs;} );
-          # zen-browser = inputs.zen-browser.packages."${system}".twilight;
         } // import ./pkgs {inherit pkgs;};
       };
 
@@ -138,9 +137,10 @@
     # hyprland = {
     #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
     # };
-
-    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
