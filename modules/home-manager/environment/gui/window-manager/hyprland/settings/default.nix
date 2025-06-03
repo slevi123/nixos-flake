@@ -21,5 +21,6 @@
     ./program/overskride
 
     # ./plugin/hyprexpo.nix
+    ./plugin/hyprspace.nix
   ];
 }

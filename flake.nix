@@ -142,6 +142,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+
+      # # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
+      # inputs.hyprland.follows = "hyprland";
+    };
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # open-vsx.ankitpati.extname
