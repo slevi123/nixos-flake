@@ -145,10 +145,13 @@
 
     hyprspace = {
       url = "github:KZDKM/Hyprspace";
-
       # # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
       # inputs.hyprland.follows = "hyprland";
     };
+    # hypr-dynamic-cursors = {
+    #   url = "github:VirtCode/hypr-dynamic-cursors";
+    #   # inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
+    # };
     # ====might-be-useful====
     # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # open-vsx.ankitpati.extname

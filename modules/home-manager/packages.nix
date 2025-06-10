@@ -47,6 +47,7 @@
       clipse
       wl-clipboard
       socat
+      tldr
     ]
     ++ [
       (let

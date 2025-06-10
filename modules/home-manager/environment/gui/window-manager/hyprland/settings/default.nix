@@ -22,5 +22,7 @@
 
     # ./plugin/hyprexpo.nix
     ./plugin/hyprspace.nix
+    ./plugin/dynamic-cursors.nix
+    # ./plugin/hyprfocus.nix # broken
   ];
 }

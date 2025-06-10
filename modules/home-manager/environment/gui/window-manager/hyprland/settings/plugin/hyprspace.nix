@@ -6,7 +6,8 @@
     ];
     settings = {
       bind = [
-        "SUPER, grave, overview:toggle" # can be: toggle, off/disable or on/enable
+        "SUPER, tab, overview:toggle" # can be: toggle, off/disable or on/enable
+        
       ];
     };
   };
