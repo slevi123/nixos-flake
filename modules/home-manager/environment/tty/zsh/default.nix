@@ -23,7 +23,7 @@
         extended = true; # save timestamps
       };
 
-      initExtra = ''
+      initContent = ''
         # Bind Ctrl + Left Arrow to move backward by word
         bindkey "^[[1;5D" backward-word
         # Bind Ctrl + Right Arrow to move forward by word

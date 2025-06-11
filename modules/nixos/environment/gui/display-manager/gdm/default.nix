@@ -1,15 +1,13 @@
 {...}:
 {
   services = {
-    xserver = {
-      displayManager = {
-        # defaultSession = "gnome";
-        gdm = {
-          enable = true;
-          # debug = true;
-          wayland = true;
-          banner = "Welcome explorer 🤠";
-        };
+    displayManager = {
+      # defaultSession = "gnome";
+      gdm = {
+        enable = true;
+        # debug = true;
+        wayland = true;
+        banner = "Welcome explorer 🤠";
       };
     };
   };
