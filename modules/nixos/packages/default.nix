@@ -17,6 +17,7 @@
     # davinci-resolve
     ardour
     drawio
+    zafiro-icons
 
     # Search
 

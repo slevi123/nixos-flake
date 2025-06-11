@@ -11,21 +11,24 @@
   };
 
   gtk = {
-    enable = false;
+    enable = true;
     # font.name = "TeX Gyre Adventor 10";
     font.name = "Hack Nerd Font Mono 16";
     theme = {
-      name = "Adwaita";
-      # package = pkgs.gtk3-theme;
+      name = "Dark";
+      package = pkgs.zafiro-icons;
     };
     # iconTheme = {
     # name = "Posys Cursor";
     # package = pkgs.posy-cursors;
     # };
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
+    gtk3 = {
+
+      extraConfig = {
+        Settings = ''
+          gtk-application-prefer-dark-theme=1
+        '';
+      };
     };
     gtk4.extraConfig = {
       Settings = ''

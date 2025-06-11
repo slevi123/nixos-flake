@@ -5,7 +5,7 @@
     ./input.nix
     ./startup.nix
     ./env.nix
-    ./keybindings
+    ./keymaps
     ./layouts.nix
     ./look-and-feel.nix
     ./windowrules

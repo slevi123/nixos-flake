@@ -6,5 +6,6 @@
     ./programs-basic.nix
     ./mouse.nix
     ./xf86.nix
+    ./group-map.nix
   ];
 }
