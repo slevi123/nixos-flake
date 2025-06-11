@@ -16,8 +16,8 @@
     ],
     "modules-center": [
         "hyprland/submap",
-        "hyprland/workspaces",
-        "niri/workspaces"
+        "hyprland/workspaces"
+        // "niri/workspaces"
     ],
     "modules-right": [
         // "mpd",
@@ -75,9 +75,9 @@
             "class<org.gnome.Nautilus>": "", // Windows whose titles contain "youtube"
             "title<.*[yY]ou[tT]ube.*>": "", // Windows whose titles contain "youtube"
             "class<firefox>": "", // Windows whose classes are "firefox"
-            "class<zen-twilight>": "", // Windows whose classes are "firefox"
+            "class<zen-twilight>": "󰂡", // Windows whose classes are "firefox"
+            "class<zen>": "", // Windows whose classes are "firefox"
             "class<vivaldi-stable>": "",
-            "class<spotify>": "",
             "class<chromium-browser>": "",
             // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
@@ -85,6 +85,12 @@
             "kitty": "",
             "guake": "",
             "blackbox": "",
+            "class<discord>":"",
+            "class<spotify>": "",
+            "class<obsidian>":"󰛼"
+        },
+        "format-icons": {
+            "special": ""
         },
     },
     "battery": {

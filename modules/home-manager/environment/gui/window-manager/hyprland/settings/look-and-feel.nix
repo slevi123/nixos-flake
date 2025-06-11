@@ -11,7 +11,7 @@
         gaps_in = 5;
         gaps_out = 15;
 
-        border_size = 1;
+        border_size = 2;
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false;
@@ -24,26 +24,43 @@
       };
 
       decoration = {
-        rounding = 10;
+        # rounding = 10;
 
         # Change transparency of focused and unfocused windows
-        active_opacity = "0.95505050";
-        inactive_opacity = "0.8";
+        # active_opacity = "0.95505050";
+        # inactive_opacity = "0.8";
 
+        # shadow = {
+        #     enabled = true;
+        #     range = 4;
+        #     render_power = 3;
+        #     color = "rgba(1a1a1aee)";
+        # };
+
+        # blur = {
+        #     enabled = true;
+        #     size = 3;
+        #     passes = 1;
+
+        #     vibrancy = "0.1696";
+        # };
+        rounding = 15;
+        rounding_power = 4.0;
+        inactive_opacity = 0.54;
+        active_opacity = 0.90;
         shadow = {
-            enabled = true;
-            range = 4;
-            render_power = 3;
-            color = "rgba(1a1a1aee)";
+          enabled = false;
         };
+        # drop_shadow = false;
 
-        # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
-            enabled = true;
-            size = 3;
-            passes = 1;
-
-            vibrancy = "0.1696";
+          enabled = true;
+          size = 10;
+          passes = 3;
+          new_optimizations = true;
+          ignore_opacity = true;
+          noise = 0;
+          brightness = 0.90;
         };
       };
 
@@ -82,8 +99,11 @@
     extraConfig = ''
       general {
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-        col.inactive_border = rgba(595959aa)
+        # col.active_border = rgba(245, 66, 84, 0.98) rgba(8, 7, 7, 0.83) 45deg
+        col.active_border = rgba(F54254FA) rgba(080707D4) 45deg
+        # col.inactive_border = rgba(595959aa)
+        # col.inactive_border = rgba(128, 122, 122, 0.23) rgba(8, 7, 7, 0.18) 90deg
+        col.inactive_border = rgba(807A7A3B) rgba(0807072E) 90deg
       }
     '';
   };

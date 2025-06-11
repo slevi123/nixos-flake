@@ -6,7 +6,7 @@
     ];
     settings = {
       bind = [
-        "SUPER, tab, overview:toggle" # can be: toggle, off/disable or on/enable
+        "SUPER, Tab, overview:toggle" # can be: toggle, off/disable or on/enable
         
       ];
     };
