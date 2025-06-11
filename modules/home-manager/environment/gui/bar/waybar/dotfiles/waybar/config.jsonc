@@ -85,6 +85,7 @@
             "kitty": "",
             "guake": "",
             "blackbox": "",
+            "class<FFPWA-01JXFJG7WSEKP2NJTM8M74766W>":"",
             "class<discord>":"",
             "class<spotify>": "",
             "class<obsidian>":"󰛼"
@@ -195,7 +196,7 @@
     "custom/notification": {
         // TODO: to customize
         "tooltip": false,
-        "format": "{icon}",
+        "format": "{} {icon}",
         "format-icons": {
              "notification": "",
              "none": "",
