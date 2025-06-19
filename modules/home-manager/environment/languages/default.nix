@@ -2,7 +2,8 @@
   imports = [
     ./c
     ./java
-    ./nodejs
+    ./javascript/nodejs
+    ./javascript/pnpm.nix
     ./python
   ];
 }
