@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-options="⏻ Shutdown\n󰜉 Reboot\n󰗽 Logout\n󰏥 Suspend\n Lock"
+# TODO: to be created, external monitor contorl
+
+
+options="Turn On Display (DDCUTIL)\n Turn off display"
 selected=$(echo -e $options | wofi --dmenu --prompt="Power Menu" --width=200 --height=200 )
 
 case $selected in

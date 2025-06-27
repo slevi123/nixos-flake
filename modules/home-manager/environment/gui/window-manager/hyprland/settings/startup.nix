@@ -6,10 +6,10 @@
       "hyprsunset -t 5000"
       "swaync & avizo-service &"
       "udiskie --smart-tray &"
-      "$CHARM_BAR &"
+      "uwsm app -- $CHARM_BAR &"
       "$CHARM_IDLE &"
       "clipse -listen &"
-      "$CHARM_WALLPAPER &"
+      "uwsm app -- $CHARM_WALLPAPER &"
       "~/.charm/scripts/hyprland/custom-ipc-handler.sh"
     ];
 

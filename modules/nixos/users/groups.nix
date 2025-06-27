@@ -4,6 +4,7 @@
     defaultUserShell = pkgs.zsh;
     groups = {
       gitprojects = {};
+      i2c = {};
     };
   };
 }
