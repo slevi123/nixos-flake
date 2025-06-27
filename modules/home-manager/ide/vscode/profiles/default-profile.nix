@@ -1,7 +1,8 @@
-{pkgs, ...}:
+{pkgs, inputs, ...}:
 {
   programs.vscode.profiles.default = {
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-extensions;
+    with inputs.nix-vscode-extensions.extensions.${pkgs.system}; [
       k--kato.intellij-idea-keybindings
       mkhl.direnv
       mhutchie.git-graph
@@ -16,7 +17,7 @@
       pkief.material-icon-theme
 
       naumovs.color-highlight
-      # ewen-lbh.vscode-hyprls # not added yet to nixpkgs
+      vscode-marketplace.ewen-lbh.vscode-hyprls
     ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
