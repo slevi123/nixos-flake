@@ -11,6 +11,7 @@
     inputs.nix-index-database.hmModules.nix-index
     "${self}/modules/home-manager/environment/languages"
     "${self}/modules/home-manager/environment/tty/alpha.nix"
+    "${self}/modules/home-manager/environment/web-stack"
     "${self}/modules/home-manager/terminal/kitty"
 
     "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
