@@ -72,8 +72,12 @@
         "format-window-separator": " ",
         "window-rewrite-default": ".",
         "window-rewrite": {
-            "class<org.gnome.Nautilus>": "", // Windows whose titles contain "youtube"
+            "class<org.gnome.Nautilus>": "",
+
+            // browser tabs
             "title<.*[yY]ou[tT]ube.*>": "", // Windows whose titles contain "youtube"
+            "title<.*[dD]eep[sS]eek.*>": "󱧎", // Windows whose titles contain "deepseek"
+
             "class<firefox>": "", // Windows whose classes are "firefox"
             "class<zen-twilight>": "󰂡", // Windows whose classes are "firefox"
             "class<zen>": "", // Windows whose classes are "firefox"
@@ -89,9 +93,16 @@
             "class<discord>":"",
             "class<spotify>": "",
             "class<obsidian>":"󰛼",
-            "class<Insomnia>":""
+            "class<Insomnia>":"",
+            "class<dev.warp.Warp>":""
         },
         "format-icons": {
+            "sp1":"󰩳1",
+            "sp2":"󰩳2",
+            "sp3":"󰩳3",
+            "sp4":"󰩳4",
+            "sp5":"󰩳5",
+            "sp6":"󰩳6",
             "special": ""
         },
     },
