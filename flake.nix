@@ -135,7 +135,9 @@
     # };
 
     # hyprland = {
-    #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
+    #   # url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
+    #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.49.0";
+    #   # url = "github:hyprwm/Hyprland/nix";
     # };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
@@ -149,10 +151,11 @@
       # inputs.hyprland.follows = "hyprland";
     };
 
-    hyprland-easymotion = {
-      url = "github:zakk4223/hyprland-easymotion";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland-easymotion = {
+    #   url = "github:zakk4223/hyprland-easymotion";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     # hypr-dynamic-cursors = {
     #   url = "github:VirtCode/hypr-dynamic-cursors";
@@ -163,6 +166,8 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ashell.url = "github:MalpenZibo/ashell";
     # open-vsx.ankitpati.extname
     # vscode-marketplace.extname
   };

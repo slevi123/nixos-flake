@@ -17,16 +17,17 @@
 
     "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
     "${self}/modules/home-manager/environment/gui/bar/waybar"
+    "${self}/modules/home-manager/environment/gui/bar/ashell"
     "${self}/modules/home-manager/environment/gui/idle/hypridle"
     "${self}/modules/home-manager/environment/gui/wallpaper/hyprpaper"
     "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
-    "${self}/modules/home-manager/environment/gui/bar/waybar"
     "${self}/modules/home-manager/environment/gui/notification/swaync"
     "${self}/modules/home-manager/environment/gui/menu/wofi"
 
     "${self}/modules/home-manager/environment/gui/fonts"
 
     "${self}/modules/home-manager/program/browser"
+    "${self}/modules/home-manager/program/file-manager/superfile.nix"
 
     "${self}/modules/home-manager/program/communication/discord"
     # "${self}/modules/home-manager/program/communication/matrix/element"
