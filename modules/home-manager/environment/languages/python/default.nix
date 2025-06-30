@@ -1,4 +1,7 @@
-{pkgs, ...} : 
+{pkgs, inputs, ...} : 
+let
+  pkgs-stable = inputs.nixpkgs-stable.legacyPackages."${pkgs.system}";
+in
 {
   home.sessionVariables = {
     PYTHONSTARTUP = ./python_startup.py;
@@ -14,7 +17,7 @@
       python-packages = ps:
         with ps; [
           pyusb
-          jupyter
+          # jupyter
           requests
           scrapy
           nltk
@@ -32,7 +35,7 @@
         ];
     in
     [
-          (pkgs.python311.withPackages python-packages)
+          (pkgs-stable.python313.withPackages python-packages)
     ];
   };
 }

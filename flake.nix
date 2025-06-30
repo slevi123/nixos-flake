@@ -89,7 +89,7 @@
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     hardware.url = "github:NixOS/nixos-hardware";
@@ -118,7 +118,7 @@
     };
     
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim/nixos-25.05";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
