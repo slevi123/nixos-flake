@@ -25,5 +25,6 @@
     ./plugin/hyprscrolling.nix
     ./plugin/dynamic-cursors.nix
     # ./plugin/hyprfocus.nix # broken
+    ./permissions.nix
   ];
 }
