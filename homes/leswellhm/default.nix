@@ -13,6 +13,7 @@
     "${self}/modules/home-manager/environment/tty/alpha.nix"
     "${self}/modules/home-manager/environment/web-stack"
     "${self}/modules/home-manager/terminal/kitty"
+    "${self}/modules/home-manager/terminal/warp"
 
     "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
     "${self}/modules/home-manager/environment/gui/bar/waybar"
