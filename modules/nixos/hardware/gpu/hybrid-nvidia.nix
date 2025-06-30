@@ -18,8 +18,10 @@
     };
 
     nvidia = {
-      open = false; # Set to false for proprietary drivers
+      open = true; # Set to false for proprietary drivers
       modesetting.enable = true;
+      powerManagement.enable = true;
+
 
       # prime = {
       #   # allowExternalGpu = true;
