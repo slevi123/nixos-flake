@@ -148,6 +148,12 @@
       # # Hyprspace uses latest Hyprland. We declare this to keep them in sync.
       # inputs.hyprland.follows = "hyprland";
     };
+
+    hyprland-easymotion = {
+      url = "github:zakk4223/hyprland-easymotion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hypr-dynamic-cursors = {
     #   url = "github:VirtCode/hypr-dynamic-cursors";
     #   # inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
