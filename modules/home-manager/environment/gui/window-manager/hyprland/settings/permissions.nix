@@ -4,8 +4,8 @@
     ecosystem = {
       enforce_permissions = true;
     };
-    permission = {
+    permission = [
       "/nix/store/.*hyprland.*/bin/hyprctl, plugin, allow"
-    };
+    ];
   };
 }
