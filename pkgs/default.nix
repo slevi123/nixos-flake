@@ -3,4 +3,5 @@
 {pkgs ? (import ../nixpkgs.nix) {}}: {
   # example = pkgs.callPackage ./example { };
   # jdtls = pkgs.callPackage ./jdt-language-server {};
+  anythingllm = pkgs.callPackage ./anythingllm.nix {};
 }

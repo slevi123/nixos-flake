@@ -28,6 +28,7 @@
 
     "${self}/modules/home-manager/program/browser"
     "${self}/modules/home-manager/program/file-manager/superfile.nix"
+    # "${self}/modules/home-manager/program/ai/anythingllm.nix"
 
     "${self}/modules/home-manager/program/communication/discord"
     # "${self}/modules/home-manager/program/communication/matrix/element"
