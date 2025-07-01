@@ -7,7 +7,7 @@ log_level = "warn"
 # if the outputs is not available the bar will be displayed in the active output
 outputs = "All"
 # Bar position, possible values Top | Bottom.
-position = "Bottom"
+position = "Top"
 # App launcher command, it will be used to open the launcher,
 # without a value the related button will not appear
 # optional, default None
@@ -39,7 +39,7 @@ truncate_title_after_length = 150
 # optional, the following is the default configuration
 [modules]
 # The modules that will be displayed on the left side of the status bar
-left = ["CustomNotifications",  "WindowTitle", "Updates", "MediaPlayer"]
+left = ["CustomNotifications",  "WindowTitle", "MediaPlayer"]
 # The modules that will be displayed in the center of the status bar
 center = [ "KeyboardSubmap", "Workspaces"  ]
 # The modules that will be displayed on the right side of the status bar
