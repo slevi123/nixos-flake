@@ -35,7 +35,7 @@
     leswellhm = {
       description = "initial";
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "docker" "users" "plugdev" "usb"];
+      extraGroups = ["networkmanager" "wheel" "docker" "users" "plugdev" "usb" "network"];
       shell = pkgs.zsh;
     };
     leswell = {

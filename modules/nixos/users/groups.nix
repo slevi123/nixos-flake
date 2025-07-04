@@ -5,6 +5,7 @@
     groups = {
       gitprojects = {};
       i2c = {};
+      network = {};
     };
   };
 }

@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
 options="⏻ Shutdown\n󰜉 Reboot\n󰗽 Logout\n󰏥 Suspend\n Lock"
-selected=$(echo -e $options | wofi --dmenu --prompt="Power Menu" --width=200 --height=200 )
+selected=$(echo -e $options | wofi --dmenu --prompt="Power Menu" --width=200 --lines )
 
 case $selected in
   '⏻ Shutdown')
-    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Shutdown?" --width=150 --height=100)
+    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Shutdown?" --width=150 --lines)
     [ "$confirm" = "Yes" ] && systemctl poweroff
     ;;
   '󰜉 Reboot')
-    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Reboot?" --width=150 --height=100)
+    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Reboot?" --width=150 --lines)
     [ "$confirm" = "Yes" ] && systemctl reboot
     ;;
   '󰗽 Logout')
-    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Logout?" --width=150 --height=100)
+    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Logout?" --width=150 --lines)
     [ "$confirm" = "Yes" ] && uwsm stop  # Replace with `hyprctl dispatch exit` for Hyprland
     ;;
   '󰏥 Suspend')
-    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Suspend?" --width=150 --height=100)
+    confirm=$(echo -e "Yes\nNo" | wofi --dmenu --prompt="Suspend?" --width=150 --lines)
     [ "$confirm" = "Yes" ] && systemctl suspend
     ;;
   ' Lock')

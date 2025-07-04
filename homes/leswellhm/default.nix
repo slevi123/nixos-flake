@@ -28,6 +28,8 @@
 
     "${self}/modules/home-manager/program/browser"
     "${self}/modules/home-manager/program/file-manager/superfile.nix"
+    "${self}/modules/home-manager/program/color-picker/hyprpicker.nix"
+    "${self}/modules/home-manager/program/calculator/qalc.nix"
     # "${self}/modules/home-manager/program/ai/anythingllm.nix"
 
     "${self}/modules/home-manager/program/communication/discord"
@@ -42,6 +44,7 @@
     "${self}/modules/home-manager/packages.nix"
     "${self}/modules/home-manager/theme.nix"
     "${self}/modules/home-manager/ssh"
+    "${self}/modules/home-manager/networking/iw-frontend"
   ];
   
 

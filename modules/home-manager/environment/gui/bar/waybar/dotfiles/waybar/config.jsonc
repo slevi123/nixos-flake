@@ -119,13 +119,15 @@
     "wireplumber": {
         "format": "{icon}",
         "format-muted": "",  //"",
-        "on-click": "pkill helvum || helvum",
+        "on-click-right": "pkill helvum || helvum",
+        "on-click": "$HOME/.charm/scripts/hyprland/wofi/audio-changer.py",
         "format-icons": ["", "", "", "", ""], // ["", "", ""],
         "tooltip-format": "Volume: {volume}%"
     },
 
     "bluetooth": {
-        "on-click": "overskride",
+        "on-click-right": "overskride",
+        "on-click": " kitty --title 'bluetuith' bluetuith"
     },
 
     "backlight": {

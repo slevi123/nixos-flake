@@ -17,7 +17,7 @@
     ./program/discord.nix
     ./program/ulauncher.nix
     ./program/wofi
-    ./program/wofi/bluetuith.nix
+    ./program/bluetuith.nix
     ./program/overskride
 
     # ./plugin/hyprexpo.nix

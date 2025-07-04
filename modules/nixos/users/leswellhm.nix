@@ -3,6 +3,6 @@
   users.users.leswellhm = {
     description = "levi (hm)";
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker" "users" "plugdev" "usb" "libvirtd" "gitprojects" "i2c"];
+    extraGroups = ["networkmanager" "wheel" "docker" "users" "plugdev" "usb" "libvirtd" "gitprojects" "i2c" "network"];
   };
 }

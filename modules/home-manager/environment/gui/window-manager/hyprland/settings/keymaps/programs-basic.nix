@@ -17,7 +17,8 @@
       "SUPER SHIFT, A, exec, ~/.config/ashell/toggle.sh # Toggle ashell"
       "SUPER, L, exec, hyprlock"
       "SUPER, Space, exec, ~/.charm/scripts/hyprland/switch-lang.sh # Switch language"
-      "SUPER SHIFT, B, exec, ~/.charm/scripts/hyprland/toggle-hyprsunset.sh # Toggle bluelight (hypesunset)"
+      "SUPER SHIFT, B, exec, ~/.charm/scripts/hyprland/toggle-hyprsunset.sh # Toggle bluelight (hyprsunset)"
+      "SUPER, P, exec, ~/.charm/scripts/hyprland/wofi/extra-commands.sh"
     ];
   };
 }

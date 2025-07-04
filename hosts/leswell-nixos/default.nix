@@ -51,6 +51,8 @@
     "${self}/modules/nixos/agenix"
     "${self}/modules/nixos/virtualisation/docker"
 
+    "${self}/modules/nixos/hardware/networking"
+
 
     # temporary
     # "${self}/modules/nixos/ide/jupyter" # for faculty
@@ -74,10 +76,6 @@
 
   networking = {
     hostName = "leswell-nixos";
-    networkmanager = {
-      enable = true;
-      # wifi.powersave = false; # maybe it not letting the laptop to sleep
-    };
   };
 
   security = {

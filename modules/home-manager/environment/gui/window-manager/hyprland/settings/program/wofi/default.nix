@@ -6,7 +6,9 @@
       "SUPER, H, exec, ~/.charm/scripts/hyprland/wofi/cheatsheet.sh # Open binding cheatsheet"
       "SUPER SHIFT, P, exec, ~/.charm/scripts/hyprland/wofi/power-menu # Open power menu"
     ];
-    windowrulev2 = [
+    layerrule = [
+      "dimaround, wofi"
+      "blur, wofi"
     ];
   };
 }
