@@ -31,7 +31,6 @@
     # Tools
     wget
     htop
-    btop
     unzip
     # nvtop
     pciutils

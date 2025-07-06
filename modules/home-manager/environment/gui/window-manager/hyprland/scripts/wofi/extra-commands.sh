@@ -31,6 +31,8 @@ options_ss_region_clipboard="[HYPRSHOT]: Screenshot Region to clipboard"
 options_ss_window_clipboard="[HYPRSHOT]: Screenshot Window to clipboard"
 options_ss_monitor_clipboard="[HYPRSHOT]: Screenshot Monitor to clipboard"
 
+options_script_shortcuts="[CHARM]: Show keybind cheatsheet (Shortcuts)"
+
 # PIN WINDOWS
 options_hyprland_toogle_pin="[HYPRLAND]: Pin floating window (Show on all workspaces)"
 # TAGS
@@ -53,7 +55,8 @@ $options_ss_monitor\n\
 $options_ss_region_clipboard\n\
 $options_ss_window_clipboard\n\
 $options_ss_monitor_clipboard\n\
-$options_hyprland_toogle_pin\
+$options_hyprland_toogle_pin\n\
+$options_script_shortcuts\
 "
 selected=$(echo -e $options | wofi --dmenu --prompt="Quick Menu" --lines --width=75% )
 
@@ -149,6 +152,9 @@ case $selected in
     else
       hyprctl notify 0 10000 "rgb(ff0000)" "fontsize:20 $result"
     fi
+    ;;
+  "$options_script_shortcuts")
+      $HOME/.charm/scripts/hyprland/wofi/cheatsheet.sh
     ;;
   =*)
     problem=$(strip_equals $selected)
