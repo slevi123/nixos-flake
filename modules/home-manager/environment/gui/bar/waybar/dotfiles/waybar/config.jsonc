@@ -77,6 +77,7 @@
             // browser tabs
             "title<.*[yY]ou[tT]ube.*>": "", // Windows whose titles contain "youtube"
             "title<.*[dD]eep[sS]eek.*>": "󱧎", // Windows whose titles contain "deepseek"
+            "title<.*Picture[ -]in[ -][Pp]icture.*>": "", // pip
 
             "class<firefox>": "", // Windows whose classes are "firefox"
             "class<zen-twilight>": "󰂡", // Windows whose classes are "firefox"

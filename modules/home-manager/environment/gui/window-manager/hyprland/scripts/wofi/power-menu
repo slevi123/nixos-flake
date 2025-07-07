@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 options="⏻ Shutdown\n󰜉 Reboot\n󰗽 Logout\n󰏥 Suspend\n Lock"
-selected=$(echo -e $options | wofi --dmenu --prompt="Power Menu" --width=200 --lines )
+selected=$(echo -e $options | wofi --dmenu --prompt="Power Menu" --width=6 --lines )
 
 case $selected in
   '⏻ Shutdown')

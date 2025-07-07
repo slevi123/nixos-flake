@@ -34,7 +34,7 @@ options_ss_monitor_clipboard="[HYPRSHOT]: Screenshot Monitor to clipboard"
 options_script_shortcuts="[CHARM]: Show keybind cheatsheet (Shortcuts)"
 
 # PIN WINDOWS
-options_hyprland_toogle_pin="[HYPRLAND]: Pin floating window (Show on all workspaces)"
+options_hyprland_toogle_pin=" : Pin floating window (Show on all workspaces)"
 # TAGS
 
 # Volume / Light Control

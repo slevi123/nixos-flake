@@ -1,0 +1,72 @@
+window {
+  margin: 0px;
+  /* border: 1px solid #bd93f9; */
+  border: 2px solid rgb(169, 49, 59);
+  /* background-color: rgba(0, 32, 214, 0.553); */
+  background-color: rgba(39, 24, 48, 0.555);
+  border-radius: 20px;
+}
+  
+#input {
+  /* margin: 5px; */
+  width: 0px;
+  height: 0px;
+  border: none;
+  color: #f8f8f2;
+  background-color: rgba(68, 71, 90, 0);
+  border-radius: 20px;
+}
+  
+#inner-box {
+  margin: 5px;
+  border: none;
+  /* background-color: rgba(76, 188, 7, 0.631); */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+#inner-box #text {
+  margin-left: 30px;
+}
+  
+#outer-box {
+  margin: 5px;
+  border: none;
+  /* background-color: rgba(255, 0, 0, 0.651); */
+  /* background-color: rgba(39, 24, 48, 0.555); */
+  margin: 10px 16px;
+}
+  
+#scroll {
+  margin: 0px;
+  border: none;
+}
+  
+#text {
+  margin: 0px;
+  border: none;
+  color: #f8f8f2;
+} 
+  
+#entry.activatable #text {
+  color: #282a36;
+  border-radius: 20px;
+}
+
+#entry > * {
+  color: #f8f8f2;
+  border-radius: 20px;
+  /* border: 1px solid rgb(0, 229, 42); */
+
+}
+  
+#entry:selected {
+  background-color: rgba(68, 71, 90, 0.705);
+  border: 2px solid rgba(216, 0, 0, 0.176);
+  border-radius: 20px;
+
+}
+  
+#entry:selected #text {
+  font-weight: bold;
+}
