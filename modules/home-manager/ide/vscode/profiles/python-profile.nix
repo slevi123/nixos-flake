@@ -1,6 +1,6 @@
 {pkgs, inputs, ...}:
 {
-  programs.vscode.profiles.default = {
+  programs.vscode.profiles.python = {
     extensions = with pkgs.vscode-extensions;
     with inputs.nix-vscode-extensions.extensions.${pkgs.system}; [
       k--kato.intellij-idea-keybindings

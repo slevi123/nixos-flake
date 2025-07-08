@@ -14,7 +14,7 @@ class LeswellPythonPromptPS1(object):
   def __str__(self):
     self.line += 1
     python_logo = f"{self.clean}{self.pc(self.logo)}{self.clean}"
-    return f"\n{self.pc(self.bracket_color)} {{ {python_logo}{self.pc(self.bracket_color)}{self.line} }} {self.clean} "
+    return f"{self.pc(self.bracket_color)} {{ {python_logo}{self.pc(self.bracket_color)}{self.line} }} {self.clean} "
 
   def pc(self, color):
     """Pack color, with invisible character counting inplace"""
