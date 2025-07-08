@@ -126,7 +126,12 @@
 
     keylightctl = {
       url = "git+https://gitlab.com/leswell/keylightctl";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quick-actions = {
+      url = "git+https://gitlab.com/leswell/quick-actions";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # niri = {

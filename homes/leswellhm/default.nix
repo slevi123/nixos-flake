@@ -23,6 +23,7 @@
     "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
     "${self}/modules/home-manager/environment/gui/notification/swaync"
     "${self}/modules/home-manager/environment/gui/menu/wofi"
+    "${self}/modules/home-manager/environment/gui/menu/quick-actions"
 
     "${self}/modules/home-manager/environment/gui/fonts"
 
