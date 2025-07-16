@@ -22,7 +22,7 @@
 
     # ./plugin/hyprexpo.nix
     ./plugin/hyprspace.nix
-    ./plugin/hyprscrolling.nix
+    # ./plugin/hyprscrolling.nix
     ./plugin/dynamic-cursors.nix
     # ./plugin/easymotion.nix
     # ./plugin/hyprfocus.nix # broken

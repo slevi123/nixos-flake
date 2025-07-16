@@ -26,6 +26,7 @@
 
   imports = [
     "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
+    "${self}/modules/nixos/hardware/gpu/cuda"
     
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
@@ -111,6 +112,15 @@
       FFF_CD_ON_EXIT = "1";
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
+  };
+
+   nix.settings = {
+    substituters = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

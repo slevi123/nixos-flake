@@ -46,7 +46,7 @@
       bind = SUPER ALT, left, moveintogroup, l
       bind = SUPER ALT, right, moveintogroup, r
 
-      bind = , escape, submap, reset
+      bindd = , escape, "exits the group-map", submap, reset
       submap = reset
     '';
   };

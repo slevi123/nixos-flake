@@ -5,7 +5,7 @@
       enforce_permissions = true;
     };
     permission = [
-      "/nix/store/.*hyprland.*/bin/hyprctl, plugin, allow"
+      "hyprctl, plugin, allow"
     ];
   };
 }

@@ -41,5 +41,22 @@
         ]
         ++ [final.pkgs.bitwarden-cli];
     });
+
+    # openai-whisper = prev.openai-whisper.overrideAttrs (old: {
+    #   propagatedBuildInputs = with final.python312Packages;[
+    #     more-itertools
+    #     numba
+    #     numpy
+    #     tiktoken
+    #     torch-bin
+    #     # inputs.nixpkgs-stable-unfree.legacyPackages."x86_64-linux".python3Packages.torch.override {
+    #     #   cudaSupport = true;
+    #     #   # cudnn = inputs.nixpkgs-stable-unfree.legacyPackages."x86_64-linux".cudnn;  # Specific cuDNN version
+    #     #   cudaCapabilities = ["8.6"];  # Your GPU arch
+    #     # }
+    #     tqdm     
+    #   ];
+    # });
   };
 }
+

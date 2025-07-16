@@ -1,6 +1,6 @@
 {inputs, pkgs, ...}:
 {
-  home.packages = [
-    inputs.quick-actions.packages.${pkgs.system}.quick-actions
+  imports = [
+    inputs.quick-actions.homeManagerModules.default
   ];
 }

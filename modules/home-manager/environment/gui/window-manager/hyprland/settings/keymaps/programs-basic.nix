@@ -18,7 +18,10 @@
       "SUPER, L, exec, hyprlock"
       "SUPER, Space, exec, ~/.charm/scripts/hyprland/switch-lang.sh # Switch language"
       "SUPER SHIFT, B, exec, ~/.charm/scripts/hyprland/toggle-hyprsunset.sh # Toggle bluelight (hyprsunset)"
-      "SUPER, P, exec, quick-actions"
+    ];
+
+    bindd = [
+      "SUPER, P, Opens up quick-actions menu, exec, quick-actions"
     ];
   };
 }

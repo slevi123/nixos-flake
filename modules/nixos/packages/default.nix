@@ -25,9 +25,6 @@
     # bitwarden
     # bitwarden-cli
 
-    # cuda
-    # cudatoolkit
-
     # Tools
     wget
     htop
