@@ -10,7 +10,7 @@
       "SUPER, M, exec, uwsm stop"
       "SUPER, f, fullscreen"
       "SUPER SHIFT, f, togglefloating,"
-      "SUPER, R, exec, $menu"
+      "SUPER, R, exec, wofi --show=drun --height=70% --width=40%"
 
       "SUPER SHIFT, W, exec, ~/.config/waybar/launch.sh # Reload waybar"
       "SUPER CTRL, W, exec, ~/.config/waybar/toggle.sh # Toggle waybar"

@@ -1076,11 +1076,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752003718,
-        "narHash": "sha256-okg2/oJiUZhvRKbM6fthFAMeNkpWT7Z2wQQNnW9chto=",
+        "lastModified": 1752701014,
+        "narHash": "sha256-vrenPG7M0IYOljoBQSwmSOMOB/HG7ki8Swea+jYzmQQ=",
         "ref": "refs/heads/main",
-        "rev": "765dca8bdd89ac238ab6fb146a02517ee335da06",
-        "revCount": 18,
+        "rev": "dec27ecb847783b4efb213f25fcf64583caa5794",
+        "revCount": 23,
         "type": "git",
         "url": "https://gitlab.com/leswell/quick-actions"
       },

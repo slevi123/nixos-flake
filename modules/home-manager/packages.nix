@@ -8,7 +8,6 @@
       spotify
       arduino-ide
       insomnia
-      fastfetch
 
       jq
       helvum # vs qpwgraph

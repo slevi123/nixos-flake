@@ -53,7 +53,7 @@
         ["KP_Down" "KP-2" ]
         ["KP_Next" "KP-3" ]
         ["KP_Left" "KP-4" ]
-        ["KP_BegiKP_Rightn" "KP-5" ]
+        ["KP_Begin" "KP-5" ]
         ["KP_Right" "KP-6" ]
         ["KP_Home" "KP-7" ]
         ["KP_Up" "KP-8"]
