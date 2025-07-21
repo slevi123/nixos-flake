@@ -79,7 +79,7 @@
 
     azure-cli
 
-    texlive.combined.scheme-full
+    # texlive.combined.scheme-full
 
     nmap
 

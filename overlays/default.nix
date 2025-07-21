@@ -12,12 +12,12 @@
     # });
 
     # for now, because there is an old hash in warp
-    warp-terminal = prev.warp-terminal.overrideAttrs (oldAttrs: {
-      src = prev.fetchurl {
-        url = oldAttrs.src.url;
-        hash = "sha256-yrwS6rqSGkiWNjr17MVyH+ZQL2CTUqt6coi8qWfq0Gg="; # New hash
-      };
-    });
+    # warp-terminal = prev.warp-terminal.overrideAttrs (oldAttrs: {
+    #   src = prev.fetchurl {
+    #     url = oldAttrs.src.url;
+    #     hash = "sha256-yrwS6rqSGkiWNjr17MVyH+ZQL2CTUqt6coi8qWfq0Gg="; # New hash
+    #   };
+    # });
 
     flameshot = prev.flameshot.overrideAttrs (previousAttrs: {
       cmakeFlags = [

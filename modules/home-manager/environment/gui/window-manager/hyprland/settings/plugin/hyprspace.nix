@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+      pkgs.hyprlandPlugins.hyprspace
     ];
     settings = {
       bind = [

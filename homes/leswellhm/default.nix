@@ -8,7 +8,7 @@
   ...
 }: {
   imports = [ 
-    inputs.nix-index-database.hmModules.nix-index
+    inputs.nix-index-database.homeModules.nix-index
     "${self}/modules/home-manager/environment/languages"
     "${self}/modules/home-manager/environment/tty/alpha.nix"
     "${self}/modules/home-manager/environment/web-stack"
@@ -28,6 +28,7 @@
     "${self}/modules/home-manager/environment/gui/fonts"
 
     "${self}/modules/home-manager/program/browser"
+    "${self}/modules/home-manager/program/file-manager/yazi.nix"
     "${self}/modules/home-manager/program/file-manager/superfile.nix"
     "${self}/modules/home-manager/program/color-picker/hyprpicker.nix"
     "${self}/modules/home-manager/program/calculator/qalc.nix"
@@ -38,11 +39,12 @@
 
     "${self}/modules/home-manager/program/communication/discord"
     # "${self}/modules/home-manager/program/communication/matrix/element"
+    "${self}/modules/home-manager/program/character-picker/unipicker"
     "${self}/modules/home-manager/program"
 
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"
-    "${self}/modules/home-manager/ide/jetbrains"
+    # "${self}/modules/home-manager/ide/jetbrains"
 
     # TODO: refactor these
     "${self}/modules/home-manager/packages.nix"
