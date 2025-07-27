@@ -118,9 +118,10 @@
     },
 
     "wireplumber": {
-        "format": "{icon}",
+        "format": "╰{icon} ",
         "format-muted": "",  //"",
-        "on-click-right": "pkill helvum || helvum",
+        // "on-click-right": "pkill helvum || helvum",
+        "on-click-right": "pkill pavucontrol || pavucontrol",
         "on-click": "$HOME/.charm/scripts/hyprland/wofi/audio-changer.py",
         "format-icons": ["", "", "", "", ""], // ["", "", ""],
         "tooltip-format": "Volume: {volume}%"
@@ -132,7 +133,7 @@
     },
 
     "backlight": {
-        "format": "{icon}",
+        "format": "{icon}░ ",
         "on-scroll-up": "brightnessctl s 5%+",
         "on-scroll-down": "brightnessctl s 5%-",
         "smooth-scrolling-threshold": 0.25,

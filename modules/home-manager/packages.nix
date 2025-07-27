@@ -10,7 +10,6 @@
       insomnia
 
       jq
-      helvum # vs qpwgraph
       cava
 
       delta
