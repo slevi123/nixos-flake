@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$terminal" = "kitty";
-    "$menu" = "ulauncher-toggle";
+    # "$menu" = "ulauncher-toggle";
     bind = [
       "SUPER, Q, exec, $terminal"
       "SUPER, Z, exec, zen"
