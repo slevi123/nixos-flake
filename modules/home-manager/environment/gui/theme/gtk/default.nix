@@ -7,8 +7,8 @@
       # name = "Materia-dark";  # Or your chosen theme name
       # package = pkgs.materia-theme; # Or your chosen package
 
-      name = "Breeze-Dark";
-      package = pkgs.libsForQt5.breeze-gtk;
+      name = "Orchis-Red-Dark";
+      package = pkgs.orchis-theme;
     };
 
     iconTheme = {
@@ -20,6 +20,10 @@
     };
 
     gtk3 = {
+      extraConfig.gtk-application-prefer-dark-theme = true;
+    };
+
+    gtk4 = {
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
   };

@@ -2,7 +2,7 @@
 {
   imports = [
     ./gtk
-    ./qt
+    # ./qt
     ./cursor
   ];
 }
