@@ -28,6 +28,7 @@
     "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
 
     "${self}/modules/home-manager/environment/gui/fonts"
+    "${self}/modules/home-manager/environment/gui/theme"
 
     "${self}/modules/home-manager/program/browser"
     "${self}/modules/home-manager/program/file-manager/yazi.nix"
