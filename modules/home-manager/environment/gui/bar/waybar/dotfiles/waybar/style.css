@@ -32,6 +32,14 @@ tooltip {
     background:@background;
     color: @color7;
 }
+
+#bt{
+    background:rgba(203, 12, 60, 0.278);
+    background:rgba(139, 5, 5, 0.278);
+    margin: 10px;
+    border-radius: 20px;
+}
+
 #clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover, #disk:hover{
     transition: all .3s ease;
     color:@color9;
@@ -152,7 +160,7 @@ tooltip {
 
 #cpu,#memory,#temperature,#disk{
     padding: 0px 5px;
-    margin: 2px 1px; 
+    margin: 10px 1px; 
     transition: all .3s ease; 
     color:@color7;
     border: 1px dotted @color3;
@@ -165,8 +173,8 @@ tooltip {
 
 }
 #tray{
-    margin: 0px 5px;
-    padding: 3px 0;
+    margin: 8px 5px;
+    padding: 3px 2px;
     transition: all .3s ease; 
     /* border: 1px dashed rgba(255, 2, 2, 0.585); */
     background: rgba(106, 0, 0, 0.361);

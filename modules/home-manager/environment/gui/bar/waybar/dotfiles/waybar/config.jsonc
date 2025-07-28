@@ -37,7 +37,7 @@
         // "custom/power"
         "tray",
         "power-profiles-daemon",
-        "bluetooth",
+        "group/bt",
         "wireplumber",
         "backlight",
         "battery",
@@ -129,7 +129,10 @@
 
     "bluetooth": {
         "on-click-right": "overskride",
-        "on-click": " kitty --title 'bluetuith' bluetuith"
+        "on-click": " kitty --title 'bluetuith' bluetuith",
+        "format": "{num_connections}",
+        "tooltip-format": "{num_connections} {device_alias} {status}",
+        "tooltip-format-connected-battery": "{num_connections} {device_alias} {status} {device_battery_percentage}%"
     },
 
     "backlight": {
@@ -284,25 +287,38 @@
     //     "format-disconnected": "Disconnected ⚠",
     //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
     // },
-    // "pulseaudio": {
-    //     // "scroll-step": 1, // %, can be a float
-    //     "format": "{volume}% {icon} {format_source}",
-    //     "format-bluetooth": "{volume}% {icon} {format_source}",
-    //     "format-bluetooth-muted": " {icon} {format_source}",
-    //     "format-muted": " {format_source}",
-    //     "format-source": "{volume}% ",
-    //     "format-source-muted": "",
-    //     "format-icons": {
-    //         "headphone": "",
-    //         "hands-free": "",
-    //         "headset": "",
-    //         "phone": "",
-    //         "portable": "",
-    //         "car": "",
-    //         "default": ["", "", ""]
-    //     },
-    //     "on-click": "pavucontrol"
-    // },
+    "group/bt": {
+        "orientation": "inherit",
+        "modules": [
+            "bluetooth",
+            "pulseaudio"
+        ],
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "bt",
+            "transition-left-to-right": true,
+        }
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
     // "custom/media": {
     //     "format": "{icon} {text}",
     //     "return-type": "json",
