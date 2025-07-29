@@ -8,6 +8,18 @@
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
+
+    settings = {
+      mgr = {
+        # linemode = "permissions_and_size_and_mtime_and_owner";
+      };
+      opener = {
+        zathura = {
+          run = "zathura \"$@\"";
+          desc = "Open with zathura";
+        };
+      };
+    };
   };
 
   # programs.zsh.initContent = ''
