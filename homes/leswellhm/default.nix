@@ -23,6 +23,7 @@
     "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
     "${self}/modules/home-manager/environment/gui/notification/swaync"
     "${self}/modules/home-manager/environment/gui/menu/wofi"
+    "${self}/modules/home-manager/environment/gui/menu/rofi"
     "${self}/modules/home-manager/environment/gui/menu/quick-actions"
     "${self}/modules/home-manager/environment/sound/frontend/helvum"
     "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
@@ -40,6 +41,7 @@
     "${self}/modules/home-manager/program/resource-monitor/btop"
     # "${self}/modules/home-manager/program/ai/anythingllm.nix"
     "${self}/modules/home-manager/program/ai/openai-whisper.nix"
+    "${self}/modules/home-manager/program/ai/ocr/tesseract"
     "${self}/modules/home-manager/program/about/fastfetch"
 
     "${self}/modules/home-manager/program/communication/discord"

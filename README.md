@@ -8,14 +8,4 @@ This is my personal nixos configuration.
 - Hyprland
 - mostly hypr components
 - Swaync
-
-
-
-## Manual Setup For
-### Ulauncher
-
-extensions, settings, theme, etc...
-
-### Burn My Windows
-
-to copy profile files in ~/.config/burn-my-windows/profiles to new user
+- ...

@@ -10,4 +10,8 @@
       ./nixvim-full.nix
     ];
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }

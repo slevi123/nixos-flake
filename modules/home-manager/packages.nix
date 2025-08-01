@@ -18,7 +18,6 @@
       # hypr
       psmisc
       pywal16
-      rofi
       hyprshade
       bluez
       bluetuith
