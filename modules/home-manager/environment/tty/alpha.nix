@@ -11,5 +11,6 @@
     ./cool-tools/atuin
     ./cool-tools/comma
     ./cool-tools/pager
+    ./cool-tools/tldr
   ];
 }
