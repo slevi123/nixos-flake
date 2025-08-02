@@ -17,6 +17,7 @@
     ./program/discord.nix
     ./program/ulauncher.nix
     ./program/wofi
+    ./program/rofi
     ./program/bluetuith.nix
     ./program/overskride
 
