@@ -12,5 +12,7 @@
     ./cool-tools/comma
     ./cool-tools/pager
     ./cool-tools/tldr
+    ./cool-tools/asciinema
+    ./git
   ];
 }

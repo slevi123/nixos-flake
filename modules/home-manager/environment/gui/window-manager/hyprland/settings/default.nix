@@ -20,6 +20,7 @@
     ./program/rofi
     ./program/bluetuith.nix
     ./program/overskride
+    ./program/anki
 
     # ./plugin/hyprexpo.nix
     ./plugin/hyprspace.nix

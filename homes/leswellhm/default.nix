@@ -43,6 +43,7 @@
     "${self}/modules/home-manager/program/ai/openai-whisper.nix"
     "${self}/modules/home-manager/program/ai/ocr/tesseract"
     "${self}/modules/home-manager/program/about/fastfetch"
+    "${self}/modules/home-manager/program/learning/flash-cards/anki"
 
     "${self}/modules/home-manager/program/communication/discord"
     # "${self}/modules/home-manager/program/communication/matrix/element"

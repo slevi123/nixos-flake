@@ -10,11 +10,10 @@
     modes = [
       "drun"
       "run"
-      "emoji"
+      # "emoji"
       "ssh"
       "window"
       "keys"
-      "dmenu"
       # {
       #   name = "whatnot";
       #   path = lib.getExe pkgs.rofi-whatnot;

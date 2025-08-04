@@ -53,6 +53,7 @@
     "${self}/modules/nixos/virtualisation/docker"
 
     "${self}/modules/nixos/hardware/networking"
+    "${self}/modules/nixos/home-assistant"
 
 
     # temporary

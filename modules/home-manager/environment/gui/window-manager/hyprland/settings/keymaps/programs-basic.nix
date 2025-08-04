@@ -10,7 +10,8 @@
       "SUPER, M, exec, uwsm stop"
       "SUPER, f, fullscreen"
       "SUPER SHIFT, f, togglefloating,"
-      "SUPER, R, exec, wofi --show=drun --height=70% --width=40%"
+      # "SUPER, R, exec, wofi --show=drun --height=70% --width=40%"
+      "SUPER, R, exec, rofi -show drun -show-icons"
 
       "SUPER SHIFT, W, exec, ~/.config/waybar/launch.sh # Reload waybar"
       "SUPER CTRL, W, exec, ~/.config/waybar/toggle.sh # Toggle waybar"
@@ -18,6 +19,7 @@
       "SUPER, L, exec, hyprlock"
       "SUPER, Space, exec, ~/.charm/scripts/hyprland/switch-lang.sh # Switch language"
       "SUPER SHIFT, B, exec, ~/.charm/scripts/hyprland/toggle-hyprsunset.sh # Toggle bluelight (hyprsunset)"
+      "SUPER, T, exec, kitten quick-access-terminal"
     ];
 
     bindd = [
