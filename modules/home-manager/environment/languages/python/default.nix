@@ -16,6 +16,7 @@ in
         pygtrie
         scapy
         typer # CLI for everything
+        rich # terminal beauty
         # overleaf-sync
         #pint
         #simpleeval
