@@ -12,6 +12,6 @@
   environment.systemPackages = with pkgs; [
     eza
     fzf
-    fff
+    # fff
   ];
 }
