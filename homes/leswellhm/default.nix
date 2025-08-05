@@ -33,7 +33,7 @@
     "${self}/modules/home-manager/environment/gui/widget/quickshell"
 
     "${self}/modules/home-manager/program/browser"
-    "${self}/modules/home-manager/program/viewer/zathura"
+    "${self}/modules/home-manager/program/viewer/pdf/zathura"
     "${self}/modules/home-manager/program/file-manager/yazi.nix"
     "${self}/modules/home-manager/program/file-manager/superfile.nix"
     "${self}/modules/home-manager/program/color-picker/hyprpicker.nix"
