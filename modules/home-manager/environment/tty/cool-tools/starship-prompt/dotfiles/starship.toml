@@ -1,6 +1,6 @@
 add_newline = true
 
-format=""" $character $git_metrics $git_state $git_status $nix_shell ${custom.fsh}
+format=""" $character $git_metrics $git_state $git_status ${custom.git-town} $nix_shell ${custom.fsh}
 $username $directory $git_branch $cmd_duration\
 $docker_context\
 $azure\
@@ -195,4 +195,8 @@ format = 'on [$symbol($subscription)]($style) '
 symbol = '󰠅 '
 style = 'blue bold'
 
+[custom.git-town]
+command = "git town status --pending"
+when = ""
+require_repo = true
 
