@@ -48,6 +48,7 @@
     "${self}/modules/home-manager/program/communication/discord"
     # "${self}/modules/home-manager/program/communication/matrix/element"
     "${self}/modules/home-manager/program/character-picker/unipicker"
+    "${self}/modules/home-manager/program/markdown-viewer/glow"
     "${self}/modules/home-manager/program"
 
     "${self}/modules/home-manager/ide/vscode"
