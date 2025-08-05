@@ -13,7 +13,7 @@
     "${self}/modules/home-manager/environment/tty/alpha.nix"
     "${self}/modules/home-manager/environment/web-stack"
     "${self}/modules/home-manager/terminal/kitty"
-    "${self}/modules/home-manager/terminal/warp"
+    # "${self}/modules/home-manager/terminal/warp"
 
     "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
     "${self}/modules/home-manager/environment/gui/bar/waybar"
@@ -45,6 +45,7 @@
     "${self}/modules/home-manager/program/ai/ocr/tesseract"
     "${self}/modules/home-manager/program/about/fastfetch"
     "${self}/modules/home-manager/program/learning/flash-cards/anki"
+    "${self}/modules/home-manager/program/colors/pastel"
 
     "${self}/modules/home-manager/program/communication/discord"
     # "${self}/modules/home-manager/program/communication/matrix/element"
