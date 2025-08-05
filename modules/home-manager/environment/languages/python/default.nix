@@ -15,6 +15,7 @@ in
         marisa-trie
         pygtrie
         scapy
+        typer # CLI for everything
         # overleaf-sync
         #pint
         #simpleeval
