@@ -27,5 +27,6 @@
 
   home.packages = [
     pkgs.gitoxide  # rust git implementation
+    pkgs.git-town # git automaitons (for various workflows)
   ];
 }
