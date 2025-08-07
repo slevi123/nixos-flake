@@ -34,7 +34,7 @@
     "${self}/modules/nixos/environment/tty/phi.nix"
 
     "${self}/modules/nixos/environment/gui/display-manager/gdm"
-    "${self}/modules/nixos/environment/gui/desktop-environment/gnome"
+    # "${self}/modules/nixos/environment/gui/desktop-environment/gnome"
     "${self}/modules/nixos/environment/gui/window-manager/hyprland"
     # "${self}/modules/nixos/environment/gui/menu/ulauncher"
     # "${self}/modules/nixos/environment/window-manager/niri"
