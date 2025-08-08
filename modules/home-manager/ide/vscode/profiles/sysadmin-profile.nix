@@ -1,6 +1,6 @@
 {pkgs, inputs, ...}:
 {
-  programs.vscode.profiles.python = {
+  programs.vscode.profiles.sysadmin = {
     extensions = with pkgs.vscode-extensions;
     with inputs.nix-vscode-extensions.extensions.${pkgs.system}; [
       k--kato.intellij-idea-keybindings
@@ -19,9 +19,9 @@
       naumovs.color-highlight
       vscode-marketplace.ewen-lbh.vscode-hyprls
       vscode-marketplace.dlech.chmod
-      
-      vscode-marketplace.ms-python.python
-      vscode-marketplace.ms-python.debugpy
+
+      # vscode-marketplace.emilast.LogFileHighlighter
+      vscode-marketplace.emilast.logfilehighlighter
     ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
@@ -30,10 +30,7 @@
       "workbench.iconTheme" = "material-icon-theme";
       "window.menuBarVisibility" = "toggle";
       "editor.scrollbar.vertical" = "hidden";
-
-      "files.exclude" = {
-        "**/__pycache__/" = true;
-      };
+      "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
     };
   };
 }

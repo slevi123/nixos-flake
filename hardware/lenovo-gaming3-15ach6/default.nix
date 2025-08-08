@@ -14,7 +14,7 @@
     after = [ "local-fs.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.coreutils}/bin/chmod 664 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode";
+      ExecStart = "${pkgs.coreutils}/bin/chmod 666 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode";
     };
   };
   services.udev.packages = [

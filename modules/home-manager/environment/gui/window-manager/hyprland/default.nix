@@ -2,6 +2,7 @@
 {
   imports = [
     ./settings
+    ./portals
     # inputs.hyprland.homeManagerModules.default
 
   ];

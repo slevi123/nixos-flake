@@ -39,10 +39,7 @@
 
     # Terminals
     blackbox-terminal
-    guake # dropdown
-
-    # Prompt
-    # starship
+    # guake # dropdown
 
     # Notes
     obsidian

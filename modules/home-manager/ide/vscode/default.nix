@@ -5,6 +5,7 @@
     ./profiles/svelte-profile.nix
     ./profiles/python-profile.nix
     ./profiles/qml-profile.nix
+    ./profiles/sysadmin-profile.nix
   ];
 
   programs.vscode = {

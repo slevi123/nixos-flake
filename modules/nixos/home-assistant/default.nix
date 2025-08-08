@@ -16,38 +16,38 @@
   #   };
   # };
 
-  services.wyoming = {
-    openwakeword = {
-      enable = true;
-      preloadModels = [
-        "hey_jarvis"
-        "hey_mycroft"
-        "hey_rhasspy"
-        "ok_nabu"
-      ];
-    };
-    faster-whisper.servers.suttogo = {
-      enable = true;
-      uri = "tcp://0.0.0.0:10300";
-      language = "auto";
-      model = "base-int8";
-      device = "cuda";
-      extraArgs = [
-        "--data-dir"
-        "$XDG_DATA_HOME/wyoming/faster-whisper-models"
-      ];
-    };
-    piper.servers.bors = {
-      enable = true;
-      uri = "tcp://0.0.0.0:10200";
-      voice = "en-us-ryan-medium";
-    };
-  };
+#   services.wyoming = {
+#     openwakeword = {
+#       enable = true;
+#       preloadModels = [
+#         "hey_jarvis"
+#         "hey_mycroft"
+#         "hey_rhasspy"
+#         "ok_nabu"
+#       ];
+#     };
+#     faster-whisper.servers.suttogo = {
+#       enable = true;
+#       uri = "tcp://0.0.0.0:10300";
+#       language = "auto";
+#       model = "base-int8";
+#       device = "cuda";
+#       extraArgs = [
+#         "--data-dir"
+#         "$XDG_DATA_HOME/wyoming/faster-whisper-models"
+#       ];
+#     };
+#     piper.servers.bors = {
+#       enable = true;
+#       uri = "tcp://0.0.0.0:10200";
+#       voice = "en-us-ryan-medium";
+#     };
+#   };
 
-  systemd.services.wyoming-faster-whisper-suttogo = {
-    environment = {
-      TRANSFORMERS_CACHE = "$XDG_DATA_HOME/wyoming/faster-whisper-models";
-      HF_HOME = "$XDG_DATA_HOME/wyoming/faster-whisper-models";
-    };
-  };
+#   systemd.services.wyoming-faster-whisper-suttogo = {
+#     environment = {
+#       TRANSFORMERS_CACHE = "$XDG_DATA_HOME/wyoming/faster-whisper-models";
+#       HF_HOME = "$XDG_DATA_HOME/wyoming/faster-whisper-models";
+#     };
+#   };
 }
