@@ -1,17 +1,23 @@
 {inputs, pkgs, ...}: {
 
   imports = [
-    ./plugins/lines-n-bars/lualine.nix
-    ./plugins/startup/alpha.nix
-    ./plugins/nvim-tree.nix
-    ./plugins/telescope.nix
-    ./plugins/which-key.nix
-    ./plugins/auto-save.nix
-    ./plugins/session/auto-session.nix
-    ./plugins/indent/indent-blankline.nix
-    ./plugins/indent/guess-indent.nix
+    ./plugins/lines-n-bars/lualine
+    # ./plugins/startup/alpha.nix
+    # ./plugins/nvim-tree.nix
+    # ./plugins/auto-save.nix
+    # ./plugins/session/auto-session.nix
+    # ./plugins/indent/indent-blankline.nix
+    # ./plugins/indent/guess-indent.nix
     # ./plugins/mini
+    ./plugins/other/telescope
     ./plugins/wilder.nix
+    ./plugins/which-key.nix
+    ./plugins/file-manager/yazi
+    ./plugins/other/noice
+    ./plugins/other/fzf-lua
+    ./plugins/git-integration/neogit
+    ./settings/theme/catppuccin
+    
     
 
 
@@ -21,12 +27,11 @@
     # veil
   ];
 
-  colorschemes.catppuccin.enable = true;
   plugins = {
     web-devicons.enable = true;
-    direnv.enable = true;
-    treesitter.enable = true;
-    bufferline.enable = true;
+    # direnv.enable = true;
+    # treesitter.enable = true;
+    # bufferline.enable = true;
 
 
     oil.enable = true;
@@ -49,6 +54,11 @@
     number = true;
   };
 
+
+  globals = {
+    mapleader = " "; # Szóköz normal módban
+    maplocalleader = ",,"; # Opcionálisan local leader
+  };
 
   keymaps = [
     {

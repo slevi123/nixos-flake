@@ -3,6 +3,7 @@
   plugins.wilder = {
     enable = true;
     enableCmdlineEnter = true;
+    modes = [":" "?" "/" ];
   };
 
   keymaps = [

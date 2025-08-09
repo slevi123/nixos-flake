@@ -19,6 +19,8 @@
       naumovs.color-highlight
       vscode-marketplace.ewen-lbh.vscode-hyprls
       vscode-marketplace.dlech.chmod
+      vscode-marketplace.vscodevim.vim
+
     ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";

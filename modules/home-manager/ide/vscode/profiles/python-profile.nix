@@ -22,6 +22,8 @@
       
       vscode-marketplace.ms-python.python
       vscode-marketplace.ms-python.debugpy
+      vscode-marketplace.vscodevim.vim
+
     ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
