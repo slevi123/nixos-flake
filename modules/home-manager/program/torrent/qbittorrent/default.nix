@@ -2,6 +2,6 @@
 {
   home.packages = with pkgs; [
     qbittorrent
-    fragments # gnome circle torrent client
+    # fragments # gnome circle torrent client
   ];
 }

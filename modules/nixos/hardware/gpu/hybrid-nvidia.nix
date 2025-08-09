@@ -18,7 +18,7 @@
     };
 
     nvidia = {
-      open = true; # Set to false for proprietary drivers
+      open = false; # Set to false for proprietary drivers
       modesetting.enable = true;
       powerManagement.enable = true;
 
