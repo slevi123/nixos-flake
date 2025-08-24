@@ -1,8 +1,23 @@
 {pkgs, inputs, ...}:
 {
-  programs.vscode.profiles.python = {
+  programs.vscode.profiles.python =   
+  # let
+  #   nixpkgs-unfree = (import inputs.nixpkgs {
+  #     system = pkgs.system;
+  #     config = {
+  #       allowUnfree = true;
+  #     };
+  #   });
+  #   nix-vscode-extensions-unfree = (import inputs.nix-vscode-extensions {
+  #     pkgs = nixpkgs-unfree;
+  #   });
+
+  #   unfree-extensions = nix-vscode-extensions-unfree.extensions.${pkgs.system}; 
+  # in 
+  {
     extensions = with pkgs.vscode-extensions;
-    with inputs.nix-vscode-extensions.extensions.${pkgs.system}; [
+    with inputs.nix-vscode-extensions.extensions.${pkgs.system};
+    [
       k--kato.intellij-idea-keybindings
       mkhl.direnv
       mhutchie.git-graph
@@ -22,7 +37,8 @@
       
       vscode-marketplace.ms-python.python
       vscode-marketplace.ms-python.debugpy
-      vscode-marketplace.vscodevim.vim
+      ms-python.vscode-pylance
+      # vscode-marketplace.vscodevim.vim
 
     ];
     userSettings = {

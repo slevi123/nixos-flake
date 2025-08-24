@@ -11,8 +11,8 @@
         "custom/notification",
         "hyprland/window",
         "niri/window",
-        "custom/xwayland-indicator"
-        // "mpris",  // TODO: custromize this
+        "custom/xwayland-indicator",
+        "mpris"  // TODO: custromize this
     ],
     "modules-center": [
         "hyprland/submap",
@@ -95,7 +95,9 @@
             "class<spotify>": "",
             "class<obsidian>":"󰛼",
             "class<Insomnia>":"",
-            "class<dev.warp.Warp>":""
+            "class<dev.warp.Warp>":"",
+            "title<Transmission>":"󰨈",
+            "class<vlc>":"󰕼"
         },
         "format-icons": {
             "sp1":"󰩳1",
@@ -164,16 +166,36 @@
             "on-click-right": "mode",
         }
     },
+    // "mpris": {
+    //     "format": " {player_icon} {title}",
+    //     "format-paused": " {status_icon} <i>{dynamic}</i>",
+    //     "player-icons": {
+    //         "default": "▶",
+    //         "mpv": "🎵"
+    //     },
+    //     "status-icons": {
+    //         "paused": "⏸"
+    //     },
+    //     // "ignored-players": ["firefox"]
+    // },
+
     "mpris": {
-        "format": " {player_icon} {title}",
-        "format-paused": " {status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{player_icon} {status_icon}",
         "player-icons": {
-            "default": "▶",
-            "mpv": "🎵"
+            "default": "",
+            "mpv": "🎵",
+            "vlc": "󰕼",
+            "spotify": ""
+            // "firefox": ""
         },
         "status-icons": {
             "paused": "⏸"
         },
+        "align": 0.7,
+        "interval": 3,
+        "title-len": 40,
+        "dynamic-len": 40
         // "ignored-players": ["firefox"]
     },
     // Modules configuration

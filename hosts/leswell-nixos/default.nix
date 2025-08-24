@@ -55,6 +55,7 @@
     "${self}/modules/nixos/hardware/networking"
     "${self}/modules/nixos/home-assistant"
     "${self}/modules/nixos/program/torrent/transmission.nix"
+    # "${self}/modules/nixos/program/snapd"
 
 
     # temporary

@@ -167,10 +167,9 @@
     #   url = "github:VirtCode/hypr-dynamic-cursors";
     #   # inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
     # };
-    # ====might-be-useful====
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs-stable-unfree";
     };
 
     ashell.url = "github:MalpenZibo/ashell";
@@ -190,6 +189,12 @@
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-snapd = {
+      url = "github:nix-community/nix-snapd";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
 
 }
