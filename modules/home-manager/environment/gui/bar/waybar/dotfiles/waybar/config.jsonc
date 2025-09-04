@@ -90,14 +90,17 @@
             "kitty": "",
             "guake": "",
             "blackbox": "",
-            "class<FFPWA-01JXFJG7WSEKP2NJTM8M74766W>":"",
+            "class<FFPWA-01JXFJG7WSEKP2NJTM8M74766W>":"", // soundcloud
             "class<discord>":"",
             "class<spotify>": "",
             "class<obsidian>":"󰛼",
             "class<Insomnia>":"",
             "class<dev.warp.Warp>":"",
             "title<Transmission>":"󰨈",
-            "class<vlc>":"󰕼"
+            "class<vlc>":"󰕼",
+            "class<org.pwmt.zathura>": "",
+            "class<Minecraft\\* .*>": "󰍳",
+            "title<SKlauncher .*>": ""
         },
         "format-icons": {
             "sp1":"󰩳1",

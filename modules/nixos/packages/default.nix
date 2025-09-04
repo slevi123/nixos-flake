@@ -74,7 +74,7 @@
 
     openssl
 
-    azure-cli
+    # azure-cli
 
     # texlive.combined.scheme-full
 
