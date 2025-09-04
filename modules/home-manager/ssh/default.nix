@@ -1,6 +1,7 @@
 {config, osConfig, ...}: {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
 
     # Define SSH hosts
     matchBlocks = {

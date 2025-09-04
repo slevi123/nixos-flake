@@ -21,6 +21,7 @@
     ./program/bluetuith.nix
     ./program/overskride
     ./program/anki
+    ./program/swaync
 
     # ./plugin/hyprexpo.nix
     ./plugin/hyprspace.nix

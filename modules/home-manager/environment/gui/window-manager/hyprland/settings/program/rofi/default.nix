@@ -7,7 +7,7 @@
       # "SUPER SHIFT, P, exec, ~/.charm/scripts/hyprland/wofi/power-menu # Open power menu"
     ];
     layerrule = [
-      "dimaround, rofi"
+      # "dimaround, rofi"
       "blur, rofi"
     ];
   };

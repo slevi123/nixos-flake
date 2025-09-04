@@ -8,7 +8,9 @@
     "control-center-margin-right": 8,
     "control-center-margin-left": 8,
     "control-center-width": 500,
-    "control-center-height": 600,  
+    "control-center-height": 600,
+    "fit-to-screen": true,
+  
     "layer-shell": true,
     "layer": "overlay",
     "control-center-layer": "overlay",
@@ -17,8 +19,8 @@
     "notification-body-image-height": 100,
     "notification-body-image-width": 200,
     "notification-inline-replies": true,
-    "timeout": 6,
-    "timeout-low": 3,
+    "timeout": 10,
+    "timeout-low": 5,
     "timeout-critical": 0,
     "notification-window-width": 500,
     "keyboard-shortcuts": true,
@@ -27,10 +29,8 @@
     "hide-on-clear": true,
     "hide-on-action": true,
     "script-fail-notify": true,
-    "fit-to-screen": true,
-    "markup": true,
+  
     "widgets": [
-      "title",
       "inhibitors",
       "dnd",
       "mpris",
@@ -44,8 +44,8 @@
       },
       "title": {
         "text": "Notifications",
-        "clear-all-button": true,
-        "button-text": "𝕏"
+        "clear-all-button": false,
+        "button-text": "Clear All"
       },
       "dnd": {
         "text": "Do Not Disturb"
@@ -55,7 +55,6 @@
         "text": "Label Text"
       },
       "mpris": {
-        "autohide": true,
         "image-size": 96,
         "blur": true
       }

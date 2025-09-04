@@ -116,29 +116,6 @@ tooltip {
     color:@color7;
 
 }
-#battery{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-
-
-}
-#battery.charging {
-    color: #26A65B;
-}
-
-#battery.warning:not(.charging) {
-    color: #ffbe61;
-}
-
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
 #group-expand{
     padding: 0px 5px;
     transition: all .3s ease; 
@@ -158,9 +135,9 @@ tooltip {
 }
 
 
-#cpu,#memory,#temperature,#disk{
+#cpu,#memory,#disk,#network{
     padding: 0px 5px;
-    margin: 10px 1px; 
+    margin: 12px 0px; 
     transition: all .3s ease; 
     color:@color7;
     border: 1px dotted @color3;
@@ -211,4 +188,29 @@ tooltip {
 
 #mpris.vlc {
     color: rgba(211, 130, 24, 0.637);
+}
+
+#battery {
+    background:rgba(139, 5, 5, 0.17);
+    margin: 10px 0px;
+    border-radius: 20px;
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+}
+/* #battery.charging {
+    color: rgba(0, 4, 215, 0.839);
+} */
+
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }

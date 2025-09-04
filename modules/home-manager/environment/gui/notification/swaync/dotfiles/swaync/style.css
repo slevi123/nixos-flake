@@ -1,7 +1,9 @@
 * {
   all: unset;
   font-size: 14px;
-  font-family: "Ubuntu Nerd Font";
+  /* font-family: "Ubuntu Nerd Font"; */
+  /* font-family: "CodeNewRoman Nerd Font Propo"; */
+  font-family: "Hack Nerd Font Mono";
   transition: 200ms;
 }
 
@@ -21,7 +23,7 @@ slider {
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #363a4f;
+  box-shadow: 0 0 8px 0 rgba(160, 58, 58, 0.879), inset 0 0 0 1px #363a4f;
   border-radius: 12.6px;
   margin: 18px;
   background-color: #24273a;
@@ -32,6 +34,8 @@ slider {
 .floating-notifications.background .notification-row .notification-background .notification {
   padding: 7px;
   border-radius: 12.6px;
+  color: whitesmoke;
+  background: rgb(6, 6, 6);
 }
 
 .floating-notifications.background .notification-row .notification-background .notification.critical {
@@ -61,7 +65,7 @@ slider {
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
   border-radius: 7px;
   color: #cad3f5;
-  background-color: #363a4f;
+  background-color: #10258e;
   box-shadow: inset 0 0 0 1px #494d64;
   margin: 7px;
 }
@@ -105,19 +109,46 @@ slider {
   padding: 14px;
 }
 
+.control-center .widget-title {
+  margin-bottom: 15px;
+  padding-bottom: 6px;
+  border-bottom: 1px double rgba(251, 251, 251, 0.482);
+}
+
 .control-center .widget-title > label {
   color: #cad3f5;
   font-size: 1.3em;
 }
 
-.control-center .widget-title button {
-  border-radius: 7px;
-  color: #cad3f5;
-  background-color: #363a4f;
-  box-shadow: inset 0 0 0 1px #494d64;
-  padding: 8px;
+.control-center .widget-title button > label {
+  background: rgba(255, 0, 0, 0.182);
+  border-radius: 30px;
+  padding: 4px 7px;
 }
 
+.control-center .widget-title button > label:hover {
+  background: rgba(253, 99, 99, 0.3);
+}
+
+.control-center .widget-title button > label:hover {
+  background: rgba(253, 99, 99, 0.704);
+}
+
+/* .widget-title button label{
+  border-radius: 30px;
+  padding: 4px 8px;
+  margin: 0px;
+} */
+
+.control-center .widget-title button {
+  border-radius: 30px;
+  /* color: #cad3f5; */
+  background: #9a1111bc;
+  /* box-shadow: inset 0 0 0 1px #494d64; */
+  background: transparent;
+  padding: 8px;
+}
+/* 
 .control-center .widget-title button:hover {
   box-shadow: inset 0 0 0 1px #494d64;
   background-color: #5b6078;
@@ -128,7 +159,7 @@ slider {
   box-shadow: inset 0 0 0 1px #494d64;
   background-color: #7dc4e4;
   color: #24273a;
-}
+} */
 
 .control-center .notification-row .notification-background {
   border-radius: 7px;
@@ -136,6 +167,7 @@ slider {
   background-color: rgba(68, 71, 90, 0.616);
   box-shadow: inset 0 0 0 1px #494d64;
   margin-top: 14px;
+  margin: 7px 2px;
 }
 
 .control-center .notification-row .notification-background .notification {
@@ -152,15 +184,30 @@ slider {
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .summary {
-  color: #cad3f5;
+  color: #080808;
+  background: rgb(255, 255, 255);
+  font-weight: 900;
+  border-radius: 11px;
+  margin-right: 8px;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+  box-shadow: 10px 20px 30px 40px #9d0202d5;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .time {
-  color: #a5adcb;
+  color: #666854;
+  background: rgba(245, 245, 245, 0.611);
+  border-radius: 12px;
+  padding: 2px 4px;
 }
 
 .control-center .notification-row .notification-background .notification .notification-content .body {
-  color: #cad3f5;
+  color: #212121;
+  border-radius: 18px;
+  padding: 3px 8px;
+  background: rgba(245, 245, 245, 0.611);
+  box-shadow: 10px 30px 30px 10px #7701019d;
+
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * {
@@ -222,6 +269,10 @@ slider {
   color: #cad3f5;
 }
 
+.notification {
+  background: #000000e1;
+}
+
 .notification.critical progress {
   background-color: #ed8796;
 }
@@ -271,20 +322,39 @@ slider {
   border: 1px solid #6e738d;
 }
 
+.widget-mpris {
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 2rem;
+  color: rgb(116, 2, 2);
+  /* border: 2px solid red; */
+}
+
 .widget-mpris .widget-mpris-player {
-  margin-top: 10px;
-  padding: 6px 8px;
+  margin: 10px 4px;
+  border: 5px solid rgba(61, 1, 1, 0.496);
   /* background: rgba(218, 0, 0, 0.451); */
   border-radius: 25px;
-  padding: 7px;
+  /* padding: 7px; */
 }
 
 .widget-mpris .widget-mpris-title {
   font-size: 1.2rem;
+  color: #000000;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.753);
+  padding: 2px 5px;
+  border-radius: 18px;
+  margin: 0px 4px;
 }
 
 .widget-mpris .widget-mpris-subtitle {
   font-size: 0.8rem;
+  color: #000000;
+  font-weight: bolder;
+  background: rgba(255, 255, 255, 0.431);
+  padding: 2px 5px;
+  border-radius: 18px;
 }
 
 .widget-menubar > box > .menu-button-bar > button > label {
@@ -303,6 +373,8 @@ slider {
 }
 
 .control-center .widget-label > label {
+  font-family: "CodeNewRoman Nerd Font Propo";
+  font-weight: bolder;
   color: #cad3f5;
   font-size: 2rem;
 }
@@ -343,4 +415,8 @@ slider {
 
 .image {
   padding-right: 0.5rem;
+}
+
+.blank-window {
+  background: transparent;
 }

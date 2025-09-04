@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+menu_command='rofi -dmenu -p'
+
+options="⏻ Shutdown\n󰜉 Reboot\n󰗽 Logout\n󰏥 Suspend\n Lock"
+selected=$(echo -e $options | $menu_command "Power Menu")
+
+case $selected in
+  '⏻ Shutdown')
+    confirm=$(echo -e "Yes\nNo" | $menu_command "Shutdown?")
+    [ "$confirm" = "Yes" ] && systemctl poweroff
+    ;;
+  '󰜉 Reboot')
+    confirm=$(echo -e "Yes\nNo" | $menu_command "Reboot?")
+    [ "$confirm" = "Yes" ] && systemctl reboot
+    ;;
+  '󰗽 Logout')
+    confirm=$(echo -e "Yes\nNo" | $menu_command "Logout?")
+    [ "$confirm" = "Yes" ] && uwsm stop  # Replace with `hyprctl dispatch exit` for Hyprland
+    ;;
+  '󰏥 Suspend')
+    confirm=$(echo -e "Yes\nNo" | $menu_command "Suspend?")
+    [ "$confirm" = "Yes" ] && systemctl suspend
+    ;;
+  ' Lock')
+    hyprlock  # Or use your preferred screen locker
+    ;;
+esac

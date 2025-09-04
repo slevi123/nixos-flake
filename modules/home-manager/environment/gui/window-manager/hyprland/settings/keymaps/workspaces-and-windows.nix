@@ -41,8 +41,6 @@
         "SUPER SHIFT, ${workspace_key}, movetoworkspace, name:${workspace_name}"
         # Move active window to a workspace (without workspace switch) with mainMod + CTRL + SHIFT + [0-9]
         "SUPER CTRL SHIFT, ${workspace_key}, movetoworkspacesilent, name:${workspace_name}"
-
-        "SUPER CTRL SHIFT, ${workspace_key}, movetoworkspacesilent, name:${workspace_name}"  
       ]
     ) 
     (
