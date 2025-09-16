@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # services.gitlab-runner.services = {
   #     # runner for building docker images

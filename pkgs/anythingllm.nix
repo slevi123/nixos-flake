@@ -6,8 +6,6 @@
   copyDesktopItems,
   writeShellScriptBin,
   nodejs,
-  coreutils,
-  findutils,
   gnused,
   prisma-engines,
 }:

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   systemd.user.services = {
     albert = {

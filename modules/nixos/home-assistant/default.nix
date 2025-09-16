@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # # frenck, the original author of the package, sadly doesnt likes it to be distributed for nix :(
   # # also this seemed broken to me, maybe the config...

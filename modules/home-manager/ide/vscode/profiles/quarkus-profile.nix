@@ -17,7 +17,7 @@ let
   );
 in
 {
-  home.packages = with pkgs; [
+  home.packages = [
     my-jdk17
     my-jdk21
   ];

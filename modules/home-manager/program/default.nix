@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ ... }:
 {
   programs = {
     # Enable home-manager and git

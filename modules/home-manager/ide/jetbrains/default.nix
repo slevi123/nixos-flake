@@ -1,7 +1,7 @@
-{ pkgs, inputs, ... }:
-let
-  pkgs-stable = inputs.nixpkgs-stable.legacyPackages."${pkgs.system}";
-in
+{ pkgs, ... }:
+# let
+#   pkgs-stable = inputs.nixpkgs-stable.legacyPackages."${pkgs.system}";
+# in
 {
   home.packages = with pkgs.jetbrains; [
     pycharm-professional
