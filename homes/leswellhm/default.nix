@@ -51,6 +51,7 @@
     # "${self}/modules/home-manager/program/communication/matrix/element"
     "${self}/modules/home-manager/program/character-picker/unipicker"
     "${self}/modules/home-manager/program"
+    "${self}/modules/home-manager/games"
 
     "${self}/modules/home-manager/ide/vscode"
     "${self}/modules/home-manager/ide/nixvim"

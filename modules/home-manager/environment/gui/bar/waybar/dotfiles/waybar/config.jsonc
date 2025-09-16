@@ -101,7 +101,9 @@
             "class<vlc>":"󰕼",
             "class<org.pwmt.zathura>": "",
             "class<Minecraft\\* .*>": "󰍳",
-            "title<SKlauncher .*>": ""
+            "title<SKlauncher .*>": "",
+            "class<steam>": "",
+            "class<class: Arduino IDE>": ""
         },
         "format-icons": {
             "sp1":"󰩳1",
