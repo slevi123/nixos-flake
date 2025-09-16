@@ -6,5 +6,6 @@
     ./javascript/nodejs
     ./javascript/pnpm.nix
     ./python
+    ./nix
   ];
 }

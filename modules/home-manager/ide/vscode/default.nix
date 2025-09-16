@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ./profiles/default-profile.nix
     ./profiles/quarkus-profile.nix
