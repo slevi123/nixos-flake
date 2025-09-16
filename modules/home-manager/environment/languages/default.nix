@@ -1,5 +1,6 @@
 {
   imports = [
+    ./nix
     ./c
     ./java
     ./javascript/nodejs

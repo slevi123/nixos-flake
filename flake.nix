@@ -194,6 +194,8 @@
       url = "github:nix-community/nix-snapd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    naersk.url = "github:nix-community/naersk";
   };
 
 

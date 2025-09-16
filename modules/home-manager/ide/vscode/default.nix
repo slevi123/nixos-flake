@@ -6,6 +6,7 @@
     ./profiles/python-profile.nix
     ./profiles/qml-profile.nix
     ./profiles/sysadmin-profile.nix
+    ./profiles/nix-profile.nix
   ];
 
   programs.vscode = {
