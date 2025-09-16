@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   environment.systemPackages = [
     pkgs.ulauncher
@@ -8,7 +8,7 @@
     ulauncher = {
       enable = true;
       description = "Linux Application Launcher";
-      documentation = ["https://ulauncher.io/"];
+      documentation = [ "https://ulauncher.io/" ];
       serviceConfig = {
         Type = "simple";
         Restart = "always";
@@ -18,8 +18,8 @@
         '';
       };
 
-      wantedBy = ["graphical-session.target"];
-      after = ["display-manager.service"];
+      wantedBy = [ "graphical-session.target" ];
+      after = [ "display-manager.service" ];
     };
   };
 }

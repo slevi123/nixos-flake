@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   wayland.windowManager.hyprland.settings = {
     "$piptitle" = "Picture[ -]in[ -][Pp]icture";

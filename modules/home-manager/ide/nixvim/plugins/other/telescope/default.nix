@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   plugins.telescope = {
     enable = true;
@@ -28,20 +28,19 @@
 
     {
       mode = "n";
-        key = "<leader>p";
-        action = "<cmd>Telescope commands<CR>";
-        options = {
-          desc = "Find Commands";
-        };
+      key = "<leader>p";
+      action = "<cmd>Telescope commands<CR>";
+      options = {
+        desc = "Find Commands";
+      };
     }
     {
       mode = "n";
-        key = "<C-p>";
-        action = "<cmd>Telescope find_files<CR>";
-        options = {
-          desc = "Find Files";
-        };
+      key = "<C-p>";
+      action = "<cmd>Telescope find_files<CR>";
+      options = {
+        desc = "Find Files";
+      };
     }
   ];
 }
-

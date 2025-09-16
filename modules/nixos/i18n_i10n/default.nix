@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   # Set your time zone.
   time.timeZone = "Europe/Bucharest";
@@ -18,5 +18,5 @@
       LC_TELEPHONE = "hu_HU.UTF-8";
       LC_TIME = "hu_HU.UTF-8";
     };
-  }; 
+  };
 }

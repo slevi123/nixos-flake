@@ -1,8 +1,8 @@
-{...}:
+{ ... }:
 {
   wayland.windowManager.hyprland.settings.input = {
     kb_layout = "us,hu,ro";
-    kb_variant =",qwerty,";
+    kb_variant = ",qwerty,";
     kb_model = "";
     kb_options = "lv3:ralt_switch";
     kb_rules = "";

@@ -1,29 +1,30 @@
-{pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 {
   programs.vscode.profiles.nix = {
-    extensions = with pkgs.vscode-extensions;
-    with inputs.nix-vscode-extensions.extensions.${pkgs.system}; [
-      k--kato.intellij-idea-keybindings
-      mkhl.direnv
-      mhutchie.git-graph
+    extensions =
+      with pkgs.vscode-extensions;
+      with inputs.nix-vscode-extensions.extensions.${pkgs.system};
+      [
+        k--kato.intellij-idea-keybindings
+        mkhl.direnv
+        mhutchie.git-graph
 
-      # language support
-      # bbenoist.nix
-      tamasfe.even-better-toml
-      # kdl-org.kdl
+        # language support
+        # bbenoist.nix
+        tamasfe.even-better-toml
+        # kdl-org.kdl
 
+        gruntfuggly.todo-tree
+        pkief.material-icon-theme
 
-      gruntfuggly.todo-tree
-      pkief.material-icon-theme
+        naumovs.color-highlight
+        vscode-marketplace.ewen-lbh.vscode-hyprls
+        vscode-marketplace.dlech.chmod
+        # vscode-marketplace.vscodevim.vim
 
-      naumovs.color-highlight
-      vscode-marketplace.ewen-lbh.vscode-hyprls
-      vscode-marketplace.dlech.chmod
-      # vscode-marketplace.vscodevim.vim
+        jnoortheen.nix-ide
 
-      jnoortheen.nix-ide
-
-    ];
+      ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
       "files.autoSave" = "afterDelay";
@@ -33,12 +34,12 @@
       "editor.scrollbar.vertical" = "hidden";
 
       "nix.enableLanguageServer" = true; # Enable LSP.
-      "nix.serverPath"= "nil"; # The path to the LSP server executable.
+      "nix.serverPath" = "nil"; # The path to the LSP server executable.
 
       "nix.serverSettings" = {
         "nil" = {
           "formatting" = {
-            "command" = ["nixfmt"]; 
+            "command" = [ "nixfmt" ];
           };
         };
       };

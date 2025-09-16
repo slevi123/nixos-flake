@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   imports = [
     ./dialog-fixes.nix

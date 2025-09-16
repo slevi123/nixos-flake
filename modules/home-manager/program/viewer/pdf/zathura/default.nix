@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.zathura = {
     enable = true;
@@ -13,7 +13,7 @@
       "x-scheme-handler/http" = "userapp-Zen-EBBR22.desktop";
       "x-scheme-handler/https" = "userapp-Zen-EBBR22.desktop";
       "x-scheme-handler/chrome" = "userapp-Zen-EBBR22.desktop";
-      "text/html"="userapp-Zen-EBBR22.desktop";
+      "text/html" = "userapp-Zen-EBBR22.desktop";
       "application/x-extension-htm" = "userapp-Zen-EBBR22.desktop";
       "application/x-extension-html" = "userapp-Zen-EBBR22.desktop";
       "application/x-extension-shtml" = "userapp-Zen-EBBR22.desktop";

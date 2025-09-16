@@ -1,20 +1,20 @@
-{...}:
+{ ... }:
 {
   programs = {
     atuin = {
-        enable = true;
-        enableZshIntegration = true;
-        enableBashIntegration = true;
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
 
-        flags = [
-          # "--disable-up-arrow"
-          # "--disable-ctrl-r"
-        ];
+      flags = [
+        # "--disable-up-arrow"
+        # "--disable-ctrl-r"
+      ];
 
-        settings = {
-          filter_mode = "session";
-          style = "compact";
-        };
+      settings = {
+        filter_mode = "session";
+        style = "compact";
+      };
     };
   };
 }

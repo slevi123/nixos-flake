@@ -3,8 +3,9 @@
   lib,
   ...
 }:
-with lib.hm.gvariant; {
-  dconf.settings = { 
+with lib.hm.gvariant;
+{
+  dconf.settings = {
     # ----------GNOME EXTENSION SETTINGS-----------------------
     "org/gnome/shell" = {
       enabled-extensions = [
@@ -25,7 +26,7 @@ with lib.hm.gvariant; {
       display-mode = 1;
       history-size = 700;
       private-mode = false;
-      toggle-menu = ["<Super>v"];
+      toggle-menu = [ "<Super>v" ];
       window-width-percentage = 38;
     };
 

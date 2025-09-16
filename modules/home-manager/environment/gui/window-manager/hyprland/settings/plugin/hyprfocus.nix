@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     plugins = [
@@ -21,23 +21,23 @@
         ];
 
         flash = {
-            flash_opacity = 0.7;
+          flash_opacity = 0.7;
 
-            in_bezier = "bezIn";
-            in_speed = 0.5;
+          in_bezier = "bezIn";
+          in_speed = 0.5;
 
-            out_bezier = "bezOut";
-            out_speed = 3;
+          out_bezier = "bezOut";
+          out_speed = 3;
         };
 
         shrink = {
-            shrink_percentage = 0.8;
+          shrink_percentage = 0.8;
 
-            in_bezier = "bezIn";
-            in_speed = 0.5;
+          in_bezier = "bezIn";
+          in_speed = 0.5;
 
-            out_bezier = "bezOut";
-            out_speed = 3;
+          out_bezier = "bezOut";
+          out_speed = 3;
         };
       };
     };

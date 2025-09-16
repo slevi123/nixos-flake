@@ -1,9 +1,8 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
-    
 
     # diff, only one
     # delta.enable = true; # fast, only syntaxhighlight
@@ -26,7 +25,7 @@
   };
 
   home.packages = [
-    pkgs.gitoxide  # rust git implementation
+    pkgs.gitoxide # rust git implementation
     pkgs.git-town # git automaitons (for various workflows)
   ];
 }

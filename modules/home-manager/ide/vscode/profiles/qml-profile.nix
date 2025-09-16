@@ -1,29 +1,30 @@
-{pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 {
   programs.vscode.profiles.qt-qml = {
-    extensions = with pkgs.vscode-extensions;
-    with inputs.nix-vscode-extensions.extensions.${pkgs.system}; [
-      k--kato.intellij-idea-keybindings
-      mkhl.direnv
-      mhutchie.git-graph
+    extensions =
+      with pkgs.vscode-extensions;
+      with inputs.nix-vscode-extensions.extensions.${pkgs.system};
+      [
+        k--kato.intellij-idea-keybindings
+        mkhl.direnv
+        mhutchie.git-graph
 
-      # language support
-      bbenoist.nix
-      tamasfe.even-better-toml
-      # kdl-org.kdl
+        # language support
+        bbenoist.nix
+        tamasfe.even-better-toml
+        # kdl-org.kdl
 
+        gruntfuggly.todo-tree
+        pkief.material-icon-theme
 
-      gruntfuggly.todo-tree
-      pkief.material-icon-theme
+        naumovs.color-highlight
+        vscode-marketplace.ewen-lbh.vscode-hyprls
+        vscode-marketplace.dlech.chmod
 
-      naumovs.color-highlight
-      vscode-marketplace.ewen-lbh.vscode-hyprls
-      vscode-marketplace.dlech.chmod
-
-      vscode-marketplace.theqtcompany.qt-qml
-      vscode-marketplace.theqtcompany.qt-core
-      vscode-marketplace.theqtcompany.qt
-    ];
+        vscode-marketplace.theqtcompany.qt-qml
+        vscode-marketplace.theqtcompany.qt-core
+        vscode-marketplace.theqtcompany.qt
+      ];
     userSettings = {
       "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
       "files.autoSave" = "afterDelay";

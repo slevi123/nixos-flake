@@ -1,9 +1,8 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   home.packages = [
     pkgs.superfile
   ];
-
 
   xdg.desktopEntries = {
     "Superfile" = {

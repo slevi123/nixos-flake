@@ -1,4 +1,4 @@
-{config, ...}:
+{ config, ... }:
 {
   plugins.nvim-tree = {
     enable = true;
@@ -15,7 +15,7 @@
         desc = "Toggle Nvim Tree";
       };
     }
-    
+
     {
       mode = "n";
       key = "<leader>tf";
@@ -34,4 +34,3 @@
     }
   ];
 }
-

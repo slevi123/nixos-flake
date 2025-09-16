@@ -1,5 +1,7 @@
-{pkgs, ...}: {
-  home.packages = with pkgs;
+{ pkgs, ... }:
+{
+  home.packages =
+    with pkgs;
     [
       wtype
 
@@ -13,7 +15,6 @@
       cava
 
       delta
-
 
       # hypr
       psmisc
@@ -46,16 +47,20 @@
       socat
     ]
     ++ [
-      (let
-        base = pkgs.appimageTools.defaultFhsEnvArgs;
-      in
-        pkgs.buildFHSEnv (base
+      (
+        let
+          base = pkgs.appimageTools.defaultFhsEnvArgs;
+        in
+        pkgs.buildFHSEnv (
+          base
           // {
             name = "fhs";
-            targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config];
+            targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [ pkgs.pkg-config ];
             profile = "export FHS=1";
             runScript = "zsh";
             # extraOutputsToInstall = ["dev"];
-          }))
+          }
+        )
+      )
     ];
 }

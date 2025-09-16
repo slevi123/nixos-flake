@@ -6,8 +6,9 @@
   config,
   pkgs,
   ...
-}: {
-  imports = [ 
+}:
+{
+  imports = [
     inputs.nix-index-database.homeModules.nix-index
     "${self}/modules/home-manager/environment/languages"
     "${self}/modules/home-manager/environment/tty/alpha.nix"

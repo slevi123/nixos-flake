@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -18,12 +18,12 @@
         # indicator_gap = 2;
       };
     };
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
+    # https://wiki.hyprland.org/Configuring/Variables/#gestures
 
     extraConfig = ''
       bind = SUPER ALT, right, changegroupactive, f
       bind = SUPER ALT, left, changegroupactive, b
-      
+
       bind = SUPER, G, submap, group-map
       submap = group-map
 

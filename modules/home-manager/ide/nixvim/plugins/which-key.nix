@@ -1,9 +1,9 @@
-{...}:
+{ ... }:
 {
   plugins.which-key = {
     enable = true;
     settings = {
-      show_help = true; 
+      show_help = true;
       keys = {
         # scroll_down = "<C-down>"; # Scroll down with Ctrl+Down
         # scroll_up = "<C-up>"; # Scroll up with Ctrl+Up
@@ -14,7 +14,7 @@
           __unkeyed-1 = "<auto>";
           mode = "nxsot";
         }
-        # { 
+        # {
         #   __unkeyed-2 = "<localleader>";
         #   mode = [ "i" ];
         # }
@@ -26,7 +26,10 @@
   keymaps = [
 
     {
-      mode = [ "i" "t"];
+      mode = [
+        "i"
+        "t"
+      ];
       key = "<localleader>";
       action = "<cmd>WhichKey<CR>";
       options = {
@@ -52,4 +55,3 @@
     # }
   ];
 }
-

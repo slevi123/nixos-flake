@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   imports = [
     ./kernel/julia-mestint.nix

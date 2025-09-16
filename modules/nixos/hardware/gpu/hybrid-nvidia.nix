@@ -2,11 +2,12 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   services = {
     xserver = {
       # enable = true;
-      videoDrivers = ["nvidia"];
+      videoDrivers = [ "nvidia" ];
     };
   };
 
@@ -14,14 +15,13 @@
     #Prime GPU Bus Ids set by nixos-hardware
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [nvidia-vaapi-driver];
+      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
 
     nvidia = {
       open = false; # Set to false for proprietary drivers
       modesetting.enable = true;
       powerManagement.enable = true;
-
 
       # prime = {
       #   # allowExternalGpu = true;

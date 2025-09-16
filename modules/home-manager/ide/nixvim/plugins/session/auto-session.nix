@@ -1,12 +1,12 @@
-{...}: 
+{ ... }:
 {
   plugins.auto-session = {
     enable = true;
     settings = {
       auto_create = true;
       enabled = true;
-      auto_save = true; 
-      auto_restore = true; 
+      auto_save = true;
+      auto_restore = true;
 
       root_dir = {
         __raw = "vim.fn.stdpath 'data' .. '/sessions/'";
@@ -16,7 +16,7 @@
         load_on_setup = true;
       };
 
-       # fix for nvim bug
+      # fix for nvim bug
       luaConfig = {
         post = ''
           require('auto-session').setup {

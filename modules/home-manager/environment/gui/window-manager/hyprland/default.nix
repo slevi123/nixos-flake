@@ -1,4 +1,10 @@
-{pkgs, inputs, lib, osConfig,  ...}: 
+{
+  pkgs,
+  inputs,
+  lib,
+  osConfig,
+  ...
+}:
 {
   imports = [
     ./settings

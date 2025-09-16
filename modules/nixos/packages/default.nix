@@ -1,7 +1,6 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
-  environment.systemPackages = 
-  with pkgs; [
+  environment.systemPackages = with pkgs; [
     # distrobox
 
     # F
@@ -33,7 +32,7 @@
     pciutils
     usbutils
     nvtopPackages.full
-    
+
     go-chromecast
     lazydocker
 
@@ -105,8 +104,6 @@
 
     # chromedriver
     #selenium-server-standalone
-
-
 
     # gaphor  # gnome UML tool
     libpng

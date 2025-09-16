@@ -3,7 +3,8 @@
   lib,
   ...
 }:
-with lib.hm.gvariant; {
+with lib.hm.gvariant;
+{
   dconf.settings = {
     # =====================GUAKE===============================
     # TODO: maybe use guake yml in future

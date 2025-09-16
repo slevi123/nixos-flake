@@ -1,11 +1,10 @@
-{inputs, pkgs, ...}:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     inputs.keylightctl.nixosModules.lenovo
     inputs.hardware.nixosModules.lenovo-ideapad-15ach6
   ];
-
 
   # conservation mode
   systemd.services.fix-ideapad-conservation-mode = {
@@ -20,6 +19,6 @@
   services.udev.packages = [
     (pkgs.writeTextDir "/etc/udev/rules.d/99-ideapad-conservation.rules" ''
       SUBSYSTEM=="platform", KERNEL=="VPC2004:00", ATTR{conservation_mode}="*", MODE="0664", GROUP="users"
-    '')				 
+    '')
   ];
 }

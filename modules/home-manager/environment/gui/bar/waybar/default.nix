@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   home.file.".config/waybar" = {
     source = ./dotfiles/waybar;
@@ -8,5 +8,5 @@
   home.sessionVariables = {
     CHARM_BAR = "waybar";
   };
-  # programs.enable 
+  # programs.enable
 }

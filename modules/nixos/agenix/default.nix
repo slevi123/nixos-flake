@@ -1,4 +1,4 @@
-{inputs, self, ...}:
+{ inputs, self, ... }:
 {
   imports = [
     inputs.agenix.nixosModules.default

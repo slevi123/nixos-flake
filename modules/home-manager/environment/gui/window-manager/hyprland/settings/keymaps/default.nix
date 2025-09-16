@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   imports = [
     ./workspaces-and-windows.nix

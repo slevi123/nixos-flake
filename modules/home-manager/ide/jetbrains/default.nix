@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 let
   pkgs-stable = inputs.nixpkgs-stable.legacyPackages."${pkgs.system}";
 in

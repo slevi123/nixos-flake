@@ -1,14 +1,14 @@
-{inputs, pkgs, ...}:
+{ inputs, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     plugins = [
-      # inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors 
+      # inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
       pkgs.hyprlandPlugins.hyprscrolling
     ];
 
     settings = {
       plugin.hyprscrolling = {
-        
+
       };
     };
 

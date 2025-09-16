@@ -1,4 +1,4 @@
-{lib, ...}:
+{ lib, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     workspace = [
@@ -24,65 +24,107 @@
       "20,defaultName:KP-0"
     ];
 
-    bind = let 
-      dupList = map (num: [num num]);
-    in
-    builtins.concatMap 
-    ( 
-     workspace:
+    bind =
       let
-        workspace_key = lib.head workspace;
-        workspace_name = lib.elemAt workspace 1;
-      in 
-      [
-        # Switch workspaces with mainMod + [0-9]
-        "SUPER, ${workspace_key}, workspace, name:${workspace_name}"
-        # Move active window to a workspace with mainMod + SHIFT + [0-9]
-        "SUPER SHIFT, ${workspace_key}, movetoworkspace, name:${workspace_name}"
-        # Move active window to a workspace (without workspace switch) with mainMod + CTRL + SHIFT + [0-9]
-        "SUPER CTRL SHIFT, ${workspace_key}, movetoworkspacesilent, name:${workspace_name}"
-      ]
-    ) 
-    (
-      (dupList ["1" "2" "3" "4" "5" "6" "7" "8" "9" "0"]) 
-      ++ 
-      [
-        ["KP_End" "KP-1" ]
-        ["KP_Down" "KP-2" ]
-        ["KP_Next" "KP-3" ]
-        ["KP_Left" "KP-4" ]
-        ["KP_Begin" "KP-5" ]
-        ["KP_Right" "KP-6" ]
-        ["KP_Home" "KP-7" ]
-        ["KP_Up" "KP-8"]
-        ["KP_Prior" "KP-9"]
-        ["KP_Insert" "KP-0"]
-      ]
-    ) 
-    ++ 
-    [
+        dupList = map (num: [
+          num
+          num
+        ]);
+      in
+      builtins.concatMap
+        (
+          workspace:
+          let
+            workspace_key = lib.head workspace;
+            workspace_name = lib.elemAt workspace 1;
+          in
+          [
+            # Switch workspaces with mainMod + [0-9]
+            "SUPER, ${workspace_key}, workspace, name:${workspace_name}"
+            # Move active window to a workspace with mainMod + SHIFT + [0-9]
+            "SUPER SHIFT, ${workspace_key}, movetoworkspace, name:${workspace_name}"
+            # Move active window to a workspace (without workspace switch) with mainMod + CTRL + SHIFT + [0-9]
+            "SUPER CTRL SHIFT, ${workspace_key}, movetoworkspacesilent, name:${workspace_name}"
+          ]
+        )
+        (
+          (dupList [
+            "1"
+            "2"
+            "3"
+            "4"
+            "5"
+            "6"
+            "7"
+            "8"
+            "9"
+            "0"
+          ])
+          ++ [
+            [
+              "KP_End"
+              "KP-1"
+            ]
+            [
+              "KP_Down"
+              "KP-2"
+            ]
+            [
+              "KP_Next"
+              "KP-3"
+            ]
+            [
+              "KP_Left"
+              "KP-4"
+            ]
+            [
+              "KP_Begin"
+              "KP-5"
+            ]
+            [
+              "KP_Right"
+              "KP-6"
+            ]
+            [
+              "KP_Home"
+              "KP-7"
+            ]
+            [
+              "KP_Up"
+              "KP-8"
+            ]
+            [
+              "KP_Prior"
+              "KP-9"
+            ]
+            [
+              "KP_Insert"
+              "KP-0"
+            ]
+          ]
+        )
+      ++ [
 
-      # Move focus with mainMod + arrow keys
-      "SUPER, left, movefocus, l"
-      "SUPER, right, movefocus, r"
-      "SUPER, up, movefocus, u"
-      "SUPER, down, movefocus, d"
+        # Move focus with mainMod + arrow keys
+        "SUPER, left, movefocus, l"
+        "SUPER, right, movefocus, r"
+        "SUPER, up, movefocus, u"
+        "SUPER, down, movefocus, d"
 
-      # Move workspace to monitor with mainMod + CTRL + arrow keys
-      "CTRL SUPER, left, movecurrentworkspacetomonitor, l"
-      "CTRL SUPER, right, movecurrentworkspacetomonitor, r"
-      "CTRL SUPER, up, movecurrentworkspacetomonitor, u"
-      "CTRL SUPER, down, movecurrentworkspacetomonitor, d"
+        # Move workspace to monitor with mainMod + CTRL + arrow keys
+        "CTRL SUPER, left, movecurrentworkspacetomonitor, l"
+        "CTRL SUPER, right, movecurrentworkspacetomonitor, r"
+        "CTRL SUPER, up, movecurrentworkspacetomonitor, u"
+        "CTRL SUPER, down, movecurrentworkspacetomonitor, d"
 
-      # Move current window with mainMod + SHIFT + arrow keys
-      "SHIFT SUPER, right, movewindow, r"
-      "SHIFT SUPER, left, movewindow, l"
-      "SHIFT SUPER, up, movewindow, u"
-      "SHIFT SUPER, down, movewindow, d"
-    ];
+        # Move current window with mainMod + SHIFT + arrow keys
+        "SHIFT SUPER, right, movewindow, r"
+        "SHIFT SUPER, left, movewindow, l"
+        "SHIFT SUPER, up, movewindow, u"
+        "SHIFT SUPER, down, movewindow, d"
+      ];
   };
 }
-
 
 # =======================================
 # source: https://www.reddit.com/r/hyprland/comments/11zy9tj/binding_numpad_keys_to_switch_workspaces/
@@ -104,4 +146,4 @@
 
 # bind = SUPER, KP_Prior, workspace, 9
 
-# bind = SUPER, KP_Insert, workspace, 10 
+# bind = SUPER, KP_Insert, workspace, 10

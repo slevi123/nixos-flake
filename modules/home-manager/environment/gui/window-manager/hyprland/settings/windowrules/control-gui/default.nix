@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
@@ -9,6 +9,6 @@
       "size 70% 68%, tag:control"
     ];
     # and gtk portal (dialogs), temporary solution until I learn more about portals
-    
+
   };
 }

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   gtk = {
     enable = true;
     font.name = "Hack Nerd Font Mono 16";
@@ -26,7 +27,6 @@
     gtk4 = {
       extraConfig.gtk-application-prefer-dark-theme = true;
     };
-
 
   };
 }

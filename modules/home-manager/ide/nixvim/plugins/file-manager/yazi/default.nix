@@ -1,17 +1,20 @@
-{...}:
+{ ... }:
 {
   plugins.yazi = {
     enable = true;
 
     settings = {
-      enable_mouse_support = true; 
+      enable_mouse_support = true;
     };
   };
 
   keymaps = [
     {
       key = "<leader>-";
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       action = "<cmd>Yazi<cr>";
       options = {
         desc = "Open yazi at the current file";

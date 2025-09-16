@@ -15,7 +15,7 @@
   wsl.enable = true;
   wsl.defaultUser = "leswellhm";
 
-    imports = [
+  imports = [
     "${self}/modules/nixos/environment/tty/phi.nix"
 
     # "${self}/modules/nixos/users"
@@ -23,7 +23,6 @@
 
     # "${self}/modules/nixos/packages"
     "${self}/modules/nixos/i18n_i10n"
-
 
     "${self}/modules/nixos/agenix"
 
@@ -35,14 +34,29 @@
     leswellhm = {
       description = "initial";
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "docker" "users" "plugdev" "usb" "network"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "users"
+        "plugdev"
+        "usb"
+        "network"
+      ];
       shell = pkgs.zsh;
     };
     leswell = {
       description = "leswell";
       isNormalUser = true;
       uid = 1002;
-      extraGroups = ["networkmanager" "wheel" "docker" "users" "plugdev" "usb"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "users"
+        "plugdev"
+        "usb"
+      ];
       shell = pkgs.zsh;
 
     };

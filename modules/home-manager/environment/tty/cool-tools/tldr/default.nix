@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.tealdeer = {
     # tealdeer is faster than tldr

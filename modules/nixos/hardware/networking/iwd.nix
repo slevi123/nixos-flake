@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   networking = {
     networkmanager = {
@@ -17,10 +17,10 @@
 
     # # Use systemd-networkd for basic network configuration
     # useNetworkd = true;
-     
+
     # # Configure DHCP client (dhcpcd is a good alternative)
     # dhcpcd.enable = true;
-    
+
   };
   # # Enable DNS resolution
   # services.resolved.enable = true;

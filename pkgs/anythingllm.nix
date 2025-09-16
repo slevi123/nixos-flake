@@ -1,14 +1,15 @@
-{ lib
-, appimageTools
-, fetchurl
-, makeDesktopItem
-, copyDesktopItems
-, writeShellScriptBin
-, nodejs
-, coreutils
-, findutils
-, gnused
-, prisma-engines
+{
+  lib,
+  appimageTools,
+  fetchurl,
+  makeDesktopItem,
+  copyDesktopItems,
+  writeShellScriptBin,
+  nodejs,
+  coreutils,
+  findutils,
+  gnused,
+  prisma-engines,
 }:
 
 let
@@ -16,9 +17,9 @@ let
   version = "1.0.0";
   src = fetchurl {
     url = "https://cdn.anythingllm.com/latest/AnythingLLMDesktop.AppImage";
-    hash = "sha256-SBj+ln0VbE6H4097TvmYu+pQdg6JizfMs9lA+yI9SoE=";  # REPLACE WITH ACTUAL HASH
+    hash = "sha256-SBj+ln0VbE6H4097TvmYu+pQdg6JizfMs9lA+yI9SoE="; # REPLACE WITH ACTUAL HASH
   };
-  
+
   extracted = appimageTools.extractType2 {
     inherit pname version src;
   };
@@ -30,19 +31,22 @@ let
     exec = "${pname}";
     icon = "${pname}";
     comment = "Private desktop AI application";
-    categories = [ "Utility" "AI" ];
+    categories = [
+      "Utility"
+      "AI"
+    ];
     startupWMClass = "anything-llm";
   };
 
   # Custom wrapper script to fix Prisma issues
   appWrapper = writeShellScriptBin "${pname}" ''
     set -euo pipefail
-    
+
     # Prepare work directory
     WORK_DIR="''${XDG_DATA_HOME:-$HOME/.local/share}/${pname}"
     mkdir -p "$WORK_DIR"
     cd "$WORK_DIR"
-    
+
     # Copy backend resources if not already present
     if [ ! -d "backend" ]; then
       cp -r ${extracted}/resources/backend .
@@ -65,7 +69,8 @@ let
     exec ${extracted}/AppRun "$@"
   '';
 
-in appimageTools.wrapType2 {
+in
+appimageTools.wrapType2 {
   inherit pname version src;
 
   nativeBuildInputs = [ copyDesktopItems ];
@@ -75,7 +80,7 @@ in appimageTools.wrapType2 {
     # Replace default wrapper with our custom script
     rm $out/bin/${pname}
     cp ${appWrapper}/bin/${pname} $out/bin/${pname}
-    
+
     # Install icon
     icon_path=$(find ${extracted} -path '*/resources/*' \( -name 'icon.png' -o -name '*.ico' -o -name '*.svg' \) -print -quit)
     if [ -n "$icon_path" ]; then

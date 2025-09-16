@@ -3,9 +3,10 @@
   lib,
   ...
 }:
-with lib.hm.gvariant; {
+with lib.hm.gvariant;
+{
   dconf.settings = {
-     # ----------GNOME CUSTOM SHORTCUTS---------------------
+    # ----------GNOME CUSTOM SHORTCUTS---------------------
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -49,13 +50,13 @@ with lib.hm.gvariant; {
     # ----------GNOME BUILT-IN SHORTCUTS---------------------
 
     "org/gnome/desktop/wm/keybindings" = {
-      close = ["<Super>q"];
+      close = [ "<Super>q" ];
       minimize = "@as []";
     };
 
     "org/gnome/shell/keybindings" = {
       focus-active-notification = "@as []";
-      toggle-message-tray = ["<Super>n"];
+      toggle-message-tray = [ "<Super>n" ];
     };
   };
 }

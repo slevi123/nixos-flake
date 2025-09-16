@@ -1,3 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # services.tailscale.enable = true;
 }

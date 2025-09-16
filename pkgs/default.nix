@@ -1,7 +1,10 @@
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # You can build them using 'nix build .#example'
-{pkgs ? (import ../nixpkgs.nix) {}}: {
+{
+  pkgs ? (import ../nixpkgs.nix) { },
+}:
+{
   # example = pkgs.callPackage ./example { };
   # jdtls = pkgs.callPackage ./jdt-language-server {};
-  anythingllm = pkgs.callPackage ./anythingllm.nix {};
+  anythingllm = pkgs.callPackage ./anythingllm.nix { };
 }

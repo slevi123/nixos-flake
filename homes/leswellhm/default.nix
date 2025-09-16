@@ -6,8 +6,9 @@
   config,
   pkgs,
   ...
-}: {
-  imports = [ 
+}:
+{
+  imports = [
     inputs.nix-index-database.homeModules.nix-index
     "${self}/modules/home-manager/environment/languages"
     "${self}/modules/home-manager/environment/tty/alpha.nix"
@@ -63,15 +64,16 @@
     "${self}/modules/home-manager/ssh"
     "${self}/modules/home-manager/networking/iw-frontend"
   ];
-  
 
   home = {
     homeDirectory = "/home/leswellhm";
 
-/*     keyboard = {
-      layout = "us,hu+qwerty,ro"; # Define the layouts
-      options = "lv3:ralt_switch"; # Set XKB options
-    }; */
+    /*
+      keyboard = {
+         layout = "us,hu+qwerty,ro"; # Define the layouts
+         options = "lv3:ralt_switch"; # Set XKB options
+       };
+    */
 
     sessionVariables.NIXOS_OZONE_WL = "1";
   };

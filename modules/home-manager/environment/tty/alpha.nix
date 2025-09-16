@@ -1,9 +1,9 @@
-{...}:
+{ ... }:
 {
   imports = [
     ./zsh
     ./bash
-    
+
     ./cool-tools/starship-prompt
     ./cool-tools/direnv
     ./cool-tools/eza

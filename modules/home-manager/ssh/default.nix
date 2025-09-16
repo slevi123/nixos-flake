@@ -1,4 +1,5 @@
-{config, osConfig, ...}: {
+{ config, osConfig, ... }:
+{
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;

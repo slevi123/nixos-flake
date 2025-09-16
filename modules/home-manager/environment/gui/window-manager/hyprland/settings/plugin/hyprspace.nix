@@ -1,4 +1,4 @@
-{inputs, pkgs, ...}:
+{ inputs, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     plugins = [
@@ -7,7 +7,7 @@
     settings = {
       bind = [
         "SUPER, Tab, overview:toggle" # can be: toggle, off/disable or on/enable
-        
+
       ];
     };
   };

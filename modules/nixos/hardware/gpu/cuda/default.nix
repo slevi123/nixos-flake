@@ -1,6 +1,11 @@
-{pkgs, lib, inputs, ...}:
 {
- nix.settings = {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
+  nix.settings = {
     substituters = [
       "https://cuda-maintainers.cachix.org"
     ];
@@ -9,13 +14,13 @@
     ];
   };
 
-  environment.systemPackages = 
-  let
-    # pkgs-unfree = import  {system = pkgs.system; allowUnfree= true;};
-    cudaPackages = inputs.nixpkgs-stable-unfree.legacyPackages.${pkgs.system}.cudaPackages;
-  in
-  [
-    cudaPackages.cudatoolkit
-    cudaPackages.cudnn
-  ];
+  environment.systemPackages =
+    let
+      # pkgs-unfree = import  {system = pkgs.system; allowUnfree= true;};
+      cudaPackages = inputs.nixpkgs-stable-unfree.legacyPackages.${pkgs.system}.cudaPackages;
+    in
+    [
+      cudaPackages.cudatoolkit
+      cudaPackages.cudnn
+    ];
 }

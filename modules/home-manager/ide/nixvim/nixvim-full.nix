@@ -1,4 +1,5 @@
-{inputs, pkgs, ...}: {
+{ inputs, pkgs, ... }:
+{
 
   imports = [
     ./plugins/lines-n-bars/lualine
@@ -17,9 +18,6 @@
     ./plugins/other/fzf-lua
     ./plugins/git-integration/neogit
     ./settings/theme/catppuccin
-    
-    
-
 
     # ======== might want in future
     # --> startup
@@ -32,7 +30,6 @@
     # direnv.enable = true;
     # treesitter.enable = true;
     # bufferline.enable = true;
-
 
     oil.enable = true;
   };
@@ -54,7 +51,6 @@
     number = true;
   };
 
-
   globals = {
     mapleader = " "; # Szóköz normal módban
     maplocalleader = ",,"; # Opcionálisan local leader
@@ -68,7 +64,7 @@
       options = {
         desc = "Next buffer";
       };
-    } 
+    }
 
     {
       mode = "n";
@@ -77,6 +73,6 @@
       options = {
         desc = "Previous buffer";
       };
-    } 
+    }
   ];
 }

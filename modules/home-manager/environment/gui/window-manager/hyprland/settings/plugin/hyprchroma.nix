@@ -1,4 +1,4 @@
-{inputs, ...}:
+{ inputs, ... }:
 {
   wayland.windowManager.hyprland = {
     plugins = [

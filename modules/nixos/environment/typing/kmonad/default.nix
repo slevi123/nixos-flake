@@ -1,4 +1,4 @@
-{inputs, ...}:
+{ inputs, ... }:
 {
   modules = [
     inputs.kmonad.nixosModules.default
