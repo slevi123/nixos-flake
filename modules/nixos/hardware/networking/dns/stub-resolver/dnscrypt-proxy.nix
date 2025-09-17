@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
   services.dnscrypt-proxy2 = {
     enable = true;
@@ -7,7 +7,10 @@
     settings = {
       ipv6_servers = true;
       ipv4_servers = true;
-      listen_addresses = ["127.0.0.1:53" "[::1]:53"];
+      listen_addresses = [
+        "127.0.0.1:53"
+        "[::1]:53"
+      ];
       require_dnssec = true;
 
       cache = true;
@@ -36,23 +39,36 @@
       };
       anonymized_dns = {
         routes = [
-          { 
-            server_name="quad9-dnscrypt-ip4-filter-ecs-pri";
-            via=["anon-cs-ro" "anon-cs-de"];
+          {
+            server_name = "quad9-dnscrypt-ip4-filter-ecs-pri";
+            via = [
+              "anon-cs-ro"
+              "anon-cs-de"
+            ];
           }
-          { 
-            server_name="cloudflare-security";
-            via=["anon-cs-ro" "anon-cs-de"]; 
-          }     
-          { 
-            server_name="google";
-            via=["anon-cs-ro" "anon-cs-de" "cloudflare-security"]; 
+          {
+            server_name = "cloudflare-security";
+            via = [
+              "anon-cs-ro"
+              "anon-cs-de"
+            ];
+          }
+          {
+            server_name = "google";
+            via = [
+              "anon-cs-ro"
+              "anon-cs-de"
+              "cloudflare-security"
+            ];
           }
         ];
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      server_names = [ "quad9-dnscrypt-ip4-filter-ecs-pri" "google" ];
+      server_names = [
+        "quad9-dnscrypt-ip4-filter-ecs-pri"
+        "google"
+      ];
     };
   };
 

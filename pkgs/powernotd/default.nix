@@ -1,5 +1,5 @@
 # { inputs, pkgs, ... }:
-# let 
+# let
 #   version = "1.2.0";
 # in
 # inputs.naersk.buildPackage {
@@ -11,7 +11,9 @@
 #   };
 # }
 
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "powernotd";

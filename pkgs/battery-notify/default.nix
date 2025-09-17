@@ -1,5 +1,5 @@
 # { inputs, pkgs, ... }:
-# let 
+# let
 #   version = "0.3.5";
 # in
 # inputs.naersk.buildPackage {
@@ -10,7 +10,9 @@
 #     sha256 = "sha256-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=";
 #   };
 # }
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "battery-notify";

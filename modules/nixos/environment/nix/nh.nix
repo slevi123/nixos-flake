@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # CLI helper for nix
   programs.nh = {
     enable = true;
