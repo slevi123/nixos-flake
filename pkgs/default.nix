@@ -9,5 +9,5 @@
   # jdtls = pkgs.callPackage ./jdt-language-server {};
   anythingllm = pkgs.callPackage ./anythingllm.nix { };
   # powernotd = pkgs.callPackage ./powernotd { };
-  # battery-notify = pkgs.callPackage ./battery-notify { };
+  battery-notify = pkgs.callPackage ./battery-notify { };
 }

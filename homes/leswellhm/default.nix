@@ -19,10 +19,11 @@
     "${self}/modules/home-manager/environment/gui/wallpaper/hyprpaper"
     "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
     "${self}/modules/home-manager/environment/gui/notification/swaync"
+    "${self}/modules/home-manager/environment/gui/notification"
     "${self}/modules/home-manager/environment/gui/menu/wofi"
     "${self}/modules/home-manager/environment/gui/menu/rofi"
     "${self}/modules/home-manager/environment/gui/menu/quick-actions"
-    # "${self}/modules/home-manager/environment/gui/battery-warning/battery-notify"
+    "${self}/modules/home-manager/environment/gui/battery-warning/battery-notify"
     "${self}/modules/home-manager/environment/sound/frontend/helvum"
     "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
 

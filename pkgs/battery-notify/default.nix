@@ -13,15 +13,17 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.rustPlatform.buildRustPackage rec {
-  pname = "powernotd";
+  pname = "battery-notify";
   version = "0.3.5";
 
   src = pkgs.fetchFromGitHub {
     owner = "cdown";
     repo = "battery-notify";
-    rev = "v${version}";
-    sha256 = "sha256-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=";
+    rev = "${version}";
+    sha256 = "sha256-ElNKEr7v26vlzPwC97RStUSc9MVSe4epxunjfVjVfCE=";
   };
 
-  cargoSha256 = "sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb=";
+  cargoLock = {
+    lockFile = "${src}/Cargo.lock";
+  };
 }
