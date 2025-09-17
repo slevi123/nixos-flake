@@ -27,6 +27,7 @@
     ./plugin/hyprspace.nix
     # ./plugin/hyprscrolling.nix
     ./plugin/dynamic-cursors.nix
+    ./plugin/xtra-dispatchers.nix
     # ./plugin/easymotion.nix
     # ./plugin/hyprfocus.nix # broken
     ./permissions.nix
