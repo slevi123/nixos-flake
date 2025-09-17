@@ -214,3 +214,10 @@ tooltip {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
+#privacy {
+    background: rgba(255, 0, 0, 0.467);
+    border-radius: 25px;
+    padding: 2px 5px;
+    margin: 10px;
+}

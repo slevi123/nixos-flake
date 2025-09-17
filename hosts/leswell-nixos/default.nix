@@ -32,6 +32,7 @@
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
 
+    "${self}/modules/nixos/environment/nix"
     "${self}/modules/nixos/environment/tty/phi.nix"
 
     "${self}/modules/nixos/environment/gui/display-manager/gdm"
