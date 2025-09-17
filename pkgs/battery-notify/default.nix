@@ -1,15 +1,3 @@
-# { inputs, pkgs, ... }:
-# let
-#   version = "0.3.5";
-# in
-# inputs.naersk.buildPackage {
-#    src = pkgs.fetchFromGitHub {
-#     owner = "cdown";
-#     repo = "battery-notify";
-#     rev = "v${version}";
-#     sha256 = "sha256-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=";
-#   };
-# }
 {
   pkgs ? import <nixpkgs> { },
 }:

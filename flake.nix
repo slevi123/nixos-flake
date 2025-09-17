@@ -207,7 +207,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # naersk.url = "github:nix-community/naersk";
+    # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };
 
 }
