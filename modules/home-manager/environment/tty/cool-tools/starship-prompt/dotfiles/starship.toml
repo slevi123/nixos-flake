@@ -14,7 +14,7 @@ $java\
 $haskell
  [{}](bold white) """
 
-# right_format = "$git_commit $time $nix_shell"
+right_format = "$git_commit $time $nix_shell"
 [custom.fsh]
 description = "Indicates when I'm in FHS env."
 symbol = '\(FHS\)'
@@ -46,6 +46,7 @@ format = "[DETACHED head](bold red): [$hash]($style)"
 [time]
 disabled = false
 time_format = "%H:%M"
+format = '| [$time]($style)'
 
 [nix_shell]
 # format = '[$state($symbol \($name\))]($style)'
