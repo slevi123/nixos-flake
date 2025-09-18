@@ -2,10 +2,9 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
-      gestures = {
-        workspace_swipe = true;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+      ];
 
       general = {
         gaps_in = 5;

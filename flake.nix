@@ -179,6 +179,12 @@
     #   url = "github:VirtCode/hypr-dynamic-cursors";
     #   # inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
     # };
+
+    hyprland-easymotion = {
+      url = "github:zakk4223/hyprland-easymotion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       # inputs.nixpkgs.follows = "nixpkgs-stable-unfree";

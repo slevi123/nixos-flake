@@ -39,8 +39,6 @@
       # iwgtk # I use NetworkManagar not iwd
       networkmanagerapplet # WIFI needs gnome theme, it's good, until I get better
       avizo # notifications for light and volumctl
-
-      swaynotificationcenter
       # copyq
       clipse
       wl-clipboard

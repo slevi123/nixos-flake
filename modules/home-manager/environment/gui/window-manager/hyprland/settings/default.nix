@@ -24,7 +24,7 @@
     ./program/swaync
 
     # ./plugin/hyprexpo.nix
-    ./plugin/hyprspace.nix
+    # ./plugin/hyprspace.nix # FIXME: disabled, because of broken build. If it will not be fixed, I need to submit an issue
     # ./plugin/hyprscrolling.nix
     ./plugin/dynamic-cursors.nix
     ./plugin/xtra-dispatchers.nix

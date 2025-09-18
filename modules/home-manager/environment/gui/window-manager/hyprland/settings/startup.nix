@@ -4,7 +4,7 @@
     exec-once = [
       "systemctl --user start hyprpolkitagent"
       "uwsm app hyprsunset -t 5000"
-      "uwsm app swaync"
+      # "uwsm app swaync"
       "uwsm app avizo-service"
       "uwsm app -- udiskie --smart-tray"
       "uwsm app -- $CHARM_BAR"

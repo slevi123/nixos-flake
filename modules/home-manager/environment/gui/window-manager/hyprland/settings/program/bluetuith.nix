@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "SUPER, B, exec, kitty --title 'bluetuith' bluetuith  # Bluetooth settings"
+      "SUPER, B, exec, uwsm app -- kitty --title 'bluetuith' bluetuith  # Bluetooth settings"
     ];
     windowrulev2 = [
       "float, title:bluetuith"
