@@ -26,6 +26,7 @@
     "${self}/modules/home-manager/environment/gui/battery-warning/battery-notify"
     "${self}/modules/home-manager/environment/sound/frontend/helvum"
     "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
+    "${self}/modules/home-manager/environment/bluetooth"
 
     "${self}/modules/home-manager/environment/gui/fonts"
     "${self}/modules/home-manager/environment/gui/theme"

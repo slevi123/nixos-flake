@@ -42,10 +42,4 @@
     nautilus
     # fnott  # swaync is just better for now
   ];
-
-  hardware = {
-    bluetooth = {
-      enable = true;
-    };
-  };
 }

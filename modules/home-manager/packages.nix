@@ -20,9 +20,6 @@
       psmisc
       pywal16
       hyprshade
-      bluez
-      bluetuith
-      bluetui
       hyprpolkitagent
       hyprpaper
       hypridle
@@ -34,7 +31,6 @@
       brightnessctl
       playerctl
       udiskie
-      overskride # bluetooth GUI
       # libsForQt5.xwaylandvideobridge # have to try it out
       # iwgtk # I use NetworkManagar not iwd
       networkmanagerapplet # WIFI needs gnome theme, it's good, until I get better
