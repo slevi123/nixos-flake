@@ -9,3 +9,15 @@ This is my personal nixos configuration.
 - mostly hypr components
 - Swaync
 - ...
+
+# Outputs
+`gitlab:leswell/nixos-flake`
+
+## nixvim
+```bash
+nix run 'gitlab:leswell/nixos-flake#nxvim'
+```
+
+## leswell-nixos
+
+## leswell-wsl

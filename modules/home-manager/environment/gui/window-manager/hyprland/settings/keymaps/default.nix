@@ -8,5 +8,6 @@
     ./xf86.nix
     ./special-workspaces.nix
     ./group-map.nix
+    ./disable-map.nix
   ];
 }

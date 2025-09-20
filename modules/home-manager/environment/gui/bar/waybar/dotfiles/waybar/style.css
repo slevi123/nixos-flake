@@ -216,8 +216,24 @@ tooltip {
 }
 
 #privacy {
-    background: rgba(255, 0, 0, 0.467);
+    margin: 10px;
+} 
+
+#privacy-item {
+    /* background: rgba(255, 0, 0, 0.467); */
+    animation: blink-bg 1s infinite;
     border-radius: 25px;
     padding: 2px 5px;
-    margin: 10px;
 }
+
+#privacy-item.audio-out {
+    background: rgba(255, 0, 0, 0.467);
+    animation: none;
+}
+
+@keyframes blink-bg {
+  0%   { background-color: #ff0000; } /* red */
+  50%  { background-color: #000000; } /* black */
+  100% { background-color: #ff0000; } /* red again */
+}
+    
