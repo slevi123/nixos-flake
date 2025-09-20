@@ -14,14 +14,16 @@ $java\
 $haskell
  [{}](bold white) """
 
-right_format = "$git_commit $time $nix_shell"
+right_format = """${status}
+$git_commit $time"""
+
+
+
 [custom.fsh]
 description = "Indicates when I'm in FHS env."
 symbol = '\(FHS\)'
 when = 'test -n "$FHS"'
 style = "blink dimmed blue"
-
-
 
 [character]
 success_symbol = " 🔥 "
@@ -201,3 +203,8 @@ command = "git town status --pending"
 when = ""
 require_repo = true
 
+[status]
+disabled =  false
+format = '[$pipestatus \[$symbol$signal_name$signal_number $common_meaning$maybe_int\]]($style) '
+map_symbol = true
+pipestatus = true
