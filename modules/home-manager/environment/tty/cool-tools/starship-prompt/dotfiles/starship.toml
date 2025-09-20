@@ -205,6 +205,6 @@ require_repo = true
 
 [status]
 disabled =  false
-format = '[$pipestatus \[$symbol$signal_name$signal_number $common_meaning$maybe_int\]]($style) '
+format = '[$status $pipestatus \[$symbol$signal_name$signal_number $common_meaning$maybe_int\]]($style) '
 map_symbol = true
 pipestatus = true
