@@ -27,7 +27,6 @@
       hyprcursor
       hyprpicker
       hyprlang
-      hyprshot
       brightnessctl
       playerctl
       udiskie

@@ -8,6 +8,7 @@
     ./profiles/qml-profile.nix
     ./profiles/sysadmin-profile.nix
     ./profiles/nix-profile.nix
+    ./profiles/bash-profile.nix
   ];
 
   programs.vscode = {

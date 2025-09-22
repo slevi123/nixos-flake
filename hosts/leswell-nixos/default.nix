@@ -28,11 +28,13 @@
   imports = [
     "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/modules/nixos/hardware/gpu/cuda"
+    "${self}/modules/nixos/hardware/battery/upower"    
 
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
 
     "${self}/modules/nixos/environment/nix"
+    "${self}/modules/nixos/environment/gui/gaming"
     # "${self}/modules/nixos/hardware/sensors/iio-sensor"
     "${self}/modules/nixos/environment/tty/phi.nix"
 
@@ -106,7 +108,7 @@
       #jack.enable = true;
     };
 
-    flatpak.enable = true;
+    # flatpak.enable = true;
   };
 
   hardware = {

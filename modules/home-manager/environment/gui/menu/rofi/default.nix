@@ -15,6 +15,7 @@
       "ssh"
       "window"
       "keys"
+      "nerdy"
       # {
       #   name = "whatnot";
       #   path = lib.getExe pkgs.rofi-whatnot;

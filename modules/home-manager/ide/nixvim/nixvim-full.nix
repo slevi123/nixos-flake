@@ -28,7 +28,7 @@
   plugins = {
     web-devicons.enable = true;
     # direnv.enable = true;
-    # treesitter.enable = true;
+    treesitter.enable = true;
     # bufferline.enable = true;
 
     oil.enable = true;
