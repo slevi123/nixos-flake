@@ -83,6 +83,7 @@
             "class<firefox>": "", // Windows whose classes are "firefox"
             "class<zen-twilight>": "󰂡", // Windows whose classes are "firefox"
             "class<zen>": "", // Windows whose classes are "firefox"
+            "class<zen-beta>": "󰂡", //
             "class<vivaldi-stable>": "",
             "class<chromium-browser>": "",
             // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
