@@ -104,7 +104,7 @@
             "class<Minecraft\\* .*>": "󰍳",
             "title<SKlauncher .*>": "",
             "class<steam>": "",
-            "class<class: Arduino IDE>": ""
+            "class<.*Arduino IDE.*>": ""
         },
         "format-icons": {
             "sp1":"󰩳1",

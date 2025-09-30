@@ -9,6 +9,7 @@
     ./profiles/sysadmin-profile.nix
     ./profiles/nix-profile.nix
     ./profiles/bash-profile.nix
+    ./profiles/embedded-profile.nix
   ];
 
   programs.vscode = {

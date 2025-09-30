@@ -29,6 +29,7 @@
     "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/modules/nixos/hardware/gpu/cuda"
     "${self}/modules/nixos/hardware/battery/upower"    
+    "${self}/modules/nixos/hardware/embedded/udev.nix"
 
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
@@ -82,6 +83,8 @@
       auto-optimise-store = true;
     };
   };
+
+  programs.nix-ld.enable = true;
 
   networking = {
     hostName = "leswell-nixos";
