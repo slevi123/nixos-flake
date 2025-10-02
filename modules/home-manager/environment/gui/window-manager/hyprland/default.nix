@@ -6,6 +6,7 @@
 {
   imports = [
     ./settings
+    ./polkit.nix
     # ./portals
     # inputs.hyprland.homeManagerModules.default
 

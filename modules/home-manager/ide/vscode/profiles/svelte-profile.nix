@@ -1,34 +1,16 @@
 { pkgs, inputs, ... }:
 {
-  programs.vscode.profiles.svelte = {
-    extensions =
-      with pkgs.vscode-extensions;
-      with inputs.nix-vscode-extensions.extensions.${pkgs.system};
-      [
-        k--kato.intellij-idea-keybindings
-        mkhl.direnv
-        mhutchie.git-graph
-
-        # language support
-        tamasfe.even-better-toml
-        # kdl-org.kdl
-
-        gruntfuggly.todo-tree
-        pkief.material-icon-theme
-
-        naumovs.color-highlight
-        bradlc.vscode-tailwindcss
-        vscode-marketplace."1yib".svelte-bundle
-        # ewen-lbh.vscode-hyprls # not added yet to nixpkgs
-      ];
+  programs.vscode.profiles.svelte = 
+  let
+    extension_repos = (import ./globals/extension_repos.nix { inherit pkgs; inherit inputs; });
+  in {
+    extensions = [
+        extension_repos.nixpkgs.naumovs.color-highlight
+        extension_repos.nixpkgs.bradlc.vscode-tailwindcss
+        extension_repos.community.vscode-marketplace."1yib".svelte-bundle
+    ] ++ (import ./globals/extensions.nix { inherit pkgs; inherit inputs; });
     userSettings = {
-      "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
-      "files.autoSave" = "afterDelay";
-      "workbench.colorTheme" = "Wal";
-      "workbench.iconTheme" = "material-icon-theme";
-      "window.menuBarVisibility" = "toggle";
-      "editor.scrollbar.vertical" = "hidden";
       "svelte.enable-ts-plugin" = true;
-    };
+    } // (import ./globals/user-settings.nix);
   };
 }

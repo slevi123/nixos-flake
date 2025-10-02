@@ -17,6 +17,7 @@
     "${self}/modules/home-manager/environment/gui/bar/ashell"
     "${self}/modules/home-manager/environment/gui/idle/hypridle"
     "${self}/modules/home-manager/environment/gui/wallpaper/hyprpaper"
+    "${self}/modules/home-manager/environment/gui/wallpaper/wallrizz"
     "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
     "${self}/modules/home-manager/environment/gui/notification/swaync"
     "${self}/modules/home-manager/environment/gui/notification"
@@ -62,7 +63,8 @@
     # TODO: refactor these
     "${self}/modules/home-manager/packages.nix"
     "${self}/modules/home-manager/theme.nix"
-    "${self}/modules/home-manager/ssh"
+    "${self}/modules/home-manager/environment/remote/ssh"
+    "${self}/modules/home-manager/environment/remote/vnc/wayvnc"
     "${self}/modules/home-manager/networking/iw-frontend"
   ];
 

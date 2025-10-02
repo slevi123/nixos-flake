@@ -10,4 +10,5 @@
   anythingllm = pkgs.callPackage ./anythingllm.nix { };
   # powernotd = pkgs.callPackage ./powernotd { };
   battery-notify = pkgs.callPackage ./battery-notify { };
+  wallrizz = pkgs.callPackage ./wallrizz { };
 }

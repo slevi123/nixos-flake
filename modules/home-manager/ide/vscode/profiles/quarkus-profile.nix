@@ -22,55 +22,36 @@ in
     my-jdk21
   ];
 
-  programs.vscode.profiles.quarkus = {
-    extensions =
-      with pkgs.vscode-extensions;
-      with inputs.nix-vscode-extensions.extensions.${pkgs.system};
-      [
-        k--kato.intellij-idea-keybindings
-        mkhl.direnv
-        mhutchie.git-graph
+  programs.vscode.profiles.quarkus = 
+    let
+      extension_repos = (import ./globals/extension_repos.nix { inherit pkgs; inherit inputs; });
+    in {
+      extensions = [
+        extension_repos.community.vscode-marketplace.vscjava.vscode-java-pack
+        extension_repos.community.vscode-marketplace.visualstudioexptteam.vscodeintellicode
+        extension_repos.community.vscode-marketplace.redhat.java
+        extension_repos.community.vscode-marketplace.vscjava.vscode-java-debug
+        extension_repos.community.vscode-marketplace.vscjava.vscode-maven
+        extension_repos.community.vscode-marketplace.vscjava.vscode-java-test
+        extension_repos.community.vscode-marketplace.vscjava.vscode-java-dependency
+        extension_repos.community.vscode-marketplace.vscjava.vscode-gradle
+        extension_repos.community.vscode-marketplace.redhat.vscode-microprofile
+        extension_repos.community.vscode-marketplace.redhat.vscode-quarkus
+        extension_repos.community.vscode-marketplace.ms-azuretools.vscode-docker
+      ] ++ (import ./globals/extensions.nix { inherit pkgs; inherit inputs; });
+      userSettings = {
+        "redhat.telemetry.enabled" = false;
 
-        # language support
-        bbenoist.nix
-        tamasfe.even-better-toml
-        # kdl-org.kdl
-
-        gruntfuggly.todo-tree
-        pkief.material-icon-theme
-
-        naumovs.color-highlight
-        vscode-marketplace.vscjava.vscode-java-pack
-        vscode-marketplace.visualstudioexptteam.vscodeintellicode
-        vscode-marketplace.redhat.java
-        vscode-marketplace.vscjava.vscode-java-debug
-        vscode-marketplace.vscjava.vscode-maven
-        vscode-marketplace.vscjava.vscode-java-test
-        vscode-marketplace.vscjava.vscode-java-dependency
-        vscode-marketplace.vscjava.vscode-gradle
-        vscode-marketplace.redhat.vscode-microprofile
-        vscode-marketplace.redhat.vscode-quarkus
-        vscode-marketplace.ms-azuretools.vscode-docker
-      ];
-    userSettings = {
-      "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
-      "files.autoSave" = "afterDelay";
-      "workbench.colorTheme" = "Wal";
-      "workbench.iconTheme" = "material-icon-theme";
-      "window.menuBarVisibility" = "toggle";
-      "editor.scrollbar.vertical" = "hidden";
-      "redhat.telemetry.enabled" = true;
-
-      "java.home" = "${my-jdk21}/lib/openjdk"; # Critical path setting
-      "gradle.java.home" = "${my-jdk17}/lib/openjdk"; # Critical path setting
-      "java.jdt.ls.java.home" = "${my-jdk21}/lib/openjdk";
-      "java.configuration.runtimes" = [
-        {
-          name = "JavaSE-17";
-          path = "${my-jdk17}/lib/openjdk";
-          default = true;
-        }
-      ];
+        "java.home" = "${my-jdk21}/lib/openjdk"; # Critical path setting
+        "gradle.java.home" = "${my-jdk17}/lib/openjdk"; # Critical path setting
+        "java.jdt.ls.java.home" = "${my-jdk21}/lib/openjdk";
+        "java.configuration.runtimes" = [
+          {
+            name = "JavaSE-17";
+            path = "${my-jdk17}/lib/openjdk";
+            default = true;
+          }
+        ];
+      } // (import ./globals/user-settings.nix);
     };
-  };
 }

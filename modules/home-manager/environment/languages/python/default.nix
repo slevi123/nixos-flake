@@ -32,6 +32,7 @@ in
           twine
           pyusb
           hatchling
+          tinytuya
         ];
       my-python = (pkgs-stable.python313.withPackages python-packages);
     in

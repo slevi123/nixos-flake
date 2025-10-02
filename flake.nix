@@ -188,7 +188,13 @@
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
       # inputs.nixpkgs.follows = "nixpkgs-stable-unfree";
+    };
+
+    nix4vscode = {
+        url = "github:nix-community/nix4vscode";
+        inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ashell.url = "github:MalpenZibo/ashell";

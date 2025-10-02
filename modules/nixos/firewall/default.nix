@@ -1,6 +1,8 @@
 { ... }:
 {
   networking.firewall = {
+    enable = true;
+
     allowedTCPPorts = [
       1968
       8691
@@ -9,6 +11,7 @@
       5173 # frontend
       2022
       8080 # backend
+      5900 # wayvnc
     ];
 
     # allowedTCPPortRanges = [

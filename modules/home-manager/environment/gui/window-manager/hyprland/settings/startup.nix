@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "systemctl --user start hyprpolkitagent"
+      # "systemctl --user start hyprpolkitagent"
       "uwsm app hyprsunset -t 5000"
       # "uwsm app swaync"
       "uwsm app avizo-service"

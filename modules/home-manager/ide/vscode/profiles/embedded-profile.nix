@@ -9,39 +9,16 @@
 
   # ];
 
-  programs.vscode.profiles.embedded = {
-    extensions =
-      with pkgs.vscode-extensions;
-      with inputs.nix-vscode-extensions.extensions.${pkgs.system};
-      [
-        k--kato.intellij-idea-keybindings
-        mkhl.direnv
-        mhutchie.git-graph
-
-        # language support
-        bbenoist.nix
-        tamasfe.even-better-toml
-        # kdl-org.kdl
-
-        gruntfuggly.todo-tree
-        pkief.material-icon-theme
-
-        naumovs.color-highlight
-        vscode-marketplace.ewen-lbh.vscode-hyprls
-        vscode-marketplace.dlech.chmod
-        # vscode-marketplace.vscodevim.vim
-        # vscode-marketplace.platformio.platformio-ide
-        ms-vscode.cpptools
-        platformio.platformio-vscode-ide
-      ];
+  programs.vscode.profiles.embedded = 
+  let
+    extension_repos = (import ./globals/extension_repos.nix { inherit pkgs; inherit inputs; });
+  in {
+    extensions = [
+      extension_repos.nixpkgs.ms-vscode.cpptools
+      extension_repos.nixpkgs.platformio.platformio-vscode-ide
+    ] ++ (import ./globals/extensions.nix { inherit pkgs; inherit inputs; });
     userSettings = {
-      "editor.fontFamily" = "'Hack Nerd Font Mono', 'monospace', monospace";
-      "files.autoSave" = "afterDelay";
-      "workbench.colorTheme" = "Wal";
-      "workbench.iconTheme" = "material-icon-theme";
-      "window.menuBarVisibility" = "toggle";
-      "editor.scrollbar.vertical" = "hidden";
-      # "platformio-ide.useBuiltinPIOCore" = false;
-    };
+      "platformio-ide.useBuiltinPIOCore" = false;
+    } // (import ./globals/user-settings.nix);
   };
 }

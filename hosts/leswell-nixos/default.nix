@@ -17,11 +17,13 @@
       self.overlays.additions
       self.overlays.modifications
       inputs.awesome-neovim-plugins.overlays.default
+      inputs.nix4vscode.overlays.forVscode
     ];
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      # cudaSupport = true;
     };
   };
 
@@ -62,6 +64,7 @@
     "${self}/modules/nixos/hardware/bluetooth"
     "${self}/modules/nixos/home-assistant"
     "${self}/modules/nixos/program/torrent/transmission.nix"
+    "${self}/modules/nixos/program/usb-images/ventoy"
     # "${self}/modules/nixos/program/snapd"
 
     # temporary

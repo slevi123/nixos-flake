@@ -7,7 +7,7 @@
     ./profiles/python-profile.nix
     ./profiles/qml-profile.nix
     ./profiles/sysadmin-profile.nix
-    ./profiles/nix-profile.nix
+    ./profiles/flake-profile.nix
     ./profiles/bash-profile.nix
     ./profiles/embedded-profile.nix
   ];
