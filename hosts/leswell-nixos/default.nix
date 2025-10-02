@@ -36,6 +36,7 @@
     "${self}/modules/nixos/bootloader/grub"
     "${self}/modules/nixos/kernel"
 
+    "${self}/modules/nixos/environment/languages/npm"
     "${self}/modules/nixos/environment/nix"
     "${self}/modules/nixos/environment/gui/gaming"
     # "${self}/modules/nixos/hardware/sensors/iio-sensor"
@@ -119,6 +120,7 @@
 
   hardware = {
     firmware = [ pkgs.linux-firmware ];
+    enableAllFirmware = true;
   };
 
   environment = {

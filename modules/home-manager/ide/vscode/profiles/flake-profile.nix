@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   programs.vscode.profiles.flake =
     let
@@ -13,6 +18,13 @@
       extensions = [
         extension_repos.community.vscode-marketplace.ewen-lbh.vscode-hyprls
         extension_repos.nixpkgs.jnoortheen.nix-ide
+        # (extension_repos.community.vscode-marketplace.ssdev.wallrizz-theme.overrideAttrs (oldAttrs: rec {
+        #   postInstall = ''
+        #     ln -sf ${config.home.homeDirectory}/.local/share/wallrizz/wallrizz-theme.json $out/share/vscode/extensions/ssdev.wallrizz-theme/themes/wallrizz-theme.json
+        #   '';
+        # }))
+
+        # extension_repos.community.open-vsx.RichardLuo.frosted-glass-theme
 
       ]
       ++ (import ./globals/extensions.nix {
