@@ -30,7 +30,7 @@
   imports = [
     "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/modules/nixos/hardware/gpu/cuda"
-    "${self}/modules/nixos/hardware/battery/upower"    
+    "${self}/modules/nixos/hardware/battery/upower"
     "${self}/modules/nixos/hardware/embedded/udev.nix"
 
     "${self}/modules/nixos/bootloader/grub"

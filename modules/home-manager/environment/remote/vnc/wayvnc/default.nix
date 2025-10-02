@@ -1,8 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   services.wayvnc = {
     enable = true;
-      settings = {
+    settings = {
       # autoStart = false;
       address = "0.0.0.0";
       port = 5901;

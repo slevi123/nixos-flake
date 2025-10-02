@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
   environment.systemPackages = [
     # pkgs.ventoy-full-qt
     pkgs.ventoy-full-gtk
@@ -8,5 +9,5 @@
     # "ventoy-qt5-1.1.07"
     "ventoy-gtk3-1.1.07"
   ];
-            
+
 }

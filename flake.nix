@@ -193,8 +193,8 @@
     };
 
     nix4vscode = {
-        url = "github:nix-community/nix4vscode";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix4vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ashell.url = "github:MalpenZibo/ashell";

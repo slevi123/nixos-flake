@@ -1,6 +1,6 @@
-# { pkgs, 
-# # lib, 
-# ... }: 
+# { pkgs,
+# # lib,
+# ... }:
 # let
 #   platformioUdevRulesDerivation = pkgs.fetchurl {
 #     url = "https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules";
@@ -10,7 +10,7 @@
 # in
 # {
 #   services.udev.packages = [
-#     # pkgs.writeTextDir "/etc/udev/rules.d/99-emebedded-platformio-udev.rules" (builtins.readFile platformioUdevRulesDerivation)	
+#     # pkgs.writeTextDir "/etc/udev/rules.d/99-emebedded-platformio-udev.rules" (builtins.readFile platformioUdevRulesDerivation)
 #     platformioUdevRulesDerivation
 #   ];
 # }
@@ -21,7 +21,8 @@ let
     url = "https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules";
     sha256 = "sha256-CfOs4g5GoNXeRUmkKY7Kw9KdgOqX5iRLMvmP+u3mqx8=";
   };
-in {
+in
+{
   services.udev.packages = [
     (pkgs.writeTextFile {
       name = "platformio-udev-rules";

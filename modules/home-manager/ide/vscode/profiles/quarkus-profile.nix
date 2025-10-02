@@ -22,10 +22,16 @@ in
     my-jdk21
   ];
 
-  programs.vscode.profiles.quarkus = 
+  programs.vscode.profiles.quarkus =
     let
-      extension_repos = (import ./globals/extension_repos.nix { inherit pkgs; inherit inputs; });
-    in {
+      extension_repos = (
+        import ./globals/extension_repos.nix {
+          inherit pkgs;
+          inherit inputs;
+        }
+      );
+    in
+    {
       extensions = [
         extension_repos.community.vscode-marketplace.vscjava.vscode-java-pack
         extension_repos.community.vscode-marketplace.visualstudioexptteam.vscodeintellicode
@@ -38,7 +44,11 @@ in
         extension_repos.community.vscode-marketplace.redhat.vscode-microprofile
         extension_repos.community.vscode-marketplace.redhat.vscode-quarkus
         extension_repos.community.vscode-marketplace.ms-azuretools.vscode-docker
-      ] ++ (import ./globals/extensions.nix { inherit pkgs; inherit inputs; });
+      ]
+      ++ (import ./globals/extensions.nix {
+        inherit pkgs;
+        inherit inputs;
+      });
       userSettings = {
         "redhat.telemetry.enabled" = false;
 
@@ -52,6 +62,7 @@ in
             default = true;
           }
         ];
-      } // (import ./globals/user-settings.nix);
+      }
+      // (import ./globals/user-settings.nix);
     };
 }

@@ -29,7 +29,6 @@
     "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
     "${self}/modules/home-manager/environment/bluetooth"
     "${self}/modules/home-manager/environment/screenshot/hyprshot"
-    
 
     "${self}/modules/home-manager/environment/gui/fonts"
     "${self}/modules/home-manager/environment/gui/theme"

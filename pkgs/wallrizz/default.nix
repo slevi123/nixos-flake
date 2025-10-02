@@ -1,9 +1,14 @@
-{pkgs, lib, stdenv, ...}:
+{
+  pkgs,
+  lib,
+  stdenv,
+  ...
+}:
 stdenv.mkDerivation {
   pname = "wallrizz";
   version = "v1.3.0";
   src = pkgs.fetchzip {
-    url = "https://github.com/5hubham5ingh/WallRizz/releases/download/v1.3.0/WallRizz-linux-86_64.tar.gz"; 
+    url = "https://github.com/5hubham5ingh/WallRizz/releases/download/v1.3.0/WallRizz-linux-86_64.tar.gz";
     # hash = lib.fakeHash;
     hash = "sha256-C+hXWMh9KrFDOdSyNvE16cE8sQECrL/oIAzeNSvqanU=";
     executable = true;

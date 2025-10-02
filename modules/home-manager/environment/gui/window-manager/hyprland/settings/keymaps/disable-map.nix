@@ -26,7 +26,7 @@
     extraConfig = ''
       bind = SUPER, escape, submap, disable
       submap = disable
-      
+
       bind = SUPER, escape, submap, reset
       bindip = SUPER, catchall, execr
 
