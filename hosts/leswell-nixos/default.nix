@@ -23,7 +23,7 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
-      # cudaSupport = true;
+      cudaSupport = true;
     };
   };
 
@@ -60,6 +60,7 @@
 
     "${self}/modules/nixos/agenix"
     "${self}/modules/nixos/virtualisation/docker"
+    "${self}/modules/nixos/virtualisation/waydroid"
 
     "${self}/modules/nixos/hardware/networking"
     "${self}/modules/nixos/hardware/bluetooth"
