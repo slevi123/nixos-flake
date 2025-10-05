@@ -25,6 +25,7 @@
     "${self}/modules/home-manager/environment/gui/menu/rofi"
     "${self}/modules/home-manager/environment/gui/menu/quick-actions"
     "${self}/modules/home-manager/environment/gui/battery-warning/battery-notify"
+    "${self}/modules/home-manager/environment/gui/recorder/voice/gnome-sound-recorder"
     "${self}/modules/home-manager/environment/sound/frontend/helvum"
     "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
     "${self}/modules/home-manager/environment/bluetooth"

@@ -33,6 +33,7 @@ in
           pyusb
           hatchling
           tinytuya
+          # openai-whisper
         ];
       my-python = (pkgs-stable.python313.withPackages python-packages);
     in

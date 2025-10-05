@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.openai-whisper
+    pkgs.openai-whisper  
   ];
 }
