@@ -37,7 +37,7 @@
             inherit self;
             inherit inputs;
           };
-          leswellhp = import ./config/leswellhp {
+          leswellhp = import ./config/leswell-hp {
             inherit nixpkgs;
             inherit self;
             inherit inputs;
