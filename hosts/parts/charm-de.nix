@@ -7,7 +7,7 @@
   config,
   pkgs,
   stateVersion,
-  nixos-users.
+  nixos-users,
   ...
 }:
 {
