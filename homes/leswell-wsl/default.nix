@@ -11,12 +11,12 @@
 {
   imports = [
     inputs.nix-index-database.homeModules.nix-index
-    "${self}/modules/home-manager/environment/languages"
-    "${self}/modules/home-manager/environment/tty/alpha.nix"
+    "${self}/bitss/home-manager/environment/languages"
+    "${self}/bitss/home-manager/environment/tty/alpha.nix"
 
-    "${self}/modules/home-manager/program"
+    "${self}/bitss/home-manager/program"
 
-    "${self}/modules/home-manager/ide/nixvim"
+    "${self}/bitss/home-manager/ide/nixvim"
   ];
 
   # Nicely reload system units when changing configs

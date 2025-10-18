@@ -2,6 +2,6 @@
 {
   imports = [
     ./essential.nix
-    "${self}/modules/nixos/environment/tty/comphy.nix"
+    "${self}/bitss/nixos/environment/tty/comphy.nix"
   ];
 }

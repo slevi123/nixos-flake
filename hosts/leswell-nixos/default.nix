@@ -29,49 +29,49 @@
   };
 
   imports = [
-    "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
-    "${self}/modules/nixos/hardware/gpu/cuda"
-    "${self}/modules/nixos/hardware/battery/upower"
-    "${self}/modules/nixos/hardware/embedded/udev.nix"
+    "${self}/bitss/nixos/hardware/gpu/hybrid-nvidia.nix"
+    "${self}/bitss/nixos/hardware/gpu/cuda"
+    "${self}/bitss/nixos/hardware/battery/upower"
+    "${self}/bitss/nixos/hardware/embedded/udev.nix"
 
-    "${self}/modules/nixos/bootloader/grub"
-    "${self}/modules/nixos/kernel"
+    "${self}/bitss/nixos/bootloader/grub"
+    "${self}/bitss/nixos/kernel"
 
-    "${self}/modules/nixos/environment/languages/npm"
-    "${self}/modules/nixos/environment/nix"
-    "${self}/modules/nixos/environment/gui/gaming"
-    # "${self}/modules/nixos/hardware/sensors/iio-sensor"
-    "${self}/modules/nixos/environment/tty/comphy.nix"
+    "${self}/bitss/nixos/environment/languages/npm"
+    "${self}/bitss/nixos/environment/nix"
+    "${self}/bitss/nixos/environment/gui/gaming"
+    # "${self}/bitss/nixos/hardware/sensors/iio-sensor"
+    "${self}/bitss/nixos/environment/tty/comphy.nix"
 
-    "${self}/modules/nixos/environment/gui/display-manager/gdm"
-    # "${self}/modules/nixos/environment/gui/desktop-environment/gnome"
-    "${self}/modules/nixos/environment/gui/window-manager/hyprland"
-    # "${self}/modules/nixos/environment/gui/menu/ulauncher"
-    # "${self}/modules/nixos/environment/window-manager/niri"
-    "${self}/modules/nixos/users"
-    "${self}/modules/nixos/firewall"
-    # "${self}/modules/nixos/kvm/input-leap"
+    "${self}/bitss/nixos/environment/gui/display-manager/gdm"
+    # "${self}/bitss/nixos/environment/gui/desktop-environment/gnome"
+    "${self}/bitss/nixos/environment/gui/window-manager/hyprland"
+    # "${self}/bitss/nixos/environment/gui/menu/ulauncher"
+    # "${self}/bitss/nixos/environment/window-manager/niri"
+    "${self}/bitss/nixos/users"
+    "${self}/bitss/nixos/firewall"
+    # "${self}/bitss/nixos/kvm/input-leap"
 
-    "${self}/modules/nixos/packages"
-    "${self}/modules/nixos/i18n_i10n"
+    "${self}/bitss/nixos/packages"
+    "${self}/bitss/nixos/i18n_i10n"
 
-    "${self}/modules/nixos/cpu/power-profiles-daemon"
+    "${self}/bitss/nixos/cpu/power-profiles-daemon"
     "${self}/hardware/lenovo-gaming3-15ach6"
     "${self}/hardware/benq-gw2270"
 
-    "${self}/modules/nixos/agenix"
-    "${self}/modules/nixos/virtualisation/docker"
-    "${self}/modules/nixos/virtualisation/waydroid"
+    "${self}/bitss/nixos/agenix"
+    "${self}/bitss/nixos/virtualisation/docker"
+    "${self}/bitss/nixos/virtualisation/waydroid"
 
-    "${self}/modules/nixos/hardware/networking"
-    "${self}/modules/nixos/hardware/bluetooth"
-    "${self}/modules/nixos/home-assistant"
-    "${self}/modules/nixos/program/torrent/transmission.nix"
-    "${self}/modules/nixos/program/usb-images/ventoy"
-    # "${self}/modules/nixos/program/snapd"
+    "${self}/bitss/nixos/hardware/networking"
+    "${self}/bitss/nixos/hardware/bluetooth"
+    "${self}/bitss/nixos/home-assistant"
+    "${self}/bitss/nixos/program/torrent/transmission.nix"
+    "${self}/bitss/nixos/program/usb-images/ventoy"
+    # "${self}/bitss/nixos/program/snapd"
 
     # temporary
-    # "${self}/modules/nixos/ide/jupyter" # for faculty
+    # "${self}/bitss/nixos/ide/jupyter" # for faculty
   ];
 
   nix = {

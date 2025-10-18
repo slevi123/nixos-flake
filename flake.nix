@@ -50,7 +50,7 @@
           # acessible through 'nix build', 'nix shell', etc
           packages = {
             nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (
-              import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
+              import "${self}/bitss/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
             );
           }
           // import ./pkgs { inherit pkgs; };

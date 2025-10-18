@@ -26,7 +26,7 @@ nixpkgs.lib.nixosSystem {
         useUserPackages = true;
         sharedModules = [
           # modules shared between all users
-          "${self}/modules/home-manager/environment/gui/desktop-environment/gnome"
+          "${self}/bitss/home-manager/environment/gui/desktop-environment/gnome"
           # (import "${self}/homes/parts/common.nix" (args // { stateVersion = "23.05"; }))
           "${self}/homes/parts/common.nix"
         ];
