@@ -11,7 +11,6 @@ nixpkgs.lib.nixosSystem {
   };  
   modules = [
     "${self}/hosts/parts/comfy.nix"
-    "${self}/hosts/leswell-nixos"
 
     inputs.home-manager.nixosModules.home-manager
     # inputs.hyprland.nixosModules.default
