@@ -2,7 +2,6 @@ args @ {
   nixpkgs,
   inputs,
   self,
-  pkgs
 }:
 nixpkgs.lib.nixosSystem {
   specialArgs = {
@@ -16,12 +15,6 @@ nixpkgs.lib.nixosSystem {
           "${self}/bits/nixos/users/leswellhm.nix"
           # ./unsafe.nix
         ];
-
-        users = {
-          defaultUserShell = pkgs.zsh;
-          users = {
-          };
-        };
     };
   };  
   modules = [
