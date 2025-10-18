@@ -19,6 +19,7 @@ nixpkgs.lib.nixosSystem {
   };  
   modules = [
     "${self}/hosts/parts/comfy.nix"
+    "${self}/hosts/parts/charm-de.nix"
     "/etc/nixos/hardware-configuration.nix"
     inputs.home-manager.nixosModules.home-manager
     # inputs.hyprland.nixosModules.default
