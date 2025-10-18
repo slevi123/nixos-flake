@@ -1,4 +1,4 @@
-{
+args@{
   self,
   inputs,
   ...
@@ -14,7 +14,7 @@
 
     "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
     "${self}/modules/home-manager/environment/gui/bar/waybar"
-    "${self}/modules/home-manager/environment/gui/bar/ashell"
+    # "${self}/modules/home-manager/environment/gui/bar/ashell"
     "${self}/modules/home-manager/environment/gui/idle/hypridle"
     "${self}/modules/home-manager/environment/gui/wallpaper/hyprpaper"
     "${self}/modules/home-manager/environment/gui/wallpaper/wallrizz"
@@ -70,20 +70,11 @@
 
   home = {
     homeDirectory = "/home/leswellhm";
-
     /*
       keyboard = {
          layout = "us,hu+qwerty,ro"; # Define the layouts
          options = "lv3:ralt_switch"; # Set XKB options
        };
     */
-
-    sessionVariables.NIXOS_OZONE_WL = "1";
   };
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
 }

@@ -1,0 +1,76 @@
+args@{
+  stateVersion,
+  self,
+  inputs,
+  ...
+}:
+{
+  imports = [
+    # inputs.nix-index-database.homeModules.nix-index
+    # "${self}/modules/home-manager/environment/languages"
+    # "${self}/modules/home-manager/environment/tty/alpha.nix"
+    # "${self}/modules/home-manager/environment/web-stack"
+    # "${self}/modules/home-manager/terminal/kitty"
+    # # "${self}/modules/home-manager/terminal/warp"
+
+    # "${self}/modules/home-manager/environment/gui/window-manager/hyprland"
+    # "${self}/modules/home-manager/environment/gui/bar/waybar"
+    # "${self}/modules/home-manager/environment/gui/bar/ashell"
+    # "${self}/modules/home-manager/environment/gui/idle/hypridle"
+    # "${self}/modules/home-manager/environment/gui/wallpaper/hyprpaper"
+    # "${self}/modules/home-manager/environment/gui/wallpaper/wallrizz"
+    # "${self}/modules/home-manager/environment/gui/screen-lock/hyprlock"
+    # "${self}/modules/home-manager/environment/gui/notification/swaync"
+    # "${self}/modules/home-manager/environment/gui/notification"
+    # "${self}/modules/home-manager/environment/gui/menu/wofi"
+    # "${self}/modules/home-manager/environment/gui/menu/rofi"
+    # "${self}/modules/home-manager/environment/gui/menu/quick-actions"
+    # "${self}/modules/home-manager/environment/gui/battery-warning/battery-notify"
+    # "${self}/modules/home-manager/environment/gui/recorder/voice/gnome-sound-recorder"
+    # "${self}/modules/home-manager/environment/sound/frontend/helvum"
+    # "${self}/modules/home-manager/environment/sound/frontend/pavucontrol"
+    # "${self}/modules/home-manager/environment/bluetooth"
+    # "${self}/modules/home-manager/environment/screenshot/hyprshot"
+
+    # "${self}/modules/home-manager/environment/gui/fonts"
+    # "${self}/modules/home-manager/environment/gui/theme"
+    # "${self}/modules/home-manager/environment/gui/widget/quickshell"
+
+    # "${self}/modules/home-manager/program/browser"
+    # "${self}/modules/home-manager/program/viewer/pdf/zathura"
+    # "${self}/modules/home-manager/program/viewer/markdown/glow"
+    # "${self}/modules/home-manager/program/file-manager/yazi.nix"
+    # "${self}/modules/home-manager/program/file-manager/superfile.nix"
+    # "${self}/modules/home-manager/program/color-picker/hyprpicker.nix"
+    # "${self}/modules/home-manager/program/calculator/qalc.nix"
+    # "${self}/modules/home-manager/program/resource-monitor/btop"
+    # # "${self}/modules/home-manager/program/ai/anythingllm.nix"
+    # "${self}/modules/home-manager/program/ai/openai-whisper.nix"
+    # "${self}/modules/home-manager/program/ai/ocr/tesseract"
+    # "${self}/modules/home-manager/program/about/fastfetch"
+    # # "${self}/modules/home-manager/program/learning/flash-cards/anki"
+    # "${self}/modules/home-manager/program/colors/pastel"
+
+    # "${self}/modules/home-manager/program/communication/discord"
+    # # "${self}/modules/home-manager/program/communication/matrix/element"
+    # "${self}/modules/home-manager/program/character-picker/unipicker"
+    # "${self}/modules/home-manager/program"
+    # "${self}/modules/home-manager/games"
+
+    # "${self}/modules/home-manager/ide/vscode"
+    # "${self}/modules/home-manager/ide/nixvim"
+    # # "${self}/modules/home-manager/ide/jetbrains"
+
+    # # TODO: refactor these
+    # "${self}/modules/home-manager/packages.nix"
+    # "${self}/modules/home-manager/theme.nix"
+    # "${self}/modules/home-manager/environment/remote/ssh"
+    # "${self}/modules/home-manager/environment/remote/vnc/wayvnc"
+    # "${self}/modules/home-manager/networking/iw-frontend"
+  ];
+
+  home = {
+    homeDirectory = "/home/leswell";
+  };
+}
+// import ../parts/common.nix args

@@ -6,6 +6,7 @@
   lib,
   config,
   pkgs,
+  stateVersion,
   ...
 }:
 {
@@ -40,7 +41,7 @@
     "${self}/modules/nixos/environment/nix"
     "${self}/modules/nixos/environment/gui/gaming"
     # "${self}/modules/nixos/hardware/sensors/iio-sensor"
-    "${self}/modules/nixos/environment/tty/phi.nix"
+    "${self}/modules/nixos/environment/tty/comphy.nix"
 
     "${self}/modules/nixos/environment/gui/display-manager/gdm"
     # "${self}/modules/nixos/environment/gui/desktop-environment/gnome"
@@ -142,7 +143,4 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
 }

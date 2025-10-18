@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.asciinema
+    pkgs.asciinema_3
   ];
 }

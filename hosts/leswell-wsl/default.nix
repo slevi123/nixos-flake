@@ -1,6 +1,7 @@
 {
   self,
   pkgs,
+  stateVersion,
   ...
 }:
 {
@@ -15,7 +16,7 @@
   wsl.defaultUser = "leswellhm";
 
   imports = [
-    "${self}/modules/nixos/environment/tty/phi.nix"
+    "${self}/modules/nixos/environment/tty/comphy.nix"
 
     # "${self}/modules/nixos/users"
     # "${self}/modules/nixos/firewall"
@@ -60,6 +61,4 @@
 
     };
   };
-
-  system.stateVersion = "24.11";
 }
