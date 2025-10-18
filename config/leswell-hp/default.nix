@@ -1,4 +1,4 @@
-args@{
+args @ {
   nixpkgs,
   inputs,
   self,
