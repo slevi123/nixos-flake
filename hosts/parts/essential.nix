@@ -9,6 +9,9 @@
 
     # A small IDE is essential for editing configuration 
     "${self}/bits/nixos/ide/helix"
+
+    # Something is needed to start the init
+    "${self}/bits/nixos/bootloader/grub"
   ];
 
   networking = {

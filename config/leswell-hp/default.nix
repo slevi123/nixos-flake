@@ -2,12 +2,27 @@ args @ {
   nixpkgs,
   inputs,
   self,
+  pkgs
 }:
 nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
     stateVersion = "25.05";
     hostName = "HyPo";
+
+    nixos-users = {
+      imports = [
+          "${self}/bits/nixos/users/groups.nix"
+          "${self}/bits/nixos/users/leswellhm.nix"
+          # ./unsafe.nix
+        ];
+
+        users = {
+          defaultUserShell = pkgs.zsh;
+          users = {
+          };
+        };
+    };
   };  
   modules = [
     "${self}/hosts/parts/comfy.nix"

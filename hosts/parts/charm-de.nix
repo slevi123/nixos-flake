@@ -7,6 +7,7 @@
   config,
   pkgs,
   stateVersion,
+  nixos-users.
   ...
 }:
 {
@@ -38,7 +39,6 @@
     "${self}/bits/nixos/hardware/battery/upower"
     # "${self}/bits/nixos/hardware/embedded/udev.nix"
 
-    "${self}/bits/nixos/bootloader/grub"
     "${self}/bits/nixos/kernel"
 
     # "${self}/bits/nixos/environment/languages/npm"
@@ -106,4 +106,6 @@
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
-}
+} // nixos-users # FIXME
+
+

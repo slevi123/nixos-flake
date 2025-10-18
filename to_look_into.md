@@ -12,6 +12,8 @@ nix-serve-ng
 cachix
 shallow inputs
 
+user management
+
 
 3. Use Git’s insteadOf config
 
