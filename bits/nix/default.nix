@@ -1,5 +1,9 @@
-{lib, inputs, config, ...}:
+{lib, inputs, config, self, ...}:
 {
+  imports = [
+    "${self}/bits/nix/caches.nix"
+  ];
+
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake

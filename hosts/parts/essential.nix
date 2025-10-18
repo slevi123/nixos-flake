@@ -1,9 +1,19 @@
-{ self, stateVersion, ... }:
+{ self, stateVersion, hostName, ... }:
 {
   imports = [
-    "${self}/bitss/nixos/environment/nix/nh.nix"
-    "${self}/bitss/nixos/environment/tty/cool-tools/comma"
+    # Makes interacting with nix tooling HUMAN_FRIENDLY
+    "${self}/bits/nixos/environment/nix/nh.nix"
+
+    # Makes trying out programs easy
+    "${self}/bits/nixos/environment/tty/cool-tools/comma"
+
+    # A small IDE is essential for editing configuration 
+    "${self}/bits/nixos/ide/helix"
   ];
+
+  networking = {
+    inherit hostName;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = stateVersion;

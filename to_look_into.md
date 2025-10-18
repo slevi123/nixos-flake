@@ -21,3 +21,8 @@ git clone gh:my-repo.git
 git clone git@github.com:me/my-repo.git
 
 hyprland, numpad light, sound
+
+replace all wofi with rofi
+maybe use superfile instead of yazzi
+
+https://www.nyx.chaotic.cx/#lists-of-options-and-packages

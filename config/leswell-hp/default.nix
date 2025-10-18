@@ -6,8 +6,8 @@ args@{
 nixpkgs.lib.nixosSystem {
   specialArgs = {
     inherit inputs self;
-    stateVersion = "23.05";
-    hostName = "leswell-nixos";
+    stateVersion = "25.05";
+    hostName = "HyPo";
   };  
   modules = [
     "${self}/hosts/parts/comfy.nix"
@@ -17,11 +17,11 @@ nixpkgs.lib.nixosSystem {
     # inputs.hyprland.nixosModules.default
     {
       home-manager = {
-        users.leswellhm = ../../homes/leswellhm;
+        users.leswellhm = ../../homes/parts/charm-de.nix;
 
         extraSpecialArgs = {
           inherit inputs self;
-          stateVersion = "23.05";
+          stateVersion = "25.05";
         };
         useGlobalPkgs = true;
         useUserPackages = true;

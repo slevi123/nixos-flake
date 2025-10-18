@@ -16,18 +16,18 @@
   wsl.defaultUser = "leswellhm";
 
   imports = [
-    "${self}/bitss/nixos/environment/tty/comphy.nix"
+    "${self}/bits/nixos/environment/tty/comphy.nix"
 
-    # "${self}/bitss/nixos/users"
-    # "${self}/bitss/nixos/firewall"
+    # "${self}/bits/nixos/users"
+    # "${self}/bits/nixos/firewall"
 
-    # "${self}/bitss/nixos/packages"
-    "${self}/bitss/nixos/i18n_i10n"
+    # "${self}/bits/nixos/packages"
+    "${self}/bits/nixos/i18n_i10n"
 
-    "${self}/bitss/nixos/agenix"
+    "${self}/bits/nixos/agenix"
 
     # temporary
-    # "${self}/bitss/nixos/ide/jupyter" # for faculty
+    # "${self}/bits/nixos/ide/jupyter" # for faculty
   ];
 
   users.users = {

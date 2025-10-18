@@ -37,6 +37,11 @@
             inherit self;
             inherit inputs;
           };
+          leswellhp = import ./config/leswellhp {
+            inherit nixpkgs;
+            inherit self;
+            inherit inputs;
+          };
         };
       };
 
@@ -50,7 +55,7 @@
           # acessible through 'nix build', 'nix shell', etc
           packages = {
             nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (
-              import "${self}/bitss/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
+              import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
             );
           }
           // import ./pkgs { inherit pkgs; };
