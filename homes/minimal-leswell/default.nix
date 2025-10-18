@@ -70,7 +70,7 @@ args@{
   ];
 
   home = {
-    # homeDirectory = "/home/leswell";
+    homeDirectory = "/home/leswell";
   };
 }
 // import ../parts/common.nix args

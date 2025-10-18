@@ -63,9 +63,9 @@
     # "${self}/bits/home-manager/environment/remote/vnc/wayvnc"
     "${self}/bits/home-manager/networking/iw-frontend"
   ];
-  
+
   home = {
-    homeDirectory = "/home/leswellhm";
+    # homeDirectory = "/home/leswellhm";
     /*
       keyboard = {
          layout = "us,hu+qwerty,ro"; # Define the layouts
