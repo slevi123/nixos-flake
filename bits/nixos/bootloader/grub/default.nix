@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, efiSupport ? true,  ... }:
 {
   imports = [
     inputs.darkmatter.nixosModule
@@ -9,14 +9,14 @@
       grub = {
         enable = true;
         device = "nodev";
-        efiSupport = true;
+        efiSupport = efiSupport;
         useOSProber = true;
         darkmatter-theme = {
           enable = true;
           style = "nixos";
         };
       };
-      efi.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = efiSupport;
     };
   };
 }

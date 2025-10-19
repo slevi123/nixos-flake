@@ -8,6 +8,7 @@ nixpkgs.lib.nixosSystem {
     inherit inputs self;
     stateVersion = "25.05";
     hostName = "HyPo";
+    efiSupport = false;
 
     nixos-users = {
       imports = [
