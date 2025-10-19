@@ -29,7 +29,7 @@
   };
 
   imports = [
-    ../parts/essential.nix 
+    ../parts/comfy.nix 
     
     "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/bits/nixos/hardware/gpu/cuda"

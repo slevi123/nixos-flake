@@ -12,8 +12,7 @@ nixpkgs.lib.nixosSystem {
 
     nixos-users = {
       imports = [
-          "${self}/bits/nixos/users/groups.nix"
-          "${self}/bits/nixos/users/leswellhm.nix"
+
           # ./unsafe.nix
         ];
     };
@@ -22,7 +21,11 @@ nixpkgs.lib.nixosSystem {
     "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/parts/charm-de.nix"
     "/etc/nixos/hardware-configuration.nix"
-    inputs.home-manager.nixosModules.home-manager
+    # inputs.home-manager.nixosModules.home-manager
+
+
+    "${self}/bits/nixos/users/groups.nix"
+    "${self}/bits/nixos/users/leswellhm.nix"
     # inputs.hyprland.nixosModules.default
     {
       home-manager = {

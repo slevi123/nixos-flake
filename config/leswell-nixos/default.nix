@@ -8,6 +8,8 @@ nixpkgs.lib.nixosSystem {
     inherit inputs self;
     stateVersion = "23.05";
     hostName = "leswell-nixos";
+    efiSupport = true;
+
   };  
   modules = [
     "${self}/hosts/parts/comfy.nix"

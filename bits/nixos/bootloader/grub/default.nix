@@ -3,7 +3,7 @@
   imports = [
     inputs.darkmatter.nixosModule
   ];
-
+ 
   boot = {
     loader = {
       grub = {

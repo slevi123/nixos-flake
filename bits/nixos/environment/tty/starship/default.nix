@@ -1,4 +1,4 @@
-{}:
+{ ... }:
 {
   programs.starship = {
     enable = true;
@@ -50,7 +50,7 @@
     } 
     // (import ./global/format.nix)
     // (import ./nix.nix)
-    // (import ./vcs.nix)
+    // (import ./vcs)
     // (import ./cloud-platform.nix)
     // (import ./languages.nix)
     // (import ./os-symbols.nix)
