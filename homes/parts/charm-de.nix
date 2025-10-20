@@ -16,7 +16,7 @@
     "${self}/bits/home-manager/environment/gui/notification/swaync"
     "${self}/bits/home-manager/environment/gui/notification"
     "${self}/bits/home-manager/environment/gui/menu/wofi"
-            "${self}/bits/home-manager/environment/gui/menu/rofi"
+    "${self}/bits/home-manager/environment/gui/menu/rofi"
     "${self}/bits/home-manager/environment/gui/menu/quick-actions"
     "${self}/bits/home-manager/environment/gui/battery-warning/battery-notify"
     # "${self}/bits/home-manager/environment/gui/bar/ashell"

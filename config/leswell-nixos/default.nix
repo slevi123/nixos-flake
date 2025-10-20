@@ -10,7 +10,7 @@ nixpkgs.lib.nixosSystem {
     hostName = "leswell-nixos";
     efiSupport = true;
     flake-path = "/nix_config/my_own_nix_config";
-  };  
+  };
   modules = [
     "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/leswell-nixos"

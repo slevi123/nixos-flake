@@ -3,7 +3,7 @@
     # format = "[$state($symbol \($name\))]($style)"";
     # format = "[\ue0c7](#ffedbd)[ $state($symbol \\($name\\))](bg:#ffedbd fg:blue)[\ue0c6](#ffedbd)";
     format = "[$state($symbol \($name\))]($style)";
-    impure_msg="";
+    impure_msg = "";
     symbol = "";
     heuristic = true;
   };

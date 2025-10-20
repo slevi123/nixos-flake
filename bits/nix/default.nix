@@ -1,4 +1,10 @@
-{lib, inputs, config, self, ...}:
+{
+  lib,
+  inputs,
+  config,
+  self,
+  ...
+}:
 {
   imports = [
     "${self}/bits/nix/caches.nix"

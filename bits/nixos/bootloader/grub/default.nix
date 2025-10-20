@@ -1,9 +1,13 @@
-{ inputs, efiSupport ? true,  ... }:
+{
+  inputs,
+  efiSupport ? true,
+  ...
+}:
 {
   imports = [
     inputs.darkmatter.nixosModule
   ];
- 
+
   boot = {
     loader = {
       grub = {

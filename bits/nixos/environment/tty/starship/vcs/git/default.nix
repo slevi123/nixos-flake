@@ -7,8 +7,8 @@
   };
 
   custom.git-town = {
-          command = "git town status --pending";
-          when = "";
-          require_repo = true;
+    command = "git town status --pending";
+    when = "";
+    require_repo = true;
   };
 }

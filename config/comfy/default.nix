@@ -3,7 +3,7 @@
   inputs,
   self,
   stateVersion ? "24.11",
-  homeStateVersion ? stateVersion
+  homeStateVersion ? stateVersion,
 }:
 nixpkgs.lib.nixosSystem {
   specialArgs = { inherit inputs self stateVersion; };

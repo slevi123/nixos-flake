@@ -22,19 +22,22 @@
     enableDefaultPackages = true;
 
     fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" "DejaVu Serif" ];
-      sansSerif = [ 
+      serif = [
+        "Noto Serif"
+        "DejaVu Serif"
+      ];
+      sansSerif = [
         "Montserrat Regular"
         "Open Sans"
-        ];
-      monospace = [ 
-        "Hack Nerd Font Mono"
-        "JetBrains Mono" 
-        "DejaVu Sans Mono" 
       ];
-      emoji = [ 
+      monospace = [
         "Hack Nerd Font Mono"
-        "Noto Color Emoji" 
+        "JetBrains Mono"
+        "DejaVu Sans Mono"
+      ];
+      emoji = [
+        "Hack Nerd Font Mono"
+        "Noto Color Emoji"
       ];
 
     };

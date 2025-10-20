@@ -1,4 +1,9 @@
-{ self, stateVersion, hostName, ... }:
+{
+  self,
+  stateVersion,
+  hostName,
+  ...
+}:
 {
   imports = [
     # Makes interacting with nix tooling HUMAN_FRIENDLY
@@ -7,7 +12,7 @@
     # Makes trying out programs easy
     "${self}/bits/nixos/environment/tty/cool-tools/comma"
 
-    # A small IDE is essential for editing configuration 
+    # A small IDE is essential for editing configuration
     "${self}/bits/nixos/ide/helix"
 
     # Something is needed to start the init

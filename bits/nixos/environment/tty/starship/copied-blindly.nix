@@ -6,5 +6,5 @@
   # I guess languages:
   haxe = {
     symbol = " ";
-  };  
+  };
 }

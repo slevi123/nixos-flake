@@ -29,8 +29,8 @@
   };
 
   imports = [
-    ../parts/comfy.nix 
-    
+    ../parts/comfy.nix
+
     "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/bits/nixos/hardware/gpu/cuda"
     "${self}/bits/nixos/hardware/battery/upower"

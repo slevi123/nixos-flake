@@ -21,14 +21,14 @@
         "x86_64-darwin"
       ];
     in
-    flake-parts.lib.mkFlake { inherit inputs;} ({
+    flake-parts.lib.mkFlake { inherit inputs; } ({
       imports = [
       ];
 
       flake = {
         overlays = import ./overlays { inherit inputs; };
 
-        utils = nixpkgs.lib.genAttrs supportedSystems (import ./utility { inherit inputs;});
+        utils = nixpkgs.lib.genAttrs supportedSystems (import ./utility { inherit inputs; });
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
@@ -56,11 +56,16 @@
       };
 
       perSystem =
-        { pkgs, system, self', inputs', ... }:
+        {
+          pkgs,
+          system,
+          self',
+          inputs',
+          ...
+        }:
         {
           # available through 'nix fmt'
           formatter = pkgs.alejandra;
-
 
           # custom packages
           # acessible through 'nix build', 'nix shell', etc

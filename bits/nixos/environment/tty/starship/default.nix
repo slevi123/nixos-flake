@@ -16,7 +16,7 @@
         format = "[ $path]($style)";
         repo_root_format = "[ $repo_root]($repo_root_style)[$path]($style)";
         repo_root_style = "fg:#5EFC8D";
-        truncation_length = 3 ;
+        truncation_length = 3;
         truncate_to_repo = true;
         truncation_symbol = "…";
         read_only = " 󰌾";
@@ -38,7 +38,7 @@
       };
 
       status = {
-        disabled =  false;
+        disabled = false;
         format = "[ $status \[$symbol$signal_name$signal_number $common_meaning$maybe_int\]]($style) ";
         # format = "[ $status $pipestatus \[$symbol$signal_name$signal_number $common_meaning$maybe_int\]]($style) "";
         pipestatus_format = "\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int]($style) ";
@@ -46,18 +46,17 @@
         pipestatus = true;
       };
 
-    username = {
-      style_root = "blink dimmed bold red";
-    };
+      username = {
+        style_root = "blink dimmed bold red";
+      };
 
-    } 
+    }
     // (import ./global/format.nix)
     // (import ./nix.nix)
     // (import ./vcs)
     // (import ./cloud-platform.nix)
     // (import ./languages.nix)
     // (import ./os-symbols.nix)
-    // (import ./copied-blindly.nix)
-    ;
+    // (import ./copied-blindly.nix);
   };
 }

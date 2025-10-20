@@ -20,7 +20,7 @@
   };
 
   golang = {
-    symbol = " "; 
+    symbol = " ";
   };
 
   haskell = {
@@ -50,7 +50,6 @@
   nim = {
     symbol = "󰆥 ";
   };
-
 
   nodejs = {
     symbol = " ";

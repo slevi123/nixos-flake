@@ -1,4 +1,4 @@
-args @ {
+args@{
   nixpkgs,
   inputs,
   self,
@@ -14,16 +14,15 @@ nixpkgs.lib.nixosSystem {
     nixos-users = {
       imports = [
 
-          # ./unsafe.nix
-        ];
+        # ./unsafe.nix
+      ];
     };
-  };  
+  };
   modules = [
     "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/parts/charm-de.nix"
     "/etc/nixos/hardware-configuration.nix"
     # inputs.home-manager.nixosModules.home-manager
-
 
     "${self}/bits/nixos/users/groups.nix"
     "${self}/bits/nixos/users/leswellhm.nix"

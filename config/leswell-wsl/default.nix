@@ -5,7 +5,10 @@
 }:
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
-  specialArgs = { inherit inputs self; stateVersion = "24.11"; };
+  specialArgs = {
+    inherit inputs self;
+    stateVersion = "24.11";
+  };
   modules = [
     "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/leswell-wsl"
@@ -17,7 +20,10 @@ nixpkgs.lib.nixosSystem {
       home-manager = {
         # users.leswell = "${self}/homes/leswell-wsl";
         users.leswellhm = "${self}/homes/leswell-wsl";
-        extraSpecialArgs = { inherit inputs self; stateVersion = "24.11"; };
+        extraSpecialArgs = {
+          inherit inputs self;
+          stateVersion = "24.11";
+        };
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [

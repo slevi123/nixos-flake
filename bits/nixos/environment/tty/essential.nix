@@ -16,13 +16,13 @@
   };
 
   services = {
-    # TUI command history 
+    # TUI command history
     atuin.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
 
-    # drop-in replacement for ls 
+    # drop-in replacement for ls
     eza
 
     # fuzzy finder (for files)

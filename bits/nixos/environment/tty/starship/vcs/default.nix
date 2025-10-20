@@ -5,4 +5,5 @@
   hg_branch = {
     symbol = " ";
   };
-} // (import ./git)
+}
+// (import ./git)
