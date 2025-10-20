@@ -63,9 +63,15 @@
           inputs',
           ...
         }:
+        let
+          treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt;
+        in
         {
           # available through 'nix fmt'
-          formatter = pkgs.alejandra;
+          formatter = treefmtEval.config.build.wrapper;
+          # formatter = pkgs.alejandra;
+
+          checks.style = treefmtEval.config.build.check self;
 
           # custom packages
           # acessible through 'nix build', 'nix shell', etc
@@ -204,6 +210,8 @@
       url = "github:nix-community/nix-snapd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };
