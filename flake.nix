@@ -12,13 +12,23 @@
       nix-index-database,
       ...
     }:
-    flake-parts.lib.mkFlake { inherit inputs; } ({
+    let
+      supportedSystems = [
+        "aarch64-linux"
+        # "i686-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+    in
+    flake-parts.lib.mkFlake { inherit inputs;} ({
       imports = [
       ];
 
       flake = {
         overlays = import ./overlays { inherit inputs; };
 
+        utils = nixpkgs.lib.genAttrs supportedSystems (import ./utility { inherit inputs;});
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
@@ -46,10 +56,11 @@
       };
 
       perSystem =
-        { pkgs, system, ... }:
+        { pkgs, system, self', inputs', ... }:
         {
           # available through 'nix fmt'
           formatter = pkgs.alejandra;
+
 
           # custom packages
           # acessible through 'nix build', 'nix shell', etc
@@ -61,13 +72,7 @@
           // import ./pkgs { inherit pkgs; };
         };
 
-      systems = [
-        "aarch64-linux"
-        # "i686-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
+      systems = supportedSystems;
     });
 
   inputs = {

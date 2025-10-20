@@ -31,7 +31,7 @@
 
   imports = [
     "${self}/bits/nix"
-
+    "${self}/bits/nixos/environment/gui/fonts"
 
     "${self}/bits/nixos/environment/tty/comphy.nix"
     # "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
