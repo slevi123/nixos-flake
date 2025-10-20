@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     bindel = [
       ",XF86AudioRaiseVolume, exec, volumectl -u up"

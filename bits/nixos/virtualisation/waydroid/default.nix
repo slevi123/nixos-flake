@@ -4,7 +4,5 @@
     enable = true;
   };
 
-  environment.systemPackages = [
-    pkgs.waydroid-helper
-  ];
+  environment.systemPackages = [ pkgs.waydroid-helper ];
 }

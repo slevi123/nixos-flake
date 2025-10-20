@@ -21,8 +21,6 @@
       #   path = lib.getExe pkgs.rofi-whatnot;
       # }
     ];
-    plugins = [
-      pkgs.rofi-nerdy
-    ];
+    plugins = [ pkgs.rofi-nerdy ];
   };
 }

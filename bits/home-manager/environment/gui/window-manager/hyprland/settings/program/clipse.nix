@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "SUPER, V, exec, uwsm app -- kitty --class clipse -e 'clipse' && wtype -M ctrl -k v -m ctrl  # Clipboard manager"

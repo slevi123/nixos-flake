@@ -6,7 +6,5 @@
     };
   };
 
-  environment.systemPackages = [
-    pkgs.iio-sensor-proxy
-  ];
+  environment.systemPackages = [ pkgs.iio-sensor-proxy ];
 }

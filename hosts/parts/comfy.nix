@@ -9,7 +9,5 @@
     "${self}/bits/nixos/environment/tty/comphy.nix"
   ];
 
-  environment.systemPackages = [
-    self.packages.${pkgs.system}.nixvim
-  ];
+  environment.systemPackages = [ self.packages.${pkgs.system}.nixvim ];
 }

@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   plugins.wilder = {
     enable = true;
     enableCmdlineEnter = true;

@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     # fix for electron dialogs
     "$openfolderregex" = "title:(.*)([Oo]pen [Ff]older)(.*)";

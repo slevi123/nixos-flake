@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.gnome-sound-recorder
-  ];
+  home.packages = [ pkgs.gnome-sound-recorder ];
 }

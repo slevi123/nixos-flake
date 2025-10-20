@@ -6,9 +6,7 @@
   ...
 }:
 {
-  imports = [
-    "${self}/bits/nix/caches.nix"
-  ];
+  imports = [ "${self}/bits/nix/caches.nix" ];
 
   nix = {
     # This will add each flake input as a registry

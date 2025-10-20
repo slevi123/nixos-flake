@@ -1,8 +1,6 @@
 { ... }:
 {
-  imports = [
-    ./kernel/julia-mestint.nix
-  ];
+  imports = [ ./kernel/julia-mestint.nix ];
 
   services.jupyter = {
     enable = true;

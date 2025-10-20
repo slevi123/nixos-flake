@@ -2,13 +2,9 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      bind = [
-        "ALT, SPACE, easymotion, action:hyprctl dispatch focuswindow address:{}"
-      ];
+      bind = [ "ALT, SPACE, easymotion, action:hyprctl dispatch focuswindow address:{}" ];
     };
 
-    plugins = [
-      inputs.hyprland-easymotion.packages.${pkgs.system}.default
-    ];
+    plugins = [ inputs.hyprland-easymotion.packages.${pkgs.system}.default ];
   };
 }

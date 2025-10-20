@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.chromium
-  ];
+  home.packages = [ pkgs.chromium ];
 }

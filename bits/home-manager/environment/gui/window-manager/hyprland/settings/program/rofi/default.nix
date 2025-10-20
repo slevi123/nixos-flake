@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     bind = [
       # "SUPER, A, exec, ~/.charm/scripts/hyprland/wofi/audio-changer.py  # Change default audio sink"

@@ -1,14 +1,9 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs = {
     nix-index = {
       enable = true;
     };
   };
-  environment.systemPackages = [
-    pkgs.comma
-  ];
+  environment.systemPackages = [ pkgs.comma ];
 }

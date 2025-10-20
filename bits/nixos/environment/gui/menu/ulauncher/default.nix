@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [
-    pkgs.ulauncher
-  ];
+  environment.systemPackages = [ pkgs.ulauncher ];
 
   systemd.user.services = {
     ulauncher = {

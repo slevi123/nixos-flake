@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs = {
     # Enable home-manager and git
     home-manager.enable = true;

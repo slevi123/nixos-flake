@@ -1,18 +1,11 @@
-{
-  pkgs,
-  inputs,
-  config,
-  ...
-}:
+{ pkgs, inputs, ... }:
 {
   programs.vscode.profiles.flake =
     let
-      extension_repos = (
-        import ./globals/extension_repos.nix {
-          inherit pkgs;
-          inherit inputs;
-        }
-      );
+      extension_repos = import ./globals/extension_repos.nix {
+        inherit pkgs;
+        inherit inputs;
+      };
     in
     {
       extensions = [
@@ -22,8 +15,6 @@
         inherit pkgs;
         inherit inputs;
       });
-      userSettings = {
-      }
-      // (import ./globals/user-settings.nix);
+      userSettings = { } // (import ./globals/user-settings.nix);
     };
 }

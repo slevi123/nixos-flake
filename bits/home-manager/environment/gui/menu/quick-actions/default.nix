@@ -1,6 +1,4 @@
 { inputs, ... }:
 {
-  imports = [
-    inputs.quick-actions.homeManagerModules.default
-  ];
+  imports = [ inputs.quick-actions.homeManagerModules.default ];
 }

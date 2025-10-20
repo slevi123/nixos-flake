@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.tesseract
-  ];
+  home.packages = [ pkgs.tesseract ];
 }

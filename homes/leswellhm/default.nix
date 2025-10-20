@@ -1,8 +1,4 @@
-args@{
-  self,
-  inputs,
-  ...
-}:
+{ self, inputs, ... }:
 {
   imports = [
     inputs.nix-index-database.homeModules.nix-index

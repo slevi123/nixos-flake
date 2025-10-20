@@ -1,4 +1,4 @@
-args@{
+{
   nixpkgs,
   inputs,
   self,
@@ -19,9 +19,9 @@ nixpkgs.lib.nixosSystem {
     };
   };
   modules = [
+    "${self}/hardware/hp-elitebook-folio-9470m"
     "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/parts/charm-de.nix"
-    "/etc/nixos/hardware-configuration.nix"
     # inputs.home-manager.nixosModules.home-manager
 
     "${self}/bits/nixos/users/groups.nix"

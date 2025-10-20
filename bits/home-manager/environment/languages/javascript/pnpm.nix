@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.pnpm
-  ];
+  home.packages = [ pkgs.pnpm ];
 }

@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   # services.gitlab-runner.services = {
   #     # runner for building docker images
   #     docker-images = {

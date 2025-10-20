@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     "$piptitle" = "Picture[ -]in[ -][Pp]icture";
 
@@ -17,8 +16,6 @@
 
     ];
 
-    bind = [
-      "SUPER SHIFT, v, tagwindow, video"
-    ];
+    bind = [ "SUPER SHIFT, v, tagwindow, video" ];
   };
 }

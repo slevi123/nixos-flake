@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.powernotd
-  ];
+  home.packages = [ pkgs.powernotd ];
 }

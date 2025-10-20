@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    iwmenu
-  ];
+  home.packages = with pkgs; [ iwmenu ];
 }

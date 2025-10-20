@@ -1,15 +1,6 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  self,
-  inputs,
-  lib,
-  config,
-  pkgs,
-  stateVersion,
-  nixos-users,
-  ...
-}:
+{ self, inputs, ... }:
 {
 
   nixpkgs = {

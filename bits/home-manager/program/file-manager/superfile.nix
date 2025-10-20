@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.superfile
-  ];
+  home.packages = [ pkgs.superfile ];
 
   xdg.desktopEntries = {
     "Superfile" = {

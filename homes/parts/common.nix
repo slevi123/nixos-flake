@@ -1,12 +1,6 @@
+{ stateVersion, ... }:
 {
-  stateVersion,
-  self,
-  inputs,
-  ...
-}:
-{
-  imports = [
-  ];
+  imports = [ ];
 
   home = {
     sessionVariables.NIXOS_OZONE_WL = "1";

@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.glow
-  ];
+  home.packages = [ pkgs.glow ];
 }

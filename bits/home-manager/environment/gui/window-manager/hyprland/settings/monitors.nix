@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings.monitor = [
     # ===============+lEFTTOP+================
     # "HDMI-A-1, preferred, -1920x-650, auto"

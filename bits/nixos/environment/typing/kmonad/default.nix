@@ -1,8 +1,6 @@
 { inputs, ... }:
 {
-  modules = [
-    inputs.kmonad.nixosModules.default
-  ];
+  modules = [ inputs.kmonad.nixosModules.default ];
 
   services.kmonad = {
     enable = true;

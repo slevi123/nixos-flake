@@ -1,10 +1,7 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland = {
     settings = {
-      gesture = [
-        "3, horizontal, workspace"
-      ];
+      gesture = [ "3, horizontal, workspace" ];
 
       general = {
         gaps_in = 5;

@@ -6,10 +6,7 @@
     inputs@{
       self,
       nixpkgs,
-      home-manager,
       flake-parts,
-      darkmatter,
-      nix-index-database,
       ...
     }:
     let
@@ -21,9 +18,8 @@
         "x86_64-darwin"
       ];
     in
-    flake-parts.lib.mkFlake { inherit inputs; } ({
-      imports = [
-      ];
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ ];
 
       flake = {
         overlays = import ./overlays { inherit inputs; };
@@ -37,16 +33,16 @@
             inherit self;
             inherit inputs;
           };
-          leswell-wsl = import ./config/leswell-wsl {
-            inherit nixpkgs;
-            inherit self;
-            inherit inputs;
-          };
-          leswell-minimal = import ./config/minimal {
-            inherit nixpkgs;
-            inherit self;
-            inherit inputs;
-          };
+          # leswell-wsl = import ./config/leswell-wsl {
+          #   inherit nixpkgs;
+          #   inherit self;
+          #   inherit inputs;
+          # };
+          # leswell-minimal = import ./config/minimal {
+          #   inherit nixpkgs;
+          #   inherit self;
+          #   inherit inputs;
+          # };
           leswellhp = import ./config/leswell-hp {
             inherit nixpkgs;
             inherit self;
@@ -56,13 +52,7 @@
       };
 
       perSystem =
-        {
-          pkgs,
-          system,
-          self',
-          inputs',
-          ...
-        }:
+        { pkgs, system, ... }:
         let
           treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt;
         in
@@ -84,7 +74,7 @@
         };
 
       systems = supportedSystems;
-    });
+    };
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";

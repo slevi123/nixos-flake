@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   networking = {
     networkmanager = {
       wifi.backend = "iwd";

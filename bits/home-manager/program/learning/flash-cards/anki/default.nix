@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.anki
-  ];
+  home.packages = [ pkgs.anki ];
 }

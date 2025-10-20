@@ -1,9 +1,4 @@
-args@{
-  stateVersion,
-  self,
-  inputs,
-  ...
-}:
+args:
 {
   imports = [
     # inputs.nix-index-database.homeModules.nix-index

@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.hyprpicker
-  ];
+  home.packages = [ pkgs.hyprpicker ];
 }

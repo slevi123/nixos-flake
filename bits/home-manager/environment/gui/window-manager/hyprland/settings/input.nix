@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings.input = {
     kb_layout = "us,hu,ro";
     kb_variant = ",qwerty,";

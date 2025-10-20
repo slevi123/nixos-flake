@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     bindm = [
       # Move/resize windows with mainMod + LMB/RMB and dragging

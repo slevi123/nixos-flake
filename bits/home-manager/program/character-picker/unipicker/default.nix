@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.unipicker
-  ];
+  home.packages = [ pkgs.unipicker ];
 }

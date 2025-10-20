@@ -11,12 +11,10 @@
 
   programs.vscode.profiles.embedded =
     let
-      extension_repos = (
-        import ./globals/extension_repos.nix {
-          inherit pkgs;
-          inherit inputs;
-        }
-      );
+      extension_repos = import ./globals/extension_repos.nix {
+        inherit pkgs;
+        inherit inputs;
+      };
     in
     {
       extensions = [

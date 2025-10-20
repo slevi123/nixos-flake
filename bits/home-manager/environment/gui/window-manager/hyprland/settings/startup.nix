@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       # "systemctl --user start hyprpolkitagent"
@@ -15,7 +14,6 @@
       "RUST_LOG=none uwsm app battery-notify"
     ];
 
-    execr-once = [
-    ];
+    execr-once = [ ];
   };
 }

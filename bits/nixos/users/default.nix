@@ -9,7 +9,6 @@
 
   users = {
     defaultUserShell = pkgs.zsh;
-    users = {
-    };
+    users = { };
   };
 }

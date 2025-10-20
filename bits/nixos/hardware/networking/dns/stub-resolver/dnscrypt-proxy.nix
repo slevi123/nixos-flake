@@ -72,7 +72,5 @@
     };
   };
 
-  environment.systemPackages = [
-    pkgs.dnscrypt-proxy
-  ];
+  environment.systemPackages = [ pkgs.dnscrypt-proxy ];
 }

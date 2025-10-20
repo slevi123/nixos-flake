@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.warp-terminal
-  ];
+  home.packages = [ pkgs.warp-terminal ];
 }

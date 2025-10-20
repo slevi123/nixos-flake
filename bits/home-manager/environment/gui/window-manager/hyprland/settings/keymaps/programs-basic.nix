@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     "$terminal" = "kitty";
     # "$menu" = "ulauncher-toggle";
@@ -22,8 +21,6 @@
       "SUPER, T, exec, uwsm app kitten quick-access-terminal"
     ];
 
-    bindd = [
-      "SUPER, P, Opens up quick-actions menu, exec, uwsm app quick-actions"
-    ];
+    bindd = [ "SUPER, P, Opens up quick-actions menu, exec, uwsm app quick-actions" ];
   };
 }

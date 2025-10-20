@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "SUPER SHIFT, M, exec, systemctl suspend  # Sleep (suspend) system"

@@ -4,16 +4,14 @@
   ...
 }:
 {
-  imports = [
-    inputs.darkmatter.nixosModule
-  ];
+  imports = [ inputs.darkmatter.nixosModule ];
 
   boot = {
     loader = {
       grub = {
         enable = true;
         device = "nodev";
-        efiSupport = efiSupport;
+        inherit efiSupport;
         useOSProber = true;
         darkmatter-theme = {
           enable = true;

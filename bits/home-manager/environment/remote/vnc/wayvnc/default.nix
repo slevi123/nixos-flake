@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   services.wayvnc = {
     enable = true;
     settings = {

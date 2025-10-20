@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   # home.packages = [
   #   pkgs.yazi
   # ];

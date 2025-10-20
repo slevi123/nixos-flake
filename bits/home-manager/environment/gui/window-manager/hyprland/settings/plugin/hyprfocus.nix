@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
-    plugins = [
-      pkgs.hyprlandPlugins.hyprfocus
-    ];
+    plugins = [ pkgs.hyprlandPlugins.hyprfocus ];
     settings = {
       bind = [
         "SUPER, grave, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable

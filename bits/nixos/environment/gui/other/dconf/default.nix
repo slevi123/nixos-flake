@@ -1,4 +1,1 @@
-{ ... }:
-{
-  programs.dconf.enable = true;
-}
+_: { programs.dconf.enable = true; }

@@ -35,7 +35,7 @@ in
           tinytuya
           # openai-whisper
         ];
-      my-python = (pkgs-stable.python313.withPackages python-packages);
+      my-python = pkgs-stable.python313.withPackages python-packages;
     in
 
     {
@@ -47,8 +47,6 @@ in
         py = "${my-python}/bin/python -q";
       };
 
-      packages = [
-        my-python
-      ];
+      packages = [ my-python ];
     };
 }

@@ -1,20 +1,16 @@
 { pkgs, inputs, ... }:
 with pkgs;
 let
-  my-jdk17 = (
-    jdk17.overrideAttrs (old: {
-      meta = old.meta // {
-        priority = 15;
-      };
-    })
-  );
-  my-jdk21 = (
-    jdk21.overrideAttrs (old: {
-      meta = old.meta // {
-        priority = 5;
-      };
-    })
-  );
+  my-jdk17 = jdk17.overrideAttrs (old: {
+    meta = old.meta // {
+      priority = 15;
+    };
+  });
+  my-jdk21 = jdk21.overrideAttrs (old: {
+    meta = old.meta // {
+      priority = 5;
+    };
+  });
 in
 {
   home.packages = [
@@ -24,12 +20,10 @@ in
 
   programs.vscode.profiles.quarkus =
     let
-      extension_repos = (
-        import ./globals/extension_repos.nix {
-          inherit pkgs;
-          inherit inputs;
-        }
-      );
+      extension_repos = import ./globals/extension_repos.nix {
+        inherit pkgs;
+        inherit inputs;
+      };
     in
     {
       extensions = [

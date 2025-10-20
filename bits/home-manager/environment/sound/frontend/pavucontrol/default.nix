@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.pavucontrol
-  ];
+  home.packages = [ pkgs.pavucontrol ];
 }

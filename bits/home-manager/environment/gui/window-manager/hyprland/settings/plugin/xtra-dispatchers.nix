@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
-    plugins = [
-      pkgs.hyprlandPlugins.xtra-dispatchers
-    ];
+    plugins = [ pkgs.hyprlandPlugins.xtra-dispatchers ];
   };
 }

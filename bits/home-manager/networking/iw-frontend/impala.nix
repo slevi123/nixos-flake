@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    impala
-  ];
+  home.packages = with pkgs; [ impala ];
 }

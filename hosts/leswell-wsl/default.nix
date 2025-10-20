@@ -1,9 +1,4 @@
-{
-  self,
-  pkgs,
-  stateVersion,
-  ...
-}:
+{ self, pkgs, ... }:
 {
   nix = {
     settings = {

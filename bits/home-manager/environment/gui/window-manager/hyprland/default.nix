@@ -1,8 +1,4 @@
-{
-  lib,
-  osConfig,
-  ...
-}:
+{ lib, osConfig, ... }:
 {
   imports = [
     ./settings

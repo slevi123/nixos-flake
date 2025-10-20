@@ -1,13 +1,4 @@
-{
-  self,
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  stateVersion,
-  ...
-}:
+{ self, inputs, ... }:
 {
   imports = [
     inputs.nix-index-database.homeModules.nix-index

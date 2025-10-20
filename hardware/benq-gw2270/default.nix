@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    ddcutil
-  ];
+  environment.systemPackages = with pkgs; [ ddcutil ];
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [
       ddcci-driver # testing

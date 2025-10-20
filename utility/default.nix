@@ -5,4 +5,5 @@ let
 in
 {
   # makeGoogleFont = import ./google-font.nix pkgs;
+  inherit (pkgs) hello;
 }

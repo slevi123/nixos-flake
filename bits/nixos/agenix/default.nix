@@ -1,8 +1,6 @@
 { inputs, self, ... }:
 {
-  imports = [
-    inputs.agenix.nixosModules.default
-  ];
+  imports = [ inputs.agenix.nixosModules.default ];
   age = {
     secrets = {
       homerpi = {
@@ -14,8 +12,6 @@
         owner = "leswellhm";
       };
     };
-    identityPaths = [
-      "/home/leswellhm/.ssh/agenix_id_ed25519"
-    ];
+    identityPaths = [ "/home/leswellhm/.ssh/agenix_id_ed25519" ];
   };
 }
