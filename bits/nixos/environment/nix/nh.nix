@@ -1,9 +1,9 @@
-{ ... }:
+{ flake-path, ... }:
 {
   # CLI helper for nix
   programs.nh = {
     enable = true;
-    flake = "/nix_config/my_own_nix_config";
+    flake = flake-path;
     # clean.enable = true;
     # clean.extraArgs = "--keep-since 4d --keep 3";
   };
