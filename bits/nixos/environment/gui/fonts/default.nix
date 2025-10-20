@@ -21,7 +21,7 @@
     ];
     enableDefaultPackages = true;
 
-    defaultFonts = {
+    fontConfig.defaultFonts = {
       serif = [ "Noto Serif" "DejaVu Serif" ];
       sansSerif = [ 
         "Montserrat Regular"
