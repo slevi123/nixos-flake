@@ -3,8 +3,8 @@
   imports = [
 
     # My shells
-    ./zsh
-    ./bash
+    ./shell/zsh
+    ./shell/bash
 
     # zoxide is such a useful tool, when it isnt present, I feel like one of my arms is cut
     ./cool-tools/zoxide

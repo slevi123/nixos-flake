@@ -15,7 +15,7 @@
 
     settings = {
       # Enable flakes
-      experimental-features = "nix-command flakes";
+      experimental-features = "7nix-command flakes";
       auto-optimise-store = true;
     };
   };

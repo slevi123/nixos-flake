@@ -46,6 +46,9 @@
         pipestatus = true;
       };
 
+    username = {
+      style_root = "blink dimmed bold red";
+    };
 
     } 
     // (import ./global/format.nix)
