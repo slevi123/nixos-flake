@@ -3,8 +3,6 @@
 {
   self,
   inputs,
-  lib,
-  config,
   pkgs,
   ...
 }:
@@ -28,66 +26,52 @@
   };
 
   imports = [
-    "${self}/modules/nixos/hardware/gpu/hybrid-nvidia.nix"
-    "${self}/modules/nixos/hardware/gpu/cuda"
-    "${self}/modules/nixos/hardware/battery/upower"
-    "${self}/modules/nixos/hardware/embedded/udev.nix"
+    ../parts/comfy.nix
 
-    "${self}/modules/nixos/bootloader/grub"
-    "${self}/modules/nixos/kernel"
+    "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
+    "${self}/bits/nixos/hardware/gpu/cuda"
+    "${self}/bits/nixos/hardware/battery/upower"
+    "${self}/bits/nixos/hardware/embedded/udev.nix"
 
-    "${self}/modules/nixos/environment/languages/npm"
-    "${self}/modules/nixos/environment/nix"
-    "${self}/modules/nixos/environment/gui/gaming"
-    # "${self}/modules/nixos/hardware/sensors/iio-sensor"
-    "${self}/modules/nixos/environment/tty/phi.nix"
+    "${self}/bits/nixos/bootloader/grub"
+    "${self}/bits/nixos/kernel"
 
-    "${self}/modules/nixos/environment/gui/display-manager/gdm"
-    # "${self}/modules/nixos/environment/gui/desktop-environment/gnome"
-    "${self}/modules/nixos/environment/gui/window-manager/hyprland"
-    # "${self}/modules/nixos/environment/gui/menu/ulauncher"
-    # "${self}/modules/nixos/environment/window-manager/niri"
-    "${self}/modules/nixos/users"
-    "${self}/modules/nixos/firewall"
-    # "${self}/modules/nixos/kvm/input-leap"
+    "${self}/bits/nixos/environment/languages/npm"
+    "${self}/bits/nixos/environment/nix"
+    "${self}/bits/nixos/environment/gui/gaming"
+    # "${self}/bits/nixos/hardware/sensors/iio-sensor"
+    "${self}/bits/nixos/environment/tty/comphy.nix"
 
-    "${self}/modules/nixos/packages"
-    "${self}/modules/nixos/i18n_i10n"
+    "${self}/bits/nixos/environment/gui/display-manager/gdm"
+    # "${self}/bits/nixos/environment/gui/desktop-environment/gnome"
+    "${self}/bits/nixos/environment/gui/window-manager/hyprland"
+    # "${self}/bits/nixos/environment/gui/menu/ulauncher"
+    # "${self}/bits/nixos/environment/window-manager/niri"
+    "${self}/bits/nixos/users"
+    "${self}/bits/nixos/firewall"
+    # "${self}/bits/nixos/kvm/input-leap"
 
-    "${self}/modules/nixos/cpu/power-profiles-daemon"
+    "${self}/bits/nixos/packages"
+    "${self}/bits/nixos/i18n_i10n"
+
+    "${self}/bits/nixos/cpu/power-profiles-daemon"
     "${self}/hardware/lenovo-gaming3-15ach6"
     "${self}/hardware/benq-gw2270"
 
-    "${self}/modules/nixos/agenix"
-    "${self}/modules/nixos/virtualisation/docker"
-    "${self}/modules/nixos/virtualisation/waydroid"
+    "${self}/bits/nixos/agenix"
+    "${self}/bits/nixos/virtualisation/docker"
+    "${self}/bits/nixos/virtualisation/waydroid"
 
-    "${self}/modules/nixos/hardware/networking"
-    "${self}/modules/nixos/hardware/bluetooth"
-    "${self}/modules/nixos/home-assistant"
-    "${self}/modules/nixos/program/torrent/transmission.nix"
-    "${self}/modules/nixos/program/usb-images/ventoy"
-    # "${self}/modules/nixos/program/snapd"
+    "${self}/bits/nixos/hardware/networking"
+    "${self}/bits/nixos/hardware/bluetooth"
+    "${self}/bits/nixos/home-assistant"
+    "${self}/bits/nixos/program/torrent/transmission.nix"
+    "${self}/bits/nixos/program/usb-images/ventoy"
+    # "${self}/bits/nixos/program/snapd"
 
     # temporary
-    # "${self}/modules/nixos/ide/jupyter" # for faculty
+    # "${self}/bits/nixos/ide/jupyter" # for faculty
   ];
-
-  nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-    settings = {
-      # Enable flakes
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-    };
-  };
 
   programs.nix-ld.enable = true;
 
@@ -130,19 +114,4 @@
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
-
-  nix.settings = {
-    substituters = [
-      "https://nix-community.cachix.org"
-    ];
-    trusted-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-    trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
 }

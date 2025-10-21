@@ -15,7 +15,7 @@ This is my personal nixos configuration.
 
 ## nixvim
 ```bash
-nix run 'gitlab:leswell/nixos-flake#nxvim'
+nix run 'gitlab:leswell/nixos-flake#nvim'
 ```
 
 ## leswell-nixos
