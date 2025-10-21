@@ -31,7 +31,7 @@
       playerctl
       udiskie
       # libsForQt5.xwaylandvideobridge # have to try it out
-      # iwgtk # I use NetworkManagar not iwd
+      # iwgtk # I use NetworkManager not iwd
       networkmanagerapplet # WIFI needs gnome theme, it's good, until I get better
       avizo # notifications for light and volumctl
       # copyq

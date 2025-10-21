@@ -30,7 +30,7 @@
       bind = SUPER, down, layoutmsg, focus d
 
       bind = , escape, submap, reset
-      bind = , excape, exec, hyprctl keyword general:layout "master"
+      bind = , escape, exec, hyprctl keyword general:layout "master"
       submap = reset
     '';
   };

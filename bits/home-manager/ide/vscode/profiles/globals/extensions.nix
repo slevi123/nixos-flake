@@ -16,7 +16,7 @@ in
   extension_repos.community.vscode-marketplace.dlech.chmod
   # extension_repos.community.vscode-marketplace.vscodevim.vim
 
-  # langauge support
+  # language support
   extension_repos.nixpkgs.tamasfe.even-better-toml
   # extension_repos.nixpkgs.bbenoist.nix # lightweight
   extension_repos.nixpkgs.jnoortheen.nix-ide

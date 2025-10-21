@@ -54,17 +54,18 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt;
+          treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
+          treefmtEvalCheck = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
         in
         {
           # available through 'nix fmt'
           formatter = treefmtEval.config.build.wrapper;
           # formatter = pkgs.alejandra;
 
-          checks.style = treefmtEval.config.build.check self;
+          checks.style = treefmtEvalCheck.config.build.check self;
 
           # custom packages
-          # acessible through 'nix build', 'nix shell', etc
+          # accessible through 'nix build', 'nix shell', etc
           packages = {
             nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (
               import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }

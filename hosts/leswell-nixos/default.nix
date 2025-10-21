@@ -86,7 +86,7 @@
 
     settings = {
       # Enable flakes
-      experimental-features = "nix-command flakes";
+      experimental-features = "nix-command flakes no-url-literals";
       auto-optimise-store = true;
     };
   };

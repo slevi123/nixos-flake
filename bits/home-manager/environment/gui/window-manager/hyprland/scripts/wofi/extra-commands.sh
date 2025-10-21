@@ -34,12 +34,12 @@ options_ss_monitor_clipboard="[HYPRSHOT]: Screenshot Monitor to clipboard"
 options_script_shortcuts="[CHARM]: Show keybind cheatsheet (Shortcuts)"
 
 # PIN WINDOWS
-options_hyprland_toogle_pin=" : Pin floating window (Show on all workspaces)"
+options_hyprland_toggle_pin=" : Pin floating window (Show on all workspaces)"
 # TAGS
 
 # Volume / Light Control
-# Keyboard backlight controll
-# Music controll
+# Keyboard backlight control
+# Music control
 
 options="\
 $option_group_togglelock\n\
@@ -55,7 +55,7 @@ $options_ss_monitor\n\
 $options_ss_region_clipboard\n\
 $options_ss_window_clipboard\n\
 $options_ss_monitor_clipboard\n\
-$options_hyprland_toogle_pin\n\
+$options_hyprland_toggle_pin\n\
 $options_script_shortcuts\
 "
 selected=$(echo -e $options | wofi --dmenu --prompt="Quick Menu" --lines --width=75% )
@@ -94,7 +94,7 @@ calculator() {
 
 case $selected in
   "")
-    # preventing the unkown command prompt if cancel
+    # preventing the unknown command prompt if cancel
     ;;
   "$option_group_togglelock")
     hyprctl dispatch lockactivegroup 'toggle' >>$EXTRA_LOG_FILE 2>&1
@@ -144,7 +144,7 @@ case $selected in
     sleep $SLEEP_BEFORE_SCREENSHOT
     hyprshot -m output --freeze --clipboard-only
     ;;
-  "$options_hyprland_toogle_pin")
+  "$options_hyprland_toggle_pin")
     sleep 1.2
     result=$(hyprctl dispatch pin active)
     if [ $result == ok ]; then
@@ -161,6 +161,6 @@ case $selected in
     calculator "$problem"
     ;;
   *)
-    echo "sowwy, unkown command: |$selected|"| wofi --dmenu
+    echo "sowwy, unknown command: |$selected|"| wofi --dmenu
     ;;
 esac

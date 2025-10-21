@@ -44,7 +44,7 @@ with lib.hm.gvariant;
       # prefer-using-seek=false
       # show-control-icons=false
       # show-player-icon=false
-      # show-seperators=false
+      # show-separators=false
       # show-sources-menu=false
       # track-label=['track', '-', 'artist']
     };

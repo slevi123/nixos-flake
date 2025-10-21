@@ -6,7 +6,7 @@
 
     # diff, only one
     # delta.enable = true; # fast, only syntaxhighlight
-    difftastic.enable = true; # slow, but langauage aware
+    difftastic.enable = true; # slow, but languaage aware
   };
 
   programs = {

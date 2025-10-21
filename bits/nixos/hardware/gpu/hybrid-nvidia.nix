@@ -43,7 +43,7 @@
   };
 
   environment.sessionVariables = {
-    # MAYBE USEFULL
+    # MAYBE USEFUL
     # Force Wayland to use the NVIDIA driver
     # GBM_BACKEND = "nvidia-drm";
     # __GLX_VENDOR_LIBRARY_NAME = "nvidia";

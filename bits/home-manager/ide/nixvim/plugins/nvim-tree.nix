@@ -28,7 +28,7 @@ _: {
       key = "<leader>tff";
       action = "<cmd>NvimTreeFocus<CR>";
       options = {
-        desc = "Focus curretn file in the tree";
+        desc = "Focus current file in the tree";
       };
     }
   ];
