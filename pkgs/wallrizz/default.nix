@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  stdenv,
-  ...
-}:
+{ pkgs, stdenv, ... }:
 stdenv.mkDerivation {
   pname = "wallrizz";
   version = "v1.3.0";

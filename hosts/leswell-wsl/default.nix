@@ -1,8 +1,4 @@
-{
-  self,
-  pkgs,
-  ...
-}:
+{ self, pkgs, ... }:
 {
   nix = {
     settings = {
@@ -15,18 +11,18 @@
   wsl.defaultUser = "leswellhm";
 
   imports = [
-    "${self}/modules/nixos/environment/tty/phi.nix"
+    "${self}/bits/nixos/environment/tty/comphy.nix"
 
-    # "${self}/modules/nixos/users"
-    # "${self}/modules/nixos/firewall"
+    # "${self}/bits/nixos/users"
+    # "${self}/bits/nixos/firewall"
 
-    # "${self}/modules/nixos/packages"
-    "${self}/modules/nixos/i18n_i10n"
+    # "${self}/bits/nixos/packages"
+    "${self}/bits/nixos/i18n_i10n"
 
-    "${self}/modules/nixos/agenix"
+    "${self}/bits/nixos/agenix"
 
     # temporary
-    # "${self}/modules/nixos/ide/jupyter" # for faculty
+    # "${self}/bits/nixos/ide/jupyter" # for faculty
   ];
 
   users.users = {
@@ -60,6 +56,4 @@
 
     };
   };
-
-  system.stateVersion = "24.11";
 }

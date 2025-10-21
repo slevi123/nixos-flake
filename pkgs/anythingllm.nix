@@ -18,9 +18,7 @@ let
     hash = "sha256-SBj+ln0VbE6H4097TvmYu+pQdg6JizfMs9lA+yI9SoE="; # REPLACE WITH ACTUAL HASH
   };
 
-  extracted = appimageTools.extractType2 {
-    inherit pname version src;
-  };
+  extracted = appimageTools.extractType2 { inherit pname version src; };
 
   # Create custom desktop entry
   desktopItem = makeDesktopItem {
@@ -94,7 +92,7 @@ appimageTools.wrapType2 {
   meta = with lib; {
     description = "Private desktop AI application with document ingestion";
     homepage = "https://anythingllm.com";
-    license = licenses.unfree;
+    license = licenses.mit;
     platforms = [ "x86_64-linux" ];
   };
 }

@@ -6,94 +6,76 @@
     inputs@{
       self,
       nixpkgs,
-      home-manager,
       flake-parts,
-      darkmatter,
-      nix-index-database,
       ...
     }:
-    flake-parts.lib.mkFlake { inherit inputs; } ({
-      imports = [
+    let
+      supportedSystems = [
+        "aarch64-linux"
+        # "i686-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
       ];
+    in
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ ];
 
       flake = {
         overlays = import ./overlays { inherit inputs; };
 
+        utils = nixpkgs.lib.genAttrs supportedSystems (import ./utility { inherit inputs; });
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
-          leswell-nixos = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs self; };
-            modules = [
-              "${self}/hosts/leswell-nixos"
-
-              inputs.home-manager.nixosModules.home-manager
-              # inputs.hyprland.nixosModules.default
-              {
-                home-manager = {
-                  users.leswellhm = ./homes/leswellhm;
-                  extraSpecialArgs = { inherit inputs self; };
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  sharedModules = [
-                    # modules shared between all users
-                    ./modules/home-manager/environment/gui/desktop-environment/gnome
-                  ];
-                  backupFileExtension = "hm-backup";
-                };
-              }
-            ];
+          leswell-nixos = import ./config/leswell-nixos {
+            inherit nixpkgs;
+            inherit self;
+            inherit inputs;
           };
-          leswell-wsl = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs self; };
-            modules = [
-              inputs.nixos-wsl.nixosModules.default
-              inputs.home-manager.nixosModules.home-manager
-              "${self}/hosts/leswell-wsl"
-
-              {
-                home-manager = {
-                  users.leswell = ./homes/leswell-wsl;
-                  users.leswellhm = ./homes/leswell-wsl;
-                  extraSpecialArgs = { inherit inputs self; };
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  sharedModules = [
-                    # modules shared between all users
-                  ];
-                  backupFileExtension = "hm-backup";
-                };
-              }
-            ];
+          # leswell-wsl = import ./config/leswell-wsl {
+          #   inherit nixpkgs;
+          #   inherit self;
+          #   inherit inputs;
+          # };
+          # leswell-minimal = import ./config/minimal {
+          #   inherit nixpkgs;
+          #   inherit self;
+          #   inherit inputs;
+          # };
+          leswellhp = import ./config/leswell-hp {
+            inherit nixpkgs;
+            inherit self;
+            inherit inputs;
           };
         };
       };
 
       perSystem =
         { pkgs, system, ... }:
+        let
+          treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
+          treefmtEvalCheck = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
+        in
         {
           # available through 'nix fmt'
-          formatter = pkgs.alejandra;
+          formatter = treefmtEval.config.build.wrapper;
+          # formatter = pkgs.alejandra;
+
+          checks.style = treefmtEvalCheck.config.build.check self;
 
           # custom packages
-          # acessible through 'nix build', 'nix shell', etc
+          # accessible through 'nix build', 'nix shell', etc
           packages = {
             nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (
-              import "${self}/modules/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
+              import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
             );
           }
           // import ./pkgs { inherit pkgs; };
         };
 
-      systems = [
-        "aarch64-linux"
-        "i686-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-    });
+      systems = supportedSystems;
+    };
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -219,6 +201,8 @@
       url = "github:nix-community/nix-snapd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };
