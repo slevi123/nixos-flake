@@ -17,5 +17,6 @@ jobs:
       with:
         name: charm-os
         authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-    # - run: nix build
+    - run: nix build .#leswell-nixos
+    - run: nix build .#leswellhp
     - run: nix flake check
