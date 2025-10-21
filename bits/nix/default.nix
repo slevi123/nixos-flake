@@ -19,7 +19,7 @@
 
     settings = {
       # Enable flakes
-      experimental-features = "nix-command flakes";
+      experimental-features = "nix-command flakes"; # darkmatter brokes, if this is set: no-url-literals
       auto-optimise-store = true;
     };
   };

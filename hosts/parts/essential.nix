@@ -6,6 +6,9 @@
 }:
 {
   imports = [
+    # nix related settings like caches
+    "${self}/bits/nix"
+
     # Makes interacting with nix tooling HUMAN_FRIENDLY
     "${self}/bits/nixos/environment/nix/nh.nix"
 

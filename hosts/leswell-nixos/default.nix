@@ -75,22 +75,6 @@
     # "${self}/bits/nixos/ide/jupyter" # for faculty
   ];
 
-  nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-    settings = {
-      # Enable flakes
-      experimental-features = "nix-command flakes no-url-literals";
-      auto-optimise-store = true;
-    };
-  };
-
   programs.nix-ld.enable = true;
 
   networking = {
@@ -131,11 +115,5 @@
       FFF_CD_ON_EXIT = "1";
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
-  };
-
-  nix.settings = {
-    substituters = [ "https://nix-community.cachix.org" ];
-    trusted-substituters = [ "https://nix-community.cachix.org" ];
-    trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
   };
 }
