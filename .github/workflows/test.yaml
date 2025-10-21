@@ -6,8 +6,6 @@ on:
       - main
       - man-of-culture
 jobs:
-  cachix:
-
   tests:
     runs-on: ubuntu-latest
     steps:
