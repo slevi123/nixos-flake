@@ -15,6 +15,15 @@ nix-repl> legacyPackages.hello
 nix-repl> :b legacyPackages.hello 
 ```
 
+## Flake Templates
+```sh
+load template in current folder
+nix flake init -t github:nix-community/haumea
+
+creates a new folder
+nix flake new <dir> -t github:nix-community/haumea
+```
+
 
 # comma for running temporary programs quickly
 ```sh
