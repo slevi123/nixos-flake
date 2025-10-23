@@ -3,7 +3,7 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs =
-    inputs@{
+    toplevel@{
       self,
       nixpkgs,
       flake-parts,
@@ -18,20 +18,23 @@
         "x86_64-darwin"
       ];
     in
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ];
+    flake-parts.lib.mkFlake { inputs = toplevel; } rec {
+      imports = [
+        ./utility
+      ];
 
       flake = {
-        overlays = import ./overlays { inherit inputs; };
+        t = flake-parts.lib;
+        overlays = import ./overlays { inputs = toplevel; };
 
-        utils = nixpkgs.lib.genAttrs supportedSystems (import ./utility { inherit inputs; });
+        # utils = flake-parts.lib.withSystem systems (import ./utility);
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
           leswell-nixos = import ./config/leswell-nixos {
             inherit nixpkgs;
             inherit self;
-            inherit inputs;
+            inputs = toplevel;
           };
           # leswell-wsl = import ./config/leswell-wsl {
           #   inherit nixpkgs;
@@ -46,7 +49,7 @@
           leswellhp = import ./config/leswell-hp {
             inherit nixpkgs;
             inherit self;
-            inherit inputs;
+            inputs = toplevel;
           };
         };
       };
@@ -54,8 +57,8 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
-          treefmtEvalCheck = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
+          treefmtEval = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
+          treefmtEvalCheck = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
         in
         {
           # available through 'nix fmt'
@@ -67,8 +70,11 @@
           # custom packages
           # accessible through 'nix build', 'nix shell', etc
           packages = {
-            nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (
-              import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
+            nixvim = toplevel.nixvim.legacyPackages."${system}".makeNixvim (
+              import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" {
+                inherit pkgs;
+                inputs = toplevel;
+              }
             );
           }
           // import ./pkgs { inherit pkgs; };
