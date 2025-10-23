@@ -18,13 +18,10 @@
         "x86_64-darwin"
       ];
     in
-    flake-parts.lib.mkFlake { inputs = toplevel; } rec {
-      imports = [
-        ./utility
-      ];
+    flake-parts.lib.mkFlake { inputs = toplevel; } {
+      imports = [ ./utility ];
 
       flake = {
-        t = flake-parts.lib;
         overlays = import ./overlays { inputs = toplevel; };
 
         # utils = flake-parts.lib.withSystem systems (import ./utility);
