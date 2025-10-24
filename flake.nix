@@ -51,7 +51,7 @@
         };
 
         perSystem =
-          { pkgs, system, ... }:
+          { pkgs, system, inputs', ... }:
           let
             treefmtEval = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
             treefmtEvalCheck = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
@@ -66,7 +66,7 @@
             # custom packages
             # accessible through 'nix build', 'nix shell', etc
             packages = {
-              nixvim = toplevel.nixvim.legacyPackages."${system}".makeNixvim (
+              nixvim = inputs'.nixvim.legacyPackages.makeNixvim (
                 import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" {
                   inherit pkgs;
                   inputs = toplevel;
