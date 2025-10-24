@@ -1,11 +1,13 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 {
   programs.vscode.profiles.python =
     let
-      extension_repos = import ./globals/extension_repos.nix {
-        inherit pkgs;
-        inherit inputs;
-      };
+      extension_repos = import ./globals/extension_repos.nix { inherit pkgs system inputs; };
     in
     {
       extensions = [
@@ -13,10 +15,7 @@
         extension_repos.community.vscode-marketplace.ms-python.debugpy
         extension_repos.nixpkgs.ms-python.vscode-pylance
       ]
-      ++ (import ./globals/extensions.nix {
-        inherit pkgs;
-        inherit inputs;
-      });
+      ++ (import ./globals/extensions.nix { inherit pkgs system inputs; });
       userSettings = {
         "files.exclude" = {
           "**/__pycache__/" = true;

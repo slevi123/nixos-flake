@@ -5,7 +5,7 @@
     startAgent = true;
     agentTimeout = "1h";
 
-    # x11 is required for it 
-    enableAskPassword =  config.programs.hyprland.xwayland.enable;
+    # x11 is required for it
+    enableAskPassword = config.programs.hyprland.xwayland.enable;
   };
 }

@@ -30,6 +30,7 @@
   settings.formatter = {
     deadnix = {
       priority = 1;
+      options = [ "-_" ];
     };
 
     statix = {

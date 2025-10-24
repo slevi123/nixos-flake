@@ -1,9 +1,10 @@
-{ pkgs, inputs, ... }:
+{ inputs, system, ... }:
 {
   home.file.".config/ashell" = {
     source = ./dotfiles;
     recursive = true;
   };
 
-  home.packages = [ inputs.ashell.defaultPackage.${pkgs.system} ];
+  # must use system [wrong format ...]
+  home.packages = [ inputs.ashell.defaultPackage.${system} ];
 }

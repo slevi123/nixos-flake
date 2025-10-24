@@ -2,6 +2,6 @@
 {
   home.packages = [
     pkgs.steam-run
-    # inputs.nixpkgs-stable-unfree.legacyPackages.${pkgs.system}.steam
+    # inputs'.nixpkgs-stable-unfree.legacyPackages.steam
   ];
 }

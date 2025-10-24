@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ inputs', ... }:
 {
   nix.settings = {
     substituters = [ "https://cuda-maintainers.cachix.org" ];
@@ -9,8 +9,7 @@
 
   environment.systemPackages =
     let
-      # pkgs-unfree = import  {system = pkgs.system; allowUnfree= true;};
-      inherit (inputs.nixpkgs-stable-unfree.legacyPackages.${pkgs.system}) cudaPackages;
+      inherit (inputs'.nixpkgs-stable-unfree.legacyPackages) cudaPackages;
     in
     [
       cudaPackages.cudatoolkit

@@ -3,79 +3,73 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      flake-parts,
-      ...
-    }:
-    let
-      supportedSystems = [
-        "aarch64-linux"
-        # "i686-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-    in
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ];
+    toplevel@{ self, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inputs = toplevel; } (
+      { ... }:
+      {
+        systems = [
+          "aarch64-linux"
+          # "i686-linux"
+          "x86_64-linux"
+          "aarch64-darwin"
+          "x86_64-darwin"
+        ];
 
-      flake = {
-        overlays = import ./overlays { inherit inputs; };
+        imports = [
+          ./utility
+          ./config/leswell-nixos
+          ./config/leswell-hp
+        ];
 
-        utils = nixpkgs.lib.genAttrs supportedSystems (import ./utility { inherit inputs; });
-        # NixOS configuration entrypoint
-        # Available through 'nixos-rebuild --flake .#your-hostname'
-        nixosConfigurations = {
-          leswell-nixos = import ./config/leswell-nixos {
-            inherit nixpkgs;
-            inherit self;
-            inherit inputs;
-          };
-          # leswell-wsl = import ./config/leswell-wsl {
-          #   inherit nixpkgs;
-          #   inherit self;
-          #   inherit inputs;
-          # };
-          # leswell-minimal = import ./config/minimal {
-          #   inherit nixpkgs;
-          #   inherit self;
-          #   inherit inputs;
-          # };
-          leswellhp = import ./config/leswell-hp {
-            inherit nixpkgs;
-            inherit self;
-            inherit inputs;
+        flake = {
+          overlays = import ./overlays { inputs = toplevel; };
+
+          # utils = flake-parts.lib.withSystem systems (import ./utility);
+          # NixOS configuration entrypoint
+          # Available through 'nixos-rebuild --flake .#your-hostname'
+          nixosConfigurations = {
+            # leswell-wsl = import ./config/leswell-wsl {
+            #   inherit nixpkgs;
+            #   inherit self;
+            #   inherit inputs;
+            # };
+            # leswell-minimal = import ./config/minimal {
+            #   inherit nixpkgs;
+            #   inherit self;
+            #   inherit inputs;
+            # };
           };
         };
-      };
 
-      perSystem =
-        { pkgs, system, ... }:
-        let
-          treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
-          treefmtEvalCheck = inputs.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
-        in
-        {
-          # available through 'nix fmt'
-          formatter = treefmtEval.config.build.wrapper;
-          # formatter = pkgs.alejandra;
+        perSystem =
+          { pkgs, inputs', ... }:
+          let
+            treefmtEval = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
+            treefmtEvalCheck = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
+          in
+          {
+            # available through 'nix fmt'
+            formatter = treefmtEval.config.build.wrapper;
+            # formatter = pkgs.alejandra;
 
-          checks.style = treefmtEvalCheck.config.build.check self;
+            checks.style = treefmtEvalCheck.config.build.check self;
 
-          # custom packages
-          # accessible through 'nix build', 'nix shell', etc
-          packages = {
-            nixvim = inputs.nixvim.legacyPackages."${system}".makeNixvim (
-              import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" { inherit pkgs inputs; }
-            );
-          }
-          // import ./pkgs { inherit pkgs; };
-        };
+            # custom packages
+            # accessible through 'nix build', 'nix shell', etc
+            packages = {
+              nixvim = inputs'.nixvim.legacyPackages.makeNixvim (
+                import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" {
+                  inherit pkgs;
+                  inputs = toplevel;
+                }
+              );
+            }
+            // import ./pkgs { inherit pkgs; };
+          };
 
-      systems = supportedSystems;
-    };
+        # systems = supportedSystems;
+      }
+    );
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";

@@ -30,7 +30,7 @@
     #   enable = true;
     # }
     hyprlock = {
-      # package = inputs.nixpkgs-stable.legacyPackages."${system}".hyprlock;
+      # package = inputs'.nixpkgs-stable.legacyPackages.hyprlock;
       enable = true;
     };
   };
