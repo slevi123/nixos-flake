@@ -53,9 +53,9 @@ _: {
     #     numpy
     #     tiktoken
     #     torch-bin
-    #     # inputs.nixpkgs-stable-unfree.legacyPackages."x86_64-linux".python3Packages.torch.override {
+    #     # inputs'.nixpkgs-stable-unfree.legacyPackages.python3Packages.torch.override {
     #     #   cudaSupport = true;
-    #     #   # cudnn = inputs.nixpkgs-stable-unfree.legacyPackages."x86_64-linux".cudnn;  # Specific cuDNN version
+    #     #   # cudnn = inputs'.nixpkgs-stable-unfree.cudnn;  # Specific cuDNN version
     #     #   cudaCapabilities = ["8.6"];  # Your GPU arch
     #     # }
     #     tqdm
