@@ -1,15 +1,21 @@
-{ withSystem, self, inputs, ... }:
+{
+  withSystem,
+  self,
+  inputs,
+  ...
+}:
 {
 
-  flake.nixosConfigurations.leswell-nixos = withSystem "x86_64-linux" (_ctx@{ config, inputs', self', ... }:
+  flake.nixosConfigurations.leswell-nixos = withSystem "x86_64-linux" (
+    _ctx@{ self', ... }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs self;
 
         # FIXME remove these, it is good enough foir transition
-        packages = self'.packages;
-      } // import ./charisma.nix;
-      
+        inherit (self') packages;
+      }
+      // import ./charisma.nix;
 
       modules = [
         "${self}/hosts/parts/comfy.nix"
