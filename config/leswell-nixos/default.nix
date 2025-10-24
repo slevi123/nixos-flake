@@ -5,14 +5,10 @@
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs self;
-        stateVersion = "23.05";
-        hostName = "leswell-nixos";
-        efiSupport = true;
-        flake-path = "/nix_config/my_own_nix_config";
+
         # FIXME remove these, it is good enough foir transition
         packages = self'.packages;
-
-      };
+      } // import ./charisma.nix;
       
 
       modules = [
