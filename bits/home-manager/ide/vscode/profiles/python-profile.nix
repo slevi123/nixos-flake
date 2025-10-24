@@ -1,10 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, system, ... }:
 {
   programs.vscode.profiles.python =
     let
       extension_repos = import ./globals/extension_repos.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       };
     in
     {
@@ -14,8 +13,7 @@
         extension_repos.nixpkgs.ms-python.vscode-pylance
       ]
       ++ (import ./globals/extensions.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       });
       userSettings = {
         "files.exclude" = {

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, system, ... }:
 {
   home.packages = [
     pkgs.platformio
@@ -12,8 +12,7 @@
   programs.vscode.profiles.embedded =
     let
       extension_repos = import ./globals/extension_repos.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       };
     in
     {
@@ -22,8 +21,7 @@
         extension_repos.nixpkgs.platformio.platformio-vscode-ide
       ]
       ++ (import ./globals/extensions.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       });
       userSettings = {
         "platformio-ide.useBuiltinPIOCore" = false;

@@ -1,8 +1,7 @@
-{ pkgs, inputs }:
+{ pkgs, inputs, system }:
 let
   extension_repos = import ./extension_repos.nix {
-    inherit pkgs;
-    inherit inputs;
+    inherit pkgs system inputs;
   };
 in
 [

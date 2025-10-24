@@ -1,10 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, system, ... }:
 {
   programs.vscode.profiles.svelte =
     let
       extension_repos = import ./globals/extension_repos.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       };
     in
     {
@@ -14,8 +13,7 @@
         extension_repos.community.vscode-marketplace."1yib".svelte-bundle
       ]
       ++ (import ./globals/extensions.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       });
       userSettings = {
         "svelte.enable-ts-plugin" = true;

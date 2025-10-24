@@ -1,11 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, system, ... }:
 {
   programs.vscode.profiles.qt-qml =
     let
       extension_repos = import ./globals/extension_repos.nix {
-        inherit pkgs;
-        inherit inputs;
-      };
+        inherit pkgs system inputs;
+    };
     in
     {
       extensions = [
@@ -14,8 +13,7 @@
         extension_repos.community.vscode-marketplace.theqtcompany.qt
       ]
       ++ (import ./globals/extensions.nix {
-        inherit pkgs;
-        inherit inputs;
+        inherit pkgs system inputs;
       });
       userSettings = {
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
