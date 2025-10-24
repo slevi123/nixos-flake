@@ -3,12 +3,7 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs =
-    toplevel@{
-      self,
-      nixpkgs,
-      flake-parts,
-      ...
-    }:
+    toplevel@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inputs = toplevel; } (
       { ... }:
       {
@@ -23,6 +18,7 @@
         imports = [
           ./utility
           ./config/leswell-nixos
+          ./config/leswell-hp
         ];
 
         flake = {
@@ -42,11 +38,6 @@
             #   inherit self;
             #   inherit inputs;
             # };
-            leswellhp = import ./config/leswell-hp {
-              inherit nixpkgs;
-              inherit self;
-              inputs = toplevel;
-            };
           };
         };
 

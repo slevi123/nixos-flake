@@ -15,10 +15,14 @@
     }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit self inputs inputs';
-
         # FIXME remove these, it is good enough foir transition
-        inherit (self') packages;
+        inherit
+          self
+          inputs
+          inputs'
+          self'
+          ;
+
       }
       // import ./charisma.nix;
 
