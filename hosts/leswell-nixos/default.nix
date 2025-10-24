@@ -32,8 +32,6 @@
     "${self}/bits/nixos/hardware/gpu/cuda"
     "${self}/bits/nixos/hardware/battery/upower"
     "${self}/bits/nixos/hardware/embedded/udev.nix"
-
-    "${self}/bits/nixos/bootloader/grub"
     "${self}/bits/nixos/kernel"
 
     "${self}/bits/nixos/environment/languages/npm"

@@ -10,7 +10,7 @@
     _ctx@{ self', inputs', ... }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs self;
+        inherit self inputs;
 
         # FIXME remove these, it is good enough foir transition
         inherit (self') packages;
@@ -28,8 +28,8 @@
             users.leswellhm = ../../homes/leswellhm;
 
             extraSpecialArgs = {
-              inherit inputs self;
-              inherit inputs';
+              inherit self;
+              inherit inputs' inputs;
               stateVersion = "23.05";
             };
             useGlobalPkgs = true;
