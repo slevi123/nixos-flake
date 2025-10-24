@@ -1,4 +1,9 @@
-{ pkgs, inputs, system, ... }:
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 with pkgs;
 let
   my-jdk17 = jdk17.overrideAttrs (old: {
@@ -20,9 +25,7 @@ in
 
   programs.vscode.profiles.quarkus =
     let
-      extension_repos = import ./globals/extension_repos.nix {
-        inherit pkgs system inputs;
-      };
+      extension_repos = import ./globals/extension_repos.nix { inherit pkgs system inputs; };
     in
     {
       extensions = [
@@ -38,9 +41,7 @@ in
         extension_repos.community.vscode-marketplace.redhat.vscode-quarkus
         extension_repos.community.vscode-marketplace.ms-azuretools.vscode-docker
       ]
-      ++ (import ./globals/extensions.nix {
-        inherit pkgs system inputs;
-      });
+      ++ (import ./globals/extensions.nix { inherit pkgs system inputs; });
       userSettings = {
         "redhat.telemetry.enabled" = false;
 

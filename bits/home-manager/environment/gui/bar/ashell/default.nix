@@ -1,4 +1,4 @@
-{ pkgs, inputs, system, ... }:
+{ inputs, system, ... }:
 {
   home.file.".config/ashell" = {
     source = ./dotfiles;

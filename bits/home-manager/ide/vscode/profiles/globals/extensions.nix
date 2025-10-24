@@ -1,8 +1,10 @@
-{ pkgs, inputs, system }:
+{
+  pkgs,
+  inputs,
+  system,
+}:
 let
-  extension_repos = import ./extension_repos.nix {
-    inherit pkgs system inputs;
-  };
+  extension_repos = import ./extension_repos.nix { inherit pkgs system inputs; };
 in
 [
   extension_repos.nixpkgs.k--kato.intellij-idea-keybindings

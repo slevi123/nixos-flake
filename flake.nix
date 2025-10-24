@@ -51,7 +51,7 @@
         };
 
         perSystem =
-          { pkgs, system, inputs', ... }:
+          { pkgs, inputs', ... }:
           let
             treefmtEval = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
             treefmtEvalCheck = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
