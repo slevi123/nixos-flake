@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:
+{ self, packages, ... }:
 {
   imports = [
     ./essential.nix
@@ -10,5 +10,5 @@
     "${self}/bits/nixos/environment/remote/ssh"
   ];
 
-  environment.systemPackages = [ self.packages.${pkgs.system}.nixvim ];
+  environment.systemPackages = [ packages.nixvim ];
 }

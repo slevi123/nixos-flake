@@ -9,17 +9,19 @@
       flake-parts,
       ...
     }:
-    let
-      supportedSystems = [
+    flake-parts.lib.mkFlake { inputs = toplevel; } ({moduleWithsystem, ...}: {
+      systems = [
         "aarch64-linux"
         # "i686-linux"
         "x86_64-linux"
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-    in
-    flake-parts.lib.mkFlake { inputs = toplevel; } {
-      imports = [ ./utility ];
+
+      imports = [ 
+        ./utility
+        ./config/leswell-nixos
+      ];
 
       flake = {
         overlays = import ./overlays { inputs = toplevel; };
@@ -28,11 +30,6 @@
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
         nixosConfigurations = {
-          leswell-nixos = import ./config/leswell-nixos {
-            inherit nixpkgs;
-            inherit self;
-            inputs = toplevel;
-          };
           # leswell-wsl = import ./config/leswell-wsl {
           #   inherit nixpkgs;
           #   inherit self;
@@ -77,8 +74,8 @@
           // import ./pkgs { inherit pkgs; };
         };
 
-      systems = supportedSystems;
-    };
+      # systems = supportedSystems;
+    });
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
