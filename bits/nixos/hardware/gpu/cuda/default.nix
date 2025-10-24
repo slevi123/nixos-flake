@@ -9,7 +9,6 @@
 
   environment.systemPackages =
     let
-      # pkgs-unfree = import  {system = pkgs.system; allowUnfree= true;};
       inherit (inputs'.nixpkgs-stable-unfree.legacyPackages) cudaPackages;
     in
     [
