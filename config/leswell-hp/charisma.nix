@@ -3,5 +3,4 @@
   hostName = "HyPo";
   efiSupport = false;
   flake-path = "/my_own_nixos/nixos-flake";
-
 }
