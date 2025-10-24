@@ -7,7 +7,7 @@
 {
 
   flake.nixosConfigurations.leswell-nixos = withSystem "x86_64-linux" (
-    _ctx@{ self', inputs', ... }:
+    _ctx@{ self', inputs', system, ... }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit self inputs inputs';
@@ -29,7 +29,8 @@
 
             extraSpecialArgs = {
               inherit self;
-              inherit inputs' inputs;
+              inherit inputs' inputs system;
+
               stateVersion = "23.05";
             };
             useGlobalPkgs = true;
