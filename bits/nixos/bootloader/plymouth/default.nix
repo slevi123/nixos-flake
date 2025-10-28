@@ -1,4 +1,5 @@
-{self, pkgs, ...}: {
+{ self, ... }:
+{
   boot.plymouth = {
     enable = true;
     theme = "glow";
