@@ -4,6 +4,8 @@
     _perSystem@{ pkgs, self', inputs', ... }: # NOTE: only explicitly named parameters will be in perSystem; see below
     _nixos: {
       mkCharmOS = import ./charm-os.nix { inherit withSystem self inputs lib self' inputs';};
+      mkCharm = import ./charm.nix;
+
     }
   );
 }
