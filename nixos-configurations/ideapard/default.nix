@@ -26,6 +26,7 @@
   };
 
   imports = [
+    ./charisma.nix
     "${self}/hosts/parts/comfy.nix"
 
     "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"

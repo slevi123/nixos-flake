@@ -3,7 +3,7 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs =
-    toplevel@{ self, flake-parts, ... }:
+    toplevel@{ self, flake-parts, moduleWithSystem, ... }:
     flake-parts.lib.mkFlake { inputs = toplevel; } (
       { ... }:
       {
@@ -16,10 +16,21 @@
         ];
 
         imports = [
+          toplevel.ez-configs.flakeModule
           ./utility
           ./config/leswell-nixos
           ./config/leswell-hp
         ];
+
+        ezConfigs = {
+          root = ./.;
+          globalArgs = { inputs = toplevel; inherit self; };
+          # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
+          # home.users.root.importDefault = false;
+          # nixos.hosts = {
+          #   ideapard = import "${self}/nixos-configurations/ideapard/charisma.nix";
+          # };
+        };
 
         flake = {
           overlays = import ./overlays { inputs = toplevel; };
@@ -27,18 +38,6 @@
           # utils = flake-parts.lib.withSystem systems (import ./utility);
           # NixOS configuration entrypoint
           # Available through 'nixos-rebuild --flake .#your-hostname'
-          nixosConfigurations = {
-            # leswell-wsl = import ./config/leswell-wsl {
-            #   inherit nixpkgs;
-            #   inherit self;
-            #   inherit inputs;
-            # };
-            # leswell-minimal = import ./config/minimal {
-            #   inherit nixpkgs;
-            #   inherit self;
-            #   inherit inputs;
-            # };
-          };
         };
 
         perSystem =
@@ -197,6 +196,14 @@
     };
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
+
+    ez-configs = {
+      url = "github:ehllie/ez-configs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
     # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };
