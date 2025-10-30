@@ -12,6 +12,9 @@
         owner = "leswellhm";
       };
     };
-    identityPaths = [ "/home/leswellhm/.ssh/agenix_id_ed25519" ];
+    identityPaths = [
+      "/home/leswellhm/.ssh/agenix_id_ed25519"
+      "/home/leswell/.ssh/agenix_id_ed25519"
+    ];
   };
 }

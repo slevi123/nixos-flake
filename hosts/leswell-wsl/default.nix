@@ -19,7 +19,7 @@
     # "${self}/bits/nixos/packages"
     "${self}/bits/nixos/i18n_i10n"
 
-    "${self}/bits/nixos/agenix"
+    "${self}/bits/agenix"
 
     # temporary
     # "${self}/bits/nixos/ide/jupyter" # for faculty

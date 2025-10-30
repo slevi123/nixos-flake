@@ -53,7 +53,7 @@
     # "${self}/hardware/lenovo-gaming3-15ach6"
     "${self}/hardware/benq-gw2270"
 
-    "${self}/bits/nixos/agenix"
+    "${self}/bits/agenix"
     # "${self}/bits/nixos/virtualisation/docker"
     # "${self}/bits/nixos/virtualisation/waydroid"
 
