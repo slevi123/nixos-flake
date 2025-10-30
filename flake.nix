@@ -28,6 +28,18 @@
             inputs = toplevel;
             inherit self;
           };
+
+          nixos.hosts = {
+            ideapard = {
+              userHomeModules = [
+                "leswell"
+                "leswellhm"
+              ];
+            };
+            HyPo = {
+              userHomeModules = [ "leswell" ];
+            };
+          };
           # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
           # home.users.root.importDefault = false;
           # nixos.hosts = {

@@ -1,5 +1,6 @@
 { self, inputs, ... }:
 {
+  nixpkgs.config.allowUnfree = true;
   imports = [
     inputs.nix-index-database.homeModules.nix-index
     "${self}/bits/home-manager/environment/languages"
@@ -20,7 +21,7 @@
     "${self}/bits/home-manager/environment/gui/menu/wofi"
     "${self}/bits/home-manager/environment/gui/menu/rofi"
     "${self}/bits/home-manager/environment/gui/menu/quick-actions"
-    "${self}/bits/home-manager/environment/gui/battery-warning/battery-notify"
+    # "${self}/bits/home-manager/environment/gui/battery-warning/battery-notify"
     "${self}/bits/home-manager/environment/gui/recorder/voice/gnome-sound-recorder"
     "${self}/bits/home-manager/environment/sound/frontend/helvum"
     "${self}/bits/home-manager/environment/sound/frontend/pavucontrol"
@@ -50,7 +51,7 @@
     # "${self}/bits/home-manager/program/communication/matrix/element"
     "${self}/bits/home-manager/program/character-picker/unipicker"
     "${self}/bits/home-manager/program"
-    "${self}/bits/home-manager/games"
+    # "${self}/bits/home-manager/games"
 
     "${self}/bits/home-manager/ide/vscode"
     "${self}/bits/home-manager/ide/nixvim"
@@ -65,7 +66,7 @@
   ];
 
   home = {
-    homeDirectory = "/home/leswell";
+    # homeDirectory = "/home/leswellhm";
     /*
       keyboard = {
          layout = "us,hu+qwerty,ro"; # Define the layouts

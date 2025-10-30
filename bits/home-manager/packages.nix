@@ -1,4 +1,12 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  inputs,
+  self,
+  ...
+}:
+let
+  inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
+in
 {
   home.packages =
     with pkgs;
@@ -7,7 +15,7 @@
 
       # vivaldi
 
-      spotify
+      inputs'.nixpkgs-stable-unfree.legacyPackages.spotify
       arduino-ide
       insomnia
 
