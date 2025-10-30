@@ -1,7 +1,4 @@
-{
-  self,
-  ...
-}:
+{ self, ... }:
 {
   imports = [
     # nix related settings like caches

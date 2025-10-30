@@ -1,5 +1,4 @@
 {
-  withSystem,
   self',
   inputs,
   lib,
@@ -7,16 +6,22 @@
   pkgs,
   system,
   ...
-}: charisma: charm-list:
+}:
+_charisma: charm-list:
 let
-  inputs' = (import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs);
-  transform = list:
-  let
-    _charm = lib.zipAttrsWith (name: values: values) list;
-    _charm-homes = lib.zipAttrsWith (name: values: values) _charm.homes;
-    charm = { inherit (_charm) system; homes = _charm-homes; };
-  in charm;
-  
+  inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
+  transform =
+    list:
+    let
+      _charm = builtins.zipAttrsWith (_name: values: values) list;
+      _charm-homes = builtins.zipAttrsWith (_name: values: values) _charm.homes;
+      charm = {
+        inherit (_charm) system;
+        homes = _charm-homes;
+      };
+    in
+    charm;
+
   charm = transform charm-list;
 in
 
@@ -33,27 +38,33 @@ lib.nixosSystem {
   }
   // import ./charisma.nix;
 
-  modules = 
-    charm.system ++
-    [
-      inputs.home-manager.nixosModules.home-manager
-      {
-        home-manager = {
-          users = builtins.imap (name: value: { name={imports = value;}; })
-            charm.homes;
-
-          extraSpecialArgs = {
-            inherit self inputs' inputs system;
-
-            stateVersion = "23.05";
+  modules = charm.system ++ [
+    inputs.home-manager.nixosModules.home-manager
+    {
+      home-manager = {
+        users = builtins.imap (_name: value: {
+          name = {
+            imports = value;
           };
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          sharedModules = [
-            # modules shared between all users
-          ];
-          backupFileExtension = "hm-backup-g2";
+        }) charm.homes;
+
+        extraSpecialArgs = {
+          inherit
+            self
+            inputs'
+            inputs
+            system
+            ;
+
+          stateVersion = "23.05";
         };
-      }
-    ];
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        sharedModules = [
+          # modules shared between all users
+        ];
+        backupFileExtension = "hm-backup-g2";
+      };
+    }
+  ];
 }

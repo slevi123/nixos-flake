@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+_: {
   boot.plymouth = {
     enable = true;
     theme = "glow";

@@ -1,10 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 let
-  system = pkgs.system;
+  inherit (pkgs) system;
 in
 {
   programs.vscode.profiles.flake =

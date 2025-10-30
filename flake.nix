@@ -24,7 +24,10 @@
 
         ezConfigs = {
           root = ./.;
-          globalArgs = { inputs = toplevel; inherit self; };
+          globalArgs = {
+            inputs = toplevel;
+            inherit self;
+          };
           # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
           # home.users.root.importDefault = false;
           # nixos.hosts = {

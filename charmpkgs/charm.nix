@@ -1,6 +1,8 @@
-args@{_system ? [], _homes ? []}:
-charisma: charm-list: args
-
+args@{
+  _system ? [ ],
+  _homes ? [ ],
+}:
+_charisma: _charm-list: args
 
 # Gets nixos imports
 # Gets homes

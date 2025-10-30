@@ -1,4 +1,4 @@
 { osConfig, ... }:
 {
-  home.stateVersion = osConfig.system.stateVersion; 
+  home.stateVersion = osConfig.system.stateVersion;
 }
