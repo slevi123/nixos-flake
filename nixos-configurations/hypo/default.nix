@@ -1,6 +1,7 @@
 { self, ... }:
 {
   imports = [
+    ./charisma.nix
     "${self}/hardware/hp-elitebook-folio-9470m"
     "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/parts/charm-de.nix"
