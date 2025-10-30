@@ -4,11 +4,12 @@
   inputs,
   lib,
   self,
-  inputs',
+  pkgs,
   system,
   ...
 }: charisma: charm-list:
 let
+  inputs' = (import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs);
   transform = list:
   let
     _charm = lib.zipAttrsWith (name: values: values) list;

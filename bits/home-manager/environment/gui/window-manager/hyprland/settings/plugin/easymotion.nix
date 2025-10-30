@@ -1,4 +1,8 @@
-{ inputs', ... }:
+{ inputs, pkgs, self, ... }:
+let
+  inputs' = (import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs);
+
+in
 {
   wayland.windowManager.hyprland = {
     settings = {

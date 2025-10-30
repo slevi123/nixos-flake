@@ -1,4 +1,7 @@
-{ self, self', ... }:
+{ self, pkgs, inputs, ... }:
+let
+  self' = (import "${self}/charmpkgs/lib/bring-system.nix" pkgs.system self);
+in
 {
   imports = [
     ./essential.nix
