@@ -1,9 +1,11 @@
 {
   pkgs,
   inputs,
-  system,
   ...
 }:
+let
+  system = pkgs.system;
+in
 {
   home.packages = [
     pkgs.platformio

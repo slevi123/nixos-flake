@@ -1,9 +1,11 @@
 {
   pkgs,
   inputs,
-  system,
   ...
 }:
+let
+  system = pkgs.system;
+in
 {
   programs.vscode.profiles.default = {
     extensions = import ./globals/extensions.nix { inherit pkgs system inputs; };

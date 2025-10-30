@@ -18,8 +18,8 @@
         imports = [
           toplevel.ez-configs.flakeModule
           ./utility
-          ./config/leswell-nixos
-          ./config/leswell-hp
+          # ./config/leswell-nixos
+          # ./config/leswell-hp
         ];
 
         ezConfigs = {

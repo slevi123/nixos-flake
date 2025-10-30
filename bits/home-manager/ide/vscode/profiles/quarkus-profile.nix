@@ -1,11 +1,12 @@
 {
   pkgs,
   inputs,
-  system,
   ...
 }:
 with pkgs;
 let
+  system = pkgs.system;
+
   my-jdk17 = jdk17.overrideAttrs (old: {
     meta = old.meta // {
       priority = 15;

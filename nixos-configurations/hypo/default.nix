@@ -1,0 +1,12 @@
+{ self, ... }:
+{
+  imports = [
+    "${self}/hardware/hp-elitebook-folio-9470m"
+    "${self}/hosts/parts/comfy.nix"
+    "${self}/hosts/parts/charm-de.nix"
+    # inputs.home-manager.nixosModules.home-manager
+
+    "${self}/bits/nixos/users/groups.nix"
+    "${self}/bits/nixos/users/leswellhm.nix"
+  ];
+}

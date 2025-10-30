@@ -1,9 +1,11 @@
 {
   pkgs,
   inputs,
-  system,
   ...
 }:
+let
+  system = pkgs.system;
+in
 {
   programs.vscode.profiles.svelte =
     let
