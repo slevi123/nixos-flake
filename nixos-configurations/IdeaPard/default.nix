@@ -32,6 +32,7 @@
 
     "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/bits/nixos/hardware/gpu/cuda"
+
     "${self}/bits/nixos/hardware/battery/upower"
     "${self}/bits/nixos/hardware/embedded/udev.nix"
     "${self}/bits/nixos/kernel"
