@@ -9,5 +9,6 @@
 
     "${self}/bits/nixos/users/groups.nix"
     "${self}/bits/nixos/users/leswellhm.nix"
+    "${self}/bits/nixos/kvm/lan-mouse"
   ];
 }

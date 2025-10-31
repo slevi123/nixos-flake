@@ -49,6 +49,7 @@
     "${self}/bits/nixos/users"
     "${self}/bits/nixos/firewall"
     # "${self}/bits/nixos/kvm/input-leap"
+    "${self}/bits/nixos/kvm/lan-mouse"
 
     "${self}/bits/nixos/packages"
     "${self}/bits/nixos/i18n_i10n"
