@@ -17,9 +17,7 @@
 
         imports = [
           toplevel.ez-configs.flakeModule
-          ./utility
-          # ./config/leswell-nixos
-          # ./config/leswell-hp
+          # ./utility
         ];
 
         ezConfigs = rec {
