@@ -1,9 +1,10 @@
-{ self, ... }:
+{ self, ezModules, ... }:
 {
   imports = [
     ./charisma.nix
+    ezModules.comfy
+
     "${self}/hardware/hp-elitebook-folio-9470m"
-    "${self}/hosts/parts/comfy.nix"
     "${self}/hosts/parts/charm-de.nix"
     # inputs.home-manager.nixosModules.home-manager
 

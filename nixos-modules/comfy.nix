@@ -4,8 +4,6 @@ let
 in
 {
   imports = [
-    ./essential.nix
-
     # file manager
     # superfile
 

@@ -4,6 +4,7 @@
   self,
   inputs,
   pkgs,
+  ezModules,
   ...
 }:
 {
@@ -27,7 +28,7 @@
 
   imports = [
     ./charisma.nix
-    "${self}/hosts/parts/comfy.nix"
+    ezModules.comfy
 
     "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/bits/nixos/hardware/gpu/cuda"
