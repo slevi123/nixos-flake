@@ -168,15 +168,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1750178074,
-        "narHash": "sha256-+ACS/Ris0V0a3BB6vEI/vTGk5huztx7a5f7eHJK1FaQ=",
-        "owner": "ehllie",
+        "lastModified": 1761912700,
+        "narHash": "sha256-dyU+912ZEqnLX2Sn0VGYL814kZ5sgy0b6evxdrcA1Qo=",
+        "owner": "slevi123",
         "repo": "ez-configs",
-        "rev": "eb320b3a6032a30e5fa67bebbaf381e6552f9441",
+        "rev": "8f636a109f13ea61c53cd88e16eba11fa0ec6142",
         "type": "github"
       },
       "original": {
-        "owner": "ehllie",
+        "owner": "slevi123",
         "repo": "ez-configs",
         "type": "github"
       }

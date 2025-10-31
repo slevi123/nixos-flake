@@ -22,7 +22,7 @@
           # ./config/leswell-hp
         ];
 
-        ezConfigs = {
+        ezConfigs = rec {
           root = ./.;
           globalArgs = {
             inputs = toplevel;
@@ -39,6 +39,17 @@
             HyPo = {
               userHomeModules = [ "leswell" ];
             };
+
+            nixos = {
+              modulesDirectory = "${root}/nixos-modules";
+              onfigurationsDirectory = "${root}/nixos-configurations";
+              configurationEntryPoint = "default.nix";
+            };
+            homes = {
+              modulesDirectory = "${root}/home-modules";
+            };
+
+            home.backupFileExtension = "hm-backup";
           };
           # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
           # home.users.root.importDefault = false;
@@ -213,7 +224,7 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
     ez-configs = {
-      url = "github:ehllie/ez-configs";
+      url = "github:slevi123/ez-configs";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
