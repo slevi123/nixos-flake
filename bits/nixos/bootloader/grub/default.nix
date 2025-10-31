@@ -12,7 +12,7 @@
         enable = true;
         device = "nodev";
         # inherit efiSupport;
-        useOSProber = true;
+        # useOSProber = true;
         darkmatter-theme = {
           enable = true;
           style = "nixos";

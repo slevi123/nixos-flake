@@ -29,7 +29,7 @@
 
     "${self}/bits/home-manager/environment/gui/fonts"
     "${self}/bits/home-manager/environment/gui/theme"
-    "${self}/bits/home-manager/environment/gui/widget/quickshell"
+    # "${self}/bits/home-manager/environment/gui/widget/quickshell"
 
     "${self}/bits/home-manager/program/browser"
     "${self}/bits/home-manager/program/viewer/pdf/zathura"
