@@ -28,7 +28,7 @@
           };
 
           nixos.hosts = {
-            ideapard = {
+            IdeaPard = {
               userHomeModules = [
                 "leswell"
                 "leswellhm"
