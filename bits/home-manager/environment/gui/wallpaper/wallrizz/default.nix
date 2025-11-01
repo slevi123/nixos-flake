@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.wallrizz
+    # pkgs.wallrizz
     pkgs.imagemagick
   ];
 }

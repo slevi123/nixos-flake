@@ -1,9 +1,7 @@
-{
-  pkgs,
-  inputs,
-  system,
-  ...
-}:
+{ pkgs, inputs, ... }:
+let
+  inherit (pkgs) system;
+in
 {
   programs.vscode.profiles.qt-qml =
     let

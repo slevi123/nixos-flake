@@ -16,10 +16,45 @@
         ];
 
         imports = [
-          ./utility
-          ./config/leswell-nixos
-          ./config/leswell-hp
+          toplevel.ez-configs.flakeModule
+          # ./utility
         ];
+
+        ezConfigs = rec {
+          root = ./.;
+          globalArgs = {
+            inputs = toplevel;
+            inherit self;
+          };
+
+          nixos.hosts = {
+            IdeaPard = {
+              userHomeModules = [
+                "leswell"
+                "leswellhm"
+              ];
+            };
+            HyPo = {
+              userHomeModules = [ "leswell" ];
+            };
+
+            nixos = {
+              modulesDirectory = "${root}/nixos-modules";
+              onfigurationsDirectory = "${root}/nixos-configurations";
+              configurationEntryPoint = "default.nix";
+            };
+            homes = {
+              modulesDirectory = "${root}/home-modules";
+            };
+
+            home.backupFileExtension = "hm-backup";
+          };
+          # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
+          # home.users.root.importDefault = false;
+          # nixos.hosts = {
+          #   ideapard = import "${self}/nixos-configurations/ideapard/charisma.nix";
+          # };
+        };
 
         flake = {
           overlays = import ./overlays { inputs = toplevel; };
@@ -27,18 +62,6 @@
           # utils = flake-parts.lib.withSystem systems (import ./utility);
           # NixOS configuration entrypoint
           # Available through 'nixos-rebuild --flake .#your-hostname'
-          nixosConfigurations = {
-            # leswell-wsl = import ./config/leswell-wsl {
-            #   inherit nixpkgs;
-            #   inherit self;
-            #   inherit inputs;
-            # };
-            # leswell-minimal = import ./config/minimal {
-            #   inherit nixpkgs;
-            #   inherit self;
-            #   inherit inputs;
-            # };
-          };
         };
 
         perSystem =
@@ -197,6 +220,14 @@
     };
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
+
+    ez-configs = {
+      url = "github:slevi123/ez-configs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
     # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };

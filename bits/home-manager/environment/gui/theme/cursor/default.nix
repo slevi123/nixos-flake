@@ -4,6 +4,7 @@
     # package = pkgs.vanilla-dmz;
     # name = "Vanilla-DMZ";
     # name = "Posy_Cursor";
+    enable = true;
     name = "Posy_Cursor_125_175";
     package = pkgs.posy-cursors;
     gtk.enable = true;

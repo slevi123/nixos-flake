@@ -1,4 +1,4 @@
-{ inputs, system, ... }:
+{ inputs, pkgs, ... }:
 {
   home.file.".config/ashell" = {
     source = ./dotfiles;
@@ -6,5 +6,5 @@
   };
 
   # must use system [wrong format ...]
-  home.packages = [ inputs.ashell.defaultPackage.${system} ];
+  home.packages = [ inputs.ashell.defaultPackage.${pkgs.system} ];
 }

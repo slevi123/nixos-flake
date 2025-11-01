@@ -1,11 +1,8 @@
-{
-  pkgs,
-  inputs,
-  system,
-  ...
-}:
+{ pkgs, inputs, ... }:
 with pkgs;
 let
+  inherit (pkgs) system;
+
   my-jdk17 = jdk17.overrideAttrs (old: {
     meta = old.meta // {
       priority = 15;

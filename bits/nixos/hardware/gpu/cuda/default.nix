@@ -1,4 +1,12 @@
-{ inputs', ... }:
+{
+  inputs,
+  pkgs,
+  self,
+  ...
+}:
+let
+  inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
+in
 {
   nix.settings = {
     substituters = [ "https://cuda-maintainers.cachix.org" ];

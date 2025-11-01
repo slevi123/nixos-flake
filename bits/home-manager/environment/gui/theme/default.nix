@@ -3,6 +3,6 @@
   imports = [
     ./gtk
     # ./qt
-    ./cursor
+    # ./cursor
   ];
 }

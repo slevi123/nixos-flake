@@ -2,7 +2,7 @@ _: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.leswell = {
     isNormalUser = true;
-    # description = "simofilevi";
+    description = "simofilevi";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -12,6 +12,8 @@ _: {
       "usb"
       "libvirtd"
       "gitprojects"
+      "i2c"
+      "network"
     ];
     uid = 1000;
     useDefaultShell = true;

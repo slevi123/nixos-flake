@@ -1,9 +1,7 @@
-{
-  pkgs,
-  inputs,
-  system,
-  ...
-}:
+{ pkgs, inputs, ... }:
+let
+  inherit (pkgs) system;
+in
 {
   home.packages = [
     pkgs.platformio
