@@ -1,6 +1,6 @@
-{ self, pkgs, ... }:
+{ self, pkgs, charmpkgs, ... }:
 let
-  self' = import "${self}/charmpkgs/lib/bring-system.nix" pkgs.system self;
+  self' = charmpkgs.lib.bring-system pkgs.system self;
 in
 {
   imports = [
