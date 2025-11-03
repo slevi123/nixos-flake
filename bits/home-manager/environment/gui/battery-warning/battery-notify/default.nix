@@ -1,7 +1,12 @@
-{ pkgs, self, ... }:
+{
+  pkgs,
+  self,
+  charmpkgs,
+  ...
+}:
 let
   # inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
-  self' = import "${self}/charmpkgs/lib/bring-system.nix" pkgs.system self;
+  self' = charmpkgs.lib.bring-system pkgs.system self;
 in
 {
   home.packages = [ self'.packages.battery-notify ];

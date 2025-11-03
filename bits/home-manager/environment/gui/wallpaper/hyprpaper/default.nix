@@ -1,7 +1,18 @@
-_: {
+{
+  charmpkgs,
+  inputs,
+  pkgs,
+  ...
+}:
+let
+  inputs' = charmpkgs.lib.bring-system-inputs pkgs.system inputs;
+in
+{
   home.file.".config/hypr/hyprpaper.conf" = {
-    source = ./hyprpaper.conf;
-    recursive = true;
+    text = import ./config.nix {
+      inherit charmpkgs;
+      inherit (inputs'.media.packages) wallpaper;
+    };
   };
 
   home.sessionVariables = {

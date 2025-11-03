@@ -1,11 +1,12 @@
 {
   inputs,
-  self,
   pkgs,
+  charmpkgs,
   ...
 }:
 let
-  inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
+  inputs' = charmpkgs.lib.bring-system-inputs pkgs.system inputs;
+
 in
 {
   home.file.".config/quick_actions" = {
