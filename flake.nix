@@ -229,6 +229,7 @@
       };
     };
 
+    quick-actions-config.url = "github:slevi123/quick-actions-config";
     # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };
 

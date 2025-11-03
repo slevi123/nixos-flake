@@ -334,6 +334,24 @@
         "type": "github"
       }
     },
+    "flake-parts_5": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_4"
+      },
+      "locked": {
+        "lastModified": 1762040540,
+        "narHash": "sha256-z5PlZ47j50VNF3R+IMS9LmzI5fYRGY/Z5O5tol1c9I4=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "0010412d62a25d959151790968765a70c436598b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems_2"
@@ -1005,6 +1023,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib_4": {
+      "locked": {
+        "lastModified": 1761765539,
+        "narHash": "sha256-b0yj6kfvO8ApcSE+QmA6mUfu8IYG6/uU28OFn4PaC8M=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "719359f4562934ae99f5443f20aa06c2ffff91fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1761597516,
@@ -1041,6 +1074,20 @@
       }
     },
     "nixpkgs_10": {
+      "locked": {
+        "lastModified": 1761971895,
+        "narHash": "sha256-s6XfCnuMiApVKgxbqyNzpH+ClAaa+Vk8rjNyYhSjUWQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f1e8ae508a9a467a9f51d29b8639e96db2b52c30",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_11": {
       "locked": {
         "lastModified": 1761236834,
         "narHash": "sha256-+pthv6hrL5VLW2UqPdISGuLiUZ6SnAXdd2DdUE+fV2Q=",
@@ -1271,6 +1318,25 @@
         "url": "https://gitlab.com/leswell/quick-actions"
       }
     },
+    "quick-actions-config": {
+      "inputs": {
+        "flake-parts": "flake-parts_5",
+        "nixpkgs": "nixpkgs_10"
+      },
+      "locked": {
+        "lastModified": 1762176647,
+        "narHash": "sha256-ZpkOpHxSTi5Iph2FKVGeThpoOey6Efwgtn8sesrY29o=",
+        "owner": "slevi123",
+        "repo": "quick-actions-config",
+        "rev": "38d582b02619f80642b43b638866aaacdf996e66",
+        "type": "github"
+      },
+      "original": {
+        "owner": "slevi123",
+        "repo": "quick-actions-config",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -1315,6 +1381,7 @@
         "nixpkgs-stable-unfree": "nixpkgs-stable-unfree",
         "nixvim": "nixvim",
         "quick-actions": "quick-actions",
+        "quick-actions-config": "quick-actions-config",
         "quickshell": "quickshell",
         "treefmt-nix": "treefmt-nix_3",
         "zen-browser": "zen-browser"
@@ -1488,7 +1555,7 @@
     },
     "treefmt-nix_3": {
       "inputs": {
-        "nixpkgs": "nixpkgs_10"
+        "nixpkgs": "nixpkgs_11"
       },
       "locked": {
         "lastModified": 1761311587,
