@@ -21,7 +21,7 @@
     "${self}/bits/home-manager/environment/gui/menu/wofi"
     "${self}/bits/home-manager/environment/gui/menu/rofi"
     "${self}/bits/home-manager/environment/gui/menu/quick-actions"
-    # "${self}/bits/home-manager/environment/gui/battery-warning/battery-notify"
+    "${self}/bits/home-manager/environment/gui/battery-warning/battery-notify"
     "${self}/bits/home-manager/environment/gui/recorder/voice/gnome-sound-recorder"
     "${self}/bits/home-manager/environment/sound/frontend/helvum"
     "${self}/bits/home-manager/environment/sound/frontend/pavucontrol"
