@@ -1,24 +1,18 @@
-{ charmpkgs, ... }:
+{
+  charmpkgs,
+  inputs,
+  pkgs,
+  ...
+}:
 let
-  conf = charmpkgs.lib.build-hyprpaper-conf {
-    preload = [
-      "~/Pictures/wallpapers/blue.jpg"
-      "~/Pictures/wallpapers/groot.jpg"
-      "~/Pictures/wallpapers/sunnyhill.jpg"
-    ];
-
-    wallpaper = {
-      eDP-1 = "~/Pictures/wallpapers/sunnyhill.jpg";
-      HDMI-A-1 = "~/Pictures/wallpapers/groot.jpg";
-    };
-
-    #enable splash text rendering over the wallpaper
-    splash = true;
-  } "generated-hyprpaper.conf";
+  inputs' = charmpkgs.lib.bring-system-inputs pkgs.system inputs;
 in
 {
   home.file.".config/hypr/hyprpaper.conf" = {
-    source = conf;
+    text = import ./config.nix {
+      inherit charmpkgs;
+      inherit (inputs'.media.packages) wallpaper;
+    };
   };
 
   home.sessionVariables = {

@@ -1,4 +1,5 @@
-hyprpaperConfig: _name:
+# {pkgs}:
+hyprpaperConfig:
 let
   hyprpaperConfText =
     let
@@ -11,6 +12,7 @@ let
       boolToOnOff = b: if b then "on" else "off";
       optional = arg: expr: if builtins.hasAttr arg hyprpaperConfig then expr else "";
     in
+
     ''
       ${preloads}
       ${walls}
@@ -18,4 +20,4 @@ let
       ${optional "splash" ("splash = " + (boolToOnOff hyprpaperConfig.splash))}
     '';
 in
-builtins.toFile "hyprpaper.conf" hyprpaperConfText
+hyprpaperConfText
