@@ -884,16 +884,13 @@
       },
       "locked": {
         "lastModified": 1762181614,
-        "narHash": "sha256-YYr/zCf3rgEvYUBymdHrQNBjOnnZ1uksNqcoLhbgVw8=",
-        "owner": "slevi123",
-        "repo": "nixos-flake-media",
-        "rev": "93c4ee87a131f76af01bcf5647ddc6433d2848ce",
-        "type": "github"
+        "narHash": "sha256-dAnlqzQAw6kzzbGzt6lt3khhaAyL05gLi0vEVJyJm0g=",
+        "type": "tarball",
+        "url": "https://github.com/slevi123/nixos-flake-media/archive/refs/tags/0.0.1.tar.gz"
       },
       "original": {
-        "owner": "slevi123",
-        "repo": "nixos-flake-media",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://github.com/slevi123/nixos-flake-media/archive/refs/tags/0.0.1.tar.gz"
       }
     },
     "nix-index-database": {
