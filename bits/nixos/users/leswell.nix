@@ -14,6 +14,7 @@ _: {
       "gitprojects"
       "i2c"
       "network"
+      "nixxers"
     ];
     uid = 1000;
     useDefaultShell = true;
