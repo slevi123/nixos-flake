@@ -4,7 +4,13 @@
 
   outputs =
     toplevel@{ self, flake-parts, ... }:
-    flake-parts.lib.mkFlake { inputs = toplevel; } (
+
+    flake-parts.lib.mkFlake { inputs = toplevel;
+    
+        specialArgs = {
+          charmpkgs = import ./charmpkgs;
+        };
+     } (
       { ... }:
       {
         systems = [
@@ -17,7 +23,7 @@
 
         imports = [
           toplevel.ez-configs.flakeModule
-          # ./utility
+          # ./charmpkgs/lib
         ];
 
         ezConfigs = rec {
@@ -25,6 +31,7 @@
           globalArgs = {
             inputs = toplevel;
             inherit self;
+            charmpkgs = import ./charmpkgs;
           };
 
           nixos.hosts = {
