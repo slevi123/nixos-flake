@@ -1,4 +1,9 @@
-{ inputs, self, pkgs, ... }:
+{
+  inputs,
+  self,
+  pkgs,
+  ...
+}:
 let
   inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
 in

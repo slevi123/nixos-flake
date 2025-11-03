@@ -3,7 +3,7 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs =
-    toplevel@{ self, flake-parts, nixpkgs, ... }:
+    toplevel@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inputs = toplevel; } (
       { ... }:
       {
