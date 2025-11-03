@@ -245,7 +245,9 @@
     };
 
     quick-actions-config.url = "github:slevi123/quick-actions-config";
-    media.url = "github:slevi123/nixos-flake-media?lfs=1";
+    # media.url = "github:slevi123/nixos-flake-media?lfs=1";
+    # media.url = "https://github.com/slevi123/nixos-flake-media/archive/refs/tags/0.1.0.zip";
+    media.url = "https://github.com/slevi123/nixos-flake-media/archive/refs/tags/0.0.1.tar.gz";
 
     # naersk.url = "github:nix-community/naersk"; # rusk crates from crates.io, I guess
   };

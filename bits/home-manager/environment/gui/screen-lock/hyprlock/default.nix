@@ -1,7 +1,16 @@
-_: {
-  home.file.".config/hypr/hyprlock.conf" = {
-    source = ./hyprlock.conf;
-    recursive = true;
+{
+  inputs,
+  charmpkgs,
+  pkgs,
+  ...
+}:
+let
+  inputs' = charmpkgs.lib.bring-system-inputs pkgs.system inputs;
+in
+{
+  programs.hyprlock = {
+    enable = true;
+    settings = import ./settings.nix { inherit (inputs'.media.packages) wallpaper lockscreen; };
   };
 
   home.sessionVariables = {
