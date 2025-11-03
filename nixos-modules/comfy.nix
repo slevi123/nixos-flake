@@ -1,7 +1,12 @@
-{ self, pkgs, charmpkgs, ... }:
+{
+  self,
+  pkgs,
+  charmpkgs,
+  ...
+}:
 let
   self' = charmpkgs.lib.bring-system pkgs.system self;
-    in
+in
 {
   imports = [
     # file manager

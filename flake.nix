@@ -3,103 +3,111 @@
   description = "My Own NixOS Config (Leswell) - Lenovo Gaming 3 laptop";
 
   outputs =
-    toplevel@{ self, flake-parts, nixpkgs, ... }:
+    toplevel@{
+      self,
+      flake-parts,
+      nixpkgs,
+      ...
+    }:
 
-    flake-parts.lib.mkFlake { inputs = toplevel;
-    
+    flake-parts.lib.mkFlake
+      {
+        inputs = toplevel;
+
         specialArgs = {
           charmpkgs = import ./charmpkgs { inherit nixpkgs; };
         };
-     } (
-      { ... }:
-      {
-        systems = [
-          "aarch64-linux"
-          # "i686-linux"
-          "x86_64-linux"
-          "aarch64-darwin"
-          "x86_64-darwin"
-        ];
-
-        imports = [
-          toplevel.ez-configs.flakeModule
-          # ./charmpkgs/lib
-        ];
-
-        ezConfigs = rec {
-          root = ./.;
-          globalArgs = {
-            inputs = toplevel;
-            inherit self;
-            charmpkgs = import ./charmpkgs{ inherit nixpkgs; };
-          };
-
-          nixos.hosts = {
-            IdeaPard = {
-              userHomeModules = [
-                "leswell"
-                "leswellhm"
-              ];
-            };
-            HyPo = {
-              userHomeModules = [ "leswell" ];
-            };
-
-            nixos = {
-              modulesDirectory = "${root}/nixos-modules";
-              onfigurationsDirectory = "${root}/nixos-configurations";
-              configurationEntryPoint = "default.nix";
-            };
-            homes = {
-              modulesDirectory = "${root}/home-modules";
-            };
-
-            home.backupFileExtension = "hm-backup";
-          };
-          # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
-          # home.users.root.importDefault = false;
-          # nixos.hosts = {
-          #   ideapard = import "${self}/nixos-configurations/ideapard/charisma.nix";
-          # };
-        };
-
-        flake = {
-          overlays = import ./overlays { inputs = toplevel; };
-
-          # utils = flake-parts.lib.withSystem systems (import ./utility);
-          # NixOS configuration entrypoint
-          # Available through 'nixos-rebuild --flake .#your-hostname'
-        };
-
-        perSystem =
-          { pkgs, inputs', ... }:
-          let
-            treefmtEval = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
-            treefmtEvalCheck = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
-          in
-          {
-            # available through 'nix fmt'
-            formatter = treefmtEval.config.build.wrapper;
-            # formatter = pkgs.alejandra;
-
-            checks.style = treefmtEvalCheck.config.build.check self;
-
-            # custom packages
-            # accessible through 'nix build', 'nix shell', etc
-            packages = {
-              nixvim = inputs'.nixvim.legacyPackages.makeNixvim (
-                import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" {
-                  inherit pkgs;
-                  inputs = toplevel;
-                }
-              );
-            }
-            // import ./pkgs { inherit pkgs; };
-          };
-
-        # systems = supportedSystems;
       }
-    );
+      (
+        { ... }:
+        {
+          systems = [
+            "aarch64-linux"
+            # "i686-linux"
+            "x86_64-linux"
+            "aarch64-darwin"
+            "x86_64-darwin"
+          ];
+
+          imports = [
+            toplevel.ez-configs.flakeModule
+            # ./charmpkgs/lib
+          ];
+
+          ezConfigs = rec {
+            root = ./.;
+            globalArgs = {
+              inputs = toplevel;
+              inherit self;
+              charmpkgs = import ./charmpkgs { inherit nixpkgs; };
+            };
+
+            nixos.hosts = {
+              IdeaPard = {
+                userHomeModules = [
+                  "leswell"
+                  "leswellhm"
+                ];
+              };
+              HyPo = {
+                userHomeModules = [ "leswell" ];
+              };
+
+              nixos = {
+                modulesDirectory = "${root}/nixos-modules";
+                onfigurationsDirectory = "${root}/nixos-configurations";
+                configurationEntryPoint = "default.nix";
+              };
+              homes = {
+                modulesDirectory = "${root}/home-modules";
+              };
+
+              home.backupFileExtension = "hm-backup";
+            };
+            # darwin.hosts.EllMBP.userHomeModules = [ "root" ];
+            # home.users.root.importDefault = false;
+            # nixos.hosts = {
+            #   ideapard = import "${self}/nixos-configurations/ideapard/charisma.nix";
+            # };
+          };
+
+          flake = {
+            overlays = import ./overlays { inputs = toplevel; };
+
+            # utils = flake-parts.lib.withSystem systems (import ./utility);
+            # NixOS configuration entrypoint
+            # Available through 'nixos-rebuild --flake .#your-hostname'
+          };
+
+          perSystem =
+            { pkgs, inputs', ... }:
+            let
+              treefmtEval = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-fmt.nix;
+              treefmtEvalCheck = toplevel.treefmt-nix.lib.evalModule pkgs ./formatter/treefmt/nix-flake-check.nix;
+            in
+            {
+              # available through 'nix fmt'
+              formatter = treefmtEval.config.build.wrapper;
+              # formatter = pkgs.alejandra;
+
+              checks.style = treefmtEvalCheck.config.build.check self;
+
+              # custom packages
+              # accessible through 'nix build', 'nix shell', etc
+              packages = {
+                nixvim = inputs'.nixvim.legacyPackages.makeNixvim (
+                  import "${self}/bits/home-manager/ide/nixvim/nixvim-full.nix" {
+                    inherit pkgs;
+                    inputs = toplevel;
+                  }
+                );
+              }
+              // import ./pkgs { inherit pkgs; };
+            };
+
+          # systems = supportedSystems;
+        }
+      );
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";

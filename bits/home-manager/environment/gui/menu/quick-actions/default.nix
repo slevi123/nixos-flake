@@ -6,7 +6,7 @@
 }:
 let
   inputs' = charmpkgs.lib.bring-system-inputs pkgs.system inputs;
-  
+
 in
 {
   home.file.".config/quick_actions" = {
