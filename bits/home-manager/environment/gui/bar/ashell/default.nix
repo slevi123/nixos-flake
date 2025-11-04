@@ -6,5 +6,5 @@
   };
 
   # must use system [wrong format ...]
-  home.packages = [ inputs.ashell.defaultPackage.${pkgs.system} ];
+  home.packages = [ inputs.ashell.defaultPackage.${pkgs.stdenv.hostPlatform.system} ];
 }

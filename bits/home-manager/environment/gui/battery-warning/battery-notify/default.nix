@@ -5,7 +5,7 @@
   ...
 }:
 let
-  # inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
+  # inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.stdenv.hostPlatform.system inputs;
   self' = charmpkgs.lib.bring-system pkgs.stdenv.hostPlatform.system self;
 in
 {

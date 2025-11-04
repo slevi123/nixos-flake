@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 with pkgs;
 let
-  inherit (pkgs) system;
+  inherit (pkgs.stdenv.hostPlatform) system;
 
   my-jdk17 = jdk17.overrideAttrs (old: {
     meta = old.meta // {

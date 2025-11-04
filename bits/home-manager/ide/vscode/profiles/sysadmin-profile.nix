@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  inherit (pkgs) system;
+  inherit (pkgs.stdenv.hostPlatform) system;
 in
 {
   programs.vscode.profiles.sysadmin =

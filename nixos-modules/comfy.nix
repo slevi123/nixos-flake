@@ -5,7 +5,7 @@
   ...
 }:
 let
-  self' = charmpkgs.lib.bring-system pkgs.system self;
+  self' = charmpkgs.lib.bring-system pkgs.stdenv.hostPlatform.system self;
 in
 {
   imports = [

@@ -22,7 +22,6 @@ in
   # extension_repos.nixpkgs.bbenoist.nix # lightweight
   extension_repos.nixpkgs.jnoortheen.nix-ide
 
-
   extension_repos.community.vscode-marketplace.bierner.markdown-mermaid
   extension_repos.community.vscode-marketplace.mkhl.direnv
 
