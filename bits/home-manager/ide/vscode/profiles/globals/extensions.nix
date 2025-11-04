@@ -22,6 +22,9 @@ in
   # extension_repos.nixpkgs.bbenoist.nix # lightweight
   extension_repos.nixpkgs.jnoortheen.nix-ide
 
+
+  extension_repos.community.vscode-marketplace.bierner.markdown-mermaid
+
   # ---------- theme -----------
   extension_repos.nixpkgs.pkief.material-icon-theme
   # (extension_repos.community.vscode-marketplace.ssdev.wallrizz-theme.overrideAttrs (oldAttrs: rec {
