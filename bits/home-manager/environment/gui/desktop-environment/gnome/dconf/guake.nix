@@ -3,7 +3,7 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     # =====================GUAKE===============================
-    # TODO: maybe use guake yml in future
+    # oTODO: maybe use guake yml in future
     "org/guake/general" = {
       compat-delete = "delete-sequence";
       display-n = 0;
