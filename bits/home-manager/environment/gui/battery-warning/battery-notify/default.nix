@@ -6,7 +6,7 @@
 }:
 let
   # inputs' = import "${self}/charmpkgs/lib/bring-system-inputs.nix" pkgs.system inputs;
-  self' = charmpkgs.lib.bring-system pkgs.system self;
+  self' = charmpkgs.lib.bring-system pkgs.stdenv.hostPlatform.system self;
 in
 {
   home.packages = [ self'.packages.battery-notify ];
