@@ -24,6 +24,7 @@ in
 
 
   extension_repos.community.vscode-marketplace.bierner.markdown-mermaid
+  extension_repos.community.vscode-marketplace.mkhl.direnv
 
   # ---------- theme -----------
   extension_repos.nixpkgs.pkief.material-icon-theme
