@@ -1,4 +1,9 @@
-{ self, inputs, ezModules, ... }:
+{
+  self,
+  inputs,
+  ezModules,
+  ...
+}:
 {
   nixpkgs.config.allowUnfree = true;
   imports = [
