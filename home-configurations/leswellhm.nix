@@ -1,7 +1,9 @@
-{ self, inputs, ... }:
+{ self, inputs, ezModules, ... }:
 {
   nixpkgs.config.allowUnfree = true;
   imports = [
+    ezModules.hyprland-dynamic-config
+
     inputs.nix-index-database.homeModules.nix-index
     "${self}/bits/home-manager/environment/languages"
     "${self}/bits/home-manager/environment/tty/alpha.nix"
