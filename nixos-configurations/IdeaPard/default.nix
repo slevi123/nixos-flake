@@ -29,6 +29,7 @@
   imports = [
     ./charisma.nix
     ezModules.comfy
+    ezModules.ifuse
 
     "${self}/bits/nixos/hardware/gpu/hybrid-nvidia.nix"
     "${self}/bits/nixos/hardware/gpu/cuda"
