@@ -9,6 +9,7 @@
       };
       pypirc = {
         file = "${self}/secrets/pypirc.age";
+        path = "/home/leswellhm/.pypirc";
         owner = "leswellhm";
       };
     };
