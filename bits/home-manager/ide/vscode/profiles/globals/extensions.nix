@@ -26,6 +26,8 @@ in
   extension_repos.community.vscode-marketplace.mkhl.direnv
   extension_repos.community.vscode-marketplace.github.vscode-github-actions
 
+  # extension_repos.nixpkgs.github.copilot
+
   # ---------- theme -----------
   extension_repos.nixpkgs.pkief.material-icon-theme
   # (extension_repos.community.vscode-marketplace.ssdev.wallrizz-theme.overrideAttrs (oldAttrs: rec {
