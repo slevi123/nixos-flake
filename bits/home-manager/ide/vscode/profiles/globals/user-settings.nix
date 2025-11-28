@@ -18,4 +18,6 @@
       };
     };
   };
+
+  "typescript.updateImportsOnFileMove.enabled" = "always";
 }
