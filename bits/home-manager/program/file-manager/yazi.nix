@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   # home.packages = [
   #   pkgs.yazi
   # ];
@@ -7,6 +7,10 @@ _: {
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
+
+    plugin = {
+      git = pkgs.yaziPlugins.git;
+    };
 
     settings = {
       mgr = {
@@ -18,6 +22,20 @@ _: {
       #     desc = "Open with zathura";
       #   };
       # };
+      plugin = {
+        prepend_fetchers = [
+          {
+            id = "git";
+            name = "*";
+            run = "git";
+          }
+          {
+            id = "git";
+            name = "*/";
+            run = "git";
+          }
+        ];
+      };
     };
   };
 

@@ -11,6 +11,10 @@ _: {
       2022
       8080 # backend
       5900 # wayvnc
+      4443
+      1111 # Zora static site generator default
+      1353 # org-portal
+
     ];
 
     # allowedTCPPortRanges = [

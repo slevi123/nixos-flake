@@ -27,6 +27,7 @@ _: {
 
       background_opacity = 0.2;
       background_blur = 0;
+      open_url_with =  "default";
     };
   };
 }

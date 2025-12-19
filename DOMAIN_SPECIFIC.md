@@ -1,0 +1,3 @@
+- vscode management
+- port management
+- drop into python shell with packages easily
