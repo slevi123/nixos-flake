@@ -8,9 +8,9 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
 
-    plugin = {
-      git = pkgs.yaziPlugins.git;
-    };
+    # plugin = {
+    #   git = pkgs.yaziPlugins.git;
+    # };
 
     settings = {
       mgr = {
