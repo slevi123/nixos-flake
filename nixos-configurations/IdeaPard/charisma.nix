@@ -5,4 +5,10 @@
   boot.loader.grub.useOSProber = true;
   programs.nh.flake = "/nix_config/my_own_nix_config";
 
+  nix = {
+    settings = {
+      max-jobs = 3;
+      cores = 4;
+    };
+  };
 }

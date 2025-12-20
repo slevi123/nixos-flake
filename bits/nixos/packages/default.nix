@@ -79,7 +79,7 @@
 
     nmap
 
-    calibre
+    # calibre
 
     traceroute
 
