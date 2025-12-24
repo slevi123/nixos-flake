@@ -111,6 +111,8 @@
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
+    
+    backburn.url = "github:Charmfire/backburn";
 
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";

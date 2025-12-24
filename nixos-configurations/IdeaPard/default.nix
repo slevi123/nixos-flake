@@ -28,6 +28,8 @@
 
   imports = [
     ./charisma.nix
+    inputs.backburn.nixosModules.desktop-entry
+
     ezModules.comfy
     ezModules.ifuse
 
