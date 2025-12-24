@@ -104,7 +104,10 @@
             "class<Minecraft\\* .*>": "󰍳",
             "title<SKlauncher .*>": "",
             "class<steam>": "",
-            "class<.*Arduino IDE.*>": ""
+            "class<.*Arduino IDE.*>": "",
+            "class<FFPWA-01K8K99JCEDY1DAYGDCGSBMPRA>": "",
+            "class<FFPWA-01K8K9ZQTTH898W48YZFSG5S3F>": "󱚣",
+            "title<Backburn>": ""
         },
         "format-icons": {
             "sp1":"󰩳1",
