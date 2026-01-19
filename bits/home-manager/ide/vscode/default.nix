@@ -10,6 +10,7 @@
     ./profiles/flake-profile.nix
     ./profiles/bash-profile.nix
     ./profiles/embedded-profile.nix
+    ./profiles/astro-profile.nix
   ];
 
   programs.vscode = {
