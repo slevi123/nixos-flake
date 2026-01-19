@@ -6,7 +6,7 @@ _: {
       # "uwsm app swaync"
       "uwsm app avizo-service"
       "uwsm app -- udiskie --smart-tray"
-      "uwsm app -- $CHARM_BAR"
+      "uwsm app -- firebar"
       "uwsm app -- $CHARM_IDLE"
       "uwsm app -- clipse -listen"
       "uwsm app hyprpaper"

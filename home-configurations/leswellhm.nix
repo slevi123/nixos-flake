@@ -17,7 +17,8 @@
     # "${self}/bits/home-manager/terminal/warp"
 
     "${self}/bits/home-manager/environment/gui/window-manager/hyprland"
-    "${self}/bits/home-manager/environment/gui/bar/waybar"
+    # "${self}/bits/home-manager/environment/gui/bar/waybar"
+    "${self}/bits/home-manager/environment/gui/bar/firebar"
     # "${self}/bits/home-manager/environment/gui/bar/ashell"
     "${self}/bits/home-manager/environment/gui/idle/hypridle"
     "${self}/bits/home-manager/environment/gui/wallpaper/hyprpaper"
