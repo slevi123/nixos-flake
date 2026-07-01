@@ -5,7 +5,8 @@
     enableDefaultConfig = false;
 
     # Define SSH hosts
-    matchBlocks = {
+    # matchBlocks = {
+    settings = {
       # Host: lrpi
       "lrpi" = {
         hostname = "192.168.0.66";

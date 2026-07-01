@@ -112,7 +112,10 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     
-    backburn.url = "github:Charmfire/backburn";
+    backburn = {
+      url = "github:Charmfire/backburn";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     molten-ui.url = "github:Charmfire/molten-ui";
 
     # fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*.tar.gz";
@@ -174,7 +177,7 @@
     #   # url = "github:hyprwm/Hyprland?ref=refs/tags/v0.45.0";
     #   url = "github:hyprwm/Hyprland?ref=refs/tags/v0.49.0";
     #   # url = "github:hyprwm/Hyprland/nix";
-    # };
+  # };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       # url = "github:0xc000022070/zen-browser-flake";

@@ -7,6 +7,8 @@
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
+    shellWrapperName = "y";
+
 
     # plugin = {
     #   git = pkgs.yaziPlugins.git;

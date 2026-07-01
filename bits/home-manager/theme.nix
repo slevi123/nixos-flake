@@ -1,6 +1,7 @@
-_: {
+{config, ...}: {
 
   gtk = {
+    gtk4.theme = config.gtk.theme;
     enable = true;
     # font.name = "TeX Gyre Adventor 10";
     # theme = {
