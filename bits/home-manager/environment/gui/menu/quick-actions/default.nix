@@ -6,7 +6,6 @@
 }:
 let
   inputs' = charmpkgs.lib.bring-system-inputs pkgs.stdenv.hostPlatform.system inputs;
-
 in
 {
   home.file.".config/quick_actions" = {

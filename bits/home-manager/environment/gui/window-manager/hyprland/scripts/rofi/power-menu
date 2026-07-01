@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-menu_command='rofi -dmenu -p'
+menu_command='firemenu -dmenu -p'
 
 options="⏻ Shutdown\n󰜉 Reboot\n󰗽 Logout\n󰏥 Suspend\n Lock"
 selected=$(echo -e $options | $menu_command "Power Menu")

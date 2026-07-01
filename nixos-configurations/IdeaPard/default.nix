@@ -50,7 +50,7 @@
     # "${self}/bits/nixos/environment/gui/desktop-environment/gnome"
     "${self}/bits/nixos/environment/gui/window-manager/hyprland"
     # "${self}/bits/nixos/environment/gui/menu/ulauncher"
-    # "${self}/bits/nixos/environment/window-manager/niri"
+    "${self}/bits/nixos/environment/gui/window-manager/niri"
     "${self}/bits/nixos/users"
     "${self}/bits/nixos/firewall"
     # "${self}/bits/nixos/kvm/input-leap"
@@ -72,6 +72,8 @@
     "${self}/bits/nixos/home-assistant"
     "${self}/bits/nixos/program/torrent/transmission.nix"
     "${self}/bits/nixos/program/usb-images/ventoy"
+    "${self}/bytes/optimization/zram"
+
     # "${self}/bits/nixos/program/snapd"
 
     # temporary
@@ -119,4 +121,6 @@
     };
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
+
+  services.samba.enable = true;
 }

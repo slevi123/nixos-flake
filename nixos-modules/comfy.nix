@@ -13,9 +13,15 @@ in
     # superfile
 
     "${self}/bits/nixos/environment/tty/comphy.nix"
-    "${self}/bits/nixos/environment/remote/ssh"
+    # "${self}/bits/nixos/environment/remote/ssh"
     "${self}/bits/nixos/bootloader/plymouth"
   ];
 
-  environment.systemPackages = [ self'.packages.nixvim ];
+  environment.systemPackages = [ 
+    self'.packages.nixvim 
+
+    # TODO: move me to my place
+    pkgs.exfat
+    pkgs.exfatprogs
+  ];
 }

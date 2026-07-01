@@ -11,6 +11,10 @@
     ./profiles/bash-profile.nix
     ./profiles/embedded-profile.nix
     ./profiles/astro-profile.nix
+    ./profiles/clean-profile.nix
+    # ./profiles/csharp-profile.nix
+    ./profiles/nextjs-profile.nix
+    ./profiles/clang-profile.nix
   ];
 
   programs.vscode = {

@@ -3,7 +3,9 @@ _: {
     enable = true;
 
     allowedTCPPorts = [
-      1968
+      1968 # animus
+      1969 # anima
+
       8691
       4723 # appium
       5037 # appium
