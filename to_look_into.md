@@ -28,3 +28,8 @@ replace all wofi with rofi
 maybe use superfile instead of yazzi
 
 https://www.nyx.chaotic.cx/#lists-of-options-and-packages
+
+
+-------------------------
+
+CREATE VSCODE PROFILE MODULE, REFACTOR PROFILE NAMES INTO AN ATTR. CAUSE I OFTEN FORGET TO CHANGE IT SOMEWHERE

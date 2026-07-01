@@ -51,7 +51,7 @@
     # Language Servers
     taplo # toml
     yaml-language-server
-    nodePackages.typescript-language-server
+    typescript-language-server
 
     # Office Suite
     libreoffice
@@ -62,7 +62,7 @@
 
     # Others
     nssmdns
-    neofetch
+    # neofetch # EOL
     gparted
     # libusb1
     xsel # copy the selected text using X

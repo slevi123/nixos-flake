@@ -27,7 +27,7 @@
     # ./plugin/hyprspace.nix # FIXME: disabled, because of broken build. If it will not be fixed, I need to submit an issue
     # ./plugin/hyprscrolling.nix
     ./plugin/dynamic-cursors.nix
-    ./plugin/xtra-dispatchers.nix
+    # ./plugin/xtra-dispatchers.nix # FIXME: this plugin no longer exists    
     # ./plugin/easymotion.nix
     # ./plugin/hyprfocus.nix # broken
     ./permissions.nix

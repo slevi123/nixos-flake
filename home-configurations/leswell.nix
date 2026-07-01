@@ -23,7 +23,7 @@
     "${self}/bits/home-manager/environment/gui/menu/quick-actions"
     "${self}/bits/home-manager/environment/gui/battery-warning/battery-notify"
     "${self}/bits/home-manager/environment/gui/recorder/voice/gnome-sound-recorder"
-    "${self}/bits/home-manager/environment/sound/frontend/helvum"
+    # "${self}/bits/home-manager/environment/sound/frontend/helvum" # FIXME: unmantained
     "${self}/bits/home-manager/environment/sound/frontend/pavucontrol"
     "${self}/bits/home-manager/environment/bluetooth"
     "${self}/bits/home-manager/environment/screenshot/hyprshot"

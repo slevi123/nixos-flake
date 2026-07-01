@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.asciinema_3 ];
+  home.packages = [ pkgs.asciinema ];
 }
