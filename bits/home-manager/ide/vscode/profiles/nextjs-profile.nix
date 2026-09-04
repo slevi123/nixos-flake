@@ -13,6 +13,7 @@ in
     {
       extensions = [
         extension_repos.community.vscode-marketplace.esbenp.prettier-vscode
+        extension_repos.community.vscode-marketplace.dbaeumer.vscode-eslint
       ]
       ++ (import ./globals/extensions.nix { inherit pkgs system inputs; });
       userSettings = {
@@ -22,6 +23,10 @@ in
         "[typescriptreact]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
+        "[typescript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+
       }
       // (import ./globals/user-settings.nix);
     };

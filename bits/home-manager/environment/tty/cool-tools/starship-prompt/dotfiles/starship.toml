@@ -56,7 +56,7 @@ format = '| [$time]($style)'
 format = '[$state($symbol \($name\))]($style)'
 impure_msg=""
 symbol = ""
-heuristic = true
+heuristic = false
 
 # -------------------
 

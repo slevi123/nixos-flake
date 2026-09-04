@@ -19,5 +19,5 @@
     };
   };
 
-  "typescript.updateImportsOnFileMove.enabled" = "always";
+  "js/ts.updateImportsOnFileMove.enabled" = "always";
 }

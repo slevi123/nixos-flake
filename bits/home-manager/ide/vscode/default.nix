@@ -15,6 +15,7 @@
     # ./profiles/csharp-profile.nix
     ./profiles/nextjs-profile.nix
     ./profiles/clang-profile.nix
+    ./profiles/platformio-profile.nix
   ];
 
   programs.vscode = {

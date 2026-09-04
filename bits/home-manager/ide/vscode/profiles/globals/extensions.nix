@@ -30,12 +30,13 @@ in
 
   # ---------- theme -----------
   extension_repos.nixpkgs.pkief.material-icon-theme
+  extension_repos.community.vscode-marketplace.mathematic.vscode-pdf
   # (extension_repos.community.vscode-marketplace.ssdev.wallrizz-theme.overrideAttrs (oldAttrs: rec {
   #   postInstall = ''
   #     ln -sf ${config.home.homeDirectory}/.local/share/wallrizz/wallrizz-theme.json $out/share/vscode/extensions/ssdev.wallrizz-theme/themes/wallrizz-theme.json
   #   '';
   # }))
 
-  # extension_repos.community.open-vsx.RichardLuo.frosted-glass-theme
+  # extension_repos.community.open-vsx.RichardLuo.frosted-glass-themeP
 
 ]

@@ -44,7 +44,7 @@
     "${self}/bits/home-manager/program/browser"
     "${self}/bits/home-manager/program/viewer/pdf/zathura"
     "${self}/bits/home-manager/program/viewer/markdown/glow"
-    "${self}/bits/home-manager/program/file-manager/yazi.nix"
+    "${self}/bits/home-manager/program/file-manager/yazi"
     "${self}/bits/home-manager/program/file-manager/superfile.nix"
     "${self}/bits/home-manager/program/color-picker/hyprpicker.nix"
     "${self}/bits/home-manager/program/calculator/qalc.nix"

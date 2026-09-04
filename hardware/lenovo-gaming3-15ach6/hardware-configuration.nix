@@ -27,6 +27,11 @@
     device = "/dev/disk/by-uuid/390699c8-d2b0-4b9c-917d-95276fc1b920";
     fsType = "ext4";
   };
+  
+  fileSystems."/charmfire" = {
+    device = "/dev/disk/by-uuid/c4c072af-9359-415b-a730-a530d0de23e4";
+    fsType = "ext4";
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/CA80-0E78";
